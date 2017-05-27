@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Use haml for views
+gem 'haml-rails'
 gem 'haml'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
