@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="root">Codeology</a>
+    </div>
+    <% if user_is_logged_in? %>
+    <ul class="nav navbar-nav">
+      <li><%=link_to "Home", root %></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/team">Members</a></li>
+      <li><a href="/login">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
