@@ -14,4 +14,8 @@ class StaticPagesController < ApplicationController
   def team
     render 'team'
   end
+
+  def edward
+    render 'edward'
+  end
 end
