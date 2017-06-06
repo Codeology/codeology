@@ -18,4 +18,8 @@ class StaticPagesController < ApplicationController
   def franklin 
     render 'franklin'
   end 
+
+  def edward
+    render 'edward'
+  end
 end
