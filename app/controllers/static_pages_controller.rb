@@ -15,6 +15,10 @@ class StaticPagesController < ApplicationController
     render 'team'
   end
 
+  def franklin 
+    render 'franklin'
+  end 
+
   def edward
     render 'edward'
   end
