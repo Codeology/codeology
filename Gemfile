@@ -1,3 +1,5 @@
+ruby '2.2.2'
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -56,4 +58,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'annotate'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0.0.alpha6'
