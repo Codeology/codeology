@@ -183,7 +183,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bcrypt (= 3.1.11)
-  bootstrap
+  bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
   haml
