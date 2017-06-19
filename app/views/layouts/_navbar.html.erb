@@ -1,17 +1,23 @@
+<script type="text/javascript">
+   $(document).on('click', '.nav-item', function() {
+       $(".nav-item").removeClass("active");
+       $(this).addClass("active");
+   });
+</script>
 <nav class="navbar sticky-top navbar-toggleable-md navbar-inverse bg-inverse">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <%= link_to "Codeology", root_path, :class => "navbar-brand"%>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <% if user_is_logged_in? %>
       <li class="nav-item">
-        <%= link_to "Dashboard", root_path, :class => "nav-link" %>
+        <%= link_to_nav_item "Dashboard", root_path, :class => "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= @user.name %>
+        User's Name will go here
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to "Profile", about_path, :class => "dropdown-item" %>
@@ -20,16 +26,16 @@
       </li>
       <% else %>
       <li class="nav-item">
-        <%= link_to "Home", root_path, :class => "nav-link" %>
+        <%= link_to_nav_item "Home", root_path, :class => "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "About", about_path, :class => "nav-link" %>
+        <%= link_to_nav_item "About", about_path, :class => "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Members", team_path, :class => "nav-link" %>
+        <%= link_to_nav_item "Members", team_path, :class => "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Sign In", login_path, :class => "nav-link" %>
+        <%= link_to_nav_item "Sign In", login_path, :class => "nav-link" %>
       </li>
       <% end %>
     </ul>
