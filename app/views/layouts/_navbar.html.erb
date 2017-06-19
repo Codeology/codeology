@@ -1,14 +1,15 @@
-<script type="text/javascript">
-   $(document).on('click', '.nav-item', function() {
-       $(".nav-item").removeClass("active");
-       $(this).addClass("active");
-   });
 </script>
 <nav class="navbar sticky-top navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <%= link_to "Codeology", root_path, :class => "navbar-brand"%>
+  <% if user_is_logged_in? %>
+  <form class="form-inline">
+    <label class="sr-only" for="inlineFormInput">Search</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Search Codeology">
+  </form>
+  <% end %>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <% if user_is_logged_in? %>
@@ -17,10 +18,12 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        User's Name will go here
+          User's Name will go here
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <h6 class="dropdown-header">Your next interview is... [place in time]</h6>
           <%= link_to "Profile", about_path, :class => "dropdown-item" %>
+          <div class="dropdown-divider"></div>
           <%= link_to "Log Out", about_path, :class => "dropdown-item" %>
         </div>
       </li>
