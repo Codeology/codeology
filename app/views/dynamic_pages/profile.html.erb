@@ -1,3 +1,5 @@
-<% provide(:title, "Name of User") %>
+<% provide(:title, "Profile - " + current_user.name) %>
 <h1>My Profile</h1>
-<p>Displays user's information here</p>
+<p><%= current_user.name %></p>
+<p><%= current_user.email %></p>
+
