@@ -20,10 +20,10 @@
           <% @current_user.name %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <h6 class="dropdown-header">Your next interview is... [place in time]</h6>
+          <h6 class="dropdown-header">Your next interview time is ...</h6>
           <%= link_to "Profile", profile_path, :class => "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Log Out", logout_path, :class => "dropdown-item" %>
+          <%= link_to "Log Out", logout_path, method: :delete, :class => "dropdown-item" %>
         </div>
       </li>
       <% else %>

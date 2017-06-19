@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to homepage
       log_in(user)
       flash[:success] = 'You are now logged in!'
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -16,5 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 end
