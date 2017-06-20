@@ -14,7 +14,7 @@
 }
 
 #movers-row {
-    margin: -110px 0 0 120px;
+    margin: -250px 0 0 120px;
 }
 #movers-row div {
     width: 30.3%;
@@ -23,3 +23,58 @@
 #movers-row div img {
     float: right;
 }
+
+/* ============================= */
+/* ============================= */
+
+body {
+  background-color: #fce9fc;
+}
+
+.rectangle1 {
+    width:100%;
+    height:690px;
+    background:blue;
+}
+
+/* Cover Image */
+.coverpage {
+  background-image: url("/banner.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  height: 690px
+}
+
+/* Welcome to Codeology Message */
+.welcome-message {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 300%;
+}
+
+/* Quick Description */
+.top-paragraph {
+  padding: 70px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+/* Team Member Animation */
+.team-members {
+  margin-bottom: 100px;
+  padding-left: 70px;
+}
+
+  figure {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease-in-out;
+
+    &.is-showing {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
