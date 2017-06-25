@@ -3,15 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* Full height image header */
-.bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
-}
-
 .quarter {
-  float:left;width: 100%
+  float:left;
+  width: 100%
 }
 
 .center {
@@ -122,7 +116,8 @@ body {
   background-image: url("/banner.jpg");
   background-attachment: fixed;
   background-position: center;
-  height: 690px
+  background-size: cover;
+  height: 620px
 }
 
 .col {
