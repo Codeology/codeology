@@ -16,3 +16,20 @@
 //= require_tree .
 //= require_tether
 //= require bootstrap
+
+$(window).scroll(function(){
+
+  var wScroll = $(this).scrollTop();
+
+  // Animation for team members
+  if(wScroll > $('.team-members').offset().top - ($(window).height() / 1.2)) {
+
+    $('.team-members figure').each(function(i){
+
+      setTimeout(function(){
+        $('.team-members figure').eq(i).addClass('is-showing');
+      }, 150 * (i+1));
+    });
+  }
+
+});
