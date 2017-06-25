@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require_tether
+//= require bootstrap
 
 $(window).scroll(function(){
 
