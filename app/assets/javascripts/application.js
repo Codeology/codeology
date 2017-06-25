@@ -20,16 +20,6 @@ $(window).scroll(function(){
 
   var wScroll = $(this).scrollTop();
 
-  // Animation for benefits icons
-  if(wScroll > $('.benefits-icon').offset().top - $(window).height()){
-
-      var offset = Math.min(0, wScroll - $('.benefits-icon').offset().top + $(window).height() - 200);
-
-      $('.icon1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
-
-      $('.icon3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
-  }
-
   // Animation for team members
   if(wScroll > $('.team-members').offset().top - ($(window).height() / 1.2)) {
 

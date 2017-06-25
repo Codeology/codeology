@@ -9,8 +9,51 @@
     background-image: url("/w3images/mac.jpg");
     min-height: 100%;
 }
-.w3-bar .w3-button {
-    padding: 16px;
+
+.quarter {
+  float:left;width: 100%
+}
+
+.center {
+    text-align: center;
+}
+
+.row-padding {
+  border-collapse: separate;
+  border-spacing: 10px 20px;
+}
+
+.large {
+  font-size:18px
+}
+
+.margin-bottom {
+  margin-bottom: 16px
+}
+
+.column {
+    column-count: 3;
+}
+
+.card-2 {
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.button {
+  white-space: normal;
+  color: 	#D3D3D3;
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.box {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
 }
 
 #movers-row {
@@ -37,12 +80,67 @@ body {
     background:blue;
 }
 
+.card, .card-2 {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.jumbo {
+  font-size: 64px
+}
+
+.button {
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.light-gray {
+  color:#000;
+  background-color:#f1f1f1;
+}
+
+.margin-bottom {
+  margin-bottom:16px;
+}
+
 /* Cover Image */
 .coverpage {
   background-image: url("/banner.jpg");
   background-attachment: fixed;
   background-position: center;
   height: 690px
+}
+
+.col {
+  float: left;
+  width: 100%;
+}
+
+.col.m6, .half {
+  width: 49.99999%;
+}
+
+.col.l3 {
+  width: 24.99999%;
+}
+
+.large-font {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* Welcome to Codeology Message */
@@ -67,7 +165,6 @@ body {
   margin-bottom: 100px;
   padding-left: 70px;
 }
-
   figure {
     opacity: 0;
     transform: translateX(20px);
