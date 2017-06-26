@@ -14,12 +14,17 @@ class StaticPagesController < ApplicationController
   def team
     render 'team'
   end
+  
+  def recruitment
+    render 'recruitment'
+  end
 
-  def franklin 
+  def franklin
     render 'franklin'
-  end 
+  end
 
   def edward
     render 'edward'
   end
+
 end
