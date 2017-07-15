@@ -16,6 +16,7 @@
 //= require_tree .
 //= require_tether
 //= require bootstrap
+//= require d3
 
 $(window).scroll(function(){
 

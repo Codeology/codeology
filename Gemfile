@@ -11,6 +11,9 @@ end
 gem 'haml-rails'
 gem 'haml'
 
+# D3
+gem "d3-rails"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use PostgreSQL as the database for Active Record
