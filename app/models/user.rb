@@ -8,6 +8,9 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
+#  is_admin        :boolean
+#  title           :string
+#  bio             :text
 #
 
 class User < ApplicationRecord
