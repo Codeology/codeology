@@ -65,3 +65,6 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # for image attachments
 gem 'paperclip', '~> 5.0.0'
+
+# for authorization
+gem 'cancancan', '~> 2.0'
