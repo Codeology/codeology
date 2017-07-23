@@ -68,3 +68,6 @@ gem 'paperclip', '~> 5.0.0'
 
 # for authorization
 gem 'cancancan', '~> 2.0'
+
+# for authentication
+gem 'devise'
