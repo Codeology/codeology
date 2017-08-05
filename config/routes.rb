@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  # D3 graph data paths
+  get '/leadership_team', to: 'd3_graphs#leadership_team'
+
   resources :users, :except => [:new]
 end
