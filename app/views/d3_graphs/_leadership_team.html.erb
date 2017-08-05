@@ -1,92 +1,229 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<head>
+    <meta charset="utf-8">
+    <title>Marvel Characters | Force layout with images</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
-.links line {
-  stroke: #999;
-  stroke-opacity: 0.6;
-}
+    <style>
+      path.link {
+        fill: none;
+        stroke-width: 2px;
+      }
+    </style>
+</head>
 
-.nodes circle {
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
+<h1 id="leadership_team_label">Codeology Leadership Team</h1>
+<h2 id="leader_name">Click to view their roles!</h2>
+<!-- container for force layout visualisation  -->
+<section id="vis"></section>
 
-</style>
-<svg width="1200" height="600"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+// some colour variables
+  var tcBlack = "#130C0E";
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+// rest of vars
+var w = 960,
+    h = 1000,
+    maxNodeSize = 50,
+    x_browser = 20,
+    img_x_offset = -20,
+    y_browser = 25,
+    img_y_offset = 50,
+    root;
 
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(400))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+var img_height = 80,
+    img_width = 80,
+    large_img_height = 160,
+    large_img_width = 160;
 
-d3.json("/leadership_team.json", function(error, graph) {
-  if (error) throw error;
+var vis;
+var force = d3.layout.force();
 
-  var link = svg.append("g")
-      .attr("class", "links")
-    .selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+vis = d3.select("#vis").append("svg").attr("width", w).attr("height", h);
 
-  var node = svg.append("g")
-      .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", 20)
-      .attr("fill", function(d) { return color(d.group); })
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
+d3.json("/leadership_team.json", function(json) {
 
-  node.append("title")
-      .text(function(d) { return d.id; });
+  root = json;
+  root.fixed = true;
+  root.x = w / 2;
+  root.y = h / 4;
 
-  simulation
-      .nodes(graph.nodes)
-      .on("tick", ticked);
 
-  simulation.force("link")
-      .links(graph.links);
+        // Build the path
+  var defs = vis.insert("svg:defs")
+      .data(["end"]);
 
-  function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
 
-    node
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
-  }
+  defs.enter().append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5");
+
+     update();
 });
 
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
+
+/**
+ *
+ */
+function update() {
+  var nodes = flatten(root),
+      links = d3.layout.tree().links(nodes);
+
+  // Restart the force layout.
+  force.nodes(nodes)
+        .links(links)
+        .gravity(0.05)
+    .charge(-1500)
+    .linkDistance(240)
+    .friction(0.5)
+    .linkStrength(function(l, i) {return 1; })
+    .size([w, h])
+    .on("tick", tick)
+        .start();
+
+   var path = vis.selectAll("path.link")
+      .data(links, function(d) { return d.target.id; });
+
+    path.enter().insert("svg:path")
+      .attr("class", "link")
+      // .attr("marker-end", "url(#end)")
+      .style("stroke", "#eee");
+
+
+  // Exit any old paths.
+  path.exit().remove();
+
+
+
+  // Update the nodes…
+  var node = vis.selectAll("g.node")
+      .data(nodes, function(d) { return d.id; });
+
+
+  // Enter any new nodes.
+  var nodeEnter = node.enter().append("svg:g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .call(force.drag);
+
+  // Append a circle
+  nodeEnter.append("svg:circle")
+      .attr("r", function(d) { 40; })
+      .style("fill", "#eee");
+
+  // Append images
+  var images = nodeEnter.append("svg:image")
+        .attr("xlink:href",  function(d) { return d.img;})
+        .attr("x", function(d) { return -25;})
+        .attr("y", function(d) { return -25;})
+        .attr("height", img_height)
+        .attr("width", img_width);
+
+  // make the image grow a little on mouse over and add the text details on click
+  var setEvents = images
+          // Append hero text
+          .on( 'click', function (d) {
+              if (!d.center_node) {
+                d3.select("#leadership_team_label").html(d.hero);
+                d3.select("#leader_name").html(d.name);
+              }
+           })
+
+          .on( 'mouseenter', function(d) {
+            if (!d.center_node) {
+              // select element in current context
+              d3.select( this )
+                .transition()
+                .attr("x", function(d) { return -60;})
+                .attr("y", function(d) { return -60;})
+                .attr("height", large_img_height)
+                .attr("width", large_img_width);
+            }
+          })
+          // set back
+          .on( 'mouseleave', function(d) {
+            if (!d.center_node) {
+              d3.select( this )
+                .transition()
+                .attr("x", function(d) { return -25;})
+                .attr("y", function(d) { return -25;})
+                .attr("height", 80)
+                .attr("width", 80);
+            }
+          });
+
+  // Exit any old nodes.
+  node.exit().remove();
+
+
+  // Re-select for update.
+  path = vis.selectAll("path.link");
+  node = vis.selectAll("g.node");
+
+function tick() {
+
+
+    path.attr("d", function(d) {
+
+     var dx = d.target.x - d.source.x,
+           dy = d.target.y - d.source.y,
+           dr = Math.sqrt(dx * dx + dy * dy);
+           return   "M" + d.source.x + ","
+            + d.source.y
+            + "A" + dr + ","
+            + dr + " 0 0,1 "
+            + d.target.x + ","
+            + d.target.y;
+  });
+    node.attr("transform", nodeTransform);
+  }
 }
 
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
+
+/**
+ * Gives the coordinates of the border for keeping the nodes inside a frame
+ * http://bl.ocks.org/mbostock/1129492
+ */
+function nodeTransform(d) {
+  d.x =  Math.max(maxNodeSize, Math.min(w - (d.imgwidth/2 || 16), d.x));
+    d.y =  Math.max(maxNodeSize, Math.min(h - (d.imgheight/2 || 16), d.y));
+    return "translate(" + d.x + "," + d.y + ")";
+   }
+
+/**
+ * Toggle children on click.
+ */
+function click(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+
+  update();
 }
 
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
+
+/**
+ * Returns a list of all nodes under the root.
+ */
+function flatten(root) {
+  var nodes = [];
+  var i = 0;
+
+  function recurse(node) {
+    if (node.children)
+      node.children.forEach(recurse);
+    if (!node.id)
+      node.id = ++i;
+    nodes.push(node);
+  }
+
+  recurse(root);
+  return nodes;
 }
+
+
 </script>
