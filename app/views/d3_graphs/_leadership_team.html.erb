@@ -11,8 +11,6 @@
     </style>
 </head>
 
-<h1 id="leadership_team_label">Codeology Leadership Team</h1>
-<h2 id="leader_name">Click to view their roles!</h2>
 <!-- container for force layout visualisation  -->
 <section id="vis"></section>
 
@@ -60,7 +58,6 @@ d3.json("/leadership_team.json", function(json) {
      update();
 });
 
-
 /**
  *
  */
@@ -72,7 +69,7 @@ function update() {
   force.nodes(nodes)
         .links(links)
         .gravity(0.05)
-    .charge(-1500)
+    .charge(-9500)
     .linkDistance(240)
     .friction(0.5)
     .linkStrength(function(l, i) {return 1; })
