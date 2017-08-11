@@ -7,6 +7,9 @@
     <ul class="navbar-nav">
       <% if user_is_logged_in? %>
       <li class="nav-item">
+        <% if current_user.is_admin %>
+          <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
+        <% end %>
         <%= link_to_nav_item "Dashboard", "", :class => "nav-link" %>
       </li>
       <li class="nav-item dropdown">
