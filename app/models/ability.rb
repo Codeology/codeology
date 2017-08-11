@@ -27,8 +27,9 @@ class Ability
     if user.is_admin?
       can :manage, :all
     else
+      can :read, :all
+      cannot :read, User
       can :crud, User, id: user.id
-      cannot :index, User
     end
   end
 end
