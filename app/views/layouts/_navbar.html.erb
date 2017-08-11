@@ -11,14 +11,24 @@
           <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
         <% end %>
         <%= link_to_nav_item "Dashboard", "", :class => "nav-link" %>
+        <%= link_to_nav_item "Schedule", "", :class => "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown">navbarDropdownMenuLink
+        <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "FAQ", :class => "dropdown-item" %>
+          <%= link_to "Team", team_path :class => "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">navbarDropdownMenuLink
+        <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= @current_user.name %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <h6 class="dropdown-header">Your next interview time is ...</h6>
           <%= link_to "Profile", user_path(current_user), :class => "dropdown-item" %>
+          <%= link_to "Report a Bug", :class => "dropdown-item" %>
+
           <div class="dropdown-divider"></div>
           <%= link_to "Sign out", logout_path, method: :delete, :class => "dropdown-item" %>
         </div>
