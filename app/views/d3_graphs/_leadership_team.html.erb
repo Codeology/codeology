@@ -117,11 +117,11 @@ function update() {
 
   // make the image grow a little on mouse over and add the text details on click
   var setEvents = images
-          // Append hero text
+          // Append name text
           .on( 'click', function (d) {
               if (!d.center_node) {
-                d3.select("#leadership_team_label").html(d.hero);
                 d3.select("#leader_name").html(d.name);
+                d3.select("#leadership_team_label").html(d.title);
               }
            })
 
