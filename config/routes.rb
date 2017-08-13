@@ -19,4 +19,6 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
+
+  resources :user_email_confirmations, :only => [:new, :create]
 end
