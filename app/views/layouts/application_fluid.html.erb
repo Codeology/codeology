@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="google-site-verification" content="QFnKlIoSssBp0lO6N1Vv7k-naWkoNtFhWtt9HrQD4uA" />
+    <title><%= yield :title || "Codeology" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <%= render "layouts/navbar" %>
+  <body>
+    <div class="container-fluid" style="padding: 0px">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+
+</html>

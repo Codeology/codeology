@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    render 'home'
+    render layout: 'application_fluid'
   end
 
   def team
