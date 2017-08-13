@@ -28,7 +28,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      cannot :read, User
+      can :confirm_email, User
       can :crud, User, id: user.id
     end
   end
