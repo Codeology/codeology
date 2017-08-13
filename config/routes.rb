@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   # D3 graph data paths
   get '/leadership_team', to: 'd3_graphs#leadership_team'
 
-  resources :users, :except => [:new]
+  resources :users, :except => [:new] do
+    member do
+      get :confirm_email
+    end
+  end
 end

@@ -8,9 +8,12 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
-#  is_admin        :boolean
+#  is_admin        :boolean          default(FALSE)
 #  title           :string
 #  bio             :text
+#  is_officer      :boolean          default(FALSE)
+#  email_confirmed :boolean          default(FALSE)
+#  confirm_token   :string
 #
 
 require 'test_helper'
