@@ -75,7 +75,8 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD']
+    password: ENV['SENDGRID_PASSWORD'],
+    openssl_verify_mode: 'none'
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
