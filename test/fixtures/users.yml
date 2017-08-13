@@ -8,9 +8,10 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
-#  is_admin        :boolean
+#  is_admin        :boolean          default(FALSE)
 #  title           :string
 #  bio             :text
+#  is_officer      :boolean          default(FALSE)
 #
 
 # empty for now

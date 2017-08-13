@@ -1,7 +1,7 @@
 class D3GraphsController < ApplicationController
   def leadership_team
 
-    children = User.all.map do |user|
+    children = User.leadership_team.map do |user|
       {
         "name": user.name,
         "title": user.title,

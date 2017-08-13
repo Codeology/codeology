@@ -8,7 +8,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
-#  is_admin        :boolean
+#  is_admin        :boolean          default(FALSE)
+#  is_officer      :boolean          default(FALSE)
 #  title           :string
 #  bio             :text
 #
@@ -21,4 +22,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
+
+  scope :leadership_team, -> { where(is_officer: true) }
 end
