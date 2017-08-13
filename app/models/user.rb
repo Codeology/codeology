@@ -37,6 +37,20 @@ class User < ApplicationRecord
     save!(:validate => false)
   end
 
+  # is_officer controls whether the user is currently active on the leadership team
+  # i.e. President, Alumni Relations, Web Dev Chair, etc.
+  def toggle_officer
+    self.is_officer = !self.is_officer
+    save!(:validate => false)
+  end
+
+  # is_admin controls whether this user should have website administration capabilities
+  # i.e. toggling admin for other people, changing account information, etc.
+  def toggle_admin
+    self.is_admin = !self.is_admin
+    save!(:validate => false)
+  end
+
   private
 
   def set_confirmation_token
