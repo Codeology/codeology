@@ -24,7 +24,7 @@ class Ability
 
     alias_action :create, :read, :update, :destroy, to: :crud
 
-    if user.is_admin?
+    if user.is_admin
       can :manage, :all
     else
       can :read, :all
