@@ -3,18 +3,10 @@ class StaticPagesController < ApplicationController
     render 'home'
   end
 
-  def help
-    render 'help'
-  end
-
-  def about
-    render 'about'
-  end
-
   def team
     render 'team'
   end
-  
+
   def recruitment
     render 'recruitment'
   end
