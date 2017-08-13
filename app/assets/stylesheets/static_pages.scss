@@ -2,10 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Full height image header */
-.quarter {
-  float:left;
-  width: 100%
+
+.element {
+  border-width: 15px;
+  width: 750px;
+  position: relative;
+  bottom: 85px;
+  left: 250px;
+  z-index: -1;
+  border-bottom: 5px solid #373F46;
+}
+
+.value-par {
+  position: relative;
+  bottom: 150px;
+  left: 50px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.mentorship {
+  position: relative;
+  text-align: center;
+  bottom: 170px;
+  left: 10px;
+  color: #EEBF44;
+  font-size: 36px;
+}
+
+.education {
+  position: relative;
+  text-align: center;
+  bottom: 170px;
+  left: 10px;
+  color: #50D397;
+  font-size: 36px;
+}
+
+.community {
+  position: relative;
+  text-align: center;
+  bottom: 170px;
+  left: 10px;
+  color: #69EAE3;
+  font-size: 36px;
+}
+
+.sponsors {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  font-size: 150px;
+  src: local('Karla'), local('Karla-Regular'),
+       url('../fonts/karla-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/karla-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  text-align: center;
+  color: #373F46;
 }
 
 .center {
@@ -51,7 +104,8 @@
 }
 
 #movers-row {
-    margin: -250px 0 0 120px;
+    align-content: center;
+    margin: -360px 0 0 0px;
 }
 #movers-row div {
     width: 30.3%;
@@ -113,7 +167,7 @@ body {
 
 /* Cover Image */
 .coverpage {
-  background-image: url("/banner.jpg");
+  background-image: url("/cover_photo.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -140,10 +194,46 @@ body {
 
 /* Welcome to Codeology Message */
 .welcome-message {
-  text-align: center;
-  color: white;
+  font-family: 'Karla';
+  font-style: normal;
   font-weight: bold;
-  font-size: 300%;
+  color: white;
+  font-size: 150px;
+  src: local('Karla'), local('Karla-Regular'),
+       url('../fonts/karla-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/karla-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  text-align: center;
+}
+
+/* Circles */
+
+.greycircle:after {
+  position: relative;
+  bottom: 48px;
+  left: 158px;
+  content: ' \25CF';
+  font-size: 350px;
+  color: #373F46;
+  z-index: -1;
+  padding: 0px;
+}
+
+.yellow-circle:before {
+  content: ' \25CF';
+  font-size: 300px;
+  color: #EEBF44;
+}
+
+.green-circle:before {
+  content: ' \25CF';
+  font-size: 300px;
+  color: #50D397;
+}
+
+.blue-circle:before {
+  content: ' \25CF';
+  font-size: 300px;
+  color: #69EAE3;
 }
 
 /* Quick Description */
@@ -159,7 +249,7 @@ body {
 .team-members {
   margin-bottom: 100px;
   padding-left: 70px;
-}
+
   figure {
     opacity: 0;
     transform: translateX(20px);
@@ -170,3 +260,14 @@ body {
       transform: translateX(0px);
     }
   }
+}
+
+.sponsor-image {
+  position: relative;
+  top: 50px;
+  right: 30px;
+  content: url("/climate_corp_logo.jpg");
+  display: block;
+  margin: auto;
+  width: 40%;
+}

@@ -7,8 +7,18 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
   <style>
-  body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Raleway", sans-serif
+  body,h1, h2,h3,h4,h5,h6 {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: normal;
+    color: #373F46
+    src: local('Karla'), local('Karla-Regular'),
+         url('../fonts/karla-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/karla-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  p {
+    margin-top: 40px;
   }
   body, html {
       height: 100%;
@@ -21,105 +31,47 @@
     <div class="coverpage">
       <div class="container-fluid" style="padding:100px 16px" id="about">
         <center>
-          <h1 class="welcome-message"> Welcome to Codeology! </h1>
+          <h1 class="welcome-message"> Codeology </h1>
         </center>
         <h3 class="top-paragraph"> UC Berkeley computer science can be really tough... we've been there. In fact, you and I are not the only ones who have gone through this, there are many students out there that feel the same way. Which is exactly why we started Codeology.</h3>
-        <div class="container" style="padding:300px 16px" id="team">
-          <h3 class="center"><font size="5">BENEFITS OF JOINING THE FAMILY</font></h3>
+
+        <div class="container" style="padding:200px 16px" id="team">
+          <h3 class="sponsors"><font size="36">OUR VALUES</font></h3>
         </div>
-        <div class="row-padding center" style="margin-top: 80px">
-        <div id= "movers-row">
-          <div class="quarter">
-             <i class="fa fa-heart margin-bottom fa-5x"></i>
-                <p class="large">Find Your Family</p>
-                <p> At Codeology, we are building a supportive community that brings together computer science students. Here you can be honest with your peers and be open to talking about your struggles. We will tackle our issues and improve as a community.</p>
-          </div>
-        </div>
-        <div id= "movers-row">
-          <div class="quarter">
-              <i class="fa fa-desktop margin-bottom fa-5x center"></i>
-                    <p class="large">Immerse Yourself In Education</p>
-                    <p>Success is right in front of you, but it will take some work. This is where we come to help! We are a group of experienced computer science students dedicated to providing our community with interactive and personalized education that is geared towards technical interviews and professional development. We prepare weekly lectures, mock interviews, and various tips and resources.</p>
+        <div class="row-padding center">
+          <div class="element"> </div>
+          <div id= "movers-row">
+            <div class="yellow-circle">
+              <div class="greycircle"> </div>
+              <p class="mentorship">MENTORSHIP</p>
+              <p class="value-par"> We provide each member with a codeology mentor that can guide students in all areas. </p>
             </div>
         </div>
         <div id= "movers-row">
-          <div class="quarter">
-              <i class="fa fa-diamond margin-bottom fa-5x"></i>
-                  <p class="large">Receive Mentorship</p>
-                  <p>Each officer is more than happy to help each student. Therefore, everyone has the chance to recieve an experienced computer science mentor. You can talk to mentors about education, careers, or even life. Again, we are a family and we will treat you like one! </p>
+          <div class="green-circle">
+            <div class="greycircle"> </div>
+            <p class="education">EDUCATION</p>
+            <p class="value-par"> We are a group of experienced computer science students dedicated to providing our community with interactive and personalized education that is geared towards technical interviews and professional development. </p>
           </div>
         </div>
-      </div>
-
-    <!-- Team Section -->
-      <div class="rectangle2">
-        <div class="container" style="padding:460px 16px" id="team">
-          <h3 class="center"><font size="5">THE TEAM</font></h3>
-          <p class="center large">The ones helping build this community</p>
-          <div class="team-members">
-          <div class="row-padding grayscale" style="margin-top:64px">
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Catherine Chang</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Albert Hu</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Timothy Tsu</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Nikita Gupta</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Edward Qiu</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
-            <figure class="col l3 m6 margin-bottom">
-              <div class="card-2">
-                <div class="container">
-                  <h3>Franklin Heng</h3>
-                  <p>Send Me Bios.</p>
-                  <p><button class="button light-gray block"><i class="fa fa-envelope"></i> Contact</button></p>
-                </div>
-              </div>
-            </figure>
+        <div id= "movers-row">
+          <div class="blue-circle">
+              <div class="greycircle"> </div>
+              <p class="community">COMMUNITY</p>
+              <p class="value-par"> We are building a supportive community that enables members to cultivate their personal and professional skills. </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div>
-      <%= render "d3_graphs/leadership_team"%>
+    <!-- Sponsors Section -->
+    <div class="container" style="padding:200px 16px" id="sponsors">
+      <h3 class="sponsors"><font size="36">OUR SPONSORS</font></h3>
+      <div class="sponsor-image"> </div>
     </div>
 
+     <!-- Members Section -->
+     <div class="sponsors"><font size="36">OUR MEMBERS</font></div>
   </body>
 </html>
