@@ -1,20 +1,12 @@
 class StaticPagesController < ApplicationController
   def home
-    render 'home'
-  end
-
-  def help
-    render 'help'
-  end
-
-  def about
-    render 'about'
+    render layout: 'application_fluid'
   end
 
   def team
     render 'team'
   end
-  
+
   def recruitment
     render 'recruitment'
   end
