@@ -6,6 +6,15 @@
 /* Styles used throughout page
 /* ============================ */
 
+p {
+  margin-top: 40px;
+}
+
+html {
+    height: 100%;
+    line-height: 1.8;
+}
+
 /* Set background color */
 body {
   background-color: #fce9fc;
@@ -42,7 +51,7 @@ body {
 .background-overlay {
   height: 820px;
   background-color: black;
-  opacity: 0.35;
+  opacity: 0.55;
 }
 
 /* "Codeology" font and size */
@@ -57,7 +66,7 @@ body {
 
 /* "/kōd äləjē/" speech text */
 .top-paragraph {
-  margin-top: 180px;
+  margin-top: 120px;
   padding: 30px;
   color: white;
   font-size: 350%;
@@ -65,10 +74,21 @@ body {
   z-index: 2;
 }
 
+/* Text under the speech text*/
+.codeology-blurb {
+  color: white;
+  margin: auto;
+  margin-top: 250px;
+  max-width: 55%;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+}
+
 /* Padding within photo */
 .cover-text {
-  margin-top: -540px;
-  margin-bottom: 630px;
+  margin-top: -560px;
+  margin-bottom: 650px;
 }
 
 /* ============================ */
@@ -77,9 +97,9 @@ body {
 
 /* Gives circle radius */
 .circle {
-  border-radius: 150px;
-  width: 150px;
-  height: 150px;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
   border: 8px solid #373F46;
 }
 
@@ -164,6 +184,11 @@ body {
   position: absolute;
   top: 50%;
   z-index: -1;
+}
+
+/* Space between circles and texts */
+.values-text {
+  margin-top: 20px;
 }
 
 /* Customize mentor text */
