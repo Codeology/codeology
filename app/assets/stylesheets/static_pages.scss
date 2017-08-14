@@ -2,170 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* ============================ */
+/* Styles used throughout page
+/* ============================ */
 
-.element {
-  border-width: 15px;
-  width: 750px;
-  position: relative;
-  bottom: 85px;
-  left: 250px;
-  z-index: -1;
-  border-bottom: 5px solid #373F46;
-}
-
-.value-par {
-  position: relative;
-  bottom: 150px;
-  left: 50px;
-  font-size: 15px;
-  font-weight: 100;
-}
-
-.mentorship {
-  position: relative;
-  text-align: center;
-  bottom: 170px;
-  left: 10px;
-  color: #EEBF44;
-  font-size: 36px;
-}
-
-.education {
-  position: relative;
-  text-align: center;
-  bottom: 170px;
-  left: 10px;
-  color: #50D397;
-  font-size: 36px;
-}
-
-.community {
-  position: relative;
-  text-align: center;
-  bottom: 170px;
-  left: 10px;
-  color: #69EAE3;
-  font-size: 36px;
-}
-
-.sponsors {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: bold;
-  color: white;
-  font-size: 150px;
-  src: local('Karla'), local('Karla-Regular'),
-       url('../fonts/karla-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/karla-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  text-align: center;
-  color: #373F46;
-}
-
-.center {
-    text-align: center;
-}
-
-.row-padding {
-  border-collapse: separate;
-  border-spacing: 10px 20px;
-}
-
-.large {
-  font-size:18px
-}
-
-.margin-bottom {
-  margin-bottom: 16px
-}
-
-.column {
-    column-count: 3;
-}
-
-.card-2 {
-  box-shadow: 0 2px 9px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
-}
-
-.button {
-  white-space: normal;
-  color: 	#D3D3D3;
-}
-
-.block {
-  display: block;
-  width: 100%;
-}
-
-.box {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
-}
-
-#movers-row {
-    align-content: center;
-    margin: -360px 0 0 0px;
-}
-#movers-row div {
-    width: 30.3%;
-    float: left;
-}
-#movers-row div img {
-    float: right;
-}
-
-/* ============================= */
-/* ============================= */
-
+/* Set background color */
 body {
   background-color: #fce9fc;
 }
 
-.rectangle1 {
-    width:100%;
-    height:690px;
-    background:blue;
+/* Centers the object / div */
+.center-div {
+   margin: auto;
+   max-width: 300px;
 }
 
-.card, .card-2 {
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+/* Customize each section title */
+.sub-header {
+  font-style: normal;
+  color: white;
+  font-size: 150px;
+  text-align: center;
+  color: #373F46;
 }
 
-.jumbo {
-  font-size: 64px
-}
+/* ============================ */
+/* Cover Photo Section
+/* ============================ */
 
-.button {
-  border:none;
-  display:inline-block;
-  outline:0;
-  padding:8px 16px;
-  vertical-align:middle;
-  overflow:hidden;
-  text-decoration:none;
-  color:inherit;
-  background-color:inherit;
-  text-align:center;
-  cursor:pointer;
-  white-space:nowrap
-}
-
-.block {
-  display: block;
-  width: 100%;
-}
-
-.light-gray {
-  color:#000;
-  background-color:#f1f1f1;
-}
-
-.margin-bottom {
-  margin-bottom:16px;
-}
-
-/* Cover Image */
+/* Cover Photo */
 .coverpage {
   background-image: url("/cover_photo.jpg");
   background-attachment: fixed;
@@ -174,71 +39,43 @@ body {
   height: 620px;
 }
 
+/* "Codeology" font and size */
+.welcome-message {
+  font-weight: bold;
+  color: white;
+  font-size: 150px;
+  text-align: center;
+}
+
+/* "/kōd äləjē/" speech text */
+.top-paragraph {
+  padding: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 350%;
+}
+
+/* Padding within photo */
 .cover-text {
   padding: 100px 16px;
 }
 
-.col {
-  float: left;
-  width: 100%;
-}
+/* ============================ */
+/* Values Section
+/* ============================ */
 
-.col.m6, .half {
-  width: 49.99999%;
-}
-
-.col.l3 {
-  width: 24.99999%;
-}
-
-.large-font {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Welcome to Codeology Message */
-.welcome-message {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: bold;
-  color: white;
-  font-size: 150px;
-  src: local('Karla'), local('Karla-Regular'),
-       url('../fonts/karla-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/karla-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  text-align: center;
-}
-
-/* Circles */
-
+/* Gives circle radius */
 .circle {
   border-radius: 150px;
   width: 150px;
   height: 150px;
-  border: 4px solid;
+  border: 8px solid #373F46;
 }
 
+/* Creates yellow circle */
 #yellow-circle {
-  background-color: yellow;
-}
-
-#blue-circle {
-  background-color: blue;
-}
-
-#red-circle {
-  background-color: red;
-}
-
-.greycircle:after {
-  position: relative;
-  bottom: 48px;
-  left: 158px;
-  content: ' \25CF';
-  font-size: 350px;
-  color: #373F46;
-  z-index: -1;
-  padding: 0px;
+  background-color: #EEBF44;
 }
 
 .yellow-circle:before {
@@ -247,10 +84,20 @@ body {
   color: #EEBF44;
 }
 
+/* Creates green circle */
+#green-circle {
+  background-color: #50D397;
+}
+
 .green-circle:before {
   content: ' \25CF';
   font-size: 300px;
   color: #50D397;
+}
+
+/* Creates blue circle */
+#blue-circle {
+  background-color: #69EAE3;
 }
 
 .blue-circle:before {
@@ -259,32 +106,86 @@ body {
   color: #69EAE3;
 }
 
-/* Quick Description */
-.top-paragraph {
-  padding: 70px;
+/* Creates line coming out of right side of circle */
+.middle-line-right{
+    position: relative;
+}
+
+.middle-line-right:after{
+  content: "";
+  display: block;
+  width: 60%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+}
+
+/* Creates line coming out of left side of circle */
+.middle-line-left{
+    position: relative;
+}
+
+.middle-line-left:before{
+  content: "";
+  display: block;
+  width: 60%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: -1;
+}
+
+/* Creates line coming out of both sides of circle */
+.middle-line-both{
+    position: relative;
+}
+
+.middle-line-both:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+}
+
+/* Customize mentor text */
+.mentorship {
+  color: #EEBF44;
+  font-size: 36px;
+}
+
+/* Customize education text */
+.education {
+  color: #50D397;
+  font-size: 36px;
+}
+
+/* Customize community text */
+.community {
+  color: #69EAE3;
+  font-size: 36px;
+}
+
+/* Customize explanations of each value */
+.value-par {
+  font-size: 15px;
+  font-weight: 100;
   text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: 200%;
 }
 
-/* Team Member Animation */
-.team-members {
-  margin-bottom: 100px;
-  padding-left: 70px;
+/* ============================ */
+/* Values Section
+/* ============================ */
 
-  figure {
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.3s ease-in-out;
-
-    &.is-showing {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-}
-
+/* Climate Corporation Image */
 .sponsor-image {
   position: relative;
   top: 50px;
