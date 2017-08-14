@@ -35,16 +35,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to_nav_item "About", about_path, :class => "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to_nav_item "Members", "", :class => "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to_nav_item "Recruitment", "", :class => "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to_nav_item "Sign In", login_path, :class => "nav-link" %>
+          <%= link_to_nav_item "Member Login", login_path, :class => "nav-link" %>
         </li>
       <% end %>
     </ul>
