@@ -1,3 +1,12 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Styling for the login form button */
+.signup-link {
+  margin-top: 20px;
+
+  a:visited {
+    color: #0275d8
+  }
+}
