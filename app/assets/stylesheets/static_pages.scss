@@ -6,6 +6,10 @@
 /* Styles used throughout page
 /* ============================ */
 
+.spacer {
+  padding: 2%;
+}
+
 p {
   margin-top: 40px;
 }
@@ -189,6 +193,33 @@ body {
 /* Space between circles and texts */
 .values-text {
   margin-top: 20px;
+}
+
+/* Customize intro text section */
+.intro-headers {
+  font-size: 36px;
+  padding-left: 5%;
+}
+
+.interview-prep {
+  color: #EEBF44;
+}
+
+.workshops {
+  color: #50D397;
+}
+
+.social-events {
+  color: #69EAE3;
+}
+
+.intro-text {
+  font-size: 16px;
+  margin-top: 0.5%;
+  margin-bottom: 3%;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  line-height: 1;
 }
 
 /* Customize mentor text */
