@@ -16,7 +16,7 @@ p {
 
 html {
     height: 100%;
-    line-height: 1.8;
+    line-height: 2.0;
 }
 
 /* Set background color */
@@ -27,7 +27,7 @@ body {
 /* Centers the object / div */
 .center-div {
    margin: auto;
-   max-width: 300px;
+   max-width: 350px;
 }
 
 /* Customize each section title */
@@ -39,10 +39,21 @@ body {
   margin-bottom: 40px;
 }
 
+.our-sponsors {
+  margin-top:72px;
+}
 /* ============================ */
 /* Cover Photo Section
 /* ============================ */
 
+/* Navigation Bar*/
+.nav {
+    background-color: #ffffff;
+    box-shadow: 10px 5px 40px rgba(16, 16, 16, 0.25);
+    height: 72px;
+    font-size: 24 px;
+    letter-spacing: 1px;
+}
 /* Cover Photo */
 .coverpage {
   background-image: asset-url("codeology-kickback-21.jpg");
@@ -60,6 +71,7 @@ body {
 
 /* "Codeology" font and size */
 .welcome-message {
+  letter-spacing: 7px;
   font-weight: bold;
   color: white;
   font-size: 150px;
@@ -70,10 +82,9 @@ body {
 
 /* "/kōd äləjē/" speech text */
 .top-paragraph {
-  margin-top: 120px;
+  margin-top: 140px;
   padding: 30px;
   color: white;
-  font-size: 350%;
   position: absolute;
   z-index: 2;
 }
@@ -82,11 +93,50 @@ body {
 .codeology-blurb {
   color: white;
   margin: auto;
-  margin-top: 250px;
-  max-width: 55%;
+  margin-top: 170px;
+  padding-top: 75px;
+  max-width: 60%;
   position: absolute;
   text-align: center;
   z-index: 2;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 1px;
+}
+
+/* Learn more button */
+.learn-more-button {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  margin-top: 360px;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 0.8rem 1.8rem;
+  border-width: 1.5px;
+  font-size:18px;
+
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    opacity:0.8;
+    border-color: gray;
+    color: gray;
+    text-decoration: none;
+  }
+}
+
+.learn-more-text {
+  color: white;
 }
 
 /* Padding within photo */
@@ -199,6 +249,7 @@ body {
 .intro-headers {
   font-size: 36px;
   padding-left: 5%;
+  width:500px;
 }
 
 .interview-prep {
@@ -214,30 +265,37 @@ body {
 }
 
 .intro-text {
-  font-size: 16px;
-  margin-top: 0.5%;
-  margin-bottom: 3%;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
-  line-height: 1;
+    font-size: 16px;
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
 }
 
 /* Customize mentor text */
 .mentorship {
   color: #EEBF44;
   font-size: 36px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 /* Customize education text */
 .education {
   color: #50D397;
   font-size: 36px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 /* Customize community text */
 .community {
   color: #69EAE3;
   font-size: 36px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 /* Customize explanations of each value */
@@ -245,6 +303,7 @@ body {
   font-size: 15px;
   font-weight: 100;
   text-align: center;
+  letter-spacing:1px;
 }
 
 /* ============================ */
@@ -255,13 +314,26 @@ body {
 #climate-corp {
   position: relative;
   top: 50px;
-  right: 30px;
-  content: url("/climate_corp_logo.jpg");
+  content: asset-url("climate_corp_logo.jpg");
   display: block;
   margin: auto;
   width: 40%;
 }
 
+/* Rectifive */
+#rectifive {
+  position: relative;
+  top: 50px;
+  content: asset-url("rectifive_logo.jpg");
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+
+/*kilo-sponsor css*/
+.kilo-sponsor {
+  margin-top: 150px;
+}
 /* ============================ */
 /* Members Section
 /* ============================ */
