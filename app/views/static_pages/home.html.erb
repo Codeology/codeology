@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 <script src="https://use.fontawesome.com/e97bfa3b0a.js"></script>
-<link rel="stylesheet" href="h'http://fonts.googleapis.com/css?family=Karla:400,700,400italic,700italic'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 
 <!-- Cover Photo Section -->
 <div class="coverpage">
@@ -9,20 +9,24 @@
 </div>
 <div class="cover-text">
   <div class="row justify-content-center align-items-center">
-    <h1 class="welcome-message"> Codeology </h1>
+    <h1 class="welcome-message"> Codeology. </h1>
   </div>
   <div class="row justify-content-center align-items-center">
-    <h2 class="top-paragraph"> /kōd äləjē/</h2>
+    <h5 class="codeology-blurb">
+      Here at Codeology, we provide opportunities for you to explore the tech
+      industry in the context of a supportive community. Whether your interest
+      lies in engineering software, conceptualizing designs, or managing product
+      direction, we offer interview preparation and workshops to help you hone
+      your professional skills.
+    </h5>
   </div>
   <div class="row justify-content-center align-items-center">
-    <h3 class="codeology-blurb">
-      the study of problem-solving
-    </h3>
+    <a href="#valuez" class="learn-more-button learn-more-text" id="learn_more_id">Learn More</a>
   </div>
 </div>
 
 <!-- Values Section -->
-<div class="container-fluid">
+<div class="container-fluid" id="valuez">
 
   <!-- Introduction section -->
   <div class="row">
@@ -140,10 +144,15 @@
 </div>
 
 <!-- Sponsors Section -->
+<h3 class="sub-header our-sponsors"><font size="36">OUR SPONSORS</font></h3>
 <div style="padding:100px 16px" id="sponsors">
-  <h3 class="sub-header"><font size="36">SPONSORS</font></h3>
+  <h3 class="sub-header">- Mega Sponsor -</h3>
   <a href="https://www.climate.com/" target="_blank">
     <div id="climate-corp"></div>
+  </a>
+  <h3 class="sub-header kilo-sponsor">- Kilo Sponsor -</h3>
+  <a href="https://rectifive.com/" target="_blank">
+    <div id="rectifive"></div>
   </a>
   <div style="margin-bottom: 100px;"></div>
 </div>
@@ -164,3 +173,19 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function () {
+
+        $('#learn_more_id').click(function () {
+
+            var href = $(this).attr('href');
+
+            $('html, body').animate({ scrollTop: $(href).offset().top - 150 }, 1000);
+
+            return false;
+
+        });
+
+});
+</script>

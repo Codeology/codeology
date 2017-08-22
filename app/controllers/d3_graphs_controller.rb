@@ -11,7 +11,7 @@ class D3GraphsController < ApplicationController
 
 
     data = {
-      "img": view_context.asset_url("codeology_logo"),
+      "img": view_context.asset_url("codeology_logo.png"),
       "center_node": true,
       "children": children
     }
