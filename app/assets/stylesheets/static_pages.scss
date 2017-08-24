@@ -6,8 +6,71 @@
 /* Styles used throughout page
 /* ============================ */
 
+.franklin-image {
+  height:65%;
+  width: 65%;
+  display: block;
+  margin: auto;
+}
+
+.edward-image {
+  height:95%;
+  width: 95%;
+  display: block;
+  margin: auto;
+}
+
+.nikita-image {
+  height:70%;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.catherine-image {
+  height: 66%;
+  width: 66%;
+  display: block;
+  margin: auto;
+}
+
+.albert-image  {
+  height: 67%;
+  width: 67%;
+  display: block;
+  margin: auto;
+}
+
+.tracy-image {
+  height: 90%;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.tim-image {
+  height: 67%;
+  width: 67%;
+  display: block;
+  margin: auto;
+}
+
+.box-max-height {
+  max-width: 600px;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.pic-circle {
+  border-radius: 50%;
+}
+
 .spacer {
   padding: 2%;
+}
+
+.margin-left {
+  margin: 0 auto;
 }
 
 p {
@@ -273,7 +336,6 @@ body {
 }
 
 .intro-text {
-<<<<<<< HEAD
   font-family: 'Karla';
   font-size: 16px;
   margin-top: 0.5%;
