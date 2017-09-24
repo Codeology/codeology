@@ -5,28 +5,33 @@
 /* ============================ */
 /* Styles used throughout page
 /* ============================ */
-
+@function get-vw($object) {
+    $vw: (1024 * 0.01) * 1px;
+    @return ($object / $vw) * 1vw;
+}
+div {
+    width: get-vw(16px)vw;
+}
 :root {
-  --cover-img-height: 100%;
+  --cover-img-height: 100vh;
 }
 
 .landing {
   /*background-image: asset-url("codeology_cover.jpg") no-repeat center center fixed;*/
   background-image: asset-url("codeology_cover.jpg");
   background-attachment: fixed;
-  background-position: center center;
+  background-position: center top;
   /* TODO: change fixed sizing */
-  background-size: cover; 
+  background-size: 100vw auto; 
   background-repeat: no-repeat;
-  background-clip: content-box;
-
+  min-height: 25vh;
 }
 
 #landing-content {
   flex-direction: column;
   display: flex;
   justify-content: space-around;
-  height: 50%;
+
 }
 
 /*TODO: requires media-query */;
@@ -34,18 +39,20 @@
   font-family: 'Karla';
   font-weight: bold;
   color: white;
-  letter-spacing: 7px;
-  font-size: 9em;
+  font-size: 9vw;
+  margin-top: 5vh;
 }
 
 .landing-blurb {
     font-family: 'Karla';
     color: white;
+    margin-top: 4vh;
     text-align: center;
     max-width: 60%;
-    font-size: 20px;
+    font-size: 1.1vw;
     line-height: 150%;
-    letter-spacing: 1px;
+    margin-bottom: 4vh;
+
 }
 
 .landing-button {
@@ -62,6 +69,8 @@
     padding: 0.8rem 1.8rem;
     border-width: 0.1em;
     font-size: 1em;
+    margin-bottom: 6vh;
+
 
   &:visited {
     color: white;
