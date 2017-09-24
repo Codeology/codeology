@@ -1,13 +1,37 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* ============================ */
-/* Styles used throughout page
-/* ============================ */
 :root {
   --cover-img-height: 100vh;
 }
+
+*{
+  font-family: 'Karla';
+}
+
+.codeology-yellow {
+  color: #EEBF44;
+}
+
+.codeology-green {
+  color: #50D397;
+}
+
+.codeology-blue {
+  color: #69EAE3;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+.sub-header {
+  color: #373F46;
+}
+
+/* ============================ */
+/* LANDING
+/* ============================ */
 
 .landing {
   /*background-image: asset-url("codeology_cover.jpg") no-repeat center center fixed;*/
@@ -28,7 +52,6 @@
 
 /*TODO: requires media-query */;
 .landing-title {
-  font-family: 'Karla';
   font-weight: bold;
   color: white;
   font-size: 9vw;
@@ -37,7 +60,6 @@
 }
 
 .landing-blurb {
-    font-family: 'Karla';
     color: white;
     text-align: center;
     max-width: 60%;
@@ -49,7 +71,6 @@
 
 .landing-button {
     color: white;
-    font: 'Karla';
     background-color: transparent;
     border-color: white;
     border-style: solid;
@@ -79,4 +100,36 @@
 
 .landing-button-text {
   color: white;
+}
+
+/* ============================ */
+/* INTRODUCTION
+/* ============================ */
+
+#about-us {
+  margin-top: 5vh;
+  margin-bottom: 2.5vh;
+}
+
+#intro-section {
+  margin-left: 5vw;
+  margin-right: 5vw;
+
+}
+
+.intro-header {
+  font-size: 2vw;
+}
+
+.intro-blurb {
+  font-size: 1.1vw;
+}
+
+/* ============================ */
+/* VALUES
+/* ============================ */
+
+#values {
+  margin-top: 2.5vh;
+  margin-bottom: 5vh;
 }
