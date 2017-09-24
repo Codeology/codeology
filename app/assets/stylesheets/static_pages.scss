@@ -22,9 +22,9 @@ div {
   background-attachment: fixed;
   background-position: center top;
   /* TODO: change fixed sizing */
-  background-size: 100vw auto; 
+  background-size: cover; 
   background-repeat: no-repeat;
-  min-height: 25vh;
+
 }
 
 #landing-content {
@@ -40,20 +40,17 @@ div {
   font-weight: bold;
   color: white;
   font-size: 9vw;
-  margin-top: 5vh;
+
 }
 
 .landing-blurb {
     font-family: 'Karla';
     color: white;
-    margin-top: 4vh;
     text-align: center;
     max-width: 60%;
     font-size: 1.1vw;
     line-height: 150%;
-    margin-bottom: 4vh;
-
-}
+  }
 
 .landing-button {
     color: white;
@@ -69,8 +66,6 @@ div {
     padding: 0.8rem 1.8rem;
     border-width: 0.1em;
     font-size: 1em;
-    margin-bottom: 6vh;
-
 
   &:visited {
     color: white;
