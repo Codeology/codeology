@@ -5,13 +5,6 @@
 /* ============================ */
 /* Styles used throughout page
 /* ============================ */
-@function get-vw($object) {
-    $vw: (1024 * 0.01) * 1px;
-    @return ($object / $vw) * 1vw;
-}
-div {
-    width: get-vw(16px)vw;
-}
 :root {
   --cover-img-height: 100vh;
 }
@@ -40,6 +33,7 @@ div {
   font-weight: bold;
   color: white;
   font-size: 9vw;
+  padding-top: 5vh;
 
 }
 
@@ -50,6 +44,8 @@ div {
     max-width: 60%;
     font-size: 1.1vw;
     line-height: 150%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   }
 
 .landing-button {
@@ -63,9 +59,10 @@ div {
     line-height: 1.25;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    padding: 0.8rem 1.8rem;
+    padding: 0.8em 1.8em;
     border-width: 0.1em;
-    font-size: 1em;
+    font-size: 1vw;
+    
 
   &:visited {
     color: white;
