@@ -24,7 +24,6 @@
   flex-direction: column;
   display: flex;
   justify-content: space-around;
-
 }
 
 /*TODO: requires media-query */;
@@ -33,7 +32,7 @@
   font-weight: bold;
   color: white;
   font-size: 9vw;
-  padding-top: 5vh;
+  margin-top: 10vh;
 
 }
 
@@ -42,7 +41,7 @@
     color: white;
     text-align: center;
     max-width: 60%;
-    font-size: 1.1vw;
+    font-size: 1.2vw;
     line-height: 150%;
     padding-top: 5vh;
     padding-bottom: 5vh;
@@ -62,7 +61,7 @@
     padding: 0.8em 1.8em;
     border-width: 0.1em;
     font-size: 1vw;
-    
+    margin-bottom: 10vh;
 
   &:visited {
     color: white;
