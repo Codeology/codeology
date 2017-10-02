@@ -1,6 +1,10 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 
+$codeology-yellow: #EEBF44;
+$codeology-green: #50D397;
+$codeology-blue: #69EAE3;
+
 :root {
   --cover-img-height: 100vh;
 }
@@ -9,24 +13,18 @@
   font-family: 'Karla';
 }
 
-.codeology-yellow {
-  color: #EEBF44;
-}
-
-.codeology-green {
-  color: #50D397;
-}
-
-.codeology-blue {
-  color: #69EAE3;
-}
-
 .small-caps {
   font-variant: small-caps;
 }
 
 .sub-header {
   color: #373F46;
+}
+
+/* Centers the object / div */
+.center-div {
+   margin: auto;
+   max-width: 350px;
 }
 
 /* ============================ */
@@ -113,7 +111,6 @@
 #intro-section {
   margin-left: 5vw;
   margin-right: 5vw;
-
 }
 
 .intro-header {
@@ -122,6 +119,18 @@
 
 .intro-blurb {
   font-size: 1.1vw;
+}
+
+.intro-interviewprep {
+  color: $codeology-yellow;
+}
+
+.intro-workshops {
+  color: $codeology-green;
+}
+
+.intro-social {
+  color: $codeology-blue;
 }
 
 /* ============================ */
@@ -141,4 +150,61 @@
    .landing {
      background-size: 480px Auto;
    }
+}
+
+.value-description {
+  font-size: 0.9vw;
+  font-weight: 100;
+  letter-spacing:0.0625em;
+  text-align: center;
+}
+
+/* Gives circle radius */
+.circle {
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  border: 8px solid #373F46;
+}
+
+/* Creates line coming out of both sides of circle */
+.middle-line-both{
+    position: relative;
+}
+
+/* Space between circles and texts */
+.values-spacing {
+  margin-top: 1.7vh;
+}
+
+.values-header {
+  font-size: 2vw;
+  margin-top: 1.7vh;
+  padding-bottom: 1.7vh;
+  text-align: center;
+}
+
+
+#mentorship-circle-color {
+  background-color: $codeology-yellow;
+}
+
+.mentorship {
+  color: $codeology-yellow;
+}
+
+#education-circle-color {
+  background-color: $codeology-green;
+}
+
+.education {
+  color: $codeology-green;
+}
+
+#community-circle-color {
+  background-color: $codeology-blue;
+}
+
+.community {
+  color: $codeology-blue;
 }
