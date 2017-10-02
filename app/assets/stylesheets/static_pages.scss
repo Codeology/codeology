@@ -39,9 +39,8 @@
   background-attachment: fixed;
   background-position: center top;
   /* TODO: change fixed sizing */
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 #landing-content {
@@ -132,4 +131,71 @@
 #values {
   margin-top: 2.5vh;
   margin-bottom: 5vh;
+}
+
+.value-description {
+  font-size: 0.9vw;
+  font-weight: 100;
+  letter-spacing:0.0625em;
+  text-align: center;
+}
+
+/* Gives circle radius */
+.circle {
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  border: 8px solid #373F46;
+}
+
+/* Creates line coming out of both sides of circle */
+.middle-line-both{
+    position: relative;
+}
+
+/* Space between circles and texts */
+.values-spacing {
+  margin-top: 1.7vh;
+}
+
+.values-header {
+  font-size: 2vw;
+  margin-top: 1.7vh;
+  padding-bottom: 1.7vh;
+  text-align: center;
+}
+
+
+#mentorship-circle-color {
+  background-color: $codeology-yellow;
+}
+
+.mentorship {
+  color: $codeology-yellow;
+}
+
+#education-circle-color {
+  background-color: $codeology-green;
+}
+
+.education {
+  color: $codeology-green;
+}
+
+#community-circle-color {
+  background-color: $codeology-blue;
+}
+
+.community {
+  color: $codeology-blue;
+}
+
+/* ============================ */
+/* MOBILE MEDIA QUERIES
+/* ============================ */
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+   .landing {
+     background-size: 480px Auto;
+   }
 }
