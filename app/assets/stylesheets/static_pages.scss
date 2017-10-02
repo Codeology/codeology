@@ -1,24 +1,16 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 
-:root {
-  --cover-img-height: 100vh;
-}
+/* ============================ */
+/* Styles used throughout page
+/* ============================ */
+$codeology-yellow: #EEBF44;
+$codeology-green: #50D397;
+$codeology-blue: #69EAE3;
+
 
 *{
-  font-family: 'Karla';
-}
-
-.codeology-yellow {
-  color: #EEBF44;
-}
-
-.codeology-green {
-  color: #50D397;
-}
-
-.codeology-blue {
-  color: #69EAE3;
+  font-family: 'Karla', 'Times New Roman';
 }
 
 .small-caps {
@@ -124,6 +116,19 @@
   font-size: 1.1vw;
 }
 
+.intro-interviewprep {
+  color: $codeology-yellow;
+}
+
+.intro-workshops {
+  color: $codeology-green;
+}
+
+.intro-social {
+  color: $codeology-blue;
+}
+
+
 /* ============================ */
 /* VALUES
 /* ============================ */
@@ -146,6 +151,11 @@
   width: 100px;
   height: 100px;
   border: 8px solid #373F46;
+}
+
+.center-div {
+   margin: auto;
+   max-width: 350px;
 }
 
 /* Creates line coming out of right side of circle */
@@ -210,7 +220,6 @@
   text-align: center;
 }
 
-
 #mentorship-circle-color {
   background-color: $codeology-yellow;
 }
@@ -233,6 +242,59 @@
 
 .community {
   color: $codeology-blue;
+}
+
+/* ============================ */
+/* LEADERSHIP SECTION
+/* ============================ */
+
+.franklin-img {
+  height:65%;
+  width: 65%;
+  display: block;
+  margin: auto;
+}
+
+.edward-img {
+  height: 70%;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.nikita-img {
+  height:70%;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.catherine-img {
+  height: 66%;
+  width: 66%;
+  display: block;
+  margin: auto;
+}
+
+.albert-img  {
+  height: 67%;
+  width: 67%;
+  display: block;
+  margin: auto;
+}
+
+.tracy-img {
+  height: 90%;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.tim-img {
+  height: 67%;
+  width: 67%;
+  display: block;
+  margin: auto;
 }
 
 /* ============================ */
