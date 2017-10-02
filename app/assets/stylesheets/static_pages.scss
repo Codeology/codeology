@@ -39,9 +39,8 @@
   background-attachment: fixed;
   background-position: center top;
   /* TODO: change fixed sizing */
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 #landing-content {
@@ -132,4 +131,14 @@
 #values {
   margin-top: 2.5vh;
   margin-bottom: 5vh;
+}
+
+/* ============================ */
+/* MOBILE MEDIA QUERIES
+/* ============================ */
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+   .landing {
+     background-size: 480px Auto;
+   }
 }
