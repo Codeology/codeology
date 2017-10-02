@@ -142,16 +142,6 @@ $codeology-blue: #69EAE3;
   margin-bottom: 5vh;
 }
 
-/* ============================ */
-/* MOBILE MEDIA QUERIES
-/* ============================ */
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-   .landing {
-     background-size: 480px Auto;
-   }
-}
-
 .value-description {
   font-size: 0.9vw;
   font-weight: 100;
@@ -167,9 +157,54 @@ $codeology-blue: #69EAE3;
   border: 8px solid #373F46;
 }
 
+/* Creates line coming out of right side of circle */
+.middle-line-right{
+    position: relative;
+}
+
+.middle-line-right:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+}
+
+/* Creates line coming out of left side of circle */
+.middle-line-left{
+    position: relative;
+}
+
+.middle-line-left:before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: -1;
+}
+
 /* Creates line coming out of both sides of circle */
 .middle-line-both{
     position: relative;
+}
+
+.middle-line-both:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #373F46;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
 }
 
 /* Space between circles and texts */
@@ -207,4 +242,15 @@ $codeology-blue: #69EAE3;
 
 .community {
   color: $codeology-blue;
+}
+
+/* ============================ */
+/* MOBILE MEDIA QUERIES
+/* ============================ */
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+   .landing {
+     background-size: 480px Auto;
+   }
 }
