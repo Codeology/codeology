@@ -1,13 +1,14 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 
+/* TODO: all font sizes need to be calibrated with each other */
+
 /* ============================ */
 /* Styles used throughout page
 /* ============================ */
 $codeology-yellow: #EEBF44;
 $codeology-green: #50D397;
 $codeology-blue: #69EAE3;
-
 
 *{
   font-family: 'Karla', 'Times New Roman';
@@ -19,6 +20,21 @@ $codeology-blue: #69EAE3;
 
 .sub-header {
   color: #373F46;
+  text-align: center;
+  margin-bottom: 2.5vh;
+}
+
+/* ============================ */
+/* NAVBAR
+/* ============================ */
+
+/* TODO: navbar is still hard coded */
+.nav {
+    background-color: #ffffff;
+    box-shadow: 10px 5px 40px rgba(16, 16, 16, 0.25);
+    height: 72px;
+    font-size: 2em;
+    letter-spacing: 0.0625em;
 }
 
 /* ============================ */
@@ -26,11 +42,10 @@ $codeology-blue: #69EAE3;
 /* ============================ */
 
 .landing {
-  /*background-image: asset-url("codeology_cover.jpg") no-repeat center center fixed;*/
   background-image: asset-url("codeology_cover.jpg");
   background-attachment: fixed;
   background-position: center top;
-  /* TODO: change fixed sizing */
+
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -41,7 +56,6 @@ $codeology-blue: #69EAE3;
   justify-content: space-around;
 }
 
-/*TODO: requires media-query */;
 .landing-title {
   font-weight: bold;
   color: white;
@@ -141,9 +155,11 @@ $codeology-blue: #69EAE3;
 .value-description {
   font-size: 0.9vw;
   font-weight: 100;
-  letter-spacing:0.0625em;
+  letter-spacing: 0.0625em;
   text-align: center;
 }
+
+/* TODO: Make nodes responsive - still hardcoded (too large compared to everything else when resizing window) */
 
 /* Gives circle radius */
 .circle {
@@ -247,6 +263,11 @@ $codeology-blue: #69EAE3;
 /* ============================ */
 /* LEADERSHIP SECTION
 /* ============================ */
+
+/* TODO - use media queries to make only 1 member show up on the screen when on mobile view*/
+#team-section {
+  margin-bottom: 2.5vh;
+}
 
 .franklin-img {
   height:65%;
