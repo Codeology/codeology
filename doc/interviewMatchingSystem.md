@@ -44,14 +44,12 @@ Design Document for Interview Matching System
 1. Users may specify how many interviews they can be scheduled for within varying amounts of availability
    - e.g. 1 interview on Sunday anytime between 2-5 pm
    - e.g. 2 interviews this week any day during 10-11 am
-2. Should postings be public? - Yes (for interviewees to see)
-   - Users can just manually match (sign up for interviewer's slot)
-3. If multiple interviewers are available during same time slot and someone signs up for that slot how do we decide who to pair up with?
-   - Random?
-   - Least paired with (would require counters for each interviewer)
-4. Users may only sign up for a limited amount of mock interviews per week (as to not have someone take all slots)
-   - Perhaps some load balancing algo needed
-   - Limit to 2 at a time?
+2. Users may or may not be able to post several times
+   - e.g. posting for separate times
+3. Should postings be public?
+   - Probably not since we're copying interviewing.io's userflow
+   - What if someone keeps posting but never gets results because no one else is matching their time?
+   - Users can just manually match (sign up for someone's slot)
 
 #### Architecture
 1. Time data abstraction (library?)

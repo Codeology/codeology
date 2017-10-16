@@ -41,7 +41,6 @@ If you run into an error with incompatible Ruby Versions, check [here](https://s
 
 If you have trouble installing libv8 on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
 
-
 Make sure to run
 ```
 rake db:setup
