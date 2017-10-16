@@ -41,6 +41,7 @@ If you run into an error with incompatible Ruby Versions, check [here](https://s
 
 If you have trouble installing libv8 on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
 
+<<<<<<< 28429f6a943fb82bfce643193626877981446761
 
 Make sure to run
 ```
@@ -83,3 +84,8 @@ You will need to install these:
 
 ## Additional Resources
 * Skimming [getting started with rails](https://www.pluralsight.com/blog/software-development/tutorial-rails) can be helpful if you want a quick intro to the framework. Recommended if you have little/no experience with rails.
+=======
+## Design Documents
+
+* [Hao: Interview Matching System](doc/interviewMatchingSystem.md)
+>>>>>>> Added link in home readme to matching design doc
