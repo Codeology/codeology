@@ -93,21 +93,3 @@ You will need to install these:
 * **Rails** Run `gem install rails`
 * **PostgreSQL** which can be found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows). Make sure you select the appropriate version to your OS (32 vs. 64 bit).
 * **Ruby for VSCode** (If you use VSC) Visual Studio Code has a package that has Ruby language and debugging support [here](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby).
-<<<<<<< 108ae8dc7afda8d91be2dcb49813d45170e1abf8
-=======
-
-### Database:
-* These steps are necessary for you to run `rails server` to start up a local server for you to test/develop on.
-* After installing PostgreSQL, open pgAdmin (comes with installation) and create the databases listed in the `database.yml` file. Currently the dev database should be: "db/development" (the slash is part of the name)
-* You will also need to modify the `database.yml` file by adding: `host: ""` `username: username` `password: password` in the `default` block where username and passwords are what you set during installation of PostgreSQL. A detailed explanation of why we use `host: ""` can be found [here](https://stackoverflow.com/questions/23375740/pgconnectionbad-fe-sendauth-no-password-supplied).
-* If you plan on making changes to the database make sure you read up on [migrations](http://guides.rubyonrails.org/v3.2/migrations.html) before doing so.
-### Issues
-* If you get an SSL Error you will need to update certificates: [download and install most current gem](https://rubygems.org/gems/rubygems-update)
-  - gem install rubygems-update-x.x.x.gem (make sure you cd into wherever you downloaded the gem for this command)
-  - update_rubygems
-  - gem update --system
-* You might need to download the devkit [here](https://rubyinstaller.org/downloads/) and follow quick start instructions [here](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
-
-## Additional Resources
-* Skimming [getting started with rails](https://www.pluralsight.com/blog/software-development/tutorial-rails) can be helpful if you want a quick intro to the framework. Recommended if you have little/no experience with rails.
->>>>>>> Updated readme and design doc
