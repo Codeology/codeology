@@ -3,7 +3,7 @@ This is the website for the Codeology club at Berkeley
 
 ## Design Documents
 
-* [Interview Matching System](doc/interviewMatchingSystem.md)
+* [Hao: Interview Matching System](doc/interviewMatchingSystem.md)
 
 ## MacOS setup
 
@@ -41,7 +41,6 @@ If you run into an error with incompatible Ruby Versions, check [here](https://s
 
 If you have trouble installing libv8 on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
 
-<<<<<<< 28429f6a943fb82bfce643193626877981446761
 
 Make sure to run
 ```
@@ -84,8 +83,12 @@ You will need to install these:
 
 ## Additional Resources
 * Skimming [getting started with rails](https://www.pluralsight.com/blog/software-development/tutorial-rails) can be helpful if you want a quick intro to the framework. Recommended if you have little/no experience with rails.
-=======
-## Design Documents
 
-* [Hao: Interview Matching System](doc/interviewMatchingSystem.md)
->>>>>>> Added link in home readme to matching design doc
+## Windows Setup
+
+You will need to install these:
+* **A Ruby Installer** You can find ruby-installer [here](https://rubyinstaller.org/downloads/archives/). We are using Ruby 2.2.2. Make sure you select the appropriate version (32 vs. 64 bit).
+* **A Ruby Manager** You can find chruby [here](https://github.compostmodern/chruby#readme) (the sibling to ruby-install). Chruby allows you to switch between multiple Rubies (Ruby Versions).
+* **A Gem Manager** You can find bundler [here](http://bundler.io/). Bundler makes managing gems (Ruby packages) easier for your projects.
+* **PostgreSQL** (OPTIONAL not sure if need this yet) which can be found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows). Make sure you select the appropriate version to your OS (32 vs. 64 bit).
+* **Ruby for VSCode** Visual Studio Code has a package that has Ruby language and debugging support [here](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby).
