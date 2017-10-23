@@ -5,7 +5,7 @@ Design Document for Interview Matching System
 1. Log in (already implemented)
 2. Post time availability (backlog: # of interviews)
    - Copy Interviewing.io design
-   - Utilize 30 minute intervals as opposed to hourly
+   - Utilize ~~30 minute~~ hour intervals ~~as opposed to hourly~~
    - Able to modify availability
 3. Receive Email once an interviewee signs up for a slot
    - No overbooking (2 interviews at same time)
@@ -15,7 +15,28 @@ Design Document for Interview Matching System
 
 ## Tasks
 
-### Task 1: Post time (controller and model)
+### Task 1: Database Schema
+
+#### Tables and Models to implement (tables to be designed - only high level view for now)
+1. Calendar 
+   - Table that represents the aggregate data of Interviewer Availability
+   - Used for interviewees to view available timeslots
+   - Show a week in advance
+   - 7 x 24 hour slots
+     - Every entry will have a counter representing # of interviewers for that slot
+     - if 0: unavailable; if > 0: available
+   - Update on every availability update by inc/decrementing the counter
+     - decrement if no available persons
+     - increment if new available person
+
+2. User Interview Data (modify existing table?)
+   - Store upcoming interviews to view on dashboard
+   - Store past interviews so user can look at past progression/feedback
+   - Store availility time slots to be pulled to Calendar model
+   - Store Max Interviews a week
+   - Store two counters *current_week* and *next_week* to keep track of limits
+
+### Task 2: Post time (controller and model)
 
 #### Constraints and Considerations
 1. Users may specify how many interviews they can be scheduled for within varying amounts of availability
@@ -75,7 +96,7 @@ Design Document for Interview Matching System
 9. updateAvailability (could possibly just reuse pushAvailability)
    - Modify interviewer's slots
 
-## Task 2: Implement views
+## Task 3: Implement views (Front End)
 
 #### Views
 1. Dashboard

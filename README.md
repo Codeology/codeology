@@ -64,6 +64,7 @@ to start the server.
 You will need to install these:
 * **A Ruby Installer** You can find ruby-installer [here](https://rubyinstaller.org/downloads/archives/). We are using Ruby 2.2.2. Make sure you select the appropriate version (32 vs. 64 bit).
 * **A Ruby Manager** You can find chruby [here](https://github.compostmodern/chruby#readme) (the sibling to ruby-install). Chruby allows you to switch between multiple Rubies (Ruby Versions).
-* **A Gem Manager** (recommended) You can find bundler [here](http://bundler.io/). Bundler makes managing gems (Ruby packages) easier for your projects.
-* **PostgreSQL**  which can be found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows). Make sure you select the appropriate version to your OS (32 vs. 64 bit).
-* **Ruby for VSCode** Visual Studio Code has a package that has Ruby language and debugging support [here](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby).
+* **A Gem Manager** You can find bundler [here](http://bundler.io/). Bundler makes managing gems (Ruby packages) easier for your projects. (gem install bundler)
+* **Rails** Run `gem install rails`
+* **PostgreSQL** which can be found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows). Make sure you select the appropriate version to your OS (32 vs. 64 bit).
+* **Ruby for VSCode** (If you use VSC) Visual Studio Code has a package that has Ruby language and debugging support [here](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby).
