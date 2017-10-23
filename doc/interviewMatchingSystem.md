@@ -5,25 +5,16 @@ Design Document for Interview Matching System
 1. Log in (already implemented)
 2. Post time availability (backlog: # of interviews)
    - Copy Interviewing.io design
-<<<<<<< c1e98e88dffce532704bd36be45df7c48edde093
    - Utilize ~~30 minute~~ hour intervals ~~as opposed to hourly~~
-=======
-   - Utilize 30 minute intervals as opposed to hourly
->>>>>>> Updated Design Doc
    - Able to modify availability
 3. Receive Email once an interviewee signs up for a slot
    - No overbooking (2 interviews at same time)
      - Look into Mutex/Locks for ruby if necessary
-<<<<<<< c1e98e88dffce532704bd36be45df7c48edde093
      - ~~Look into [simplybook.me api](https://simplybook.me/api/developer-api "simplybook.me api documentation")~~ (too expensive)
-=======
-     - Look into [simplybook.me api](https://simplybook.me/api/developer-api "simplybook.me api documentation")
->>>>>>> Updated Design Doc
 4. Can view upcoming matches/interviews on dashboard
 
 ## Tasks
 
-<<<<<<< c1e98e88dffce532704bd36be45df7c48edde093
 ### Task 1: Database Schema
 
 #### Tables and Models to implement (tables to be designed - only high level view for now)
@@ -48,9 +39,6 @@ Design Document for Interview Matching System
    - Store two counters *current_week* and *next_week* to keep track of limits
 
 ### Task 2: Post time (controller and model)
-=======
-### Task 1: Post time (controller and model)
->>>>>>> Updated Design Doc
 
 #### Constraints and Considerations
 1. Users may specify how many interviews they can be scheduled for within varying amounts of availability
@@ -90,7 +78,6 @@ Design Document for Interview Matching System
 1. Form for POSTing availability data to server
    - Checks if interviewer is already booked at that time
 2. Form for POSTing request data (when interviewee wants an interview) to server
-<<<<<<< c1e98e88dffce532704bd36be45df7c48edde093
 3. bookSlot (for interviewees)
    - Books a slot for an interviewee
    - Modifies slot table
@@ -105,37 +92,14 @@ Design Document for Interview Matching System
    - Pulls data from upcoming interview data table for upcoming interviews for dashboard display
 8. cancelInterview (for both)
    - Delete interview from upcoming interview table
-=======
-3. pushAvailability
-   - Pushes new interviewer availability data to central data table
-4. bookSlot (for interviewees)
-   - Books a slot for an interviewee
-   - Modifies central data table
-   - Returns success or fail
-   - Decrements interviewer's # of available interviews
-5. pullAllAvailability (for interviewees)
-   - Pulls data from central data table for all availabilities for interviewees to see when choosing an interview slot
-6. pullAvailability (for interviewers)
-   - Pulls data from individual data table for posted slots for dashboard display
-7. pullInterviews (for both)
-   - Pulls data from individual data table for upcoming interviews for dashboard display
-8. cancelInterview (for both)
-   - Sends cancellation to both parties' data tables to delete interview
->>>>>>> Updated Design Doc
    - Attach notification to other party's data table to display cancellation on dashboard
    - Send email for cancellation
    - (optional) attach message as to why interview is cancelled
 9. updateAvailability (could possibly just reuse pushAvailability)
-<<<<<<< c1e98e88dffce532704bd36be45df7c48edde093
    - Modify slot table
    - Can add new ones or delete old ones
 
 ## Task 3: Implement views (Front End)
-=======
-   - Modify interviewer's slots
-
-## Task 2: Implement views
->>>>>>> Updated Design Doc
 
 #### Views
 1. Dashboard
@@ -146,7 +110,6 @@ Design Document for Interview Matching System
 6. Successful submit (interviewee)
 7. Successful cancellation (both)
 8. Fail(submit/cancel) (both)
-
 
 ## Deprecated
 
