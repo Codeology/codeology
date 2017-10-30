@@ -319,6 +319,27 @@ $codeology-blue: #69EAE3;
 }
 
 /* ============================ */
+/* SPONSORS
+/* ============================ */
+
+#sponsor-logo {
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
+#sponsor-container {
+  border: none;
+  max-width: 40%;
+  margin: auto;
+}
+
+#all-sponsor-container {
+  margin-bottom: 2.5vh;
+}
+
+
+/* ============================ */
 /* MOBILE MEDIA QUERIES
 /* ============================ */
 /* Portrait phones and smaller */
