@@ -10,7 +10,7 @@ Design Document for Interview Matching System
 3. Receive Email once an interviewee signs up for a slot
    - No overbooking (2 interviews at same time)
      - Look into Mutex/Locks for ruby if necessary
-     - Look into [simplybook.me api](https://simplybook.me/api/developer-api "simplybook.me api documentation")
+     - ~~Look into [simplybook.me api](https://simplybook.me/api/developer-api "simplybook.me api documentation")~~ (too expensive)
 4. Can view upcoming matches/interviews on dashboard
 
 ## Tasks
@@ -22,6 +22,8 @@ Design Document for Interview Matching System
    - Table that represents the aggregate data of Interviewer Availability
    - Used for interviewees to view available timeslots
    - Show a week in advance
+     - Reset at 00:00 -> delete current day and add day at end of table
+       - i.e. delete sunday, add next week's sunday at end of current week.
    - 7 x 24 hour slots
      - Every entry will have a counter representing # of interviewers for that slot
      - if 0: unavailable; if > 0: available
