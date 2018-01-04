@@ -100,7 +100,7 @@ You will need to install these:
 * These steps are necessary for you to run `rails server` to start up a local server for you to test/develop on.
 * After installing PostgreSQL, open pgAdmin (comes with installation) and create the databases listed in the `database.yml` file. Currently the dev database should be: "db/development" (the slash is part of the name)
 * You will also need to modify the `database.yml` file by adding: `host: ""` `username: username` `password: password` in the `default` block where username and passwords are what you set during installation of PostgreSQL. A detailed explanation of why we use `host: ""` can be found [here](https://stackoverflow.com/questions/23375740/pgconnectionbad-fe-sendauth-no-password-supplied).
-
+* If you plan on making changes to the database make sure you read up on [migrations](http://guides.rubyonrails.org/v3.2/migrations.html) before doing so.
 ### Issues
 * If you get an SSL Error you will need to update certificates: [download and install most current gem](https://rubygems.org/gems/rubygems-update)
   - gem install rubygems-update-x.x.x.gem (make sure you cd into wherever you downloaded the gem for this command)
