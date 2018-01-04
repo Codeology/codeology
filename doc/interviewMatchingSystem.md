@@ -76,27 +76,28 @@ Design Document for Interview Matching System
 
 #### Data Structures and Functions
 1. Form for POSTing availability data to server
+   - Checks if interviewer is already booked at that time
 2. Form for POSTing request data (when interviewee wants an interview) to server
-3. pushAvailability
-   - Pushes new interviewer availability data to central data table
-4. bookSlot (for interviewees)
+3. bookSlot (for interviewees)
    - Books a slot for an interviewee
-   - Modifies central data table
+   - Modifies slot table
+   - Modifies upcoming interview table
    - Returns success or fail
-   - Decrements interviewer's # of available interviews
-5. pullAllAvailability (for interviewees)
-   - Pulls data from central data table for all availabilities for interviewees to see when choosing an interview slot
-6. pullAvailability (for interviewers)
-   - Pulls data from individual data table for posted slots for dashboard display
+   - Removes slot from slot table
+4. pullAllAvailability (for interviewees)
+   - Pulls data from slot table for all availabilities for interviewees to see when choosing an interview slot
+5. pullAvailability (for interviewers)
+   - Pulls data from slot table for posted slots for dashboard display
 7. pullInterviews (for both)
-   - Pulls data from individual data table for upcoming interviews for dashboard display
+   - Pulls data from upcoming interview data table for upcoming interviews for dashboard display
 8. cancelInterview (for both)
-   - Sends cancellation to both parties' data tables to delete interview
+   - Delete interview from upcoming interview table
    - Attach notification to other party's data table to display cancellation on dashboard
    - Send email for cancellation
    - (optional) attach message as to why interview is cancelled
 9. updateAvailability (could possibly just reuse pushAvailability)
-   - Modify interviewer's slots
+   - Modify slot table
+   - Can add new ones or delete old ones
 
 ## Task 3: Implement views (Front End)
 

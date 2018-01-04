@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813051042) do
+ActiveRecord::Schema.define(version: 20180103195104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "past_interviews", force: :cascade do |t|
+    t.integer "technical_score"
+    t.integer "communnication_score"
+    t.integer "problem_solving_score"
+    t.string  "feedback"
+    t.integer "slot"
+    t.integer "date"
+    t.integer "interviewee"
+    t.integer "interviewer"
+  end
+
+  create_table "slot_table", force: :cascade do |t|
+    t.integer "slot"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_slot_table_on_user_id", using: :btree
+  end
+
+  create_table "upcoming_interviews", force: :cascade do |t|
+    t.integer "slot"
+    t.integer "interviewee"
+    t.integer "interviewer"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -27,7 +50,10 @@ ActiveRecord::Schema.define(version: 20170813051042) do
     t.boolean  "is_officer",      default: false
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
+    t.integer  "curr_week",       default: 0
+    t.integer  "next_week",       default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "slot_table", "users"
 end
