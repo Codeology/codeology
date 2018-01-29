@@ -1,109 +1,93 @@
-<% provide(:title, "Home") %>
-<script src="https://use.fontawesome.com/e97bfa3b0a.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112912344-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Cover Photo Section -->
-<div class="coverpage">
-  <div class="background-overlay">
-  </div>
+  gtag('config', 'UA-112912344-1');
+</script>
+<% provide(:title, "Home") %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+
+<!-- Landing Section -->
+<div class="landing">
+    <div class="container-fluid" id="landing-content">
+        <div class="row justify-content-center align-items-center">
+            <h1 class="landing-title">Codeology.</h1>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <h5 class="landing-blurb">Here at Codeology, we provide opportunities for you to explore the tech industry in the context of a supportive community. Whether your interest lies in engineering software, conceptualizing designs, or managing product direction, we offer interview preparation and workshops to help you hone your professional skills.</h5>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <a href="#about-us" class="landing-button landing-button-text" id="landing-button-transition">Learn More</a>
+        </div>
+    </div>
 </div>
-<div class="cover-text">
-  <div class="row justify-content-center align-items-center">
-    <h1 class="welcome-message"> Codeology. </h1>
-  </div>
-  <div class="row justify-content-center align-items-center">
-    <h5 class="codeology-blurb">
-      Here at Codeology, we provide opportunities for you to explore the tech
-      industry in the context of a supportive community. Whether your interest
-      lies in engineering software, conceptualizing designs, or managing product
-      direction, we offer interview preparation and workshops to help you hone
-      your professional skills.
-    </h5>
-  </div>
-  <div class="row justify-content-center align-items-center">
-    <a href="#valuez" class="learn-more-button learn-more-text" id="learn_more_id">Learn More</a>
-  </div>
+
+<!-- Introduction Section -->
+<div class="container-fluid" id="about-us">
+    <div class="row">
+        <div class="col-sm-12 justify-content-center align-items-center">
+            <h3 class="sub-header small-caps">WHAT DO WE DO?</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="container-fluid" id="intro-section">
+                <div class="row justify-content-start">
+                    <p class="intro-header intro-interviewprep small-caps">1. INTERVIEW PREP</p>
+                </div>
+                <div class="row">
+                    <p class="intro-blurb">We provide weekly lessons during our club meetings to help members strengthen their computer science fundamentals in order to improve their technical interview skills. Our leadership team also hosts office hours outside of meeting times to provide additional support. Furthermore, our website pairs up members and alumni so that members can practice mock interviewing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="container-fluid" id="intro-section">
+                <div class="row justify-content-start">
+                    <p class="intro-header intro-workshops small-caps">2. WORKSHOPS</p>
+                </div>
+                <div class="row">
+                    <p class="intro-blurb">Throughout the semester, we plan workshops centralized around a specific topic to provide career guidance and further expose our members to the tech industry.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="container-fluid" id="intro-section">
+                <div class="row justify-content-start">
+                    <p class="intro-header intro-social small-caps">3. SOCIAL EVENTS</p>
+                </div>
+                <div class="row">
+                    <p class="intro-blurb">At Codeology, we pride ourselves in not only our academics, but also our tight community. We make it our goal to make everyone feel like they're a part of the family by taking our members out on retreats, social outings, and more!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Values Section -->
-<div class="container-fluid" id="valuez">
-
-  <!-- Introduction section -->
-  <div class="row">
-    <div class="col-sm-12 justify-content-center align-items-center">
-      <h3 class="sub-header"><font size="36">WHAT DO WE DO?</font></h3>
+<div class="container-fluid" id="values">
+    <div class="row">
+        <div class="col-sm-12 justify-content-center align-items-center">
+            <h3 class="sub-header small-caps">VALUES</h3>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="row">
-        <p class="intro-headers interview-prep">1. INTERVIEW PREP</p>
-      </div>
-      <div class="row">
-        <p class="intro-text">
-          We provide weekly lessons during our club
-          meetings to help members strengthen their computer science fundamentals
-          in order to improve their technical interview skills. Our leadership team
-          also hosts office hours outside of meeting times to provide additional
-          support. Furthermore, our website pairs up members and alumni so that
-          members can practice mock interviewing.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-sm-12">
-      <div class="row">
-        <p class="intro-headers workshops">2. WORKSHOPS</p>
-      </div>
-      <div class="row">
-        <p class="intro-text">
-          Throughout the semester, we plan workshops centralized around a
-          specific topic to provide career guidance and further
-          expose our members to the tech industry.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-sm-12">
-      <div class="row">
-        <p class="intro-headers social-events">3. SOCIAL EVENTS</p>
-      </div>
-      <div class="row">
-        <p class="intro-text">
-          At Codeology, we pride ourselves in not only our academics, but also
-          our tight community. We make it our goal to make everyone feel like
-          they're a part of the family by taking our members out on retreats,
-          social outings, and more!
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row spacer">
-  </div>
-
-  <!-- Values section -->
-  <div class="row">
-    <div class="col-sm-12 justify-content-center align-items-center">
-      <h3 class="sub-header"><font size="36">VALUES</font></h3>
-    </div>
-  </div>
-  <div class="row">
+    <div class="row">
     <div class="col-sm-4">
       <div class="middle-line-right">
         <div class="row">
           <div class="center-div">
             <div class="col-sm-12">
-              <div class="circle" id="yellow-circle"> </div>
+              <div class="circle" id="mentorship-circle-color"> </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row values-text">
-        <div class="center-div">
-          <p class="mentorship" align="center">MENTORSHIP</p>
-          <p class="value-par" align="center">Alumni and older members are here to give students personal, academic, and professional guidance.</p>
+        <div class="center-div values-spacing">
+          <p class="values-header mentorship">MENTORSHIP</p>
+          <p class="value-description">Alumni and older members are here to give students personal, academic, and professional guidance.</p>
         </div>
       </div>
     </div>
@@ -112,15 +96,15 @@
         <div class="row">
           <div class="center-div">
             <div class="col-sm-12">
-              <div class="circle" id="green-circle"> </div>
+              <div class="circle" id="education-circle-color"> </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="center-div values-text">
-          <p class="education" align="center">EDUCATION</p>
-          <p class="value-par" align="center">Members lead study groups, practice interview sessions, and professional development workshops to help each other further their education.</p>
+        <div class="center-div values-spacing">
+          <p class="values-header education">EDUCATION</p>
+          <p class="value-description">Members lead study groups, practice interview sessions, and professional development workshops to help each other further their education.</p>
         </div>
       </div>
     </div>
@@ -129,129 +113,193 @@
         <div class="row">
           <div class="center-div">
             <div class="col-sm-12">
-              <div class="circle" id="blue-circle"> </div>
+              <div class="circle" id="community-circle-color"> </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row values-text">
-        <div class="center-div">
-          <p class="community" align="center">COMMUNITY</p>
-          <p class="value-par" align="center">We reward kindness and taking action in order to foster an enjoyable and motivated culture that encourages the sharing of ideas.</p>
+      <div class="row">
+        <div class="center-div values-spacing">
+          <p class="values-header community">COMMUNITY</p>
+          <p class="value-description">We reward kindness and taking action in order to foster an enjoyable and motivated culture that encourages the sharing of ideas.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Leadership Team Section -->
-<h3 class="sub-header" style="margin-top:100px"><font size="36">LEADERSHIP TEAM</font> </h3>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-          <img class="catherine-image" src="newcath.JPG" alt="Image">
-            <div class="w3-container">
-            <h3>Catherine Chang</h3>
-            <p class="w3-opacity">Co-Founder & President</p>
-            <p>Product Design & Strategy Intern <br/> @ The Climate Corporation </p>
-            <p><b>Year</b>: Senior</p>
-            <p><b>Interest</b>: Dog memes, Ice Cream, Piano</p>
-          </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-          <img class="albert-image" src="newalbert.jpg" alt="Image">
-            <div class="w3-container">
-              <h3>Albert Hu</h3>
-              <p class="w3-opacity">Alumni Relations Chair</p>
-              <p> Software Engineer @ Magoosh </p>
-              <p><b>Year</b>: Class of 2016</p>
-              <p><b>Interest</b>: Blockchain, Bouldering, Relationship counseling for friends</p>
+<!-- Leadership Team Section hyelo-->
+<div class="container-fluid">
+    <h3 class="sub-header small-caps">LEADERSHIP TEAM</h3>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="franklin heng.jpg"></img>
+                <div class="container">
+                    <h3>Franklin Heng</h3>
+                    <p>President</p>
+                    <p>Performance Architect Intern @ Samsung Advanced Computer Lab</p>
+                    <p><b>Year</b>: Senior</p>
+                    <p><b>Interest</b>: Reading/Writing, Research, Scenic Views, UFC, Tacos</p>
+                </div>
             </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-        <img class="tim-image" src="tim.jpg" alt="Image">
-          <div class="w3-container">
-            <h3>Timothy Hsu</h3>
-            <p class="w3-opacity">Co-Founder & Vice President</p>
-            <p>Software Engineering Intern @ Zendesk </p>
-            <p><b>Year:</b> Senior</p>
-            <p><b>Interest:</b> Badminton, Hiking, Making videos</p>
-          </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-        <img class="tracy-image" src="tracy.jpg" alt="Image">
-        <div class="w3-container">
-          <h3>Tracy Chen</h3>
-          <p class="w3-opacity">Education Coordinator</p>
-          <p> Software Engineering Intern @ Amazon </p>
-          <p><b>Year:</b> Senior</p>
-          <p><b>Interest:</b> Coffee, Cats, <br/> Seafood</p>
         </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-        <img class="nikita-image" src="nikita.jpg" alt="Image">
-        <div class="w3-container">
-          <h3>Nikita Gupta</h3>
-          <p class="w3-opacity">Finance Chair</p>
-          <p> CS Kickstart RA & Lab Instructor & CS61A Staff Member </p>
-          <p><b>Year:</b> Sophmore</p>
-          <p><b>Interest:</b> Teaching, Traveling, Civic tech <br/> </p>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="nikita gupta.jpg"></img>
+                <div class="container">
+                    <h3>Nikita Gupta</h3>
+                    <p>Vice President</p>
+                    <p>Research Assistant @ Berkeley Institute for Data Science (BIDS)</p>
+                    <p><b>Year</b>: Sophomore</p>
+                    <p><b>Interest</b>: Adventuring, Cognitive Computing, Ice Cream, Movies, Data Analytics</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-        <img class="franklin-image" src="franklin.jpg" alt="Image">
-        <div class="w3-container">
-          <h3>Franklin Heng</h3>
-          <p class="w3-opacity">Web Development Chair</p>
-          <p>Researcher @ Video and Image Processing Lab</p>
-          <p><b>Year:</b> Senior</p>
-          <p><b>Interest:</b> UFC, Mexican Food, Beach</p>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="sherman luo.jpg"></img>
+                <div class="container">
+                    <h3>Sherman Luo</h3>
+                    <p>Director of Education</p>
+                    <p>Director of Web Development @ Upsilon Pi Epsilon: Nu Chapter</p>
+                    <p><b>Year</b>: Sophomore</p>
+                    <p><b>Interest</b>: Basketball, Cooking, Trading Crypto, Teaching</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card-2">
-        <img class="edward-image" src="edward.jpg" alt="Image">
-        <div class="w3-container">
-          <h3>Edward Qiu</h3>
-          <p class="w3-opacity">Web Development Chair</p>
-          <p> Web Developer @ <br/> Berkeley HAAS School of Bussiness </p>
-          <p><b>Year:</b> Sophmore</p>
-          <p><b>Interest:</b> Running/Biking, Traveling, Reading <br/> </p>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="david gao.jpg"></img>
+                <div class="container">
+                    <h3>David Gao</h3>
+                    <p>Co-Director of Member Relations</p>
+                    <p>Software Development Intern @ CivicSolar</p>
+                    <p><b>Year</b>: Senior</p>
+                    <p><b>Interest</b>: Electric Skateboarding, Pusheen, Fixed Gear Bikes</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="sera yang.jpg"></img>
+                <div class="container">
+                    <h3>Sera Yang</h3>
+                    <p>Co-Director of Member Relations</p>
+                    <p>Research Assistant @ Berkeley Institute for Data Science (BIDS)</p>
+                    <p><b>Year</b>: Sophomore</p>
+                    <p><b>Interest</b>: Traveling, Hiking, Eating</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="albert hu too.jpg"></img>
+                <div class="container">
+                    <h3>Albert Hu</h3>
+                    <p>Director of Alumni Relations</p>
+                    <p>Incoming Software Engineering Intern @ Facebook</p>
+                    <p><b>Year</b>: Junior</p>
+                    <p><b>Interest</b>: Teaching, Memeology, Boba, League of Legends, Hearthstone</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="samy raman.jpg"></img>
+                <div class="container">
+                    <h3>Samy Raman</h3>
+                    <p>Director of Public Relations</p>
+                    <p>Undergraduate Research Assistant @ Blackman Lab</p>
+                    <p><b>Year</b>: Senior</p>
+                    <p><b>Interest</b>: Traveling, Hiking, Puppies, Italian food</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="tony zhang.jpg"></img>
+                <div class="container">
+                    <h3>Tony Zhang</h3>
+                    <p>Director of Media</p>
+                    <p>Co-founder @ Motion</p>
+                    <p><b>Year</b>: Junior</p>
+                    <p><b>Interest</b>: Skateboarding, Photography, Technology</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="natalia layson.jpg"></img>
+                <div class="container">
+                    <h3>Natalia Layson</h3>
+                    <p>Director of Finance</p>
+                    <p>Incoming Software Engineer Intern @ Google, Computer Science Mentor @ UC Berkeley</p>
+                    <p><b>Year</b>: Junior</p>
+                    <p><b>Interest</b>: Napping, Boba, Sushi</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="marcus lee.jpg"></img>
+                <div class="container">
+                    <h3>Marcus Lee</h3>
+                    <p>Director of Technology</p>
+                    <p>Data Engineering Intern @ Blizzard Entertainment</p>
+                    <p><b>Year</b>: Senior</p>
+                    <p><b>Interest</b>: Traveling, Overwatch, Dance, Weightlifting</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="albert hu old.jpg"></img>
+                <div class="container">
+                    <h3>Albert Hu</h3>
+                    <p>Senior Advisor, Co-founder</p>
+                    <p>Software Engineer and Blockchain, Cryptocurrency Freelancer</p>
+                    <p><b>Year</b>: Class of 2016</p>
+                    <p><b>Interest</b>: Blockchain, Bouldering, Education</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-1">
+            <div class="card pt-2">
+                <img class="officer-img" src="catherine chang.jpg"></img>
+                <div class="container">
+                    <h3>Catherine Chang</h3>
+                    <p>Senior Advisor, Co-founder</p>
+                    <p>Incoming Product Manager @ Atlassian</p>
+                    <p><b>Year</b>: Senior</p>
+                    <p><b>Interest</b>: Classical piano, Cooking, Dog memes, Startups</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- Sponsors Section -->
-  <h3 class="sub-header our-sponsors"><font size="36">OUR SPONSORS</font></h3>
-  <div style="padding:100px 16px" id="sponsors">
+<!-- Sponsors Section -->
+<div class="container-fluid">
+    <h3 class="sub-header small-caps">OUR SPONSORS</h3>
     <h3 class="sub-header">- Mega Sponsor -</h3>
-    <a href="https://www.climate.com/" target="_blank">
-      <div id="climate-corp"></div>
-    </a>
-    <h3 class="sub-header kilo-sponsor">- Kilo Sponsor -</h3>
-    <a href="https://rectifive.com/" target="_blank">
-      <div id="rectifive"></div>
-    </a>
-    <div style="margin-bottom: 100px;"></div>
-  </div>
-
+    <div class="card-group" id="all-sponsor-container">
+        <div class="card" id="sponsor-container">
+          <a href="https://www.climate.com/" target="_blank"><img class="card-img-top" src="climate_corp_logo.jpg" id="sponsor-logo"></a>
+        </div>
+    </div>
+    <h3 class="sub-header">- Kilo Sponsor -</h3>
+    <div class="card-group" id="all-sponsor-container">
+        <div class="card" id="sponsor-container">
+          <a href="https://rectifive.com/" target="_blank"><img class="card-img-top" src="rectifive_logo.jpg" id="sponsor-logo"></a>
+        </div>
+    </div>
+</div>
 
 <script>
 $(document).ready(function () {
 
-        $('#learn_more_id').click(function () {
+        $('#landing-button-transition').click(function () {
 
             var href = $(this).attr('href');
 

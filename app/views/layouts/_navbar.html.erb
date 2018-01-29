@@ -1,7 +1,4 @@
 <nav class="navbar sticky-top navbar-toggleable-md navbar-light nav">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
   <%= link_to image_tag("codeology_logo.png", height:"40x40"), root_path, :class => "navbar-brand"%>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
@@ -38,7 +35,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to_nav_item "Recruitment", recruitment_path, :class => "nav-link" %>
+
         </li>
         <li class="nav-item">
           <%= link_to_nav_item "Member Login", login_path, :class => "nav-link" %>
