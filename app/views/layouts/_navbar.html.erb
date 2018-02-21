@@ -5,6 +5,9 @@
       <li class="nav-item">
         <%= link_to_nav_item "Home", root_path, :class => "nav-link" %>
       </li>
+      <li class="nav-item">
+        <%= link_to_nav_item "Calendar", calendar_path, :class => "nav-link" %>
+      </li>
       <% if user_is_logged_in? %>
         <li class="nav-item">
           <% if current_user.is_admin %>
