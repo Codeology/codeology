@@ -43,9 +43,13 @@ rake db:setup
 ```
 to initialize the website's internal database.
 
-When developing on local, you need to instantiate a PG server instance. The typical way to do this on Mac OS X is through
+When developing on local, you need to instantiate a PG server instance in order to run Cucumber tests and start Rails on your local environment. The typical way to do this on Mac OS X is through
 ```
 initdb /usr/local/var/postgres -E utf8
+```
+if you need to initialize a PG server instance, and 
+```
 pg_ctl -D /usr/local/var/postgres -l logfile start
 
 ```
+to start the server.
