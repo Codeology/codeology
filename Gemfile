@@ -1,4 +1,4 @@
-ruby '2.2.2'
+ruby '2.5.1'
 
 source 'https://rubygems.org'
 
@@ -17,7 +17,7 @@ gem "d3-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use PostgreSQL as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.21'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
