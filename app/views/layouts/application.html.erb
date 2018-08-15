@@ -11,16 +11,32 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= render "layouts/navbar" %>
+  
   <body>
-    <div class="container" style="padding: 0px">
+  <div id="main-containter">
+    <%= render "layouts/navbar" %>
+
+    <div class="container" id="main-content" style="padding: 0px">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <div style="margin:20px">
-        <%= yield %>
-      </div>
+      <!-- Without any arguments, yield will render the template of the current controller/action -->
+      <%= yield %>
     </div>
+  </div>
   </body>
 
+  <footer class="footer">
+    <div class="container">
+    	<div class="columns is-size-3 is-size-4-tablet is-size-5-mobile">
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+      </div>
+      
+    </div>
+  </footer>
 </html>

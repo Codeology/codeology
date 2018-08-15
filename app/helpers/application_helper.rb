@@ -1,7 +1,7 @@
 module ApplicationHelper
   def link_to_nav_item(body, url, html_options = {})
     active = "active" if current_page?(url)
-    content_tag :li, class: active do
+    content_tag :a, class: active do
       link_to body, url, html_options
     end
   end

@@ -1,29 +1,31 @@
-<nav class="navbar sticky-top navbar-toggleable-md navbar-light nav">
-  <%= link_to image_tag("codeology_logo.png", height:"40x40"), root_path, :class => "navbar-brand"%>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to_nav_item "Home", root_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to_nav_item "Calendar", calendar_path, :class => "nav-link" %>
-      </li>
+<nav id="nav"; class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
+  <div class="navbar-brand">
+    <%= link_to image_tag("codeology_logo.png", height:"40x40"), root_path, :class => "navbar-item"%>
+  </div>
+  
+  <div class="navbar-menu" id="navbarMenu">
+  	<div class="navbar-end">
+      <%= link_to_nav_item "Home", root_path, :class => "navbar-item" %>
+      <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item" %>
       <% if user_is_logged_in? %>
-        <li class="nav-item">
+      <!-- Don't worry about this case yet...will fix 100% after user system is implemented -->
+      
+      <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
+        <li class="navbar-item">
           <% if current_user.is_admin %>
             <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
           <% end %>
           <%= link_to_nav_item "Dashboard", "", :class => "nav-link" %>
           <%= link_to_nav_item "Schedule", "", :class => "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="navbar-dropdown">
           <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to "FAQ", "", :class => "dropdown-item" %>
             <%= link_to "Team", "", :class => "dropdown-item" %>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="navbar-dropdown">
           <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= @current_user.name %>
           </a>
@@ -35,15 +37,13 @@
             <div class="dropdown-divider"></div>
             <%= link_to "Sign out", logout_path, method: :delete, :class => "dropdown-item" %>
           </div>
-        </li>
+        </li> 
+      -->
+      
+      <!-- End of user_is_logged_in case -->
       <% else %>
-        <li class="nav-item">
-
-        </li>
-        <li class="nav-item">
-          <%= link_to_nav_item "Member Login", login_path, :class => "nav-link" %>
-        </li>
+      <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item" %>
       <% end %>
-    </ul>
+    </div>
   </div>
 </nav>
