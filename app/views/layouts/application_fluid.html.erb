@@ -7,13 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <%= render "layouts/navbar" %>
   <body>
+    <div>
+    <%= render "layouts/navbar" %>
+    </div>
     <div class="container" style="padding: 0px">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+    </div>
+    <div>
       <%= yield %>
     </div>
   </body>

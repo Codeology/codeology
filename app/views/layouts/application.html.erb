@@ -13,7 +13,7 @@
   </head>
   
   <body>
-  <div id="main-containter">
+  <div id="main-container">
     <%= render "layouts/navbar" %>
 
     <div class="container" id="main-content" style="padding: 0px">
@@ -21,21 +21,22 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <!-- Without any arguments, yield will render the template of the current controller/action -->
-      <%= yield %>
     </div>
   </div>
+  <%= yield %>
   </body>
 
   <footer class="footer">
     <div class="container">
     	<div class="columns is-size-3 is-size-4-tablet is-size-5-mobile">
-        <div class="column">
-        </div>
-        <div class="column">
-        </div>
-        <div class="column">
-        </div>
+			<div class="column">
       </div>
+      <div class="column">
+      </div>
+      <div class="column">
+      </div>
+      </div>
+
       
     </div>
   </footer>

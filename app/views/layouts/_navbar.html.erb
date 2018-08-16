@@ -1,6 +1,13 @@
 <nav id="nav"; class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
   <div class="navbar-brand">
-    <%= link_to image_tag("codeology_logo.png", height:"40x40"), root_path, :class => "navbar-item"%>
+    <%= link_to image_tag("codeology_logo.png"), root_path, :class => "navbar-item"%>
+
+
+    <div class="navbar-burger burger" data-target="navbarMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+		</div>
   </div>
   
   <div class="navbar-menu" id="navbarMenu">
@@ -46,4 +53,7 @@
       <% end %>
     </div>
   </div>
+  <script type="text/javascript"> 
+    navBarPopulate();
+  </script>
 </nav>
