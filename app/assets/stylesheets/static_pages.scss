@@ -6,9 +6,17 @@
 /* ============================ */
 /* Styles used throughout page
 /* ============================ */
-$codeology-yellow: #EEBF44;
-$codeology-green: #50D397;
-$codeology-blue: #69EAE3;
+$old-codeology-yellow: #EEBF44;
+$old-codeology-green: #50D397;
+$old-codeology-blue: #69EAE3;
+
+$codeology-yellow: #F4C484;
+$codeology-green: #7AC478;
+$codeology-blue: #92D5E6;
+
+.is-white {
+	color: white;
+}
 
 *{
   font-family: 'Karla', 'Times New Roman';
@@ -22,6 +30,29 @@ $codeology-blue: #69EAE3;
   color: #373F46;
   text-align: center;
   margin-bottom: 2.5vh;
+}
+
+/* ============================ */
+/* BUTTON UTILS
+/* ============================ */
+
+.button-fade {
+  transition-duration: 0.2s;
+  fill-opacity: 0%;
+  color: white;
+	display: block;
+	background-color: transparent;
+	border: 2px solid grey;
+  margin: auto;
+  max-width: 33vw;
+}
+
+.button-fade:hover {
+  background-color: rgb(255, 255, 255);
+  fill-opacity: 100%;
+	color: black;
+	border: 2px solid white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* ============================ */
@@ -43,11 +74,10 @@ $codeology-blue: #69EAE3;
 
 .landing {
   background-image: asset-url("codeology_holiday_party_bigger.jpg");
-  background-attachment: fixed;
-  background-position: center top;
-
-  background-size: cover;
-  background-repeat: no-repeat;
+  //background-color: #7AC478;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: bottom;
 }
 
 #landing-content {
@@ -58,21 +88,18 @@ $codeology-blue: #69EAE3;
 
 .landing-title {
   font-weight: bold;
-  color: white;
   font-size: 9vw;
   margin-top: 10vh;
-
+  margin-bottom: 10vh;
 }
 
-.landing-blurb {
-    color: white;
-    text-align: center;
-    max-width: 60%;
-    font-size: 1.2vw;
-    line-height: 150%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-  }
+.landing-blurb{
+  //font-size: 2.5vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
 
 .landing-button {
     color: white;
@@ -349,8 +376,11 @@ $codeology-blue: #69EAE3;
 /* MOBILE MEDIA QUERIES
 /* ============================ */
 /* Portrait phones and smaller */
+
+/* COMMENTING THIS OUT SINCE IT INTERFERES WITH UI RESPONSIVENESS
 @media (max-width: 480px) {
    .landing {
      background-size: 480px Auto;
    }
 }
+*/

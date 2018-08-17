@@ -14,10 +14,9 @@
   	<div class="navbar-end">
       <%= link_to_nav_item "Home", root_path, :class => "navbar-item" %>
       <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item" %>
-      <% if user_is_logged_in? %>
-      <!-- Don't worry about this case yet...will fix 100% after user system is implemented -->
       
       <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
+      <% if user_is_logged_in? %>
         <li class="navbar-item">
           <% if current_user.is_admin %>
             <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
@@ -45,12 +44,14 @@
             <%= link_to "Sign out", logout_path, method: :delete, :class => "dropdown-item" %>
           </div>
         </li> 
-      -->
       
-      <!-- End of user_is_logged_in case -->
+      
+      
       <% else %>
       <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item" %>
       <% end %>
+      -->
+      
     </div>
   </div>
   <script type="text/javascript"> 
