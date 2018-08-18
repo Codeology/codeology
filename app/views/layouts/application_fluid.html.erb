@@ -4,6 +4,10 @@
     <meta name="google-site-verification" content="QFnKlIoSssBp0lO6N1Vv7k-naWkoNtFhWtt9HrQD4uA" />
     <title><%= yield :title || "Codeology" %></title>
     <%= csrf_meta_tags %>
+    
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -24,4 +28,25 @@
     </div>
   </body>
 
+  <footer>
+    <div class="container">
+      <div class="columns has-text-centered is-centered">
+        <div class="column is-1">
+          <a href="https://github.com/CodeologyClub" target="_blank">
+			      <span class="icon" style="color: #333;">
+			        <i class="fa fa-lg fa-github"></i>
+			      </span>
+			    </a>
+        </div>
+        <div class="column is-1">
+			    <a href="https://www.facebook.com/berkeleycodeology/" target="_blank">
+			      <span class="icon" style="color: #3B5998;">
+			        <i class="fa fa-lg fa-facebook-f"></i>
+			      </span>
+			    </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
 </html>

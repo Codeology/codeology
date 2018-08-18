@@ -12,8 +12,10 @@
   
   <div class="navbar-menu" id="navbarMenu">
   	<div class="navbar-end">
-      <%= link_to_nav_item "Home", root_path, :class => "navbar-item" %>
-      <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item" %>
+      <%= link_to_nav_item "Home", root_path, :class => "navbar-item custom-nav-item" %>
+      <%= link_to_nav_item "About", about_us_path, :class => "navbar-item custom-nav-item" %>
+      <%= link_to_nav_item "Projects", projects_path, :class => "navbar-item custom-nav-item" %>
+      <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item custom-nav-item" %>
       
       <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
       <% if user_is_logged_in? %>
@@ -51,7 +53,7 @@
       <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item" %>
       <% end %>
       -->
-      
+
     </div>
   </div>
   <script type="text/javascript"> 

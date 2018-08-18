@@ -14,8 +14,24 @@ $codeology-yellow: #F4C484;
 $codeology-green: #7AC478;
 $codeology-blue: #92D5E6;
 
+.reverse{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
 .is-white {
 	color: white;
+}
+
+.is-codeology-yellow{
+  color: $codeology-yellow;
+}
+
+.is-codeology-green{
+  color: $codeology-green;
+}
+
+.is-codeology-blue{
+  color: $codeology-blue;
 }
 
 *{
@@ -38,13 +54,14 @@ $codeology-blue: #92D5E6;
 
 .button-fade {
   transition-duration: 0.2s;
-  fill-opacity: 0%;
   color: white;
 	display: block;
 	background-color: transparent;
 	border: 2px solid grey;
   margin: auto;
-  max-width: 33vw;
+  max-width: 15vw;
+  min-width: 200px; //This is for mobile displays
+  border-radius: 290489px;
 }
 
 .button-fade:hover {
@@ -53,6 +70,15 @@ $codeology-blue: #92D5E6;
 	color: black;
 	border: 2px solid white;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.navbar-item.custom-nav-item{
+  transition-duration: 0.2s;
+}
+
+.navbar-item.custom-nav-item:hover {
+  background-color: $codeology-green;
+  color: black;
 }
 
 /* ============================ */
@@ -97,8 +123,7 @@ $codeology-blue: #92D5E6;
   //font-size: 2.5vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  min-width:275px; //This is for mobile displays
 }
 
 .landing-button {
@@ -156,19 +181,6 @@ $codeology-blue: #92D5E6;
 .intro-blurb {
   font-size: 1.1vw;
 }
-
-.intro-interviewprep {
-  color: $codeology-yellow;
-}
-
-.intro-workshops {
-  color: $codeology-green;
-}
-
-.intro-social {
-  color: $codeology-blue;
-}
-
 
 /* ============================ */
 /* VALUES
@@ -261,30 +273,6 @@ $codeology-blue: #92D5E6;
   margin-top: 1.7vh;
   padding-bottom: 1.7vh;
   text-align: center;
-}
-
-#mentorship-circle-color {
-  background-color: $codeology-yellow;
-}
-
-.mentorship {
-  color: $codeology-yellow;
-}
-
-#education-circle-color {
-  background-color: $codeology-green;
-}
-
-.education {
-  color: $codeology-green;
-}
-
-#community-circle-color {
-  background-color: $codeology-blue;
-}
-
-.community {
-  color: $codeology-blue;
 }
 
 /* ============================ */
