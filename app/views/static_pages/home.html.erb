@@ -42,7 +42,7 @@
 <!-- PROJECTS -->
 <section id="projects" class="section">
 	<div class="container">
-		<div class="columns  is-centered">
+		<div class="columns is-centered">
 			<div class="column is-10">
 				<h2 class="title is-2 has-text-black">Projects</h2>
 				<p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
@@ -51,28 +51,68 @@
 				 as developers, and to <strong>lead</strong> their own project teams.
 				 </p>
 			    <%= link_to_nav_item "Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
-				<div class="columns has-text-centered">
+				<!-- PROJECTS HERE -->
+					<!-- TODO render projects in another page -->
+					<!--
+				<div class="columns is-8">
+
 					<div class="column is-one-third">
-						<%= image_tag(@project_0_url, :alt=>"project image") %>
-						<p><%= @project_0_name %></p>
-						<p><%= @project_0_blurb %></p>
+						<div class="card">
+							<div class="card-image">
+								<%= image_tag(@project_0_url, :alt=>"project image", :class=>"image") %>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<div class="media-content">
+										<h5 class="project-card-title title is-5 has-text-black"><%= @project_0_name %></h5>
+									</div>
+								</div>
+								<div class="content">
+									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_0_blurb %></p>
+								</div>
+							</div>
+						</div>
 					</div>
+
 					<div class="column is-one-third">
-						<%= image_tag(@project_1_url, :alt=>"project image") %>
-						<p><%= @project_1_name %></p>
-						<p><%= @project_2_blurb %></p>
+						<div class="card">
+							<div class="card-image">
+								<%= image_tag(@project_1_url, :alt=>"project image", :class=>"image") %>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<div class="media-content">
+										<h5 class="project-card-title title is-5 has-text-black"><%= @project_1_name %></h5>
+									</div>
+								</div>
+								<div class="content">
+									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_1_blurb %></p>
+								</div>
+							</div>
+						</div>
 					</div>
+
 					<div class="column is-one-third">
-						<%= image_tag(@project_2_url, :alt=>"project image") %>
-						<p><%= @project_2_name %></p>
-						<p><%= @project_2_blurb %></p>
+						<div class="card">
+							<div class="card-image">
+								<%= image_tag(@project_2_url, :alt=>"project image", :class=>"image") %>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<div class="media-content">
+										<h5 class="project-card-title title is-5 has-text-black"><%= @project_2_name %></h5>
+									</div>
+								</div>
+								<div class="content">
+									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_2_blurb %></p>
+								</div>
+							</div>
+						</div>
 					</div>
+					
 				</div>
+				-->
 			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="columns">
 		</div>
 	</div>
 </section>
@@ -86,7 +126,6 @@
 				<p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
 				We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
 				</p>
-				
 			    <%= link_to_nav_item "Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
 			</div>
 		</div>
@@ -140,7 +179,7 @@
 			<div class="column is-10">
 				<h2 class="title is-2 has-text-black">Contact Us</h2>
 				<p class="reverse">
-				bluc.ygoloedoc@ofni
+				bulc.ygoloedoc@ofni
 				</p>
 			</div>
 		</div>

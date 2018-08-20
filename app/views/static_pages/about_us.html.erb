@@ -5,23 +5,65 @@
 </div>
 
 <!-- ABOUT US -->
-<section id="about-us"; class="section">
+<section id="about-us" class="section">
 	<div class="container">
 		<div class="columns">
 			<div class="column is-10 is-offset-1">
 				<h2 class="title is-2 has-text-black">About Us</h2>
+				<p> Whoops! We're currently revamping our vision and values. We'll be updating this page </p>
 			</div>
 		</div>
 	</div>
 </section>
 
+<!-- PHOTO CAROUSEL -->
+<section id="carousel" class="carousel-section">
+	<div class="scroller kinetic-active"> 
+		<div class="carousel-tile">
+			<%= image_tag("about_carousel_images/1.jpg", :alt=>"project image", :class=>"carousel-image") %>
+		</div>
+		<div class="carousel-tile">
+			<%= image_tag("about_carousel_images/2.jpg", :alt=>"project image", :class=>"carousel-image") %>
+		</div>
+		<div class="carousel-tile">
+			<%= image_tag("about_carousel_images/3.jpg", :alt=>"project image", :class=>"carousel-image") %>
+		</div>
+		<div class="carousel-tile">
+			<%= image_tag("about_carousel_images/4.jpg", :alt=>"project image", :class=>"carousel-image") %>
+		</div>
+	</div>
+</section>
+
 <!-- MEMBERS-->
-<section id="members"; class="section">
+<section id="members" class="section">
 	<div class="container">
 		<div class="columns">
 			<div class="column is-10 is-offset-1">
 				<h2 class="title is-2 has-text-black">Members</h2>
+				<p> Whoops! We'll be updating this page once photoshoots are finished </p>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- ALUMNI -->
+<section id="alumni" class="section">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-10 is-offset-1">
+				<h2 class="title is-2 has-text-black">Alumni</h2>
+				<p> Whoops! We'll be updating this page once photoshoots are finished </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var mouseDown = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+
+		if (!mouseDown) {
+			$(".scroller").kinetic();
+		}
+	});
+</script>

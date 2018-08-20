@@ -11,7 +11,7 @@ $old-codeology-green: #50D397;
 $old-codeology-blue: #69EAE3;
 
 $codeology-yellow: #F4C484;
-$codeology-green: #7AC478;
+$codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
 .reverse{
@@ -49,6 +49,31 @@ $codeology-blue: #92D5E6;
 }
 
 /* ============================ */
+/* PHOTO CAROUSEL
+/* ============================ */
+
+.scroller{
+  overflow-x: scroll;
+  white-space: nowrap;
+  cursor: grab;
+}
+
+.carousel-section{
+  padding: 6rem 0rem 3rem;
+}
+
+.carousel-tile{
+  display: inline-block;
+}
+
+.carousel-image{
+  max-width: 50vw;
+  max-height: 50vh;
+  display: inline-block;
+  padding: 0rem 1rem;
+}
+
+/* ============================ */
 /* BUTTON UTILS
 /* ============================ */
 
@@ -82,16 +107,29 @@ $codeology-blue: #92D5E6;
 }
 
 /* ============================ */
-/* NAVBAR
+/* PROJECT CARD
 /* ============================ */
+.project-card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.25s;
+}
 
-/* TODO: navbar is still hard coded */
-.nav {
-    background-color: #ffffff;
-    box-shadow: 10px 5px 40px rgba(16, 16, 16, 0.25);
-    height: 72px;
-    font-size: 2em;
-    letter-spacing: 0.0625em;
+.project-card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.project-card-image{
+  object-fit: fill;
+}
+
+.project-card-content{
+  padding: 1.25rem;
+  height: 20vh;
+}
+
+.put-footer-bottom{
+  //TODO Calculate footer height as opposed to using fixed 170px value i.e. calc(100vh - footerHeight)
+  min-height: calc(100vh - 170px);
 }
 
 /* ============================ */
@@ -100,7 +138,6 @@ $codeology-blue: #92D5E6;
 
 .landing {
   background-image: asset-url("codeology_holiday_party_bigger.jpg");
-  //background-color: #7AC478;
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: bottom;
@@ -162,11 +199,6 @@ $codeology-blue: #92D5E6;
 /* ============================ */
 /* INTRODUCTION
 /* ============================ */
-
-#about-us {
-  margin-top: 5vh;
-  margin-bottom: 2.5vh;
-}
 
 #intro-section {
   margin-left: 5vw;
