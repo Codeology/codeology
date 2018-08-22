@@ -48,6 +48,9 @@ $codeology-blue: #92D5E6;
   margin-bottom: 2.5vh;
 }
 
+.is-round{
+  border-radius: 50%;
+}
 /* ============================ */
 /* PHOTO CAROUSEL
 /* ============================ */
@@ -58,18 +61,20 @@ $codeology-blue: #92D5E6;
   cursor: grab;
 }
 
-.carousel-section{
+.extra-top-padding{
   padding: 6rem 0rem 3rem;
 }
 
 .carousel-tile{
-  display: inline-block;
+  display: inline-flex;
 }
 
 .carousel-image{
-  max-width: 50vw;
+  object-fit: cover;
+  min-width: 50vw;
+  max-width: 66vw;
   max-height: 50vh;
-  display: inline-block;
+  display: inline-flex;
   padding: 0rem 1rem;
 }
 
@@ -109,6 +114,10 @@ $codeology-blue: #92D5E6;
 /* ============================ */
 /* PROJECT CARD
 /* ============================ */
+.fixed-height{
+  min-height: calc(600px - 25vw)
+}
+
 .project-card{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.25s;

@@ -6,205 +6,409 @@
 </div>
 
 <section id="landing" class="hero has-fixed-navbar is-fullheight landing is-bold">
-    <div class="hero-body">
-        <div class="container has-text-centered">
-			<h1 class="landing-title has-text-white">Codeology.</h1>
-			<h5 class="landing-blurb is-size-3 is-size-3-tablet is-size-5-mobile has-text-white">
-			<span class="is-codeology-yellow">Education.</span> 
-			<span class="is-codeology-green">Exploration.</span> 
-			<span class="is-codeology-blue">Community.</span> 
-			</h5>
-			<a href="#about-us" class="button-fade is-size-3 is-size-5-mobile" id="landing-button-transition">Learn More</a>	
-        </div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="landing-title has-text-white">Codeology.</h1>
+      <h5 class="landing-blurb is-size-3 is-size-3-tablet is-size-5-mobile has-text-white">
+      <span class="is-codeology-yellow">Education.</span> 
+      <span class="is-codeology-green">Exploration.</span> 
+      <span class="is-codeology-blue">Community.</span> 
+      </h5>
+      <a href="#about-us" class="button-fade is-size-3 is-size-5-mobile" id="landing-button-transition">Learn More</a>	
     </div>
-	<div class="hero-foot"></div>
+  </div>
+  <div class="hero-foot"></div>
 </section>
 
 <!-- ABOUT US -->
 <section id="about-us" class="section">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">About us</h2>
-				<p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
-				<strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry 
-				in the context of a supportive community. 
-				<br>
-				Whether your interest lies in engineering software, conceptualizing designs, or managing product direction, 
-				we offer interview preparation and workshops to help you hone your professional 
-				skills.</p>
-			    <%= link_to_nav_item "Read more >", about_us_path, :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-2 has-text-black">About Us</h2>
+        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+        <strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry 
+        in the context of a supportive community. 
+        <br>
+        Whether your interest lies in engineering software, conceptualizing designs, or managing product direction, 
+        we offer interview preparation and workshops to help you hone your professional 
+        skills.</p>
+        <!--
+        <%= link_to_nav_item "Read more >", about_us_path, :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
+        -->
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Projects</h2>
-				<p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
-				<strong>This semester</strong> we'll be introducing projects as an opportunity for our
-				 members to <strong>explore</strong> cool niches in tech, to gain <strong>experience</strong>
-				 as developers, and to <strong>lead</strong> their own project teams.
-				 </p>
-			    <%= link_to_nav_item "Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
-				<!-- PROJECTS HERE -->
-					<!-- TODO render projects in another page -->
-					<!--
-				<div class="columns is-8">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-2 has-text-black">Projects</h2>
+        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+        <strong>This semester</strong> we'll be introducing projects as an opportunity for our
+          members to <strong>explore</strong> cool niches in tech, to gain <strong>experience</strong>
+          as developers, and to <strong>lead</strong> their own project teams.
+          </p>
+        <!-- PROJECTS HERE -->
+        <!-- TODO render projects in another page -->
+        <!--
+        <div class="columns is-8">
 
-					<div class="column is-one-third">
-						<div class="card">
-							<div class="card-image">
-								<%= image_tag(@project_0_url, :alt=>"project image", :class=>"image") %>
-							</div>
-							<div class="card-content">
-								<div class="media">
-									<div class="media-content">
-										<h5 class="project-card-title title is-5 has-text-black"><%= @project_0_name %></h5>
-									</div>
-								</div>
-								<div class="content">
-									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_0_blurb %></p>
-								</div>
-							</div>
-						</div>
-					</div>
+          <div class="column is-one-third">
+            <div class="card fixed-height">
+              <div class="card-image">
+                <%= image_tag(@project_0_url, :alt=>"project image", :class=>"image") %>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_0_name %></h5>
+                  </div>
+                </div>
+                <div class="content">
+                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_0_blurb %></p>
+                </div>
+              </div>
+            </div>
+            </div>
 
-					<div class="column is-one-third">
-						<div class="card">
-							<div class="card-image">
-								<%= image_tag(@project_1_url, :alt=>"project image", :class=>"image") %>
-							</div>
-							<div class="card-content">
-								<div class="media">
-									<div class="media-content">
-										<h5 class="project-card-title title is-5 has-text-black"><%= @project_1_name %></h5>
-									</div>
-								</div>
-								<div class="content">
-									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_1_blurb %></p>
-								</div>
-							</div>
-						</div>
-					</div>
+          <div class="column is-one-third">
+            <div class="card fixed-height">
+              <div class="card-image">
+                <%= image_tag(@project_1_url, :alt=>"project image", :class=>"image") %>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_1_name %></h5>
+                  </div>
+                </div>
+                <div class="content">
+                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_1_blurb %></p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-					<div class="column is-one-third">
-						<div class="card">
-							<div class="card-image">
-								<%= image_tag(@project_2_url, :alt=>"project image", :class=>"image") %>
-							</div>
-							<div class="card-content">
-								<div class="media">
-									<div class="media-content">
-										<h5 class="project-card-title title is-5 has-text-black"><%= @project_2_name %></h5>
-									</div>
-								</div>
-								<div class="content">
-									<p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_2_blurb %></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				-->
-			</div>
-		</div>
-	</div>
+          <div class="column is-one-third">
+            <div class="card fixed-height">
+              <div class="card-image">
+                <%= image_tag(@project_2_url, :alt=>"project image", :class=>"image") %>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_2_name %></h5>
+                  </div>
+                </div>
+                <div class="content">
+                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_2_blurb %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+
+        <!-- END OF PROJECTS-->
+        <!--
+        <%= link_to_nav_item "All Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
+        -->
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EVENTS -->
 <section id="events" class="section">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Events</h2>
-				<p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
-				We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
-				</p>
-			    <%= link_to_nav_item "Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <h2 class="title is-2 has-text-black">Events</h2>
+                <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+                We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
+                </p>
+                <!--
+                <%= link_to_nav_item "Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
+                -->
+            </div>
+        </div>
+    </div>
 </section>
 
 
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
-	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Leadership</h2>
-				<div class="columns is-multiline is-centered">
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-					<div class="column is-half-tablet is-one-quarter-desktop">
-					<p>member</p>
-					</div>
-				</div>
-				<%= link_to_nav_item "See All >", about_us_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
-			</div>
-		</div>
-		
-	</div>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <h2 class="title is-2 has-text-black">Leadership</h2>
+                <div class="columns is-mobile is-multiline is-centered">
+                    
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/sera.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Sera Yang</h2>
+                              <h4 class="subtitle is-6">President</h4>
+                            </div>
+                          </div>
+
+                          <div class="content">
+                            <p>
+                              SWE Intern @ Uber / Research Assistant @ BIDS 
+                              <br>
+                              <strong>Year:</strong> Junior
+                              <br>
+                              <strong>Interests:</strong> Running, Raising Plants, Crepes
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/jinsu.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Jinsu Elhance</h2>
+                              <h4 class="subtitle is-6">Vice-President</h4>
+                            </div>
+                          </div>
+
+                          <div class="content">
+                            <p>
+                              Tech Intern @ ArcSource Consulting / Curriculum Development @ DDS
+                              <br>
+                              <strong>Year:</strong> Sophomore
+                              <br>
+                              <strong>Interests:</strong> Hammocking, Potato Peels, Photography
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/sherman.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Sherman Luo</h2>
+                              <h4 class="subtitle is-6">Education Director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              CS70 uGSI / Undergraduate Researcher @ InterACT
+                              <br>
+                              <strong>Year:</strong> Junior
+                              <br>
+                              <strong>Interests:</strong> Swimming, Cooking, Basketball, Teaching
+                            </p>
+                          </div>
+                        </div>
+                      </div>                    
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/jaj.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Jiayue Li</h2>
+                              <h4 class="subtitle is-6">Technology Director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              SDE Intern @ Expedia / Research Assistant @ BIDS
+                              <br>
+                              <strong>Year:</strong> Junior
+                              <br>
+                              <strong>Interests:</strong> Hiking, Traveling, Music
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/amanda.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Amanda Te</h2>
+                              <h4 class="subtitle is-6">Social Co-director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              Software Engineering Intern @ Caulis
+                              <br>
+                              <strong>Year:</strong> Senior
+                              <br>
+                              <strong>Interests:</strong> Ballroom Dancing, Singing, Music Production, Videography, Adventures
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/calvin.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Calvin Chen</h2>
+                              <h4 class="subtitle is-6">Social Co-director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              Software Engineering Intern @ Jobwell / Technical Intern at Starfish Network 
+                              <br>
+                              <strong>Year:</strong> Sophomore
+                              <br>
+                              <strong>Interests:</strong> Basketball, Making Drinks, Pancakes
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/jess.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Jessica Hsiao</h2>
+                              <h4 class="subtitle is-6">Media Director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              iOS Development Intern @ GoGetter 
+                              <br>
+                              <strong>Year:</strong> Junior
+                              <br>
+                              <strong>Interests:</strong> Photography, Traveling, Noodles
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column is-half-tablet is-one-quarter-desktop">
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-3by4">
+			                    <%= image_tag("officers/lyric.jpg", :alt=>"placeholder officer image", :class=>"") %>
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <h2 class="title is-4">Lyric Yu</h2>
+                              <h4 class="subtitle is-6">Finance/Industry Director</h4>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <p>
+                              Software Developer Intern @ IBM 
+                              <br>
+                              <strong>Year:</strong> Junior
+                              <br>
+                              <strong>Interests:</strong> Classical Piano, Trendy Food, Matcha
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--
+                <%= link_to_nav_item "See All >", about_us_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
+                -->
+            </div>
+        </div>
+        
+    </div>
 </section>
 
 <!-- CONTACT -->
 <section id="events" class="section">
-	<div class="container">
-		<div class="columns has-text-centered is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Contact Us</h2>
-				<p class="reverse">
-				bulc.ygoloedoc@ofni
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="columns has-text-centered is-centered">
+            <div class="column is-10">
+                <h2 class="title is-2 has-text-black">Contact Us</h2>
+                <p class="reverse">
+                bulc.ygoloedoc@ofni
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- SPONSORS -->
 <section id="sponsors" class="section">
-	<div id="sponsors" class="has-text-centered container">
-		<h3 class="title is-2 small-caps">OUR SPONSORS</h3>
-		<h3 class="sub-header">- Mega Sponsor -</h3>
-		<div class="card-group" id="all-sponsor-container">
-			<div class="card" id="sponsor-container">
-			<a href="https://www.climate.com/" target="_blank"><img class="card-img-top" src="climate_corp_logo.jpg" id="sponsor-logo"></a>
-			</div>
-		</div>
-		<h3 class="sub-header">- Kilo Sponsor -</h3>
-		<div class="card-group" id="all-sponsor-container">
-			<div class="card" id="sponsor-container">
-			<a href="https://rectifive.com/" target="_blank"><img class="card-img-top" src="rectifive_logo.jpg" id="sponsor-logo"></a>
-			</div>
-		</div>
-	</div>
+    <div id="sponsors" class="has-text-centered container">
+        <h3 class="title is-2 small-caps">OUR SPONSORS</h3>
+        <h3 class="sub-header">- Mega Sponsor -</h3>
+        <div class="card-group" id="all-sponsor-container">
+            <div class="card" id="sponsor-container">
+            <a href="https://www.climate.com/" target="_blank"><img class="card-img-top" src="climate_corp_logo.jpg" id="sponsor-logo"></a>
+            </div>
+        </div>
+        <h3 class="sub-header">- Kilo Sponsor -</h3>
+        <div class="card-group" id="all-sponsor-container">
+            <div class="card" id="sponsor-container">
+            <a href="https://rectifive.com/" target="_blank"><img class="card-img-top" src="rectifive_logo.jpg" id="sponsor-logo"></a>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Script found in smoothScroll.js -->
 <script type="text/javascript">
-	addSmoothScroll();
+    addSmoothScroll();
 </script>
