@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/calendar', to: "static_pages#calendar"
   get '/projects', to: "static_pages#projects"
   get '/about_us', to: "static_pages#about_us"
+  get '/apply', to: "static_pages#apply"
   get '/help', to: "static_pages#help"
   get '/recruitment', to: "static_pages#recruitment"
   get '/about', to: "static_pages#about"

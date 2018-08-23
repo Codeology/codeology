@@ -26,6 +26,10 @@ class StaticPagesController < ApplicationController
     render layout: 'application_fluid'  
   end
 
+  def apply
+    render layout: 'application_fluid'  
+  end
+
   def recruitment
     render 'recruitment'
   end
