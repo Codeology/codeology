@@ -54,8 +54,9 @@ $codeology-blue: #92D5E6;
 
 .calendar{
   border: 0;
-  width: 80vw;
-  height: 80vh;
+  width: 66vw;
+  min-width: 300px;
+  height: 75vh;
 }
 
 /* ============================ */
@@ -160,12 +161,6 @@ $codeology-blue: #92D5E6;
   background-position: bottom;
 }
 
-#landing-content {
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
-}
-
 .landing-title {
   font-weight: bold;
   font-size: 9vw;
@@ -174,7 +169,6 @@ $codeology-blue: #92D5E6;
 }
 
 .landing-blurb{
-  //font-size: 2.5vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
   min-width:275px; //This is for mobile displays
@@ -209,186 +203,6 @@ $codeology-blue: #92D5E6;
   }
 }
 
-.landing-button-text {
-  color: white;
-}
-
-/* ============================ */
-/* INTRODUCTION
-/* ============================ */
-
-#intro-section {
-  margin-left: 5vw;
-  margin-right: 5vw;
-
-}
-
-.intro-header {
-  font-size: 2vw;
-}
-
-.intro-blurb {
-  font-size: 1.1vw;
-}
-
-/* ============================ */
-/* VALUES
-/* ============================ */
-
-#values {
-  margin-top: 2.5vh;
-  margin-bottom: 5vh;
-}
-
-.value-description {
-  font-size: 0.9vw;
-  font-weight: 100;
-  letter-spacing: 0.0625em;
-  text-align: center;
-}
-
-/* TODO: Make nodes responsive - still hardcoded (too large compared to everything else when resizing window) */
-
-/* Gives circle radius */
-.circle {
-  border-radius: 100px;
-  width: 100px;
-  height: 100px;
-  border: 8px solid #373F46;
-}
-
-.center-div {
-   margin: auto;
-   max-width: 350px;
-}
-
-/* Creates line coming out of right side of circle */
-.middle-line-right{
-    position: relative;
-}
-
-.middle-line-right:after{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 10px;
-  background-color: #373F46;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-}
-
-/* Creates line coming out of left side of circle */
-.middle-line-left{
-    position: relative;
-}
-
-.middle-line-left:before{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 10px;
-  background-color: #373F46;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  z-index: -1;
-}
-
-/* Creates line coming out of both sides of circle */
-.middle-line-both{
-    position: relative;
-}
-
-.middle-line-both:after{
-  content: "";
-  display: block;
-  width: 100%;
-  height: 10px;
-  background-color: #373F46;
-  position: absolute;
-  top: 50%;
-  z-index: -1;
-}
-
-/* Space between circles and texts */
-.values-spacing {
-  margin-top: 1.7vh;
-}
-
-.values-header {
-  font-size: 2vw;
-  margin-top: 1.7vh;
-  padding-bottom: 1.7vh;
-  text-align: center;
-}
-
-/* ============================ */
-/* LEADERSHIP SECTION
-/* ============================ */
-
-/* TODO - use media queries to make only 1 member show up on the screen when on mobile view*/
-#team-section {
-  margin-bottom: 2.5vh;
-}
-
-.officer-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.franklin-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.edward-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.nikita-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.catherine-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.albert-img  {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.tracy-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
-.tim-img {
-  height: 67%;
-  width: 67%;
-  display: block;
-  margin: auto;
-}
-
 /* ============================ */
 /* SPONSORS
 /* ============================ */
@@ -409,16 +223,3 @@ $codeology-blue: #92D5E6;
 #all-sponsor-container {
   margin-bottom: 2.5vh;
 }
-
-/* ============================ */
-/* MOBILE MEDIA QUERIES
-/* ============================ */
-/* Portrait phones and smaller */
-
-/* COMMENTING THIS OUT SINCE IT INTERFERES WITH UI RESPONSIVENESS
-@media (max-width: 480px) {
-   .landing {
-     background-size: 480px Auto;
-   }
-}
-*/
