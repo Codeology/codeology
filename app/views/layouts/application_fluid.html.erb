@@ -15,15 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <!-- NAVBAR -->
     <div>
     <%= render "layouts/navbar" %>
     </div>
+    
+    <!-- NOTIFICATIONS -->
     <div class="container" style="padding: 0px">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
     </div>
-    <div id="main content" class="put-footer-bottom">
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content-container" class="put-footer-bottom">
       <%= yield %>
     </div>
   </body>
