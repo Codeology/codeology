@@ -52,70 +52,27 @@
           as developers, and to <strong>lead</strong> their own project teams.
           </p>
         <!-- PROJECTS HERE -->
-        <!-- TODO render projects in another page -->
-        <!--
-        <div class="columns is-8">
-
-          <div class="column is-one-third">
-            <div class="card fixed-height">
-              <div class="card-image">
-                <%= image_tag(@project_0_url, :alt=>"project image", :class=>"image") %>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_0_name %></h5>
+        <!-- Three projects are chosen at random in the static_pages_controller and in Projects.rb -->
+        <div class="columns">
+          <% @projects.each do |element| %>
+            <div class="column is-one-third">
+              <div class="card">
+                <div class="card-image project-card-image">
+                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <h5 class="project-card-title title is-5 has-text-black"><%= element[:name] %></h5>
+                    </div>
                   </div>
                 </div>
-                <div class="content">
-                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_0_blurb %></p>
-                </div>
               </div>
             </div>
-            </div>
-
-          <div class="column is-one-third">
-            <div class="card fixed-height">
-              <div class="card-image">
-                <%= image_tag(@project_1_url, :alt=>"project image", :class=>"image") %>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_1_name %></h5>
-                  </div>
-                </div>
-                <div class="content">
-                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_1_blurb %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column is-one-third">
-            <div class="card fixed-height">
-              <div class="card-image">
-                <%= image_tag(@project_2_url, :alt=>"project image", :class=>"image") %>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <h5 class="project-card-title title is-5 has-text-black"><%= @project_2_name %></h5>
-                  </div>
-                </div>
-                <div class="content">
-                  <p class="project-card-subtitle subtitle is-6 has-text-black"><%= @project_2_blurb %></p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
-        -->
-
         <!-- END OF PROJECTS-->
-        <!--
         <%= link_to_nav_item "All Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
-        -->
       </div>
     </div>
   </div>
@@ -130,7 +87,7 @@
                 <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
                 </p>
-                <%= link_to_nav_item "Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
+                <%= link_to_nav_item "Our Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
             </div>
         </div>
     </div>

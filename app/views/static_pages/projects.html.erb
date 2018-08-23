@@ -30,7 +30,28 @@
 			<div class="column is-10 is-offset-1">
 				<h2 class="title is-2 has-text-black">Projects</h2>
 				<h2 class="subtitle is-4 has-text-black">Fall 2018</h2>
-				<p> Whoops! We'll be updating this page once projects are finalized </p>
+        <div class="columns is-multiline">
+          <% @projects.each do |element| %>
+            <div class="column is-one-third">
+              <div class="card">
+                <div class="card-image project-card-image">
+                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <h5 class="project-card-title title is-5 has-text-black"><%= element[:name] %></h5>
+                    </div>
+                  </div>
+                  
+                  <div class="content">
+                    <p class="project-card-subtitle subtitle is-6"><%= element[:blurb] %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
 			</div>
 		</div>
 	</div>

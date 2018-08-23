@@ -137,7 +137,11 @@ $codeology-blue: #92D5E6;
 }
 
 .project-card-image{
-  object-fit: fill;
+  max-height: 25vh;
+}
+
+.card-image.project-card-image{
+  display: flex; 
 }
 
 .project-card-content{
