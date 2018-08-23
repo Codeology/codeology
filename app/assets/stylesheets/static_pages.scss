@@ -48,8 +48,8 @@ $codeology-blue: #92D5E6;
   margin-bottom: 2.5vh;
 }
 
-.is-round{
-  border-radius: 50%;
+.blurb{
+  line-height: 2.0;
 }
 /* ============================ */
 /* PHOTO CAROUSEL
@@ -395,6 +395,7 @@ $codeology-blue: #92D5E6;
   border: none;
   max-width: 40%;
   margin: auto;
+  padding: 5vh;
 }
 
 #all-sponsor-container {
