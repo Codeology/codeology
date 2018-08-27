@@ -3,7 +3,7 @@ This is the website for the Codeology club at Berkeley
 
 ## Design Documents
 
-* [Hao: Interview Matching System](doc/interviewMatchingSystem.md)
+* [Interview Matching System](doc/interviewMatchingSystem.md)
 
 ## MacOS setup
 
