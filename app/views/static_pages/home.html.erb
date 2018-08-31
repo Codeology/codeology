@@ -111,182 +111,29 @@
             <div class="column is-10">
                 <h2 class="title is-2 has-text-black">Leadership</h2>
                 <div class="columns is-mobile is-multiline is-centered">
+                  <% @leadership.each do |element| %>
 
                     <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
                       <div class="card">
                         <div class="card-image">
                           <figure class="image is-3by4">
-			                    <%= image_tag("people/sera.jpg", :alt=>"placeholder officer image", :class=>"") %>
+			                    <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
                           </figure>
                         </div>
                         <div class="card-content">
                           <div class="media">
                             <div class="media-content">
-                              <h2 class="title is-4">Sera Yang</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">President</h4>
+                              <h2 class="title is-4"><%= element[:name] %></h2>
+                              <h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
                             </div>
-                          </div>
-
-                          <div class="content">
-
                           </div>
                         </div>
                       </div>
                     </div>
-
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jinsu.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jinsu Elhance</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Vice-President</h4>
-                            </div>
-                          </div>
-
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/sherman.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Sherman Luo</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Education</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jaj.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jiayue Li</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Technology</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/amanda.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Amanda Te</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Co-Director of Social</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/calvin.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Calvin Chen</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Co-Director of Social</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jess.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jessica Hsiao</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Media</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/lyric.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Lyric Yu</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Industry</h4>
-                            </div>
-                          </div>
-                          <div class="content">
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <%end%>
 
                 </div>
-                <!--
                 <%= link_to_nav_item "See All >", about_us_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
-                -->
             </div>
         </div>
 

@@ -107,354 +107,67 @@
 
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Leadership</h2>
-                <div class="columns is-mobile is-multiline is-centered">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-10">
+				<h2 class="title is-2 has-text-black">Leadership</h2>
+				<div class="columns is-mobile is-multiline is-centered">
+					
+					<% @leadership.each do |element| %>
+						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
+							<div class="card">
+								<div class="card-image">
+									<figure class="image is-3by4">
+									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+									</figure>
+								</div>
+								<div class="card-content">
+									<div class="media">
+										<div class="media-content">
+											<h2 class="title is-4"><%= element[:name] %></h2>
+											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%end%>
 
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/sera.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Sera Yang</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">President</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jinsu.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jinsu Elhance</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Vice-President</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/sherman.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Sherman Luo</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Education</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jaj.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jiayue Li</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Technology</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/amanda.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Amanda Te</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Co-Director of Social</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/calvin.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Calvin Chen</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Co-Director of Social</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/jess.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Jessica Hsiao</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Media</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag("people/lyric.jpg", :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4">Lyric Yu</h2>
-                              <h4 class="subtitle has-text-weight-bold is-6">Director of Industry</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <!-- MEMBERS -->
 <section id="members" class="section">
 	<div class="container">
 		<div class="columns is-centered">
-				<div class="column is-10">
-						<h2 class="title is-2 has-text-black">Members</h2>
-						<div class="columns is-mobile is-multiline is-centered">
+			<div class="column is-10">
+				<h2 class="title is-2 has-text-black">Members</h2>
+				<div class="columns is-mobile is-multiline is-centered">
 
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/andrew.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Andrew Liu</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Manager</h4>
+					<% @members.each do |element| %>
+						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
+							<div class="card">
+								<div class="card-image">
+									<figure class="image is-3by4">
+									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+									</figure>
+								</div>
+								<div class="card-content">
+									<div class="media">
+										<div class="media-content">
+											<h2 class="title is-4"><%= element[:name] %></h2>
+											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					<%end%>
+					
 				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/carson.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Carson Trinh</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Manager</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/claire.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Claire Li</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Leader</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/kevin.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Kevin Wang</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Leader</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/micah.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Micah Harrison</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Leader</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/myles.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Myles Domingo</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Designer</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/nikita.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Nikita Gupta</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">General Member</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/shalandy.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Shalandy Zhang</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Leader</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/tina.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Tina Zhao</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Project Leader</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-3by4">
-							<%= image_tag("people/weiwei.jpg", :alt=>"placeholder officer image", :class=>"") %>
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<h2 class="title is-4">Weiwei Zhang</h2>
-									<h4 class="subtitle has-text-weight-bold is-6">Industry Coordinator</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
 			</div>
 		</div>
 	</div>
@@ -466,7 +179,29 @@
 		<div class="columns">
 			<div class="column is-10 is-offset-1">
 				<h2 class="title is-2 has-text-black">Alumni</h2>
-				<p> Whoops! We'll be updating this page once general photoshoots are finished! </p>
+				<div class="columns is-mobile is-multiline is-centered">
+					
+					<% @alumni.each do |element| %>
+						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
+							<div class="card">
+								<div class="card-image">
+									<figure class="image is-3by4">
+									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+									</figure>
+								</div>
+								<div class="card-content">
+									<div class="media">
+										<div class="media-content">
+											<h2 class="title is-4"><%= element[:name] %></h2>
+											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<%end%>
+
+				</div>
 			</div>
 		</div>
 	</div>
