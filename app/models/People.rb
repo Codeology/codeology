@@ -27,7 +27,12 @@ class People
     ]
 
     @@alumni = [
-        #{:name => "Tracy Chen", :title => "Amazon", :imgurl => "alumni/tracy.jpg"}
+        {:name => "Catherine Chang", :title => "Atlassian", :imgurl => "alumni/catherine.jpg"},
+        {:name => "Albert Hu", :title => "Samsara", :imgurl => "alumni/albert.jpg"},
+        {:name => "Tracy Chen", :title => "Amazon", :imgurl => "alumni/tracy.jpg"},
+        {:name => "Tim Hsu", :title => "Citrix", :imgurl => "alumni/tim.jpg"},
+        {:name => "David Gao", :title => "SAP Ariba", :imgurl => "alumni/david.jpg"},
+        {:name => "Marcus Lee", :title => "Amazon", :imgurl => "alumni/marcus.jpg"},
     ]
 
     def self.leadership
