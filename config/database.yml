@@ -13,6 +13,8 @@ default: &default
 development:
   <<: *default
   database: db/development
+  user: postgres
+  password: asdfasdf
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,6 +22,8 @@ development:
 test: &test
   <<: *default
   database: db/test
+  user: postgres
+  password: asdfasdf
 
 production:
   <<: *default

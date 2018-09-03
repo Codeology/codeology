@@ -28,15 +28,13 @@
   <div class="navbar-menu" id="navbarMenu">
   	<div class="navbar-end">
       <%= link_to_nav_item "Home", root_path, :class => "navbar-item custom-nav-item" %>
-      <%= link_to_nav_item "About", about_us_path, :class => "navbar-item custom-nav-item" %>
+      <%= link_to_nav_item "About", about_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Projects", projects_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Apply", apply_path, :class => "navbar-item custom-nav-item" %>
       
-      <!--
-      -->
-      <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
       <% if user_is_logged_in? %>
+      <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
         <li class="navbar-item">
           <% if current_user.is_admin %>
             <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
@@ -64,13 +62,14 @@
             <%= link_to "Sign out", logout_path, method: :delete, :class => "dropdown-item" %>
           </div>
         </li> 
+        -->
       
       
       
       <% else %>
-      <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item" %>
+        <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item custom-nav-item" %>
       <% end %>
-      -->
+      <!---->
 
     </div>
   </div>
