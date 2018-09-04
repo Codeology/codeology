@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    render layout: 'application_fluid'  
   end
 
   # Allows existing users to log in, but new users must confirm
