@@ -1,12 +1,17 @@
 class StaticPagesController < ApplicationController
   def home
-    projlist = Projects.new
-    array = projlist.choose(3)
-    @projects = array
+    projList = Projects.new
+    projArray = projList.choose(3)
+    @projects = projArray
+    
+    @leadership = People.leadership
     render layout: 'application_fluid'
   end
 
   def about_us
+    @leadership = People.leadership
+    @members = People.members
+    @alumni = People.alumni
     render layout: 'application_fluid'
   end
 
