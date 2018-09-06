@@ -5,18 +5,15 @@
 <section id="sign-in" class="section">
   <div class="container" id="login-box">
     <div class="columns is-centered">
-      <div class="column is-10">
+      <div class="column is-4">
         <h2 class="title is-2 has-text-black">Member Login</h2>
 
         <%= form_for(:session, url: login_path) do |f| %>
           <div class="field">
-            <p class="control has-icons-left has-icons-right">
+            <p class="control has-icons-left">
               <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
                   <i class="fa fa-lg fa-envelope-o"></i>
-              </span>
-              <span class="icon is-small is-right">
-                  <i class="fa fa-lg fa-check"></i>
               </span>
           </p>
           </div>
