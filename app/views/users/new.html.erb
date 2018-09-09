@@ -5,10 +5,10 @@
 <section id="sign-in" class="section">
   <div class="container" id="login-box">
     <div class="columns is-centered">
-      <div class="column is-4">
-        <h2 class="title is-2 has-text-black">Sign Up</h2>
+      <div class="column is-6">
+        <h2 class="title is-2 has-text-black extra-top-padding">Sign Up</h2>
 
-        <%= form_for(@user, url: signup_path) do |f| %>
+        <%= form_for(@user) do |f| %>
           <div class="field">
             <p class="control has-icons-left">
               <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
