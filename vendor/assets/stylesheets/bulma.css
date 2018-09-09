@@ -7146,12 +7146,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   border-right: 1px solid #dbdbdb;
 }
 
-.panel-heading:first-child,
-.panel-tabs:first-child,
-.panel-block:first-child {
-  border-top: 1px solid #dbdbdb;
-}
-
 .panel-heading {
   background-color: whitesmoke;
   border-radius: 4px 4px 0 0;

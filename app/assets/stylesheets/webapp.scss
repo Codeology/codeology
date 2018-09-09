@@ -1,0 +1,52 @@
+// Place all the styles related to the webapp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ============================ */
+/* Styles used throughout page
+/* ============================ */
+$codeology-yellow: #F4C484;
+$codeology-green: #7AC377;
+$codeology-blue: #92D5E6;
+
+.is-codeology-yellow{
+  color: $codeology-yellow;
+}
+
+.is-codeology-green{
+  color: $codeology-green;
+}
+
+.is-codeology-blue{
+  color: $codeology-blue;
+}
+
+/* ============================ */
+/* Side bar styling
+/* ============================ */
+
+.sideNav {
+  height: 100%;
+  width : 200px;
+  position: fixed;
+  background-color: #222222;
+}
+
+.side-bar-margin {
+  margin-left: 200px;
+}
+
+.panel-block.sideNav-custom {
+  border: 0px;
+  height: 50px;
+}
+
+.panel-heading.sideNav-custom {
+  border: 0px;
+  background-color: $codeology-green;
+  border-radius: 0px;
+}
+
+.image.sideNav-custom {
+  display: inline-block;
+}

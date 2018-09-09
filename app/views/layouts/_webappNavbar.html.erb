@@ -1,0 +1,21 @@
+<nav id="nav"; class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
+  <div class="navbar-brand">
+    <a class="navbar-item"> > </a>
+
+
+    <div class="navbar-burger burger" data-target="navbarMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+		</div>
+  </div>
+  
+  <div class="navbar-menu" id="navbarMenu">
+  	<div class="navbar-end">
+      <%= link_to_nav_item "Back To Website", root_path, :class => "navbar-item custom-nav-item" %>
+    </div>
+  </div>
+  <script type="text/javascript"> 
+    navBarPopulate();
+  </script>
+</nav>
