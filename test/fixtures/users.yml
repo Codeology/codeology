@@ -16,4 +16,9 @@
 #  confirm_token   :string
 #
 
-# empty for now
+# empty for now until ch8
+
+
+# one:
+#   name: "test user"
+#   email: "user@example.com"

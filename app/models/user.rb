@@ -1,20 +1,26 @@
 # == Schema Information
-#
+=begin
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  name            :string
-#  email           :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  password_digest :string
-#  is_admin        :boolean          default(FALSE)
-#  title           :string
-#  bio             :text
-#  is_officer      :boolean          default(FALSE)
-#  email_confirmed :boolean          default(FALSE)
-#  confirm_token   :string
-#
+# id              :integer          not null, primary key
+  t.string   "name"
+  t.string   "email"
+  t.datetime "created_at",                             null: false
+  t.datetime "updated_at",                             null: false
+  t.string   "password_digest"
+  t.boolean  "is_admin",               default: false
+  t.string   "title"
+  t.text     "bio"
+  t.boolean  "is_officer",             default: false
+  t.boolean  "email_confirmed",        default: false
+  t.string   "confirm_token"
+  t.integer  "curr_week",              default: 0
+  t.integer  "next_week",              default: 0
+  t.integer  "interviewing_curr_week", default: 0
+  t.integer  "interviewing_next_week", default: 0
+  t.integer  "interviewing_limit",     default: 2
+  t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+=end
 
 class User < ApplicationRecord
   before_create :set_confirmation_token
@@ -27,7 +33,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
 
-  scope :leadership_team, -> { where(is_officer: true) }
+  # scope :leadership_team, -> { where(is_officer: true) }
 
   # Call this once the registration activation link has been clicked to
   # set email_confirmed and clear the confirmation token
