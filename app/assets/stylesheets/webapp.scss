@@ -39,19 +39,25 @@ $codeology-blue: #92D5E6;
   margin-left: 20vw;
 }
 
+
 .panel-block.sideNav-custom {
   border: 0px;
-  height: 50px;
+  height: calc((100vh - 200px)/6);
   transition: 0.2s;
 }
 
 .panel-block.sideNav-custom:hover {
-  background-color: $codeology-green;
+  background-color: $codeology-blue;
+  color: black !important;
+}
+
+.panel-icon.sideNav-custom {
+  color: $codeology-yellow;
 }
 
 .panel-heading.sideNav-custom {
   border: 0px;
-  background-color: $codeology-blue;
+  background-color: $codeology-green;
   border-radius: 0px;
 }
 
