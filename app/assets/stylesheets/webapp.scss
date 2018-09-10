@@ -27,26 +27,46 @@ $codeology-blue: #92D5E6;
 
 .sideNav {
   height: 100%;
-  width : 200px;
+  min-width : 200px;
+  width: 20vw;
   position: fixed;
-  background-color: #222222;
+  background-color: #222222; 
+  transition: 0.25s;
+  z-index: 2;
 }
 
-.side-bar-margin {
-  margin-left: 200px;
+.sideNav-margin {
+  margin-left: 20vw;
 }
 
 .panel-block.sideNav-custom {
   border: 0px;
   height: 50px;
+  transition: 0.2s;
+}
+
+.panel-block.sideNav-custom:hover {
+  background-color: $codeology-green;
 }
 
 .panel-heading.sideNav-custom {
   border: 0px;
-  background-color: $codeology-green;
+  background-color: $codeology-blue;
   border-radius: 0px;
 }
 
 .image.sideNav-custom {
   display: inline-block;
+}
+
+.button.sideNav-toggle {
+  position: fixed;
+  transition: 0.2s;
+  border: 0px;
+  border-radius: 0px;
+  z-index: 1;
+}
+
+.button.sideNav-toggle:hover {
+  background-color: $codeology-yellow;
 }

@@ -16,21 +16,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body>
+  <body onresize="adjustForMobile()">
 
     <!-- NAVPANEL -->
-    <div id="sideNavPanel" class="sideNav">
+    <div id="sideNavPanel" class="sideNav is-hidden-mobile">
     <%= render "layouts/sideNav" %>
     </div>
-  
+    
+    <!-- DropDown menu -->
+    <div class="is-hidden-tablet">
+    <%= render "layouts/webappNavbar"%>
+    </div>
+
+    <!-- NAVPANEL TOGGLE -->
+    <!--
+    <div id="sideNavToggleOn">
+      <button onclick="openNav()" class="button sideNav-toggle">
+        <span class="panel-icon has-text-grey-darker">
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+
+    <div id="sideNavToggleOff" class="is-hidden-desktop sideNav-margin">
+      <button onclick="closeNav()" class="button sideNav-toggle">
+        <span class="panel-icon has-text-grey-darker">
+          <i class="fa fa-caret-left" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    -->
+
     <!-- MAIN CONTENT -->
-    <div id="main-content-container" class="put-footer-bottom side-bar-margin">
+    <div id="main-content-container" class="put-footer-bottom">
       <!-- BODY -->
       <%= yield %>
     </div>
   </body>
 
-  <footer class="footer side-bar-margin">
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="columns is-mobile has-text-centered is-centered">
         <div class="column is-2">
@@ -56,6 +80,9 @@
         </div>
       </div>
     </div>
-    
   </footer>
+
+  <script type="text/javascript"> 
+    adjustForMobile();
+  </script>
 </html>

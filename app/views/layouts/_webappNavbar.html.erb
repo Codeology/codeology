@@ -1,21 +1,32 @@
-<nav id="nav"; class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
-  <div class="navbar-brand">
-    <a class="navbar-item"> > </a>
-
-
-    <div class="navbar-burger burger" data-target="navbarMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-		</div>
-  </div>
+<div id="webappDropdown" class="dropdown">
   
-  <div class="navbar-menu" id="navbarMenu">
-  	<div class="navbar-end">
-      <%= link_to_nav_item "Back To Website", root_path, :class => "navbar-item custom-nav-item" %>
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Navigation</span>
+      <span class="icon is-small">
+        <i class="fa fa-angle-down"></i>
+      </span>
+    </button>
+  </div>
+
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item">
+        Dropdown item
+      </a>
+      <a class="dropdown-item">
+        Other dropdown item
+      </a>
+      <a href="#" class="dropdown-item is-active">
+        Active dropdown item
+      </a>
+      <a href="#" class="dropdown-item">
+        Other dropdown item
+      </a>
+      <hr class="dropdown-divider">
+      <a href="/" class="dropdown-item">
+        Back to Website
+      </a>
     </div>
   </div>
-  <script type="text/javascript"> 
-    navBarPopulate();
-  </script>
-</nav>
+</div>
