@@ -30,7 +30,8 @@ function adjustForMobile() {
         document.getElementById("footer").style.marginLeft = "0";
     } else {
         let marginSize = Math.max(200, screenWidth * 0.2);
-        //let marginSize = sideNav.offsetWidth;
+        marginSize = Math.min(250, marginSize);
+
         document.getElementById("resize-content-container").style.marginLeft = marginSize + "px";
         document.getElementById("footer").style.marginLeft = marginSize + "px";
     }

@@ -1,8 +1,13 @@
 class WebappController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_login
 
     def dashboard
-        @current_user = User.find_by(id: session[:user_id])
-        @username = current_user[:name]
+        @curr_user = User.find(session[:user_id])
         render layout: 'web_application'
     end
+    
+    private
+        def redirect_to_login
+            redirect_to login_path
+        end
 end

@@ -2,9 +2,15 @@ class SessionsController < ApplicationController
   # GET	    /login	  login_path	  new	      page for a new session (login)
   # POST	  /login	  login_path	  create	  create a new session (login)
   # DELETE	/logout	  logout_path	  destroy	  delete a session (log out)
-  
+  include SessionsHelper
+
   def new
-    render layout: 'application_fluid'  
+    # TODO write test case: if user is already logged in, then login redirects to dashboard
+    if user_is_logged_in?
+      redirect_to dashboard_path
+    else
+      render layout: 'application_fluid'  
+    end
   end
 
   # Allows existing users to log in, but new users must confirm

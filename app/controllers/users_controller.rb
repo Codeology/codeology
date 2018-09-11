@@ -5,13 +5,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @username = User.find_by(id: session[:user_id])[:name]
+    @curr_user = User.find(session[:user_id])
     render layout: 'web_application'
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @curr_user = User.find(session[:user_id])
     @user = User.find(params[:id])
     render layout: 'web_application'
   end
