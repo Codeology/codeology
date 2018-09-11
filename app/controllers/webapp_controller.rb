@@ -1,5 +1,5 @@
 class WebappController < ApplicationController
-    def test
+    def dashboard
         render layout: 'web_application'
     end
 end

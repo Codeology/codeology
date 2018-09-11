@@ -40,6 +40,7 @@ class UsersController < ApplicationController
         #UserMailer.registration_confirmation(@user).deliver
         # flash[:success] = "Please check your email for the verification link to continue registration!"
         #redirect_to root_url
+        log_in @user
         redirect_to @user
       else
         # flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
@@ -100,6 +101,6 @@ class UsersController < ApplicationController
     end
     
     def redirect_to_homepage
-      redirect_to :root
+      redirect_to root_path
     end
 end

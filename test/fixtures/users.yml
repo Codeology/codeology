@@ -18,7 +18,7 @@
 
 # empty for now until ch8
 
-
-# one:
-#   name: "test user"
-#   email: "user@example.com"
+userone:
+  name: user one
+  email: userone@example.com
+  password_digest: <%= User.digest('password') %>
