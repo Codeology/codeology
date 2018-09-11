@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
         # TODO: redirect_or_back
         redirect_to root_path
       else
-        flash[:notice] = %Q[Please activate your account by following the instructions in the account confirmation email you received to proceed. Click #{view_context.link_to("here", new_user_email_confirmation_url)} to resend the confirmation email.]
-        flash[:notice] = flash[:notice].html_safe
+        flash[:info] = %Q[Please activate your account by following the instructions in the account confirmation email you received to proceed. Click #{view_context.link_to("here", new_user_email_confirmation_url)} to resend the confirmation email.]
+        flash[:info] = flash[:info].html_safe
         render 'new'
       end
     else
