@@ -1,9 +1,11 @@
 <nav class="panel">
 
   <div class="panel-heading sideNav-custom has-text-centered">
-    <figure class="image sideNav-custom">
-      <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
-    </figure>
+    <%= link_to dashboard_path do %>
+      <figure class="image sideNav-custom">
+        <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
+      </figure>
+    <% end %>
     <!-- <%= link_to_nav_item @curr_user.name, user_path(@curr_user), :class => "subtitle is-5 custom-nav-item" %> -->
   </div>
 
