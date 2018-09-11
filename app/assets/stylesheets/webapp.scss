@@ -53,8 +53,15 @@ $codeology-blue: #92D5E6;
   font-weight: bold;
 }
 
-.panel-icon.sideNav-custom {
-  color: $codeology-yellow;
+.custom-icon {
+  display: inline-block;
+    font-size: 14px;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    vertical-align: top;
+    width: 1em;
+    margin-right: 0.75em;
 }
 
 .panel-heading.sideNav-custom {

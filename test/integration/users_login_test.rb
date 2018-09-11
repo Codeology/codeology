@@ -21,6 +21,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_redirected_to dashboard_path
     follow_redirect!
     assert_template 'dashboard'
+    # TODO write separate webapp tests for assert_select for every side panel link
     get root_url
     assert_select "a[href=?]", login_path, count: 0
     assert_select "a[href=?]", logout_path
