@@ -19,7 +19,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
             post users_path, params: { user: { name:  "Example User",
                                             email: "user@example.com",
                                             password:              "foobarlo",
-                                            password_confirmation: "foobarlo" } }
+                                            password_confirmation: "foobarlo" },
+                                        secret_code: "xnb3gif3k" }
         end
     follow_redirect!
     assert_template 'users/show'

@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+  # GET	    /login	  login_path	  new	      page for a new session (login)
+  # POST	  /login	  login_path	  create	  create a new session (login)
+  # DELETE	/logout	  logout_path	  destroy	  delete a session (log out)
+  
   def new
     render layout: 'application_fluid'  
   end
@@ -23,7 +27,7 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-
+  
   def destroy
     log_out
     redirect_to root_path
