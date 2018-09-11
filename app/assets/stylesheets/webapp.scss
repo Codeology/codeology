@@ -64,6 +64,13 @@ $codeology-blue: #92D5E6;
     margin-right: 0.75em;
 }
 
+.icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
 .panel-heading.sideNav-custom {
   border: 0px;
   background-color: $codeology-green;

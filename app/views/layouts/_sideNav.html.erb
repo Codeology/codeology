@@ -4,7 +4,7 @@
     <figure class="image is-128x128 sideNav-custom">
       <%= image_tag("default_profile_pic.jpg", alt: "default profile picture", class: "is-rounded")  %>
     </figure>
-    <p class="subtitle is-5">First Last</p>
+    <p class="subtitle is-5"><% @username %></p>
   </div>
 
   <a class="panel-block sideNav-custom has-text-grey-lighter">
@@ -49,9 +49,9 @@
     Back to Website
   </a>
 
-  <a href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
+  <a rel="nofollow" data-method="delete" href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">
-      <i class="fa fa-sign-out"></i>
+      <i class=" icon-flipped fa fa-sign-out"></i>
     </span>
     Log Out
   </a>
