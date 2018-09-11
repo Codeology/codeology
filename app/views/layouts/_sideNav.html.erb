@@ -1,10 +1,10 @@
 <nav class="panel">
 
   <div class="panel-heading sideNav-custom has-text-centered">
-    <figure class="image is-128x128 sideNav-custom">
-      <%= image_tag("default_profile_pic.jpg", alt: "default profile picture", class: "is-rounded")  %>
+    <figure class="image sideNav-custom">
+      <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
     </figure>
-    <p class="subtitle is-5"><%= @curr_user.name %></p>
+    <!-- <%= link_to_nav_item @curr_user.name, user_path(@curr_user), :class => "subtitle is-5 custom-nav-item" %> -->
   </div>
 
   <a class="panel-block sideNav-custom has-text-grey-lighter">
@@ -48,6 +48,13 @@
     </span>
     Back to Website
   </a>
+  
+  <%= link_to user_path(@curr_user), :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
+    <span class="custom-icon">
+      <i class=" icon-flipped fa fa-gears"></i>
+    </span>
+    Settings
+  <% end %>
 
   <a rel="nofollow" data-method="delete" href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">
@@ -55,5 +62,7 @@
     </span>
     Log Out
   </a>
+  
+  
 
 </nav>

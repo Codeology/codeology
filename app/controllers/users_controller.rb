@@ -25,6 +25,15 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    user = User.find(params[:id])
+    curr_user = User.find(session[:user_id])
+    # If current user is editing their own info or is an admin
+    if (user.id == curr_user.id) || curr_user.is_admin
+      @user = user
+    else
+      flash.now[:warning] = "You don't have permission to edit another user."
+      redirect_to dashboard_path
+    end
   end
 
   # POST /users
@@ -33,11 +42,16 @@ class UsersController < ApplicationController
     secret_code = params[:secret_code]
 
     # LOL this is probably among the worst ways to do this don't judge -> prevents bots/strangers from signing up
-    if secret_code != "xnb3gif3k"
+    if secret_code != "xnb3gif3kt" && secret_code != "6wej5sfh8d"
       flash.now[:danger] = "Super secret code was invalid!"
       render :new
     else
       @user = User.new(user_params)
+      
+      if secret_code == "6wej5sfh8d"
+        @user.is_admin = true
+      end
+
       if @user.save
         #UserMailer.registration_confirmation(@user).deliver
         # flash[:success] = "Please check your email for the verification link to continue registration!"
@@ -54,15 +68,19 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    #respond_to do |format|
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash.now[:success] = "User info successfully updated"
+      redirect_to @user
+      #format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      #format.json { render :show, status: :ok, location: @user }
+    else
+      #format.html { render :edit }
+      #format.json { render json: @user.errors, status: :unprocessable_entity }
+      render 'edit'
     end
+    #end
   end
 
   # DELETE /users/1
@@ -86,11 +104,6 @@ class UsersController < ApplicationController
         flash[:error] = "Sorry. User does not exist"
         redirect_to root_url
       end
-  end
-
-  # GET /userNotFound
-  def userNotFound
-    render layout: "application_fluid"
   end
 
   private

@@ -34,19 +34,20 @@ $codeology-blue: #92D5E6;
   background-color: #333333; 
   transition: 0.25s;
   z-index: 2;
+  box-shadow: 0px 0px 2px 1px #888888; 
 }
 
 
 .panel-block.sideNav-custom {
   border: 0px;
-  height: calc((100vh - 200px)/7);
+  height: calc((100vh - 125px)/8);
   transition: 0.2s;
 }
 
 .panel-block.sideNav-custom:hover {
-  background-color: $codeology-blue;
+  background-color: $codeology-green;
   color: black !important;
-  box-shadow: -1px 0px 12px 2px #222222; 
+  box-shadow: -1px 2px 4px 2px #303030; 
   font-weight: bold;
 }
 
