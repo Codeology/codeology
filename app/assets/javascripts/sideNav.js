@@ -7,7 +7,7 @@ function openNav() {
     closeToggle.classList.remove("is-hidden-touch");
    
     document.getElementById("sideNavPanel").style.width = "20%";
-    document.getElementById("main-content-container").style.marginLeft = "20%"
+    document.getElementById("resize-content-container").style.marginLeft = "20%"
 }
 
 /* Close/hide the sidenav */
@@ -19,19 +19,19 @@ function closeNav() {
     closeToggle.classList.add("is-hidden-touch");
 
     document.getElementById("sideNavPanel").style.width = "0";
-    document.getElementById("main-content-container").style.marginLeft = "0"
+    document.getElementById("resize-content-container").style.marginLeft = "0"
 }
 
 function adjustForMobile() {
     let screenWidth = $(document).width();
     if (screenWidth <= 768) {
         //closeNav();
-        document.getElementById("main-content-container").style.marginLeft = "0";
+        document.getElementById("resize-content-container").style.marginLeft = "0";
         document.getElementById("footer").style.marginLeft = "0";
     } else {
         let marginSize = Math.max(200, screenWidth * 0.2);
         //let marginSize = sideNav.offsetWidth;
-        document.getElementById("main-content-container").style.marginLeft = marginSize + "px";
+        document.getElementById("resize-content-container").style.marginLeft = marginSize + "px";
         document.getElementById("footer").style.marginLeft = marginSize + "px";
     }
 }

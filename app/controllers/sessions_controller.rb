@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       #if user.email_confirmed?
         log_in user
-        flash[:success] = 'You are now logged in!'
+        flash.now[:success] = 'You are now logged in!'
         # TODO: redirect_or_back
         redirect_to dashboard_path
       #else
