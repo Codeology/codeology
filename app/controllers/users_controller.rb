@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @username = User.find_by(id: session[:user_id])[:name]
     render layout: 'web_application'
   end
 
