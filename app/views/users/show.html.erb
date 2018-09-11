@@ -9,11 +9,12 @@
           <%= @user.name %>
         </p>
       </h1>
+
       <h2 class="subtitle is-4 has-text-black">      
-        <p>
-          <strong>Email:</strong>
-          <%= @user.email %>
-        </p>
+          <p>
+            <strong>Email:</strong>
+            <%= @user.email %>
+          </p>
 
         <% unless @user.title.blank? %>
           <p>
@@ -22,6 +23,7 @@
           </p>
         <% end %>
       </h2>
+
     </div>
   </div>
 </section>

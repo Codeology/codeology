@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource :except => :confirm_email
+  rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_homepage
 
   # GET /users
   # GET /users.json
@@ -27,15 +28,23 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-    if @user.save
-      #UserMailer.registration_confirmation(@user).deliver
-      # flash[:success] = "Please check your email for the verification link to continue registration!"
-      #redirect_to root_url
-      redirect_to @user
+    secret_code = params[:secret_code]
+
+    # LOL this is probably among the worst ways to do this don't judge -> prevents bots/strangers from signing up
+    if secret_code != "xnb3gif3k"
+      flash[:danger] = "Super secret code was incorrect!"
+      render :new
     else
-      # flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
-      render :new      
+      @user = User.new(user_params)
+      if @user.save
+        #UserMailer.registration_confirmation(@user).deliver
+        # flash[:success] = "Please check your email for the verification link to continue registration!"
+        #redirect_to root_url
+        redirect_to @user
+      else
+        # flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
+        render :new      
+      end
     end
   end
 
@@ -76,6 +85,11 @@ class UsersController < ApplicationController
       end
   end
 
+  # GET /userNotFound
+  def userNotFound
+    render layout: "application_fluid"
+  end
+
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -83,5 +97,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(
         :name, :email, :password, :password_confirmation #, :is_admin, :title, :bio, :is_officer
       )
+    end
+    
+    def redirect_to_homepage
+      redirect_to :root
     end
 end

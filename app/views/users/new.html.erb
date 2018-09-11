@@ -15,7 +15,7 @@
             <p class="control has-icons-left">
               <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-user"></i>
+                <i class="fa fa-lg fa-user"></i>
               </span>
             </p>
           </div>
@@ -25,7 +25,7 @@
             <p class="control has-icons-left">
               <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-envelope-o"></i>
+                <i class="fa fa-lg fa-envelope-o"></i>
               </span>
           </p>
           </div>
@@ -34,7 +34,7 @@
             <p class="control has-icons-left">
               <%= f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
+                <i class="fa fa-lg fa-lock"></i>
               </span>
             </p>
           </div>
@@ -43,7 +43,16 @@
             <p class="control has-icons-left">
               <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
+                <i class="fa fa-lg fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input placeholder="super secret code" class="input is-rounded" type="password" value name="secret_code" id="secret_code">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-barcode"></i>
               </span>
             </p>
           </div>
