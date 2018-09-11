@@ -9,6 +9,8 @@
         <h2 class="title is-2 has-text-black extra-top-padding">Sign Up</h2>
 
         <%= form_for(@user) do |f| %>
+          <%= render 'layouts/error_messages' %>
+
           <div class="field">
             <p class="control has-icons-left">
               <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>

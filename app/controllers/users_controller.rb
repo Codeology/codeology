@@ -4,15 +4,20 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    render layout: 'web_application'
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    render layout: 'web_application'
   end
 
   # GET /users/new
   def new
+    @user = User.new
+    render layout: "application_fluid"
   end
 
   # GET /users/1/edit
@@ -22,13 +27,15 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @user = User.new(user_params)
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
-      flash[:success] = "Please check your email for the verification link to continue registration!"
-      redirect_to root_url
+      #UserMailer.registration_confirmation(@user).deliver
+      # flash[:success] = "Please check your email for the verification link to continue registration!"
+      #redirect_to root_url
+      redirect_to @user
     else
-      flash[:error] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
-      render :new
+      # flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
+      render :new      
     end
   end
 
@@ -71,11 +78,10 @@ class UsersController < ApplicationController
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def user_params
-    params.require(:user).permit(
-      :name, :email, :password, :password_confirmation, :is_admin, :title,
-      :bio, :is_officer
-    )
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(
+        :name, :email, :password, :password_confirmation #, :is_admin, :title, :bio, :is_officer
+      )
+    end
 end

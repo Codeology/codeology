@@ -20,16 +20,16 @@
     <div>
     <%= render "layouts/navbar" %>
     </div>
-    
-    <!-- NOTIFICATIONS -->
-    <div class="container" style="padding: 0px">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-    </div>
 
     <!-- MAIN CONTENT -->
     <div id="main-content-container" class="put-footer-bottom">
+      <!-- NOTIFICATIONS -->
+        <div class="container extra-navbar-padding">
+          <% flash.each do |key, value| %>
+            <div class="notification is-<%= key %>"><%= value %></div>
+          <% end %>
+        </div>
+
       <%= yield %>
     </div>
   </body>
