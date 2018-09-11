@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
     # LOL this is probably among the worst ways to do this don't judge -> prevents bots/strangers from signing up
     if secret_code != "xnb3gif3k"
-      flash[:danger] = "Super secret code was incorrect!"
+      flash.now[:danger] = "Super secret code was incorrect!"
       render :new
     else
       @user = User.new(user_params)

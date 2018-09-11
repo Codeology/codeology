@@ -7,9 +7,9 @@
     <div class="columns is-centered">
       <div class="column is-6">
         <h2 class="title is-2 has-text-black extra-top-padding">Sign Up</h2>
+        <%= render 'layouts/error_messages' %>
 
         <%= form_for(@user) do |f| %>
-          <%= render 'layouts/error_messages' %>
 
           <div class="field">
             <p class="control has-icons-left">
