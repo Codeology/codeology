@@ -30,7 +30,7 @@ $codeology-blue: #92D5E6;
   min-width : 200px;
   width: 20vw;
   position: fixed;
-  background-color: #222222; 
+  background-color: #333333; 
   transition: 0.25s;
   z-index: 2;
 }
@@ -49,6 +49,8 @@ $codeology-blue: #92D5E6;
 .panel-block.sideNav-custom:hover {
   background-color: $codeology-blue;
   color: black !important;
+  box-shadow: 1px 0px 16px 2px #222222; 
+  font-weight: bold;
 }
 
 .panel-icon.sideNav-custom {
