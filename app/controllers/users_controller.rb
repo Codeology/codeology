@@ -11,6 +11,8 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   
   load_and_authorize_resource :except => :confirm_email
   rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_homepage
+  before_action :logged_in_user, only: [:edit, :update, :index, :show, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -35,6 +37,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
   # GET /users/1/edit
   def edit
+=begin    
     user = User.find(params[:id])
     curr_user = User.find(session[:user_id])
     # If current user is editing their own info or is an admin
@@ -44,6 +47,8 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       flash.now[:warning] = "You don't have permission to edit another user."
       redirect_to dashboard_path
     end
+=end
+    @user = User.find(params[:id])
   end
 
   # POST /users
@@ -97,10 +102,11 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
+    render 'index'
   end
 
   # GET /users/1/confirm_email
@@ -124,8 +130,26 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
         :name, :email, :password, :password_confirmation #, :is_admin, :title, :bio, :is_officer
       )
     end
-    
+
+    # Redirect method
     def redirect_to_homepage
       redirect_to root_path
     end
+
+    # Before filters
+
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless user_is_logged_in?
+        flash[:warning] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(dashboard_path) unless (current_user?(@user) || @user.is_admin)
+    end
+    
 end
