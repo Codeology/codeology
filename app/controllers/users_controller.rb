@@ -85,11 +85,10 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @curr_user = User.find(session[:user_id])    
     #respond_to do |format|
     @user = User.find(params[:id])
-    @user.name = user_params[:name]
-    @user.email = user_params[:email]
-    if @user.save
+    if @user.update_attributes(name: user_params[:name], email: user_params[:email])
       flash.now[:success] = "User info successfully updated"
       redirect_to @user
       #format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -97,7 +96,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
     else
       #format.html { render :edit }
       #format.json { render json: @user.errors, status: :unprocessable_entity }
-      render 'edit'
+      render 'edit', layout: 'web_application'
     end
     #end
   end

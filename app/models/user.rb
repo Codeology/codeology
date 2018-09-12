@@ -31,7 +31,7 @@ class User < ApplicationRecord
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, allow_nil:true
 
   # scope :leadership_team, -> { where(is_officer: true) }
 
