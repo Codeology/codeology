@@ -101,12 +101,14 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
     # respond_to do |format|
     #   format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
     #   format.json { head :no_content }
     # end
-    render 'index'
+    #render 'index'
   end
 
   # GET /users/1/confirm_email
@@ -146,10 +148,12 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       end
     end
 
-    # Confirms the correct user.
+    # Confirms the correct user or user is admin
     def correct_user
-      @user = User.find(params[:id])
-      redirect_to(dashboard_path) unless (current_user?(@user) || @user.is_admin)
+      unless (current_user?(@user) || is_admin?)
+        flash[:warning] = "You do not have authorization."        
+        redirect_to dashboard_path 
+      end
     end
     
 end
