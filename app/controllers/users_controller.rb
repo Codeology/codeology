@@ -48,7 +48,9 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       redirect_to dashboard_path
     end
 =end
+    @curr_user = User.find(session[:user_id])
     @user = User.find(params[:id])
+    render layout: 'web_application'
   end
 
   # POST /users
@@ -85,7 +87,9 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   def update
     #respond_to do |format|
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    @user.name = user_params[:name]
+    @user.email = user_params[:email]
+    if @user.save
       flash.now[:success] = "User info successfully updated"
       redirect_to @user
       #format.html { redirect_to @user, notice: 'User was successfully updated.' }

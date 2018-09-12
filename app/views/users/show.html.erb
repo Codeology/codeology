@@ -1,32 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<section class="hero is-medium">
+<section id="profile" class="hero">
   <div class="hero-body">
-    <div class="container is-fluid has-text-centered">
-      <h1 class="title is-2 has-text-black">
-        <p>
-          <strong>Name:</strong>
-          <%= @user.name %>
-        </p>
-      </h1>
-
-      <h2 class="subtitle is-4 has-text-black">      
+    <div class="columns has-text-centered is-centered">
+      <div class="column is-6">
+        <h1 class="title is-2 has-text-black extra-top-padding">
           <p>
-            <strong>Email:</strong>
-            <%= @user.email %>
+            <strong>Name:</strong>
+            <%= @user.name %>
           </p>
+        </h1>
 
-        <% unless @user.title.blank? %>
-          <p>
-            <strong>Title:</strong>
-            <%= @user.title %>
-          </p>
-        <% end %>
-      </h2>
+        <h2 class="subtitle is-4 has-text-black">      
+            <p>
+              <strong>Email:</strong>
+              <%= @user.email %>
+            </p>
 
+          <% unless @user.title.blank? %>
+            <p>
+              <strong>Title:</strong>
+              <%= @user.title %>
+            </p>
+          <% end %>
+        </h2>
+        <%= link_to 'Edit', edit_user_path(@user) %>
+      </div>
     </div>
   </div>
 </section>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
