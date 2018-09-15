@@ -35,7 +35,7 @@ class User < ApplicationRecord
   # scope :leadership_team, -> { where(is_officer: true) }
 
   # Call this once the registration activation link has been clicked to
-  # set email_confirmed and clear the confirmation token
+  # set activated and clear the confirmation token
   def activate
     update_columns(activated: true, activated_at: Time.zone.now)
     # update_attribute(:activated,    true)
@@ -82,7 +82,7 @@ class User < ApplicationRecord
     end
 
     # Returns the hash digest of the given string.
-    def digest(string)
+    def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                     BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)

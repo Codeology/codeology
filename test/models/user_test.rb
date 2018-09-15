@@ -12,7 +12,7 @@
 #  title           :string
 #  bio             :text
 #  is_officer      :boolean          default(FALSE)
-#  email_confirmed :boolean          default(FALSE)
+#  activated :boolean          default(FALSE)
 #  confirm_token   :string
 #
 

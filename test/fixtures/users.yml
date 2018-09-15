@@ -12,7 +12,7 @@
 #  title           :string
 #  bio             :text
 #  is_officer      :boolean          default(FALSE)
-#  email_confirmed :boolean          default(FALSE)
+#  activated :boolean          default(FALSE)
 #  confirm_token   :string
 #
 
@@ -21,13 +21,13 @@
 userone:
   name: user one
   email: userone@example.com
-  password_digest: <%= digest('password') %>
-  email_confirmed: true
+  password_digest: <%= User.digest('password') %>
+  activated: true
   activated_at: <%= Time.zone.now %>
 
 usertwo:
   name: user two
   email: usertwo@example.com
-  password_digest: <%= digest('password') %>
-  email_confirmed: true
+  password_digest: <%= User.digest('password') %>
+  activated: true
   activated_at: <%= Time.zone.now %>
