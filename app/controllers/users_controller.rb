@@ -18,6 +18,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # GET /users.json
   def index
     @curr_user = User.find(session[:user_id])
+    @users = User.where(activated: true).paginate(page: params[:page])
     render layout: 'web_application'
   end
 
@@ -26,6 +27,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   def show
     @curr_user = User.find(session[:user_id])
     @user = User.find(params[:id])
+    redirect_to root_url and return unless user.authenticated?(:activation, params[:id])
     render layout: 'web_application'
   end
 
@@ -70,13 +72,11 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       end
 
       if @user.save
-        #UserMailer.account_activation(@user).deliver
-        # flash[:success] = "Please check your email for the verification link to continue registration!"
-        #redirect_to root_url
-        log_in @user
-        redirect_to @user
+        @user.send_activation_email
+        flash[:info] = "Please check your email to activate your account."
+        redirect_to root_url
       else
-        # flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
+        flash[:danger] = "Oops! Something went wrong. Please try signing up again or email us for help at info@codeology.club"
         render :new      
       end
     end
@@ -91,11 +91,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
     if @user.update_attributes(name: user_params[:name], email: user_params[:email])
       flash.now[:success] = "User info successfully updated"
       redirect_to @user
-      #format.html { redirect_to @user, notice: 'User was successfully updated.' }
-      #format.json { render :show, status: :ok, location: @user }
     else
-      #format.html { render :edit }
-      #format.json { render json: @user.errors, status: :unprocessable_entity }
       render 'edit', layout: 'web_application'
     end
     #end
@@ -107,18 +103,13 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
-    # respond_to do |format|
-    #   format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
-    #render 'index'
   end
 
   # GET /users/1/confirm_email
   def confirm_email
       user = User.find_by_confirm_token(params[:id])
       if user
-        user.activate_email
+        user.activate
         flash[:success] = "Welcome to Codeology! Your email has been confirmed. Please sign in to continue."
         redirect_to login_path
       else

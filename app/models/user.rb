@@ -36,10 +36,15 @@ class User < ApplicationRecord
 
   # Call this once the registration activation link has been clicked to
   # set email_confirmed and clear the confirmation token
-  def activate_email
-    self.email_confirmed = true
-    self.confirm_token = nil
-    save!(:validate => false)
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+    # update_attribute(:activated,    true)
+    # update_attribute(:activated_at, Time.zone.now)
+  end
+
+  # Sends activation email.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   # is_officer controls whether the user is currently active on the leadership team
@@ -54,6 +59,13 @@ class User < ApplicationRecord
   def toggle_admin
     self.is_admin = !self.is_admin
     save!(:validate => false)
+  end
+
+  # Checks if a token has been authenticated (useful for remember, account activation, and PW reset tokens)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   private
