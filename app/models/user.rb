@@ -61,12 +61,19 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password?(token)
   end
 
+  # Checks if token has expired
+  def expired?(attribute, token)
+    sent_at = send("#{attribute}_sent_at")
+    sent_at < 3.hours.ago
+  end
+
   private
 
-    # Creates a token and its digest
+    # Creates a token and its digest and sent time
     def create_activation_digest
         self.activation_token = User.new_token
-        self.activation_digest = User.digest(activation_token)
+        update_attribute(:activation_digest, User.digest(activation_token))
+        update_attribute(:activation_sent_at, Time.zone.now)
     end
 
     # Generates new token
