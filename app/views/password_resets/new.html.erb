@@ -1,4 +1,4 @@
-<% provide(:title, "Log in") %>
+<% provide(:title, "Password Reset") %>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -6,9 +6,9 @@
   <div class="hero-body" id="login-box">
     <div class="columns is-centered">
       <div class="column is-6">
-        <h2 class="title is-2 has-text-black extra-top-padding">Member Login</h2>
+        <h2 class="title is-2 has-text-black extra-top-padding">Password Reset</h2>
 
-        <%= form_for(:session, url: login_path) do |f| %>
+        <%= form_for(:password_reset, url: password_resets_path) do |f| %>
           <div class="field">
             <p class="control has-icons-left">
               <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
@@ -17,16 +17,8 @@
               </span>
           </p>
           </div>
-          <%= link_to "(forgot password)", new_password_reset_path %>
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
-              </span>
-            </p>
-          </div>
-          <%= f.submit "Log in", class: "button is-rounded", style: "margin-top: 10px;"%> 
+         
+          <%= f.submit "Submit", class: "button is-rounded", style: "margin-top: 10px;"%> 
           <p class="signup-link">New user? <%= link_to "Sign up now!", signup_path %></p>
         <% end %>
 

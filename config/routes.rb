@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :account_activations, :only => [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+end
+
+
 =begin
   , :except => [:new] do
     member do
@@ -30,8 +34,14 @@ GET	      /users/1/edit	  edit	    edit_user_path(user)	page to edit user with i
 PATCH	    /users/1	      update	  user_path(user)	      update user
 DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
+
+GET	      /password_resets/new	                          new	          new_password_reset_path
+POST	    /password_resets	                              create	      password_resets_path
+GET	      http://ex.co/password_resets/<token>/edit	      edit	        edit_password_reset_url(token)
+PATCH	    /password_resets/<token>                      	update      	password_reset_path(token)
+
 =end
 
-end
+
   # D3 graph data paths
   # get '/leadership_team', to: 'd3_graphs#leadership_team'
