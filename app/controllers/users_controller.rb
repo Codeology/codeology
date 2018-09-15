@@ -70,7 +70,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       end
 
       if @user.save
-        #UserMailer.registration_confirmation(@user).deliver
+        #UserMailer.account_activation(@user).deliver
         # flash[:success] = "Please check your email for the verification link to continue registration!"
         #redirect_to root_url
         log_in @user

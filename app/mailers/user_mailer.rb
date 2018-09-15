@@ -1,8 +1,12 @@
 class UserMailer < ActionMailer::Base
-    default :from => "info@codeology.club"
+  default :from => "info@codeology.club"
 
-   def registration_confirmation(user)
-      @user = user
-      mail(:to => "#{user.name} <#{user.email}>", :subject => "[Codeology] Registration Confirmation")
-   end
- end
+  def account_activation(user)
+    @user = user
+    mail to: user.email, subject: "[Codeology] Account Activation"
+  end
+
+  def password_reset
+    mail to: user.email, subject: "[Codeology] Password Reset"
+  end
+end

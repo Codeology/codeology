@@ -3,4 +3,4 @@ Hi <%= @user.name %>!
 Thanks for registering! To confirm your registration click the URL below. If you
 did not sign up for a Codeology account, please ignore this email.
 
-<%= confirm_email_user_url(@user.confirm_token) %>
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

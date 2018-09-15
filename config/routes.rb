@@ -31,7 +31,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
 =end
 
-  resources :user_email_confirmations, :only => [:new, :create]
-  end
+  resources :account_activations, :only => [:edit]
+end
   # D3 graph data paths
   # get '/leadership_team', to: 'd3_graphs#leadership_team'

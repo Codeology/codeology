@@ -3,27 +3,26 @@
 # Table name: users
 #
 # id              :integer          not null, primary key
-  t.string   "name"
-  t.string   "email"
-  t.datetime "created_at",                             null: false
-  t.datetime "updated_at",                             null: false
-  t.string   "password_digest"
-  t.boolean  "is_admin",               default: false
-  t.string   "title"
-  t.text     "bio"
-  t.boolean  "is_officer",             default: false
-  t.boolean  "email_confirmed",        default: false
-  t.string   "confirm_token"
-  t.integer  "curr_week",              default: 0
-  t.integer  "next_week",              default: 0
-  t.integer  "interviewing_curr_week", default: 0
-  t.integer  "interviewing_next_week", default: 0
-  t.integer  "interviewing_limit",     default: 2
-  t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "password_digest"
+    t.boolean  "is_admin",               default: false
+    t.integer  "curr_week",              default: 0
+    t.integer  "next_week",              default: 0
+    t.integer  "interviewing_curr_week", default: 0
+    t.integer  "interviewing_next_week", default: 0
+    t.integer  "interviewing_limit",     default: 2
+    t.string   "activation_digest"
+    t.boolean  "activated",              default: false
+    t.datetime "activated_at"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
 =end
 
 class User < ApplicationRecord
-  before_create :set_confirmation_token
+  attr_accessor :confirm_token
+  before_create :create_activation_digest
   before_save { self.email = email.downcase }
 
   validates :name, presence: true, length: { maximum: 50 }
@@ -59,16 +58,21 @@ class User < ApplicationRecord
 
   private
 
-  def set_confirmation_token
-      if self.confirm_token.blank?
-        self.confirm_token = SecureRandom.urlsafe_base64.to_s
-      end
-  end
+    # Creates a token and its digest
+    def create_activation_digest
+        self.activation_token = User.new_token
+        self.activation_digest = User.digest(confirm_token)
+    end
 
-  # Returns the hash digest of the given string.
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
+    # Generates new token
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+
+    # Returns the hash digest of the given string.
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                    BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
 end

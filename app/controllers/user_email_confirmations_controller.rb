@@ -9,7 +9,7 @@ class UserEmailConfirmationsController < ApplicationController
 
     if @user
       params[:id] = @user.confirm_token
-      UserMailer.registration_confirmation(@user).deliver
+      UserMailer.account_activation(@user).deliver
       flash[:success] = "Please check your email for the verification link to continue registration!"
       redirect_to root_url
     end
