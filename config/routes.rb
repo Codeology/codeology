@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'webapp#dashboard'
 
   resources :users
+  resources :account_activations, :only => [:edit]
 =begin
   , :except => [:new] do
     member do
@@ -31,7 +32,6 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
 =end
 
-  resources :account_activations, :only => [:edit]
 end
   # D3 graph data paths
   # get '/leadership_team', to: 'd3_graphs#leadership_team'
