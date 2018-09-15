@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         flash.now[:success] = 'You are now logged in!'
         redirect_to dashboard_path
       else
-       # flash[:info] = %Q[Please activate your account by following the instructions in the account confirmation email you received to proceed. Click #{view_context.link_to("here", new_user_email_confirmation_url)} to resend the confirmation email.]
+        flash[:info] = 'Please activate your account by following the instructions in the account confirmation email you received to proceed.'
        # flash[:info] = flash[:info].html_safe
         render 'new'
       end

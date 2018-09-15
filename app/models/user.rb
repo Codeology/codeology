@@ -21,7 +21,7 @@
 =end
 
 class User < ApplicationRecord
-  attr_accessor :confirm_token
+  attr_accessor :activation_token
   before_create :create_activation_digest
   before_save { self.email = email.downcase }
 
@@ -47,13 +47,6 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
-  # is_officer controls whether the user is currently active on the leadership team
-  # i.e. President, Alumni Relations, Web Dev Chair, etc.
-  def toggle_officer
-    self.is_officer = !self.is_officer
-    save!(:validate => false)
-  end
-
   # is_admin controls whether this user should have website administration capabilities
   # i.e. toggling admin for other people, changing account information, etc.
   def toggle_admin
@@ -73,11 +66,11 @@ class User < ApplicationRecord
     # Creates a token and its digest
     def create_activation_digest
         self.activation_token = User.new_token
-        self.activation_digest = User.digest(confirm_token)
+        self.activation_digest = User.digest(activation_token)
     end
 
     # Generates new token
-    def new_token
+    def User.new_token
       SecureRandom.urlsafe_base64
     end
 

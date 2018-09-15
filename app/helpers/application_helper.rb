@@ -5,9 +5,10 @@ module ApplicationHelper
       link_to body, url, html_options
     end
   end
-
+=begin
   def gravatar_url(user)
     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=128"
   end
+=end
 end

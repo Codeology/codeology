@@ -18,7 +18,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # GET /users.json
   def index
     @curr_user = User.find(session[:user_id])
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @users = User.where(activated: true)
     render layout: 'web_application'
   end
 
@@ -27,7 +27,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   def show
     @curr_user = User.find(session[:user_id])
     @user = User.find(params[:id])
-    redirect_to root_url and return unless user.authenticated?(:activation, params[:id])
+    redirect_to root_url unless @user.activated?
     render layout: 'web_application'
   end
 
@@ -67,6 +67,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
     else
       @user = User.new(user_params)
       
+      # check for admin sign up
       if secret_code == "6wej5sfh8d"
         @user.is_admin = true
       end
@@ -101,13 +102,13 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # DELETE /users/1.json
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash.now[:success] = "User deleted"
     redirect_to users_url
   end
 
   # GET /users/1/confirm_email
   def confirm_email
-      user = User.find_by_confirm_token(params[:id])
+      user = User.find_by_activation_token(params[:id])
       if user
         user.activate
         flash[:success] = "Welcome to Codeology! Your email has been confirmed. Please sign in to continue."
