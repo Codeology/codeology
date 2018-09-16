@@ -1,4 +1,4 @@
-<nav id="nav"; class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
+<nav id="nav"; class="navbar" style="box-shadow: 0px 0px 12px 1px #888888; position: fixed; top: 0; left: 0; right: 0; z-index:999999;">
   <div class="navbar-brand">
     <%= link_to image_tag("codeology_logo.png"), root_path, :class => "navbar-item"%>
     
@@ -28,49 +28,18 @@
   <div class="navbar-menu" id="navbarMenu">
   	<div class="navbar-end">
       <%= link_to_nav_item "Home", root_path, :class => "navbar-item custom-nav-item" %>
-      <%= link_to_nav_item "About", about_us_path, :class => "navbar-item custom-nav-item" %>
+      <%= link_to_nav_item "About", about_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Projects", projects_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Calendar", calendar_path, :class => "navbar-item custom-nav-item" %>
       <%= link_to_nav_item "Apply", apply_path, :class => "navbar-item custom-nav-item" %>
       
-      <!--
-      -->
-      <!-- COMMENTING THIS OUT TO AVOID COLOR CLUTTER
-      <% if user_is_logged_in? %>
-        <li class="navbar-item">
-          <% if current_user.is_admin %>
-            <%= link_to_nav_item "Admin", "", :class => "nav-link" %>
-          <% end %>
-          <%= link_to_nav_item "Dashboard", "", :class => "nav-link" %>
-          <%= link_to_nav_item "Schedule", "", :class => "nav-link" %>
-        </li>
-        <li class="navbar-dropdown">
-          <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to "FAQ", "", :class => "dropdown-item" %>
-            <%= link_to "Team", "", :class => "dropdown-item" %>
-          </div>
-        </li>
-        <li class="navbar-dropdown">
-          <a class="nav-link dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= @current_user.name %>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <h6 class="dropdown-header">Your next interview time is ...</h6>
-            <%= link_to "Profile", user_path(current_user), :class => "dropdown-item" %>
-            <%= link_to "Report a Bug", "", :class => "dropdown-item" %>
-
-            <div class="dropdown-divider"></div>
-            <%= link_to "Sign out", logout_path, method: :delete, :class => "dropdown-item" %>
-          </div>
-        </li> 
-      
-      
-      
+      <% if user_is_logged_in? %>  
+        <%= link_to_nav_item "Dashboard", dashboard_path, :class => "navbar-item custom-nav-item" %>      
+        <%= link_to_nav_item "Logout", logout_path, method: :delete, :class => "navbar-item custom-nav-item" %>
       <% else %>
-      <%= link_to_nav_item "Member Login", login_path, :class => "navbar-item" %>
+        <%= link_to_nav_item "Login", login_path, :class => "navbar-item custom-nav-item" %>
       <% end %>
-      -->
+      <!---->
 
     </div>
   </div>

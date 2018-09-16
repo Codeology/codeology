@@ -1,0 +1,9 @@
+Hi <%= @user.name %>!
+
+Thanks for registering! To confirm your registration click the URL below.
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+This link will expire in three hours.
+
+If you did not sign up for a Codeology account, please ignore this email.

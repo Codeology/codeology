@@ -12,9 +12,10 @@
 #  title           :string
 #  bio             :text
 #  is_officer      :boolean          default(FALSE)
-#  email_confirmed :boolean          default(FALSE)
+#  activated :boolean          default(FALSE)
 #  confirm_token   :string
 #
+
 
 require 'test_helper'
 
@@ -29,7 +30,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "name should be present" do
-    @user.name = ""
+    @user.name = " "
     assert_not @user.valid?
   end
 
@@ -38,6 +39,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "email should be present" do
+    @user.email = "     "
+    assert_not @user.valid?
+  end
+  
   test "email should not be too long" do
     @user.email = "a" * 244 + "@example.com"
     assert_not @user.valid?

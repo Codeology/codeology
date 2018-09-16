@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     render layout: 'application_fluid'
   end
 
-  def about_us
+  def about
     @leadership = People.leadership
     @members = People.members
     @alumni = People.alumni
@@ -21,10 +21,6 @@ class StaticPagesController < ApplicationController
 
   def apply
     render layout: 'application_fluid'  
-  end
-
-  def recruitment
-    render 'recruitment'
   end
 
   def projects

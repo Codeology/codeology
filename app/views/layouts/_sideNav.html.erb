@@ -1,0 +1,69 @@
+<nav class="panel">
+
+  <div class="panel-heading sideNav-custom has-text-centered">
+    <%= link_to dashboard_path do %>
+      <figure class="image sideNav-custom">
+        <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
+      </figure>
+    <% end %>
+  </div>
+
+  <a class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-terminal"></i>
+    </span>
+    Get Interviewed
+  </a>
+
+  <a class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-comments-o"></i>
+    </span>
+    Interview Others
+  </a>
+
+  <a class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-calendar"></i>
+    </span>
+    Upcoming
+  </a>
+
+  <a class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-bar-chart"></i>
+    </span>
+    Completed
+  </a>
+
+  <a href="/users" class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-address-book-o"></i>
+    </span>
+    Member Directory
+  </a>
+
+  <a href="/" class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class="fa fa-angle-double-left"></i>
+    </span>
+    Back to Website
+  </a>
+  
+  <%= link_to user_path(@curr_user), :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
+    <span class="custom-icon">
+      <i class=" icon-flipped fa fa-gears"></i>
+    </span>
+    Settings
+  <% end %>
+
+  <a rel="nofollow" data-method="delete" href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
+    <span class="custom-icon">
+      <i class=" icon-flipped fa fa-sign-out"></i>
+    </span>
+    Log Out
+  </a>
+  
+  
+
+</nav>

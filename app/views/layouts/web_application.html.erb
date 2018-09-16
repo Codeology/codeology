@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="google-site-verification" content="QFnKlIoSssBp0lO6N1Vv7k-naWkoNtFhWtt9HrQD4uA" />
+    <title><%= yield :title || "Codeology" %></title>
+    <link href="./../../assets/mini_logo.png" rel="icon">
+    <%= csrf_meta_tags %>
+    
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body onresize="adjustForMobile()">
+
+    <!-- NAVPANEL -->
+    <div id="sideNavPanel" class="sideNav is-hidden-mobile">
+    <%= render "layouts/sideNav" %>
+    </div>
+    
+    <!-- DropDown menu -->
+    <div class="is-hidden-tablet">
+    <%= render "layouts/webappNavbar"%>
+    </div>
+
+    <!-- NAVPANEL TOGGLE -->
+    <!--
+    <div id="sideNavToggleOn">
+      <button onclick="openNav()" class="button sideNav-toggle">
+        <span class="panel-icon has-text-grey-darker">
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+
+    <div id="sideNavToggleOff" class="is-hidden-desktop">
+      <button onclick="closeNav()" class="button sideNav-toggle">
+        <span class="panel-icon has-text-grey-darker">
+          <i class="fa fa-caret-left" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    -->
+
+    <!-- MAIN CONTENT -->
+    <div id="resize-content-container" class="put-footer-bottom">
+      <!-- BODY -->
+      <%= yield %>
+    </div>
+  </body>
+
+  <footer id="footer" class="footer">
+    <div class="container is-fluid">
+      <div class="columns is-mobile has-text-centered is-centered">
+        <div class="column is-2">
+          <a class="footer-icon" href="https://github.com/CodeologyClub" target="_blank">
+			      <span class="icon" style="color: #333;">
+			        <i class="fa fa-lg fa-github"></i>
+			      </span>
+			    </a>
+        </div>
+        <div class="column is-2">
+          <a class="footer-item" href="https://www.linkedin.com/company/berkeley-codeology/" target="_blank">
+            <span class="icon" style="color: #007bb6;">
+              <i class="fa fa-lg fa-linkedin-square"></i>
+            </span>
+          </a>
+        </div>
+        <div class="column is-2">
+			    <a class="footer-icon" href="https://www.facebook.com/berkeleycodeology/" target="_blank">
+			      <span class="icon" style="color: #3B5998;">
+			        <i class="fa fa-lg fa-facebook-f"></i>
+			      </span>
+			    </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"> 
+    adjustForMobile();
+  </script>
+</html>

@@ -12,8 +12,22 @@
 #  title           :string
 #  bio             :text
 #  is_officer      :boolean          default(FALSE)
-#  email_confirmed :boolean          default(FALSE)
+#  activated :boolean          default(FALSE)
 #  confirm_token   :string
 #
 
-# empty for now
+# empty for now until ch8
+
+userone:
+  name: user one
+  email: userone@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+usertwo:
+  name: user two
+  email: usertwo@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>

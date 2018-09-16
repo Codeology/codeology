@@ -1,28 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<section id="profile" class="hero">
+  <div class="hero-body">
+    <div class="columns has-text-centered is-centered">
+      <div class="column is-6">
+        <h1 class="title is-2 has-text-black extra-top-padding">
+          <p>
+            <strong>Name:</strong>
+            <%= @user.name %>
+          </p>
+        </h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+        <h2 class="subtitle is-4 has-text-black">      
+            <p>
+              <strong>Email:</strong>
+              <%= @user.email %>
+            </p>
+        </h2>
+        <%= link_to 'Edit', edit_user_path(@user) %>
+      </div>
+    </div>
+  </div>
+</section>
 
-<% unless @user.title.blank? %>
-  <p>
-    <strong>Title:</strong>
-    <%= @user.title %>
-  </p>
-<% end %>
 
-<% unless @user.bio.blank? %>
-  <p>
-    <strong>Bio:</strong>
-    <%= @user.bio || "" %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

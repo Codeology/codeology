@@ -1,0 +1,38 @@
+<% provide(:title, "Password Reset Submit") %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section id="sign-in" class="hero">
+  <div class="hero-body" id="login-box">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <h2 class="title is-2 has-text-black extra-top-padding">Password Reset</h2>
+        <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+          <%= hidden_field_tag :email, @user.email %>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <%=  f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-lock"></i>
+              </span>
+          </p>
+          </div>
+         
+         <div class="field">
+            <p class="control has-icons-left">
+              <%=  f.password_field :password_confirmation, placeholder: 'password confirmation', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-lock"></i>
+              </span>
+          </p>
+          </div>
+
+          <%= f.submit "Reset Password", class: "button is-rounded", style: "margin-top: 10px;"%> 
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</section>

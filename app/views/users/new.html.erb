@@ -1,5 +1,67 @@
-<h1>New User</h1>
+<% provide(:title, "New User") %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<%= render 'form', user: @user %>
+<section id="sign-in" class="hero">
+  <div class="hero-body" id="login-box">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <h2 class="title is-2 has-text-black extra-top-padding">Sign Up</h2>
+        <%= render 'layouts/error_messages' %>
 
-<%= link_to "Have an account already? Log in.", login_path %>
+        <%= form_for(@user) do |f| %>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-envelope-o"></i>
+              </span>
+          </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input placeholder="super secret code" class="input is-rounded" type="password" value name="secret_code" id="secret_code">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-barcode"></i>
+              </span>
+            </p>
+          </div>
+
+          <%= f.submit "Sign up", class: "button is-rounded", style: "margin-top: 10px;"%> 
+          <p class="signup-link">Already a user? <%= link_to "Log in!", login_path %></p>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,26 +1,47 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get '/calendar', to: "static_pages#calendar"
-  get '/projects', to: "static_pages#projects"
-  get '/about_us', to: "static_pages#about_us"
-  get '/apply', to: "static_pages#apply"
-  get '/help', to: "static_pages#help"
-  get '/recruitment', to: "static_pages#recruitment"
-  get '/about', to: "static_pages#about"
-  get '/team', to: "static_pages#team"
-  get '/signup', to: "users#new"
+  get '/about', to: 'static_pages#about'
+  get '/calendar', to: 'static_pages#calendar'
+  get '/projects', to: 'static_pages#projects'
+  get '/apply', to: 'static_pages#apply'
+
+  get '/signup', to: 'users#new'
+
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  # D3 graph data paths
-  get '/leadership_team', to: 'd3_graphs#leadership_team'
+  get '/dashboard', to: 'webapp#dashboard'
 
-  resources :users, :except => [:new] do
+  resources :users
+  resources :account_activations, :only => [:new, :create, :edit]
+  resources :password_resets, :only => [:new, :create, :edit, :update]
+end
+
+
+=begin
+  , :except => [:new] do
     member do
       get :confirm_email
     end
   end
 
-  resources :user_email_confirmations, :only => [:new, :create]
-end
+GET     	/users	        index	    users_path          	page to list all users
+GET     	/users/1	      show	    user_path(user)	      page to show user
+GET	      /users/new	    new	      new_user_path	        page to make a new user (signup)
+POST   	  /users	        create	  users_path	          create a new user
+GET	      /users/1/edit	  edit	    edit_user_path(user)	page to edit user with id 1
+PATCH	    /users/1	      update	  user_path(user)	      update user
+DELETE	  /users/1	      destroy	  user_path(user)	      delete user
+
+
+GET	      /password_resets/new	                          new	          new_password_reset_path
+POST	    /password_resets	                              create	      password_resets_path
+GET	      http://ex.co/password_resets/<token>/edit	      edit	        edit_password_reset_url(token)
+PATCH	    /password_resets/<token>                      	update      	password_reset_path(token)
+
+=end
+
+
+  # D3 graph data paths
+  # get '/leadership_team', to: 'd3_graphs#leadership_team'
