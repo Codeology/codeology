@@ -62,7 +62,7 @@ class User < ApplicationRecord
   end
 
   # Checks if token has expired
-  def expired?(attribute, token)
+  def expired?(attribute)
     sent_at = send("#{attribute}_sent_at")
     sent_at < 3.hours.ago
   end
@@ -70,10 +70,16 @@ class User < ApplicationRecord
   private
 
     # Creates a token and its digest and sent time
+    #
+    # This is called with BEFORE_CREATE,  which happens before user has been created
+    # So there's no attribute to update_attribute() with yet! However, as a result of 
+    # the callback, when a new user is defined with User.new, it will automatcially get 
+    # all 3 attributes; because the last two are associated witha column int he db, it 
+    # will be written to the DB automatically when user is saved.
     def create_activation_digest
         self.activation_token = User.new_token
-        update_attribute(:activation_digest, User.digest(activation_token))
-        update_attribute(:activation_sent_at, Time.zone.now)
+        self.activation_digest = User.digest(activation_token)
+        self.activation_sent_at = Time.zone.now
     end
 
     # Generates new token

@@ -60,7 +60,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   def create
     secret_code = params[:secret_code]
 
-    # LOL this is probably among the worst ways to do this don't judge -> prevents bots/strangers from signing up
+    # LOL this is among the worst ways to do this don't judge -> prevents bots/strangers from signing up
     if secret_code != "xnb3gif3kt" && secret_code != "6wej5sfh8d"
       flash.now[:danger] = "Super secret code was invalid!"
       render :new
@@ -143,9 +143,9 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       end
     end
 
-    # Confirms the correct user or user is admin
+    # Confirms the correct user OR (user is admin AND user being modified isn't also admin)
     def correct_user
-      unless (current_user?(@user) || is_admin?)
+      unless (current_user?(@user) || (is_admin? && @user.is_admin?))
         flash[:warning] = "You do not have authorization."        
         redirect_to dashboard_path 
       end
