@@ -21,7 +21,7 @@
 =end
 
 class User < ApplicationRecord
-  attr_accessor :activation_token
+  attr_accessor :activation_token, :reset_token
   before_create :create_activation_digest
   before_save { self.email = email.downcase }
 
@@ -46,7 +46,11 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
-
+  
+  # Sends password reset email.
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
   # is_admin controls whether this user should have website administration capabilities
   # i.e. toggling admin for other people, changing account information, etc.
   def toggle_admin
@@ -59,6 +63,12 @@ class User < ApplicationRecord
     digest = send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  # Sets the password reset attributes.
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
   end
 
   # Checks if token has expired
@@ -85,7 +95,7 @@ class User < ApplicationRecord
     def reset_activation_digest
       self.activation_token = User.new_token
       update_attributes(:activation_digest=> User.digest(activation_token), :activation_sent_at => Time.zone.now)
-  end
+    end
 
     # Generates new token
     def User.new_token

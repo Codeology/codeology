@@ -4,10 +4,17 @@
     <h2 class="subtitle is-size-6 has-text-black">Codeology Activation</h2>
     <p class="has-text-black"> 
       Hi <%= @user.name %>!
-      Thanks for registering! To confirm your registration click the URL below. If you
-      did not sign up for a Codeology account, please ignore this email. 
+      Thanks for registering! To confirm your registration click the URL below. 
+      
     </p>
     
     <%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+    
+    <p class="has-text-black">
+      This link will expire in three hours.
+      <br>
+      <br>
+      If you did not sign up for a Codeology account, please ignore this email. 
+    </p>
   </div>
 </section>

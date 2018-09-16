@@ -1,4 +1,4 @@
-<% provide(:title, "Password Reset Request") %>
+<% provide(:title, "Password Reset Submit") %>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -9,17 +9,27 @@
         <h2 class="title is-2 has-text-black extra-top-padding">Password Reset</h2>
 
         <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+          <%= hidden_field_tag :email, @user.email %>
+          
           <div class="field">
             <p class="control has-icons-left">
-              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
+              <%=  f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
               <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-envelope-o"></i>
+                  <i class="fa fa-lg fa-lock"></i>
               </span>
           </p>
           </div>
          
-          <%= f.submit "Submit", class: "button is-rounded", style: "margin-top: 10px;"%> 
-          <p class="signup-link">New user? <%= link_to "Sign up now!", signup_path %></p>
+         <div class="field">
+            <p class="control has-icons-left">
+              <%=  f.password_confirmation :password, placeholder: 'password confirmation', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-lock"></i>
+              </span>
+          </p>
+          </div>
+
+          <%= f.submit "Reset Password", class: "button is-rounded", style: "margin-top: 10px;"%> 
         <% end %>
 
 

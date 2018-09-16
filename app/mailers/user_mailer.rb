@@ -7,6 +7,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def password_reset
+    @user = user
     mail to: user.email, subject: "[Codeology] Password Reset"
   end
 end
