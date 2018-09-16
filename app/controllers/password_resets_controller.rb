@@ -1,7 +1,7 @@
 class PasswordResetsController < ApplicationController
-  before_action :get_user,         only: [:edit, :update]
-  before_action :valid_user,       only: [:edit, :update]
-  before_action :check_expiration, only: [:edit, :update]    # Case (1)
+  before_action :get_user,         only: [:create, :edit, :update]
+  before_action :valid_user,       only: [:create, :edit, :update]
+  before_action :check_expiration, only: [:create, :edit, :update]    # Case (1)
 
   def new
   end
@@ -23,15 +23,17 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if params[:user][:password].empty?                  # Case (3)
+    if params[:user][:password].empty?
       @user.errors.add(:password, "can't be empty")
       render 'edit'
-    elsif @user.update_attributes(user_params)          # Case (4)
+    elsif @user.update_attributes(user_params)
       log_in @user
+      @user.update_attribute(:reset_digest, nil)
       flash[:success] = "Password has been reset."
       redirect_to @user
     else
-      render 'edit'                                     # Case (2)
+      flash[:danger] = "Passwords must match"
+      render 'edit', layout: 'application_fluid'
     end
   end
 
@@ -48,8 +50,8 @@ class PasswordResetsController < ApplicationController
 
     # Confirms a valid user.
     def valid_user
-      unless (@user && @user.activated? &&
-              @user.authenticated?(:reset, params[:id]))
+      unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
+        flash[:danger] = "Invalid email or unactivated account"
         redirect_to root_url
       end
     end
