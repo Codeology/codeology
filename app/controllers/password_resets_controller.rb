@@ -32,7 +32,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "Password has been reset."
       redirect_to @user
     else
-      flash[:danger] = "Passwords must match"
+      flash[:danger] = "Passwords must match or can not be blank"
       render 'edit', layout: 'application_fluid'
     end
   end
@@ -51,7 +51,8 @@ class PasswordResetsController < ApplicationController
     # Confirms a valid user.
     def valid_user
       unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
-        flash[:danger] = "Invalid email or unactivated account"
+        #flash[:danger] = "Invalid email or unactivated account"
+        flash[:danger] = "Invalid link"
         redirect_to root_url
       end
     end
