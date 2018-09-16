@@ -51,8 +51,7 @@ class PasswordResetsController < ApplicationController
     # Confirms a valid user.
     def valid_user
       unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
-        #flash[:danger] = "Invalid email or unactivated account"
-        flash[:danger] = "Invalid link"
+        flash[:danger] = "Invalid link or unactivated account"
         redirect_to root_url
       end
     end
