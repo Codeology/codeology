@@ -22,13 +22,12 @@ class AccountActivationsController < ApplicationController
     end
   end
 
-
   def edit
     user = User.find_by(email: params[:email])
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
       if user.expired?(:activation)
         flash[:warning] = "Activation Link Expired!"
-        redirect_to root_url
+        redirect_to new_account_activation_path
       else
         user.activate
         flash[:success] = "Account activated! Please log in to continue."
