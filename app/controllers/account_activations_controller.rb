@@ -30,6 +30,7 @@ class AccountActivationsController < ApplicationController
         redirect_to new_account_activation_path
       else
         user.activate
+        user.update_attribute(:activation_digest, nil)
         flash[:success] = "Account activated! Please log in to continue."
         redirect_to root_url
       end
