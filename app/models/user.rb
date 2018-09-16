@@ -82,6 +82,11 @@ class User < ApplicationRecord
         self.activation_sent_at = Time.zone.now
     end
 
+    def reset_activation_digest
+      self.activation_token = User.new_token
+      update_attributes(:activation_digest=> User.digest(activation_token), :activation_sent_at => Time.zone.now)
+  end
+
     # Generates new token
     def User.new_token
       SecureRandom.urlsafe_base64

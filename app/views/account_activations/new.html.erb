@@ -1,20 +1,29 @@
-<%= form_for @user, :url => user_email_confirmations_path, :method => :post do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<% provide(:title, "Resend Activation Link") %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section id="sign-in" class="hero">
+  <div class="hero-body" id="login-box">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <h2 class="title is-2 has-text-black extra-top-padding">Resend Activation Link</h2>
+
+        <%= form_for(:account_activations, url: account_activations_path) do |f| %>
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-envelope-o"></i>
+              </span>
+          </p>
+          </div>
+         
+          <%= f.submit "Submit", class: "button is-rounded", style: "margin-top: 10px;"%> 
+          <p class="signup-link">New user? <%= link_to "Sign up now!", signup_path %></p>
+        <% end %>
+
+
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send confirmation email" %>
-  </div>
-<% end %>
+</section>

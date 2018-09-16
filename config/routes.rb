@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'webapp#dashboard'
 
   resources :users
-  resources :account_activations, :only => [:edit]
+  resources :account_activations, :only => [:new, :create, :edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
 

@@ -106,19 +106,6 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
     redirect_to users_url
   end
 
-  # GET /users/1/confirm_email
-  def confirm_email
-      user = User.find_by_activation_token(params[:id])
-      if user
-        user.activate
-        flash[:success] = "Welcome to Codeology! Your email has been confirmed. Please sign in to continue."
-        redirect_to login_path
-      else
-        flash[:error] = "Sorry. User does not exist"
-        redirect_to root_url
-      end
-  end
-
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -130,6 +117,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
     # Redirect method
     def redirect_to_homepage
+      flash[:warning] = "User doesn't exist."
       redirect_to root_path
     end
 
@@ -145,7 +133,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
     # Confirms the correct user OR (user is admin AND user being modified isn't also admin)
     def correct_user
-      unless (current_user?(@user) || (is_admin? && @user.is_admin?))
+      unless (current_user?(@user) || (is_admin? ))#&& @user.is_admin?))
         flash[:warning] = "You do not have authorization."        
         redirect_to dashboard_path 
       end
