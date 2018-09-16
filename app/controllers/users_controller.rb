@@ -131,9 +131,10 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
       end
     end
 
-    # Confirms the correct user OR (user is admin AND user being modified isn't also admin)
+    # Confirms the correct user OR (user is admin AND user being modified is not also admin)
+    # Short circuiting allows admins to modify themselves
     def correct_user
-      unless (current_user?(@user) || (is_admin? ))#&& @user.is_admin?))
+      unless (current_user?(@user) || (is_admin? && !@user.is_admin?))
         flash[:warning] = "You do not have authorization."        
         redirect_to dashboard_path 
       end
