@@ -50,7 +50,7 @@ class People
         {:name => "Stella Lu", :title => "General Member", :imgurl => "people/stella_lu.png"},
         {:name => "Michael Chen", :title => "General Member", :imgurl => "people/michael_chen.png"},
 
-        {:name => "David Paner", :title => "General Member", :imgurl => "people/david_paner.jpg"},
+        {:name => "David Paner", :title => "General Member", :imgurl => "people/david_paner.JPG"},
         {:name => "Maganahalli Ayush", :title => "General Member", :imgurl => "people/maganahalli_ayush.png"},
         {:name => "Haotian Ye", :title => "General Member", :imgurl => "people/haotian_ye.jpg"},
         {:name => "Emily Hu", :title => "General Member", :imgurl => "people/emily_hu.jpg"},
