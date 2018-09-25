@@ -57,7 +57,7 @@ class People
         {:name => "Jackie Chu", :title => "General Member", :imgurl => "people/jackie_chu.jpg"},
 
         {:name => "Snehpreet Kaur", :title => "General Member", :imgurl => "people/snehpreet_kaur.jpg"},
-        {:name => "Wenyao Li", :title => "General Member", :imgurl => "people/weiwei.jpg"},
+        {:name => "Wenyao Li", :title => "General Member", :imgurl => "people/wenyao_li.jpg"},
         {:name => "Kaavya Shah", :title => "General Member", :imgurl => "people/kaavya_shah.jpg"},
         {:name => "Alex Lazich", :title => "General Member", :imgurl => "people/alex_lazich.jpg"},
         {:name => "Thu Nguyen", :title => "General Member", :imgurl => "people/thu_nguyen.jpg"},
