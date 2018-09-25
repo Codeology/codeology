@@ -19,11 +19,64 @@ class People
         {:name => "Claire Li", :title => "Project Leader", :imgurl => "people/claire.jpg"},
         {:name => "Kevin Wang", :title => "Project Leader", :imgurl => "people/kevin.jpg"},
         {:name => "Micah Harrison", :title => "Project Leader", :imgurl => "people/micah.jpg"},
+        
         {:name => "Myles Domingo", :title => "Designer", :imgurl => "people/myles.jpg"},
         {:name => "Nikita Gupta", :title => "General Member", :imgurl => "people/nikita.jpg"},
         {:name => "Shalandy Zhang", :title => "Project Leader", :imgurl => "people/shalandy.jpg"},
         {:name => "Tina Zhao", :title => "Project Leader", :imgurl => "people/tina.jpg"},
-        {:name => "Weiwei Zhang", :title => "Industry Coordinator", :imgurl => "people/weiwei.jpg"}
+        {:name => "Weiwei Zhang", :title => "Industry Coordinator", :imgurl => "people/weiwei.jpg"},
+
+        {:name => "David Ly", :title => "General Member", :imgurl => "people/david_ly.png"},
+        {:name => "Jagpinder Singh", :title => "General Member", :imgurl => "people/jagpinder_singh.jpg"},
+        {:name => "Alan Liu", :title => "General Member", :imgurl => "people/alan_liu.jpg"},
+        {:name => "Muying Chen", :title => "General Member", :imgurl => "people/muying_chen.jpg"},
+        {:name => "Kyle Hua", :title => "General Member", :imgurl => "people/kyle_hua.png"},
+
+        {:name => "Ashley Song", :title => "General Member", :imgurl => "people/ashley_song.jpg"},
+        {:name => "Hiroaki Oshima", :title => "General Member", :imgurl => "people/hiroaki_oshima.png"},
+        {:name => "Isha Mangal", :title => "General Member", :imgurl => "people/isha_mangal.jpg"},
+        {:name => "SunAh Lee", :title => "General Member", :imgurl => "people/sunah_lee.png"},
+        {:name => "Luciano Lopez", :title => "General Member", :imgurl => "people/luciano_lopez.jpg"},
+
+        {:name => "Richard Huang", :title => "General Member", :imgurl => "people/richard_huang.jpg"},
+        {:name => "Vincent Tantra", :title => "General Member", :imgurl => "people/vincent_tantra.jpg"},
+        {:name => "Emily Wang", :title => "General Member", :imgurl => "people/emily_wang.jpg"},
+        {:name => "Pranad Reddy", :title => "General Member", :imgurl => "people/pranad_reddy.jpg"},
+        {:name => "Jennifer Xiao", :title => "General Member", :imgurl => "people/jennifer_xiao.jpg"},
+
+        {:name => "Johnathan Zhou", :title => "General Member", :imgurl => "people/johnathan_zhou.png"},
+        {:name => "Sai Kapuluru", :title => "General Member", :imgurl => "people/sai_kapuluru.jpg"},
+        {:name => "Eric Jia", :title => "General Member", :imgurl => "people/eric_jia.jpg"},
+        {:name => "Stella Lu", :title => "General Member", :imgurl => "people/stella_lu.png"},
+        {:name => "Michael Chen", :title => "General Member", :imgurl => "people/michael_chen.png"},
+
+        {:name => "David Paner", :title => "General Member", :imgurl => "people/david_paner.jpg"},
+        {:name => "Maganahalli Ayush", :title => "General Member", :imgurl => "people/maganahalli_ayush.png"},
+        {:name => "Haotian Ye", :title => "General Member", :imgurl => "people/haotian_ye.jpg"},
+        {:name => "Emily Hu", :title => "General Member", :imgurl => "people/emily_hu.jpg"},
+        {:name => "Jackie Chu", :title => "General Member", :imgurl => "people/jackie_chu.jpg"},
+
+        {:name => "Snehpreet Kaur", :title => "General Member", :imgurl => "people/snehpreet_kaur.jpg"},
+        {:name => "Wenyao Li", :title => "General Member", :imgurl => "people/weiwei.jpg"},
+        {:name => "Kaavya Shah", :title => "General Member", :imgurl => "people/kaavya_shah.jpg"},
+        {:name => "Alex Lazich", :title => "General Member", :imgurl => "people/alex_lazich.jpg"},
+        {:name => "Thu Nguyen", :title => "General Member", :imgurl => "people/thu_nguyen.jpg"},
+
+        {:name => "Dymtro Khelemendyk", :title => "General Member", :imgurl => "people/dymtro_khelemendyk.jpg"},
+        {:name => "Jack Coyle", :title => "General Member", :imgurl => "people/jack_coyle.jpg"},
+        {:name => "Ashlihan Kalin", :title => "General Member", :imgurl => "people/aslihan_kalin.png"},
+        {:name => "Karthic Ravikumar", :title => "General Member", :imgurl => "people/karthic_ravikumar.jpg"},
+        {:name => "Myles Domingo", :title => "General Member", :imgurl => "people/myles_domingo.jpg"},
+
+        {:name => "Lucas Liu", :title => "General Member", :imgurl => "people/lucas_liu.jpg"},
+        {:name => "Natalia Layson", :title => "General Member", :imgurl => "people/natalia_layson.jpg"},
+        {:name => "Anna Young", :title => "General Member", :imgurl => "people/anna_young.jpg"},
+        {:name => "Harvey Woo", :title => "General Member", :imgurl => "people/harvey_woo.jpg"},
+        {:name => "Kimberly Ko", :title => "General Member", :imgurl => "people/kimberly_ko.jpg"},
+
+        {:name => "Albert Hu", :title => "General Member", :imgurl => "people/albert_hu.jpg"}
+
+
     ]
 
     @@alumni = [
