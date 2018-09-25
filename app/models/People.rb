@@ -66,14 +66,12 @@ class People
         {:name => "Jack Coyle", :title => "General Member", :imgurl => "people/jack_coyle.jpg"},
         {:name => "Ashlihan Kalin", :title => "General Member", :imgurl => "people/aslihan_kalin.png"},
         {:name => "Karthic Ravikumar", :title => "General Member", :imgurl => "people/karthick_ravikumar.jpg"},
-        {:name => "Myles Domingo", :title => "General Member", :imgurl => "people/myles_domingo.jpg"},
-
         {:name => "Lucas Liu", :title => "General Member", :imgurl => "people/lucas_liu.jpg"},
+
         {:name => "Natalia Layson", :title => "General Member", :imgurl => "people/natalia_layson.jpg"},
         {:name => "Anna Young", :title => "General Member", :imgurl => "people/anna_young.jpg"},
         {:name => "Harvey Woo", :title => "General Member", :imgurl => "people/harvey_woo.jpg"},
         {:name => "Kimberly Ko", :title => "General Member", :imgurl => "people/kimberly_ko.JPG"},
-
         {:name => "Albert Hu", :title => "General Member", :imgurl => "people/albert_hu.jpg"}
 
 
