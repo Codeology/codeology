@@ -10,48 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180916021227) do
+ActiveRecord::Schema.define(version: 20180927195838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "past_interviews", force: :cascade do |t|
-    t.integer "technical_score"
-    t.integer "communnication_score"
-    t.integer "problem_solving_score"
-    t.string  "feedback"
-    t.integer "slot"
-    t.integer "date"
-    t.integer "interviewee"
-    t.integer "interviewer"
-  end
-
-  create_table "slot_table", force: :cascade do |t|
-    t.integer "slot"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_slot_table_on_user_id", using: :btree
+    t.integer  "technical_score"
+    t.integer  "communnication_score"
+    t.integer  "problem_solving_score"
+    t.integer  "interviewee"
+    t.integer  "interviewer"
+    t.datetime "time"
+    t.text     "feedback"
   end
 
   create_table "upcoming_interviews", force: :cascade do |t|
-    t.integer "slot"
-    t.integer "interviewee"
-    t.integer "interviewer"
+    t.integer  "interviewee"
+    t.integer  "interviewer"
+    t.datetime "time"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "password_digest"
-    t.boolean  "is_admin",               default: false
-    t.integer  "curr_week",              default: 0
-    t.integer  "next_week",              default: 0
-    t.integer  "interviewing_curr_week", default: 0
-    t.integer  "interviewing_next_week", default: 0
-    t.integer  "interviewing_limit",     default: 2
+    t.boolean  "is_admin",           default: false
     t.string   "activation_digest"
-    t.boolean  "activated",              default: false
+    t.boolean  "activated",          default: false
     t.datetime "activated_at"
     t.datetime "activation_sent_at"
     t.string   "reset_digest"
@@ -59,5 +47,4 @@ ActiveRecord::Schema.define(version: 20180916021227) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  add_foreign_key "slot_table", "users"
 end
