@@ -8,19 +8,19 @@
     <% end %>
   </div>
 
-  <a class="panel-block sideNav-custom has-text-grey-lighter">
+  <a href="/availabilitys" class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">
       <i class="fa fa-terminal"></i>
     </span>
     Get Interviewed
   </a>
 
-  <a class="panel-block sideNav-custom has-text-grey-lighter">
+  <%= link_to showUserAvailability_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
     <span class="custom-icon">
       <i class="fa fa-comments-o"></i>
     </span>
     Interview Others
-  </a>
+  <% end %>
 
   <a class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">

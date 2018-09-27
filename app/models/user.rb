@@ -31,7 +31,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 8 }, allow_nil:true
-
+  has_many :availability
+  
   # scope :leadership_team, -> { where(is_officer: true) }
 
   # Call this once the registration activation link has been clicked to
