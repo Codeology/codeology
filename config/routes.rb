@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, :only => [:new, :create, :edit]
   resources :password_resets, :only => [:new, :create, :edit, :update]
+  resources :availability, :only => [:index, :new, :create, :destroy]
+  #resources :upcoming_interviews, :only => [:index, :new, :create,]
+  #resources :past_interviews, :only => [:index, :create, :edit, :update,]
 end
 
 
