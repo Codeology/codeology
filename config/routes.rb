@@ -13,12 +13,13 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'webapp#dashboard'
 
-  get '/myAvailability', to: 'availability#showUserAvailability'
+  get '/myAvailability', to: 'availabilities#showUserAvailability'
+  get '/newAvailability', to: 'availabilities#new'
 
   resources :users
   resources :account_activations, :only => [:new, :create, :edit]
   resources :password_resets, :only => [:new, :create, :edit, :update]
-  resources :availability, :only => [:index, :new, :create, :destroy]
+  resources :availabilities, :only => [:index, :new, :create, :destroy]
   #resources :upcoming_interviews, :only => [:index, :new, :create,]
   #resources :past_interviews, :only => [:index, :create, :edit, :update,]
 end

@@ -31,7 +31,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 8 }, allow_nil:true
-  has_many :availability
+  has_many :availabilitys
   
   # scope :leadership_team, -> { where(is_officer: true) }
 

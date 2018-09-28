@@ -1,8 +1,11 @@
 <section class="section">
   <div class="container is-fluid has-text-centered">
-      
-    <h1 class="title is-2 has-text-black">Your Availability</h1>
-
+    
+    <h1 class="title is-2 has-text-black small-vertical-padding">Your Availability</h1>
+    
+    <div class="small-bottom-padding">
+      <%= link_to_nav_item "Add Availability", newAvailability_path, :class => "button is-rounded is-medium is-success is-outlined custom-button" %>
+    </div>
     <table class="table is-fullwidth">
       <thead>
         <tr>

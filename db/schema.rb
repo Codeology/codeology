@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927213847) do
+ActiveRecord::Schema.define(version: 20180928000325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "availabilitys", force: :cascade do |t|
+  create_table "availabilities", force: :cascade do |t|
     t.datetime "time"
     t.integer  "user_id"
-    t.index ["user_id"], name: "index_availabilitys_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_availabilities_on_user_id", using: :btree
   end
 
   create_table "past_interviews", force: :cascade do |t|
@@ -53,5 +53,5 @@ ActiveRecord::Schema.define(version: 20180927213847) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  add_foreign_key "availabilitys", "users"
+  add_foreign_key "availabilities", "users"
 end

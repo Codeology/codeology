@@ -1,22 +1,23 @@
-class AvailabilityController < ApplicationController
+class AvailabilitiesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_login
   before_action :logged_in_user, only: [:create, :index]
   before_action :correct_user,   only: [:destroy]
 
   def showUserAvailability
     @curr_user = User.find(session[:user_id])
-    @userAvailabilitys = @curr_user.availabilitys
+    @userAvailabilitys = @curr_user.availabilitys.order('time ASC')
     render layout: 'web_application'
   end
   
   def index
     @curr_user = User.find(session[:user_id])
-    @allAvailabilitys = Availability.order('time DESC').all
+    @allAvailabilitys = Availability.order('time ASC').all
     render layout: 'web_application'
   end
 
   def new
     @curr_user = User.find(session[:user_id])
+    render layout: 'web_application'
   end
  
   def create
