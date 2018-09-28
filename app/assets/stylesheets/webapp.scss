@@ -21,15 +21,20 @@ $codeology-blue: #92D5E6;
   color: $codeology-blue;
 }
 
-.custom-button.is-success.is-outlined.is-rounded.is-medium.button{
+.custom-button.is-success.is-outlined.is-rounded.button{
   border-color: $codeology-green;
   color: $codeology-green;
   transition: .25s;
 }
 
-.custom-button.is-success.is-outlined.is-rounded.is-medium.button:hover{
+.custom-button.is-success.is-outlined.is-rounded.button:hover{
   background-color: $codeology-green;
+  border-color: $codeology-green;
   color: white;
+}
+
+.button.is-rounded.is-danger.is-outlined.custom-button{
+  transition: .25s
 }
 
 /* ============================ */
