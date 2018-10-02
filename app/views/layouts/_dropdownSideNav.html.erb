@@ -14,56 +14,56 @@
       <div class="dropdown-menu" id="dropdown-menu" role="menu">
         <div class="dropdown-content">
           
-          <%= link_to availabilities_path, :class => "dropdown-item" do %>
+          <%= link_to availabilities_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class="fa fa-terminal"></i>
             </span>
             Get Interviewed
           <% end %>
 
-          <%= link_to myAvailability_path, :class => "dropdown-item" do %>
+          <%= link_to myAvailability_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class="fa fa-comments-o"></i>
             </span>
             Interview Others
           <% end %>
 
-          <%= link_to upcoming_interviews_path, :class => "dropdown-item" do %>
+          <%= link_to upcoming_interviews_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class="fa fa-calendar"></i>
             </span>
             Upcoming
           <% end %>
 
-          <a class="dropdown-item">
+          <a class="dropdown-item custom">
             <span class="custom-icon">
               <i class="fa fa-bar-chart"></i>
             </span>
             Completed
           </a>
 
-          <%= link_to users_path, :class => "dropdown-item" do %>
+          <%= link_to users_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class="fa fa-address-book-o"></i>
             </span>
             Member Directory
           <% end %>
 
-          <a href="/" class="dropdown-item">
+          <a href="/" class="dropdown-item custom">
             <span class="custom-icon">
               <i class="fa fa-angle-double-left"></i>
             </span>
             Back to Website
           </a>
           
-          <%= link_to user_path(@curr_user), :class => "dropdown-item" do %>
+          <%= link_to user_path(@curr_user), :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class=" icon-flipped fa fa-gears"></i>
             </span>
             Settings
           <% end %>
 
-          <a rel="nofollow" data-method="delete" href="/logout" class="dropdown-item">
+          <a rel="nofollow" data-method="delete" href="/logout" class="dropdown-item custom">
             <span class="custom-icon">
               <i class=" icon-flipped fa fa-sign-out"></i>
             </span>

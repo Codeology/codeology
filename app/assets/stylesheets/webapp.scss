@@ -41,6 +41,10 @@ $codeology-blue: #92D5E6;
 /* Side bar styling
 /* ============================ */
 
+.dropdown-item.custom{
+  height: 10vh;
+}
+
 .sideNav {
   height: 100%;
   min-width : 200px;
