@@ -35,12 +35,12 @@
             Upcoming
           <% end %>
 
-          <a class="dropdown-item custom">
+          <%= link_to past_interviews_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">
               <i class="fa fa-bar-chart"></i>
             </span>
             Completed
-          </a>
+          <% end %>
 
           <%= link_to users_path, :class => "dropdown-item custom" do %>
             <span class="custom-icon">

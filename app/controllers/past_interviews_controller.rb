@@ -33,6 +33,10 @@ class PastInterviewsController < ApplicationController
         @curr_user = User.find(session[:user_id])
         render layout: 'web_application'
       end
+
+      def update
+        redirect_to past_interviews_path
+      end
     
       private
     

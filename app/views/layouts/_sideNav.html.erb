@@ -29,12 +29,12 @@
     Upcoming
   <% end %>
 
-  <a class="panel-block sideNav-custom has-text-grey-lighter">
+  <%= link_to past_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
     <span class="custom-icon">
       <i class="fa fa-bar-chart"></i>
     </span>
     Completed
-  </a>
+  <% end %>
 
   <a href="/users" class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">
