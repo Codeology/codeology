@@ -9,8 +9,15 @@ class AvailabilitiesController < ApplicationController
     render layout: 'web_application'
   end
   
+  def prune
+    @curr_user = User.find(session[:user_id])
+    Availability.where("time <= ?", 24.hours.from_now).destroy_all
+    redirect_to availabilities_path
+  end
+
   def index
     @curr_user = User.find(session[:user_id])
+    Availability.where("time <= ?", 24.hours.from_now).destroy_all
     @allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
     render layout: 'web_application'
   end
@@ -39,8 +46,7 @@ class AvailabilitiesController < ApplicationController
   def update
     @curr_user = User.find(session[:user_id])    
     @availability = Availability.find(params[:id])
-    @giving_user = User.find(@availability.user_id)
-    @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @giving_user.id, time: @availability.time)
+    @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, time: @availability.time)
     if @upcoming_interview.save
       flash.now[:success] = "Successful booking!"
       Availability.find(params[:id]).destroy

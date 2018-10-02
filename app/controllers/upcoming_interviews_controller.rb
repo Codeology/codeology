@@ -5,11 +5,18 @@ class UpcomingInterviewsController < ApplicationController
     
     def index
       @curr_user = User.find(session[:user_id])
+
+      # Prune upcoming interviews
+      upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now)
+      upcomingInterviews.each do |upcoming|
+          @past_interview = Past_interview.new(interviewee: upcoming.interviewee, interviewer: upcoming.interviewer, time: upcoming.time)
+          @past_interview.save
+      end
+
       # Get upcoming interviews
       allUpcomingReceiving = Upcoming_interview.where(interviewee: session[:user_id]).order('time ASC')
       allUpcomingGiving = Upcoming_interview.where(interviewer: session[:user_id]).order('time ASC')
 
-      
       # Create map to store usernames
       @mappedUpcomingReceiving = []
       @mappedUpcomingGiving = []
