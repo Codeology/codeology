@@ -1,0 +1,52 @@
+<section class="section">
+  <div class="container is-fluid has-text-centered">
+      
+    <h1 class="title is-2 has-text-black small-vertical-padding">Upcoming Interviews</h1>
+
+    <table class="table is-fullwidth">
+      <thead>
+        <tr><th>Receiving Interviews At:</th></tr>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @allUpcomingReceiving.each do |receiving| %>
+          <tr>
+          <!-- TODO parse date and time for 1st and 2nd respectively -->
+            <td class="is-size-5 is-size-6-mobile"><%= receiving.time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= receiving.time.localtime.strftime("%I:00 %p") %></td>
+            <% if is_admin? %>  
+            <td><%= link_to 'Cancel', upcoming_interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table class="table is-fullwidth">
+      <thead>
+        <tr><th>Giving Interviews At:</th></tr>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @allUpcomingGiving.each do |giving| %>
+          <tr>
+          <!-- TODO parse date and time for 1st and 2nd respectively -->
+            <td class="is-size-5 is-size-6-mobile"><%= giving.time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= giving.time.localtime.strftime("%I:00 %p") %></td>
+            <td><%= link_to 'Cancel', upcoming_interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
