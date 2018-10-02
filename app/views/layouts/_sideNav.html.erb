@@ -8,12 +8,12 @@
     <% end %>
   </div>
 
-  <a href="/availabilities" class="panel-block sideNav-custom has-text-grey-lighter">
+  <%= link_to availabilities_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
     <span class="custom-icon">
       <i class="fa fa-terminal"></i>
     </span>
     Get Interviewed
-  </a>
+  <% end %>
 
   <%= link_to myAvailability_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
     <span class="custom-icon">
@@ -22,12 +22,12 @@
     Interview Others
   <% end %>
 
-  <a class="panel-block sideNav-custom has-text-grey-lighter">
+  <%= link_to upcoming_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
     <span class="custom-icon">
       <i class="fa fa-calendar"></i>
     </span>
     Upcoming
-  </a>
+  <% end %>
 
   <a class="panel-block sideNav-custom has-text-grey-lighter">
     <span class="custom-icon">

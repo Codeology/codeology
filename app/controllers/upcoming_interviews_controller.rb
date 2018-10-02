@@ -1,12 +1,31 @@
-class AvailabilitiesController < ApplicationController
+class UpcomingInterviewsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_login
   before_action :logged_in_user, only: [:index]
   before_action :correct_user,   only: [:destroy]
     
     def index
       @curr_user = User.find(session[:user_id])
-      @allUpcomingReceiving = Upcoming_interview.where(interviewee: session[:user_id]).order('time ASC')
-      @allUpcomingGiving = Upcoming_interview.where(interviewer: session[:user_id]).order('time ASC')
+      # Get upcoming interviews
+      allUpcomingReceiving = Upcoming_interview.where(interviewee: session[:user_id]).order('time ASC')
+      allUpcomingGiving = Upcoming_interview.where(interviewer: session[:user_id]).order('time ASC')
+
+      
+      # Create map to store usernames
+      @mappedUpcomingReceiving = []
+      @mappedUpcomingGiving = []
+
+      # Map usernames
+      allUpcomingReceiving.each do |item|
+        givingUser = User.find(item.interviewer)
+        @mappedUpcomingReceiving.push({:username => givingUser.name, :interview => item})
+      end
+      
+      # Map usernames
+      allUpcomingGiving.each do |item|
+        receivingUser = User.find(item.interviewee)
+        @mappedUpcomingGiving.push({:username => receivingUser.name, :interview => item})
+      end
+
       render layout: 'web_application'
     end
    
@@ -34,8 +53,9 @@ class AvailabilitiesController < ApplicationController
   
       # Confirms the correct user or user is admin
       def correct_user
-        @user = User.find(@availability.user_id)
-        unless (current_user?(@user) || is_admin?)
+        @giver = User.find(@upcoming_interview.interviewer)
+        @receiver = User.find(@upcoming_interview.interviewee)
+        unless (current_user?(@giver) || current_user?(@receiver) || is_admin?)
           flash[:warning] = "You do not have authorization."        
           redirect_to dashboard_path 
         end

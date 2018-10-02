@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :account_activations, :only => [:new, :create, :edit]
   resources :password_resets, :only => [:new, :create, :edit, :update]
   resources :availabilities, :only => [:index, :new, :create, :update, :destroy]
-  resources :upcoming_interviews, :only => [:index, :delete]
+  resources :upcoming_interviews, :only => [:index, :destroy]
   #resources :past_interviews, :only => [:index, :edit, :update]
 end
 
