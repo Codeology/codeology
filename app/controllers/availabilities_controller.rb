@@ -36,6 +36,9 @@ class AvailabilitiesController < ApplicationController
     redirect_to showUserAvailability_path
   end
 
+  def book
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def availability_params

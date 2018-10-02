@@ -19,8 +19,8 @@
         <% @userAvailabilitys.each do |availability| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td class="is-size-5 is-size-6-mobile"><%= availability.time.new_offset(DateTime.now.offset).strftime("%m/%d/%y") %></td>
-            <td class="is-size-5 is-size-6-mobile"><%= availability.time.new_offset(DateTime.now.offset).strftime("%I:00 %p") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= availability.time.localtime.strftime("%I:00 %p") %></td>
             <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  class: "button is-rounded is-danger is-outlined custom-button" %></td>
           </tr>
         <% end %>
