@@ -2,6 +2,7 @@
 class Availability < ApplicationRecord
     belongs_to :user
 
+    # method unused but left for reference
     def prune_availability
         #delete old availabilities (24 hours)
         #availability.time < 1.days.from_now

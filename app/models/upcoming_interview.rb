@@ -1,4 +1,6 @@
 class Upcoming_interview < ApplicationRecord
+    
+    # method unused but left for reference
     def prune_upcoming
         upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now)
         upcomingInterviews.each do |upcoming|

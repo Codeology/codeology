@@ -16,8 +16,21 @@ class AvailabilitiesController < ApplicationController
   end
 
   def index
-    @curr_user = User.find(session[:user_id])
+    # Not the most efficient way to do this
+    # Every time a user looks at availabilities, all availabilities
+    # within 24 hours are deleted (so that people can only sign up for
+    # an interview at least 24 hours in advance)
+    #
+    # Potential optimization is to keep a boolean that tracks if this
+    # has been done within the past hour interval. This will reduce amount
+    # of times we hit the database.
+    #
+    # However, due to the small scale of this application this is fine
+    # If for some reason this application needs to scale then the
+    # optimization is recommended.
     Availability.where("time <= ?", 24.hours.from_now).destroy_all
+
+    @curr_user = User.find(session[:user_id])
     @allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
     render layout: 'web_application'
   end
