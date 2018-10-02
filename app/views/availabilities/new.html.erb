@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container is-fluid">
+      
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">New Availability</h1>
+    
+    <input type="date"  data-display-mode="inline" id="newAvailability">
+
+  </div>
+</section>
+
+
+<script type="text/javascript">
+  // Initialize all input of date type.
+  var calendars = bulmaCalendar.attach('[type="date"]');
+
+  // Loop on each calendar initialized
+  for(var i = 0; i < calendars.length; i++) {
+    // Add listener to date:selected event
+    calendars[i].on('date:selected', date => {
+      console.log(date);
+    });
+  }
+</script>
