@@ -53,8 +53,9 @@ class UpcomingInterviewsController < ApplicationController
   
       # Confirms the correct user or user is admin
       def correct_user
-        @giver = User.find(@upcoming_interview.interviewer)
-        @receiver = User.find(@upcoming_interview.interviewee)
+        @interview = Upcoming_interview.find(params[:id])
+        @giver = User.find(@interview.interviewer)
+        @receiver = User.find(@interview.interviewee)
         unless (current_user?(@giver) || current_user?(@receiver) || is_admin?)
           flash[:warning] = "You do not have authorization."        
           redirect_to dashboard_path 

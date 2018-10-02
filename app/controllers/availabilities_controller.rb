@@ -1,6 +1,6 @@
 class AvailabilitiesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_login
-  before_action :logged_in_user, only: [:create, :index]
+  before_action :logged_in_user, only: [:new, :create, :index]
   before_action :correct_user,   only: [:destroy]
 
   def showUserAvailability
