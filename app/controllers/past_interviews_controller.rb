@@ -47,6 +47,13 @@ class PastInterviewsController < ApplicationController
 
   def edit
     @curr_user = User.find(session[:user_id])
+    @past_interview = Past_interview.find(params[:id])
+    # Find if user is interviewer or interviewee
+    if @past_interview.interviewee == @curr_user.id
+      @is_interviewee = true
+    else
+      @is_interviewee = false
+    end
     render layout: 'web_application'
   end
 

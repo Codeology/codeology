@@ -2,33 +2,78 @@
 
 <section id="edit" class="hero">
   <div class="hero-body" id="login-box">
-    <div class="columns has-text-centered is-centered">
-      <div class="column is-6">
-        <h2 class="title is-2 has-text-black extra-top-padding">Edit User</h2>
-       
-        <%= render 'layouts/error_messages' %>
-       
-        <%= form_for(@user) do |f| %>
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                <i class="fa fa-lg fa-user"></i>
-              </span>
-            </p>
-          </div>
-
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">Edit User</h2>
+              
+        <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
+          <input autocomplete="off" name="hidden" type="text" style="display:none;">
           
           <div class="field">
-            <p class="control has-icons-left">
-              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
+            <label class="label">
               <span class="icon is-small is-left">
-                <i class="fa fa-lg fa-envelope-o"></i>
+                <i class="fa fa-lg fa-pencil-square-o"></i>
               </span>
-          </p>
+              Feedback</label>
+            <p class="control is-expanded">
+              <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewer" placeholder="Help your interviewee get better!"></textarea>   
+            </p>
+          </div>
+      
+          <div class="field is-grouped">
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="technical" name="technical">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-wrench"></i>
+              </div>
+            </div>
+
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="problem_solving" name="problem_solving">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-lightbulb-o"></i>
+              </div>
+            </div>
+
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="communication" name="communication">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-quote-left"></i>
+              </div>
+            </div>
+          </div>
+    
+          <div class="field is-grouped">
+            
           </div>
 
-          <%= f.submit "Submit Changes", class: "button is-rounded", style: "margin-top: 10px;"%> 
+          <div class="field is-grouped">
+            
+          </div>
+
+          <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
+        
         <% end %>
         
       </div>

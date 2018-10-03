@@ -8,6 +8,7 @@
         <div class="tabs is-toggle is-toggle-rounded is-centered">
           <ul>
             <li onclick="toggleByMe()" id="by_me_tab" class=""><a><span>Feedback By Me</span></a></li>
+            <li><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview) %></li>
             <li onclick="toggleForMe()" id="for_me_tab" class="is-active"><a><span>Feedback About Me</span></a></li>
           </ul>
         </div>
@@ -123,7 +124,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   
