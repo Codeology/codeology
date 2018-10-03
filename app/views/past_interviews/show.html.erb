@@ -5,14 +5,18 @@
     <div class="columns is-centered">
       <div class="column is-10">
 
-        <div class="tabs is-toggle is-toggle-rounded">
+        <div class="tabs is-toggle is-toggle-rounded is-centered">
           <ul>
-            <li id="by_me_tab" class="is-active"><a><span>Feedback By Me</span></a></li>
-            <li id="for_me_tab" class=""><a><span>Feedback About Me</span></a></li>
+            <li onclick="toggleByMe()" id="by_me_tab" class=""><a><span>Feedback By Me</span></a></li>
+            <li onclick="toggleForMe()" id="for_me_tab" class="is-active"><a><span>Feedback About Me</span></a></li>
           </ul>
         </div>
 
-        <div class="card">
+        <% if @is_interviewee %>
+          <div class="card" id="for_me">
+        <% else %>
+          <div class="card" id="by_me" style="display:none;">
+        <% end %>
           <div class="card-content">
             
             <div class="media">
@@ -47,7 +51,7 @@
               </div>
             </div>
             <div class="content">
-              <% @past_interview.communnication_score.times do %>
+              <% @past_interview.communication_score.times do %>
                 <span class="icon">
                   <i class="fa fa-lg fa-star"></i>
                 </span>
@@ -58,13 +62,17 @@
                 <p class="subtitle is-6">Help your interviewee get better!</p>
               </div>
             </div>
-            <div class="content">
+            <div class="content" style="font-family: 'Courier New', Courier, monospace;">
               <%= @past_interview.feedback_interviewee %>
             </div>
           </div>
         </div>
         
-        <div class="card">
+        <% if @is_interviewee %>
+          <div class="card" id="by_me" style="display:none;">
+        <% else %>
+          <div class="card" id="for_me">
+        <% end %>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
@@ -110,7 +118,7 @@
                 <p class="subtitle is-6">Help your interviewer get better!</p>
               </div>
             </div>
-            <div class="content">
+            <div class="content" style="font-family: 'Courier New', Courier, monospace;">
               <%= @past_interview.feedback_interviewer %>
             </div>
           </div>
@@ -121,3 +129,20 @@
   
   </div>
 </section>
+
+<script type="text/javascript">
+function toggleByMe() {
+  $("#by_me_tab").attr('class', 'is-active');
+  $("#for_me_tab").attr('class', '');
+  $("#by_me").css('display', 'block');
+  $("#for_me").css('display', 'none');
+}
+
+function toggleForMe() {
+  $("#by_me_tab").attr('class', '');
+  $("#for_me_tab").attr('class', 'is-active');
+  $("#by_me").css('display', 'none');
+  $("#for_me").css('display', 'block');
+}
+
+</script>

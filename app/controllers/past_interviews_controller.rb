@@ -35,8 +35,10 @@ class PastInterviewsController < ApplicationController
     # Find other user's id and then find that user
     if @past_interview.interviewee == @curr_user.id
       other_id = @past_interview.interviewer
+      @is_interviewee = true
     else
       other_id = @past_interview.interviewee
+      @is_interviewee = false
     end
     @other_user = User.find(other_id)
     
