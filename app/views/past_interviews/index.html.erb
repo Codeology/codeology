@@ -18,11 +18,11 @@
         <% @mappedPastReceiving.each do |receiving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td class="is-size-6 is-size-7-mobile"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-6 is-size-7-mobile"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
-            <td class="is-size-6 is-size-7-mobile"><%= receiving[:username] %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:username] %></td>
             <% interview = receiving[:interview] %>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -44,11 +44,11 @@
         <% @mappedPastGiving.each do |giving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td class="is-size-6 is-size-7-mobile"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-6 is-size-7-mobile"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
-            <td class="is-size-6 is-size-7-mobile"><%= giving[:username] %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:username] %></td>
             <% interview = giving[:interview] %>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
       </tbody>

@@ -13,7 +13,7 @@ class AccountActivationsController < ApplicationController
       else
         @user.send(:reset_activation_digest)
         @user.send_activation_email
-        flash[:info] = "Email sent with password reset instructions"
+        flash[:info] = "Email sent with account activation instructions"
         redirect_to root_url
       end
     else

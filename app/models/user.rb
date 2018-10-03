@@ -52,6 +52,7 @@ class User < ApplicationRecord
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
   end
+  
   # is_admin controls whether this user should have website administration capabilities
   # i.e. toggling admin for other people, changing account information, etc.
   def toggle_admin
