@@ -24,11 +24,11 @@
     <!-- MAIN CONTENT -->
     <div id="main-content-container" class="put-footer-bottom">
       <!-- NOTIFICATIONS -->
-        <div class="container extra-navbar-padding">
-          <% flash.each do |key, value| %>
-            <div class="notification is-<%= key %>"><%= value %></div>
-          <% end %>
-        </div>
+      <div class="container extra-navbar-padding">
+        <% flash.each do |key, value| %>
+          <div class="notification is-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
 
       <%= yield %>
     </div>

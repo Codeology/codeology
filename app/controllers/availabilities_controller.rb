@@ -61,7 +61,7 @@ class AvailabilitiesController < ApplicationController
  
   def destroy
     Availability.find(params[:id]).destroy
-    flash.now[:success] = "Availability deleted"
+    flash[:success] = "Availability deleted"
     redirect_to myAvailability_path
   end
 
@@ -71,10 +71,10 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.find(params[:id])
     @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, time: @availability.time)
     if @upcoming_interview.save
-      flash.now[:success] = "Successful booking!"
+      flash[:success] = "Successful booking!"
       Availability.find(params[:id]).destroy
     else
-      flash.now[:danger] = "Booking failed. Submit an issue if this persists"
+      flash[:danger] = "Booking failed. Submit an issue if this persists"
     end
     redirect_to availabilities_path
   end

@@ -39,7 +39,7 @@ class UpcomingInterviewsController < ApplicationController
    
     def destroy
       Upcoming_interview.find(params[:id]).destroy
-      flash.now[:success] = "Interview cancelled"
+      flash[:success] = "Interview cancelled"
       redirect_to upcoming_interviews_path
     end
   

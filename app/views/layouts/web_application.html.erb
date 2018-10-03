@@ -17,7 +17,6 @@
   </head>
 
   <body onresize="adjustForMobile()">
-
     <!-- NAVPANEL -->
     <div id="sideNavPanel" class="sideNav is-hidden-mobile">
     <%= render "layouts/sideNav" %>
@@ -49,7 +48,12 @@
 
     <!-- MAIN CONTENT -->
     <div id="resize-content-container" class="put-footer-bottom">
-      <!-- BODY -->
+      <!-- BODY --><!-- NOTIFICATIONS -->
+      <div class="container extra-navbar-padding">
+        <% flash.each do |key, value| %>
+          <div class="has-text-centered notification is-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
   </body>
