@@ -16,6 +16,7 @@ class AvailabilitiesController < ApplicationController
   end
 
   def index
+    
     # Not the most efficient way to do this
     # Every time a user looks at availabilities, all availabilities
     # within 24 hours are deleted (so that people can only sign up for
@@ -101,12 +102,36 @@ class AvailabilitiesController < ApplicationController
 
   # the update path is used exclusively for booking interviews
   def update
+    # Get user and requested availability
     @curr_user = User.find(session[:user_id])    
     @availability = Availability.find(params[:id])
+    # Create new upcoming interview instance
     @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, time: @availability.time)
-    if @upcoming_interview.save
+    
+    # Query DB for existing upcoming-interviews to check overlap/duplicates
+    userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
+    
+    # Create overlapping times
+    timeObj = @availability.time.gmtime
+    ahead = timeObj + 30.minutes
+    behind = timeObj - 30.minutes
+    
+    # Finds if there is an upcoming interview at or overlapping with new availability timeslot
+    dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
+    overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
+    overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
+   
+    # if dups or overlap upcoming interview exists
+    if dupsUpcoming
+      flash[:warning] = "You already have an upcoming interview for that time"
+    elsif overlapAheadUpcoming || overlapBehindUpcoming
+      flash[:warning] = "You already have an overlapping upcoming interview for that time"
+    # if model saving into database is successful    
+    elsif @upcoming_interview.save
       flash[:success] = "Successful booking!"
       Availability.find(params[:id]).destroy
+      # Query DB for overlapping availabilities and destroy
+      Availability.where(time: ahead).or(Availability.where(time: behind).or(Availability.where(time: timeObj))).where(user_id: session[:user_id]).destroy_all
     else
       flash[:danger] = "Booking failed. Submit an issue if this persists"
     end
