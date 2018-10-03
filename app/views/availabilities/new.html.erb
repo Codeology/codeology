@@ -99,6 +99,7 @@
       let hours = (today.getHours() + 16 ) % 24;
       let minutes = today.getMinutes();
       // calculate index from current time
+      let index = 0;
       if (minutes < 29) {
         index = index + 1;
       } else if (minutes < 59) {
@@ -110,7 +111,6 @@
       if (index < 0 || index > 32) {
         index = 0;
       }
-      console.log(index);
       // Fill in options
       populate(index);
 
