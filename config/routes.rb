@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :password_resets, :only => [:new, :create, :edit, :update]
   resources :availabilities, :only => [:index, :new, :create, :update, :destroy]
   resources :upcoming_interviews, :only => [:index, :destroy]
-  resources :past_interviews, :only => [:index, :edit, :update]
+  resources :past_interviews, :only => [:index, :show, :edit, :update]
 end
 
 

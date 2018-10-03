@@ -1,0 +1,37 @@
+<% provide(:title, "Edit Past Interview") %>
+
+<section id="edit" class="hero">
+  <div class="hero-body" id="login-box">
+    <div class="columns has-text-centered is-centered">
+      <div class="column is-6">
+        <h2 class="title is-2 has-text-black extra-top-padding">Edit User</h2>
+       
+        <%= render 'layouts/error_messages' %>
+       
+        <%= form_for(@user) do |f| %>
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          
+          <div class="field">
+            <p class="control has-icons-left">
+              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-envelope-o"></i>
+              </span>
+          </p>
+          </div>
+
+          <%= f.submit "Submit Changes", class: "button is-rounded", style: "margin-top: 10px;"%> 
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180928000325) do
+ActiveRecord::Schema.define(version: 20181003195714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,11 @@ ActiveRecord::Schema.define(version: 20180928000325) do
     t.integer  "interviewee"
     t.integer  "interviewer"
     t.datetime "time"
-    t.text     "feedback"
+    t.text     "feedback_interviewee"
+    t.integer  "excitement_score"
+    t.integer  "question_score"
+    t.integer  "helpfulness_score"
+    t.text     "feedback_interviewer"
   end
 
   create_table "upcoming_interviews", force: :cascade do |t|

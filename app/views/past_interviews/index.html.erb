@@ -22,6 +22,7 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:username] %></td>
             <% interview = receiving[:interview] %>
+            <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
             <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
@@ -48,6 +49,7 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:username] %></td>
             <% interview = giving[:interview] %>
+            <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
             <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
