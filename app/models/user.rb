@@ -55,7 +55,6 @@ class User < ApplicationRecord
 
   # Sends booking email
   def send_booking_emails(other_user, upcoming_interview)
-    UserMailer.new_booking(self, other_user, upcoming_interview).deliver_now
     UserMailer.new_booking(other_user, self, upcoming_interview).deliver_now
   end
 
