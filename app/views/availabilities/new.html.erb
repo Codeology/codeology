@@ -5,9 +5,27 @@
     <div class="columns is-centered">
       <div class="column is-6">
         <%= form_tag("/availabilities", method: "post") do %>
-          <input type="text" data-toggle="datepicker" class="input is-rounded" name="availability[date]" placeholder="Pick a date">      
-          <input type="time" id="availability_time" name="availability[time]" class="input is-rounded">
+          
+          <div class="field">
+            <p class="control has-icons-left">
+              <input type="text" data-toggle="datepicker" class="input is-rounded" name="availability[date]" placeholder="Pick a date">      
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-calendar"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input type="time" id="availability_time" name="availability[time]" class="input is-rounded">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-clock-o"></i>
+              </span>
+            </p>
+          </div>
+
           <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
+        
         <% end %>
       </div>
     </div>
@@ -18,7 +36,7 @@
 <script type="text/javascript">
   let tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate()+1);
-  
+
   $('[data-toggle="datepicker"]').datepicker({
     autoHide: true,
     startDate: tomorrow,
