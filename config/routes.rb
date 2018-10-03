@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'webapp#dashboard'
 
   get '/myAvailability', to: 'availabilities#showUserAvailability'
-  get '/newAvailability', to: 'availabilities#new'
   get '/prune', to: 'availabilities#prune'
 
   resources :users

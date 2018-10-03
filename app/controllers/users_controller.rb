@@ -39,17 +39,6 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
 
   # GET /users/1/edit
   def edit
-=begin    
-    user = User.find(params[:id])
-    curr_user = User.find(session[:user_id])
-    # If current user is editing their own info or is an admin
-    if (user.id == curr_user.id) || curr_user.is_admin
-      @user = user
-    else
-      flash.now[:warning] = "You don't have permission to edit another user."
-      redirect_to dashboard_path
-    end
-=end
     @curr_user = User.find(session[:user_id])
     @user = User.find(params[:id])
     render layout: 'web_application'

@@ -41,7 +41,14 @@ class AvailabilitiesController < ApplicationController
   end
  
   def create
-    @availability = Availability.new(availability_params)
+    date = params[:availability][:date]
+    time = params[:availability][:time]
+    # combine date and time
+    datetime = Date.new(date).to_datetime + time.seconds_since_midnight.seconds
+    # convert to UTC
+    datetime = datetime.gmtime
+
+    @availability = Availability.new(time: datetime, user_id: User.find(session[:user_id]))
     if @availability.save
       flash.now[:info] = "Availability saved."
     else
@@ -56,6 +63,7 @@ class AvailabilitiesController < ApplicationController
     redirect_to showUserAvailability_path
   end
 
+  # the update path is used exclusively for booking interviews
   def update
     @curr_user = User.find(session[:user_id])    
     @availability = Availability.find(params[:id])
@@ -73,7 +81,7 @@ class AvailabilitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def availability_params
       params.require(:availability).permit(
-        :datetime
+        :time
       )
     end
 

@@ -3,8 +3,13 @@
       
     <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">New Availability</h1>
     
-    <input type="date"  data-display-mode="inline" id="newAvailability">
-
+    <%= form_tag("/availabilities", method: "post") do %>
+      <input type="date" data-display-mode="inline" id="availability_date" name="availability[date]">
+      <input type="time" id="availability_time" name="availability[time]">
+      
+      <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
+    <% end %>
+  
   </div>
 </section>
 
