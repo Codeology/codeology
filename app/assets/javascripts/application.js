@@ -17,7 +17,7 @@
 //= require_tether
 //= require bootstrap
 //= require d3
-//= require bulma-calendar
+//= require datepicker.min
 
 $(window).scroll(function(){
 

@@ -2,27 +2,27 @@
   <div class="container is-fluid">
       
     <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">New Availability</h1>
-    
-    <%= form_tag("/availabilities", method: "post") do %>
-      <input type="date" data-display-mode="inline" id="availability_date" name="availability[date]">
-      <input type="time" id="availability_time" name="availability[time]">
-      
-      <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
-    <% end %>
-  
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_tag("/availabilities", method: "post") do %>
+          <input type="text" data-toggle="datepicker" class="input is-rounded" name="availability[date]" placeholder="Pick a date">      
+          <input type="time" id="availability_time" name="availability[time]" class="input is-rounded">
+          <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
+        <% end %>
+      </div>
+    </div>
   </div>
 </section>
 
 
 <script type="text/javascript">
-  // Initialize all input of date type.
-  var calendars = bulmaCalendar.attach('[type="date"]');
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate()+1);
+  
+  $('[data-toggle="datepicker"]').datepicker({
+    autoHide: true,
+    startDate: tomorrow,
+    endDate: new Date(2019, 0, 0), 
 
-  // Loop on each calendar initialized
-  for(var i = 0; i < calendars.length; i++) {
-    // Add listener to date:selected event
-    calendars[i].on('date:selected', date => {
-      console.log(date);
-    });
-  }
+  });
 </script>
