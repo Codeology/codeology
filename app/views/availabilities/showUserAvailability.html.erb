@@ -20,7 +20,7 @@
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%I:00 %p") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
             <td style="vertical-align:middle;"><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  class: "button is-rounded is-danger is-outlined custom-button" %></td>
           </tr>
         <% end %>

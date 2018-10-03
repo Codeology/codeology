@@ -42,14 +42,48 @@ class AvailabilitiesController < ApplicationController
  
   def create
     @curr_user = User.find(session[:user_id])
-    datetime = params[:availability][:date] + " " + params[:availability][:time]
-    time = Time.strptime(datetime, "%m/%d/%Y %l:%M %P")
-    time = time.gmtime
+    datetimeString = params[:availability][:date] + " " + params[:availability][:time]
+    timeObj = Time.strptime(datetimeString, "%m/%d/%Y %l:%M %P")
+    timeObj = timeObj.gmtime
+
+    # Create overlapping times
+    ahead = timeObj + 30.minutes
+    behind = timeObj - 30.minutes
 
     # create new availability item
-    @availability = Availability.new(time: time, user_id: session[:user_id])
+    @availability = Availability.new(time: timeObj, user_id: session[:user_id])
+    
+    # Query DB for existing user availabilities to check again duplicates and overlapping times e.g. 8:30 and 9:00 overlap
+    userAvailabilities = Availability.where(user_id: session[:user_id])
+  
+    # Finds if there is an availability at or overlapping with new availability timeslot
+    dups = userAvailabilities.find {|avail| avail.time == timeObj}
+    overlapAhead = userAvailabilities.find {|avail| avail.time == ahead}
+    overlapBehind = userAvailabilities.find {|avail| avail.time == behind}
 
-    if @availability.save
+    # Query DB for existing upcoming-interviews to check overlap/duplicates
+    userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
+    
+    # Finds if there is an upcoming interview at or overlapping with new availability timeslot
+    dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
+    overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
+    overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
+
+    # If time is within 24 hours
+    if timeObj <= 24.hours.from_now
+      flash[:warning] = "Availability must be at least 24 hours ahead of current time"
+    # if dups or overlap availability exists
+    elsif dups
+      flash[:warning] = "You already have an availability posted for that time"
+    elsif overlapAhead || overlapBehind
+      flash[:warning] = "You already have an overlapping availability posted for that time"
+    # if dups or overlap upcoming interview exists
+    elsif dupsUpcoming
+      flash[:warning] = "You already have an upcoming interview for that time"
+    elsif overlapAheadUpcoming || overlapBehindUpcoming
+      flash[:warning] = "You already have an overlapping upcoming interview for that time"
+    # if model saving into database is successful
+    elsif @availability.save
       flash[:success] = "Availability saved"
     else
       flash[:danger] = "Availability couldn't be saved"
