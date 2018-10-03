@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003195714) do
+ActiveRecord::Schema.define(version: 20181003215527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20181003195714) do
 
   create_table "past_interviews", force: :cascade do |t|
     t.integer  "technical_score"
-    t.integer  "communnication_score"
+    t.integer  "communication_score"
     t.integer  "problem_solving_score"
     t.integer  "interviewee"
     t.integer  "interviewer"

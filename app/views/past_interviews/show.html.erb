@@ -1,0 +1,123 @@
+
+<section class="section">
+  <div class="container is-fluid">
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Past Interview with <%= @other_user.name %></h1>
+    <div class="columns is-centered">
+      <div class="column is-10">
+
+        <div class="tabs is-toggle is-toggle-rounded">
+          <ul>
+            <li id="by_me_tab" class="is-active"><a><span>Feedback By Me</span></a></li>
+            <li id="for_me_tab" class=""><a><span>Feedback About Me</span></a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">How were their technical skills?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.technical_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>
+            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">How was their problem solving ability?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.problem_solving_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>
+            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">What about their communication ability?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.communnication_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">Help your interviewee get better!</p>
+              </div>
+            </div>
+            <div class="content">
+              <%= @past_interview.feedback_interviewee %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">How excited would you be to work with them?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.excitement_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>
+            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">How good were the questions?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.question_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>
+            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">How helpful was your interviewer in guiding you to the solution(s)?</p>
+              </div>
+            </div>
+            <div class="content">
+              <% @past_interview.helpfulness_score.times do %>
+                <span class="icon">
+                  <i class="fa fa-lg fa-star"></i>
+                </span>
+              <% end %>
+            </div>
+            <hr>
+            <div class="media">
+              <div class="media-content">
+                <p class="subtitle is-6">Help your interviewer get better!</p>
+              </div>
+            </div>
+            <div class="content">
+              <%= @past_interview.feedback_interviewer %>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  </div>
+</section>

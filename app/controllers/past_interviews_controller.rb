@@ -32,6 +32,14 @@ class PastInterviewsController < ApplicationController
   def show
     @curr_user = User.find(session[:user_id])
     @past_interview = Past_interview.find(params[:id])
+    # Find other user's id and then find that user
+    if @past_interview.interviewee == @curr_user.id
+      other_id = @past_interview.interviewer
+    else
+      other_id = @past_interview.interviewee
+    end
+    @other_user = User.find(other_id)
+    
     render layout: 'web_application'
   end
 
