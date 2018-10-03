@@ -38,7 +38,20 @@ class UpcomingInterviewsController < ApplicationController
     end
    
     def destroy
-      Upcoming_interview.find(params[:id]).destroy
+      @curr_user = User.find(session[:user_id])      
+      upcoming = Upcoming_interview.find(params[:id])
+      # Find other user's id and then find that user
+      if upcoming.interviewee == @curr_user.id
+        other_id = upcoming.interviewer
+      else
+        other_id = upcoming.interviewee
+      end
+      other_user = User.find(other_id)
+
+      #send cancel email and then destroy upcoming interview
+      @curr_user.send_cancel_emails(other_user, upcoming)
+      upcoming.destroy
+      
       flash[:success] = "Interview cancelled"
       redirect_to upcoming_interviews_path
     end

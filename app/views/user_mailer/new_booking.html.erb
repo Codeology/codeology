@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container is-fluid has-text-centered">
+    
+    <h2 class="subtitle is-size-6 has-text-black">Codeology New Interview</h2>
+    <p class="has-text-black"> 
+      Hi <%= @user.name %>!
+      <%= @other_user.name%> has created a booking with you. You will be interviewing them at
+      <%= @upcoming_interview.time.localtime.strftime("%m/%d/%y %I:%M %p") %>
+
+      <%= link_to "Your Upcoming Interviews", upcoming_interviews_url %>
+    </p>
+        
+  </div>
+</section>

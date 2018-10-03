@@ -32,7 +32,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 8 }, allow_nil:true
   has_many :availabilitys
-  
+
   # scope :leadership_team, -> { where(is_officer: true) }
 
   # Call this once the registration activation link has been clicked to
@@ -47,12 +47,24 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
-  
+
   # Sends password reset email.
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
   end
-  
+
+  # Sends booking email
+  def send_booking_emails(other_user, upcoming_interview)
+    UserMailer.new_booking(self, other_user, upcoming_interview).deliver_now
+    UserMailer.new_booking(other_user, self, upcoming_interview).deliver_now
+  end
+
+  # Sends cancel email
+  def send_cancel_emails(other_user, upcoming_interview)
+    UserMailer.cancel_booking(self, other_user, upcoming_interview).deliver_now
+    UserMailer.cancel_booking(other_user, self, upcoming_interview).deliver_now
+  end
+
   # is_admin controls whether this user should have website administration capabilities
   # i.e. toggling admin for other people, changing account information, etc.
   def toggle_admin

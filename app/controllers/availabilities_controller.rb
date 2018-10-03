@@ -105,6 +105,7 @@ class AvailabilitiesController < ApplicationController
     # Get user and requested availability
     @curr_user = User.find(session[:user_id])    
     @availability = Availability.find(params[:id])
+    other_user = User.find(@availability.user_id)
     # Create new upcoming interview instance
     @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, time: @availability.time)
     
@@ -133,6 +134,7 @@ class AvailabilitiesController < ApplicationController
       # Query DB for overlapping availabilities and destroy
       # For example: if I book for 9pm, I want to delete my own availabilities at 8:30, 9:00, and/or 9:30 due to overlap with my new booking.
       Availability.where(time: ahead).or(Availability.where(time: behind).or(Availability.where(time: timeObj))).where(user_id: session[:user_id]).destroy_all
+      @curr_user.send_booking_emails(other_user, @upcoming_interview)
     else
       flash[:danger] = "Booking failed. Submit an issue if this persists"
     end
