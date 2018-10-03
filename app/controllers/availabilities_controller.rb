@@ -50,9 +50,9 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.new(time: time, user_id: session[:user_id])
 
     if @availability.save
-      flash[:info] = "Availability saved."
+      flash[:success] = "Availability saved"
     else
-      flash[:danger] = "Availability couldn't be saved."
+      flash[:danger] = "Availability couldn't be saved"
     end
     # puts @availability.errors.full_messages
     
@@ -61,7 +61,7 @@ class AvailabilitiesController < ApplicationController
  
   def destroy
     Availability.find(params[:id]).destroy
-    flash[:success] = "Availability deleted"
+    flash[:info] = "Availability deleted"
     redirect_to myAvailability_path
   end
 

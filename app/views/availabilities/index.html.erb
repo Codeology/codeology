@@ -16,8 +16,8 @@
         <% @allAvailabilitys.each do |availability| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td class="is-size-5 is-size-6-mobile"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-5 is-size-6-mobile"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td class="is-size-6 is-size-7-mobile"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-6 is-size-7-mobile"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
             <td>
               <%= link_to 'Book', availability, method: :patch, data: { confirm: 'You are about to book for: ' + 
               availability.time.localtime.strftime("%m/%d/%y") + " " + availability.time.localtime.strftime("%I:%M %p") }, 

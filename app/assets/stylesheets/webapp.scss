@@ -21,6 +21,19 @@ $codeology-blue: #92D5E6;
   color: $codeology-blue;
 }
 
+.custom-button.is-info.is-outlined.is-rounded.button{
+  border-color: $codeology-blue;
+  color: $codeology-blue;
+  transition: .25s;
+}
+
+.custom-button.is-info.is-outlined.is-rounded.button:hover{
+  background-color: $codeology-blue;
+  border-color: $codeology-blue;
+  color: white;
+}
+
+
 .custom-button.is-success.is-outlined.is-rounded.button{
   border-color: $codeology-green;
   color: $codeology-green;
