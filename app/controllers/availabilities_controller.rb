@@ -41,26 +41,28 @@ class AvailabilitiesController < ApplicationController
   end
  
   def create
-    date = params[:availability][:date]
-    time = params[:availability][:time]
-    # combine date and time
-    datetime = Date.new(date).to_datetime + time.seconds_since_midnight.seconds
-    # convert to UTC
-    datetime = datetime.gmtime
+    @curr_user = User.find(session[:user_id])
+    datetime = params[:availability][:date] + " " + params[:availability][:time]
+    time = Time.strptime(datetime, "%m/%d/%Y %l:%M %P")
+    time = time.gmtime
 
-    @availability = Availability.new(time: datetime, user_id: User.find(session[:user_id]))
+    # create new availability item
+    @availability = Availability.new(time: time, user_id: session[:user_id])
+
     if @availability.save
-      flash.now[:info] = "Availability saved."
+      flash[:info] = "Availability saved."
     else
-      flash.now[:danger] = "Availability couldn't be saved."      
-    end 
-    render :new  
+      flash[:danger] = "Availability couldn't be saved."
+    end
+    # puts @availability.errors.full_messages
+    
+    redirect_to new_availability_path
   end
  
   def destroy
     Availability.find(params[:id]).destroy
     flash.now[:success] = "Availability deleted"
-    redirect_to showUserAvailability_path
+    redirect_to myAvailability_path
   end
 
   # the update path is used exclusively for booking interviews
@@ -101,6 +103,7 @@ class AvailabilitiesController < ApplicationController
 
     # Confirms the correct user or user is admin
     def correct_user
+      @availability = Availability.find(params[:id])
       @user = User.find(@availability.user_id)
       unless (current_user?(@user) || is_admin?)
         flash[:warning] = "You do not have authorization."        

@@ -19,7 +19,7 @@
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
             <td class="is-size-5 is-size-6-mobile"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-5 is-size-6-mobile"><%= receiving[:interview].time.localtime.strftime("%I:00 %p") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-5 is-size-6-mobile"><%= receiving[:username] %></td>
             <% interview = receiving[:interview] %>
             <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
@@ -45,7 +45,7 @@
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
             <td class="is-size-5 is-size-6-mobile"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-5 is-size-6-mobile"><%= giving[:interview].time.localtime.strftime("%I:00 %p") %></td>
+            <td class="is-size-5 is-size-6-mobile"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-5 is-size-6-mobile"><%= giving[:username] %></td>
             <% interview = giving[:interview] %>
             <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
