@@ -131,6 +131,7 @@ class AvailabilitiesController < ApplicationController
       flash[:success] = "Successful booking!"
       Availability.find(params[:id]).destroy
       # Query DB for overlapping availabilities and destroy
+      # For example: if I book for 9pm, I want to delete my own availabilities at 8:30, 9:00, and/or 9:30 due to overlap with my new booking.
       Availability.where(time: ahead).or(Availability.where(time: behind).or(Availability.where(time: timeObj))).where(user_id: session[:user_id]).destroy_all
     else
       flash[:danger] = "Booking failed. Submit an issue if this persists"
