@@ -29,7 +29,9 @@ class AvailabilitiesController < ApplicationController
     # However, due to the small scale of this application this is fine
     # If for some reason this application needs to scale then the
     # optimization is recommended.
-    Availability.where("time <= ?", 24.hours.from_now).destroy_all
+    #
+    #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
+    Availability.where("time <= ?", 17.hours.from_now).destroy_all
 
     @curr_user = User.find(session[:user_id])
     @allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
