@@ -69,7 +69,7 @@ class PastInterviewsController < ApplicationController
         flash[:danger] = "Feedback update failed"
       end
     end
-    redirect_to past_interviews_path
+    redirect_to past_interview_path(@past_interview)
   end
 
   private

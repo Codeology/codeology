@@ -1,11 +1,11 @@
 
 <section class="section">
   <div class="container is-fluid">
-    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Interviewed  <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h1>
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h1>
     <div class="columns is-centered">
       <div class="column is-10">
 
-        <div class="tabs is-toggle is-toggle-rounded is-centered">
+        <div class="tabs is-medium is-toggle is-toggle-rounded is-centered">
           <ul>
             <li onclick="toggleByMe()" id="by_me_tab" class=""><a><span>Feedback By Me</span></a></li>
             <li><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview) %></li>
@@ -22,7 +22,7 @@
             
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">How were their technical skills?</p>
+                <p class="subtitle is-6">How were <%if @is_interviewee%>my<%else%>their<%end%> technical skills?</p>
               </div>
             </div>
             <div class="content">
@@ -35,7 +35,7 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">How was their problem solving ability?</p>
+                <p class="subtitle is-6">How was <%if @is_interviewee%>my<%else%>their<%end%> problem solving ability?</p>
               </div>
             </div>
             <div class="content">
@@ -48,7 +48,7 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">What about their communication ability?</p>
+                <p class="subtitle is-6">What about <%if @is_interviewee%>my<%else%>their<%end%> communication ability?</p>
               </div>
             </div>
             <div class="content">
@@ -60,7 +60,7 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">Help your interviewee get better!</p>
+                <p class="subtitle is-6"><%if @is_interviewee%>Their feedback to help me<%else%>My feedback to help them<%end%> get better!</p>
               </div>
             </div>
             <div class="content" style="font-family: 'Courier New', Courier, monospace;">
@@ -77,7 +77,7 @@
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">How excited would you be to work with them?</p>
+                <p class="subtitle is-6">How excited would <%if @is_interviewee%>I be to work with them<%else%>they be to work with me<%end%>?</p>
               </div>
             </div>
             <div class="content">
@@ -90,7 +90,7 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">How good were the questions?</p>
+                <p class="subtitle is-6">How good were <%if @is_interviewee%>their<%else%>my<%end%> questions?</p>
               </div>
             </div>
             <div class="content">
@@ -103,7 +103,8 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">How helpful was your interviewer in guiding you to the solution(s)?</p>
+                <p class="subtitle is-6">How helpful  <%if @is_interviewee%>where they<%else%>was I<%end%> 
+                in guiding <%if @is_interviewee%>me<%else%>them<%end%> to the solution(s)?</p>
               </div>
             </div>
             <div class="content">
@@ -116,7 +117,7 @@
             <hr>
             <div class="media">
               <div class="media-content">
-                <p class="subtitle is-6">Help your interviewer get better!</p>
+                <p class="subtitle is-6"><%if @is_interviewee%>My feedback to help them<%else%>Their feedback to help me<%end%> get better!</p>
               </div>
             </div>
             <div class="content" style="font-family: 'Courier New', Courier, monospace;">

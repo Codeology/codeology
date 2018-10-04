@@ -29,7 +29,7 @@
 
 
 
-        <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
+        <%= form_tag("/past_interviews/" + @past_interview.id.to_s, method: "patch", autocomplete: "off") do %>
           <input autocomplete="off" name="hidden" type="text" style="display:none;">
           
           <% if !@is_interviewee %>
@@ -40,7 +40,7 @@
                 </span>
                 Feedback</label>
               <p class="control is-expanded">
-                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewee" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
+                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewee" rows="8" placeholder="Help <%=@other_user.name%> get better!"><%= @past_interview.feedback_interviewee%></textarea>   
               </p>
             </div>
         
@@ -106,7 +106,7 @@
                 </span>
                 Feedback</label>
               <p class="control is-expanded">
-                <textarea id="feedback_interviewer" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
+                <textarea id="feedback_interviewer" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"><%= @past_interview.feedback_interviewer%></textarea>   
               </p>
             </div>
         
@@ -171,4 +171,12 @@
   function toggleModal() {
     $("#modal_feedback").toggleClass('is-active');
   }
+
+  $("#technical").prop("selectedIndex", <%= @past_interview.technical_score - 1%>);
+  $("#problem_solving").prop("selectedIndex", <%= @past_interview.problem_solving_score - 1%>);
+  $("#communication").prop("selectedIndex", <%= @past_interview.communication_score - 1%>);
+  $("#excitement").prop("selectedIndex", <%= @past_interview.excitement_score - 1%>);
+  $("#question").prop("selectedIndex", <%= @past_interview.question_score - 1%>);
+  $("#helpfulness").prop("selectedIndex", <%= @past_interview.helpfulness_score - 1%>);
+
 </script>
