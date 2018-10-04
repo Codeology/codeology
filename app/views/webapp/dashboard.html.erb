@@ -1,13 +1,29 @@
 <section class="hero">
   <div class="hero-body">
-    <div class="container is-fluid has-text-centered">
-      <h1 class="small-vertical-padding title is-2 has-text-black">
+    <div class="container is-fluid">
+      <h1 class="title is-2 has-text-black has-text-centered" style="padding: 3rem 0rem 0rem">
       Welcome <%= @curr_user.name %>! <hr>
       </h1>
 
-      <div class="columns is-centered is-multiline">
+    <article id="msg" class="message is-codeology-green">  
+      <div class="message-body is-codeology-green">        
+        <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
+        Welcome! There's not that many directions released as I want to get ui/ux feedback from users. Please feel free to explore and break things.
+        <br><br>
+        Some features worth noting that I am considering:
+          <li>Limits to how many interviews you can book to be interviewed</li>
+          <li>Add multiple availabilities at once on one page</li>
+          <li>Add preferred language option when posting availability</li>
+          <li>Add preferred location (in person or phone) when posting availability</li>
+        <br>
+        Feedback, issues, and bugs: Please <a href="https://github.com/CodeologyClub/codeology/issues">click here</a> to submit any form of feedback and suggestions or to report bugs or issues. Thank you!
+      </div>
+    </article>
+
+      <div class="columns is-centered has-text-centered is-multiline">
         <div class="column is-6">
           <div class="card">
+            <a href="/myAvailability">
             <div class="card-content">
               <p class="title">
                 <%= @yourAvail %>
@@ -16,11 +32,13 @@
                 Your Availabilities
               </p>
             </div>
+            </a>
           </div>
         </div>
         
         <div class="column is-6"> 
           <div class="card">
+            <a href="/availabilities">
             <div class="card-content">
               <p class="title">
                 <%= @totalAvail %>
@@ -29,11 +47,43 @@
                 Total Availabilities
               </p>
             </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="card">
+            <a href="/upcoming_interviews">
+            <div class="card-content">
+              <p class="title">
+                <%= @upcomingReceive %>
+              </p>
+              <p class="subtitle">
+                Interviews to Receive
+              </p>
+            </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="column is-6"> 
+          <div class="card">
+            <a href="/upcoming_interviews">
+            <div class="card-content">
+              <p class="title">
+                <%= @upcomingGive %>
+              </p>
+              <p class="subtitle">
+                Interviews to Give
+              </p>
+            </div>
+            </a>
           </div>
         </div>
 
         <div class="column is-6"> 
           <div class="card">
+            <a href="/past_interviews">
             <div class="card-content">
               <p class="title">
                 <%= @received %>
@@ -42,11 +92,13 @@
                 Interviews Received
               </p>
             </div>
+            </a>
           </div>
         </div>
         
         <div class="column is-6"> 
           <div class="card">
+            <a href="/past_interviews">
             <div class="card-content">
               <p class="title">
                 <%= @given %>
@@ -55,6 +107,7 @@
                 Interviews Given
               </p>
             </div>
+            </a>
           </div>
         </div>
       </div>
@@ -62,3 +115,9 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  function closeMessage() {
+    $("#msg").css('display', 'none');
+  }
+</script> 

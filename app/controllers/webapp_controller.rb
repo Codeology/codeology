@@ -9,7 +9,9 @@ class WebappController < ApplicationController
     @yourAvail = Availability.where(user_id: session[:user_id]).count
     @received = Past_interview.where(interviewee: session[:user_id]).count
     @given = Past_interview.where(interviewer: session[:user_id]).count
-    
+    @upcomingReceive = Upcoming_interview.where(interviewee: session[:user_id]).count
+    @upcomingGive = Upcoming_interview.where(interviewer: session[:user_id]).count
+
     render layout: 'web_application'
   end
   
