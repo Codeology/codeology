@@ -77,6 +77,7 @@ $codeology-blue: #92D5E6;
   height: calc((100vh - 125px)/8);
   transition: 0.2s;
   color: rgb(34, 34, 34) !important;
+  padding: 0.5em 1.5em;
 }
 
 .panel-block.sideNav-custom:hover {
@@ -129,4 +130,12 @@ $codeology-blue: #92D5E6;
 
 .button.sideNav-toggle:hover {
   background-color: $codeology-yellow;
+}
+
+/* ============================ */
+/* Misc. Styling Custom
+/* ============================ */
+
+.message-body.is-codeology-green{
+  border-color: $codeology-green;
 }

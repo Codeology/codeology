@@ -4,8 +4,32 @@
   <div class="hero-body" id="login-box">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%></h2>
+        <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">
+        Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
+        </h2>
         
+        <article class="message is-codeology-green">
+          <div class="message-body is-codeology-green">
+            We appreciate you for taking the time to leave feedback! Leaving feedback helps our peers grow as students,
+            interviewers, and interviewees and as such you are playing an important part of a well-functioning Codeology. Thank you!
+            <br><br>
+            Tips: Be as concise as possible, provide rationale, cite specific examples whenever possible, and be constructive! :)
+            <br><br>
+            Bonus Reading: <a onclick="toggleModal()">click me</a>
+          </div>
+        </article>
+
+        <div id="modal_feedback" class="modal">
+          <div class="modal-content">
+            <p class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
+            </p>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+
+
         <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
           <input autocomplete="off" name="hidden" type="text" style="display:none;">
           
@@ -145,3 +169,9 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  function toggleModal() {
+    $("#modal_feedback").attr('class', 'is-active');
+  }
+</script>
