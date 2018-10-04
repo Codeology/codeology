@@ -43,6 +43,13 @@ class AvailabilitiesController < ApplicationController
  
   def create
     @curr_user = User.find(session[:user_id])
+    puts params[:availability][:time].nil?
+    puts params[:availability][:date].nil?
+    if (params[:availability][:time].nil? || params[:availability][:date].nil?)
+      flash[:danger] = "Availability not complete"
+      redirect_to new_availability_path
+      return      
+    end
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]
     timeObj = Time.strptime(datetimeString, "%m/%d/%Y %l:%M %P")
     timeObj = timeObj.gmtime

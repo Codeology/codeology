@@ -26,7 +26,9 @@
                 <i class="fa fa-lg fa-clock-o"></i>
               </div>
             </div>
+
           </div>
+
           <div class="field is-grouped is-grouped-centered">
             <input type="submit" name="commit" value="Submit" class="button is-rounded" data-disable-with="Submit">
           </div>
@@ -40,13 +42,17 @@
 
 <script type="text/javascript">
   
+  function addAvail() {
+
+  };
+
   function populate(start)
   {
     $("#availability_time").html(""); //reset child options
     for (i = start; i<32; i++) { //populate child options 
       $("#availability_time").append("<option>"+timeArray[i]+"</option>");
     };
-  }
+  };
 
   let tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate()+1);
