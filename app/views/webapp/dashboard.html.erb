@@ -1,38 +1,62 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-fluid has-text-centered">
-      <h1 class="extra-vertical-padding title is-2 has-text-black">
-      Welcome <%= @curr_user.name %>!
+      <h1 class="small-vertical-padding title is-2 has-text-black">
+      Welcome <%= @curr_user.name %>! <hr>
       </h1>
 
-      <div class="tile is-ancestor">
-
-        <div class="tile is-vertical is-6">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
-                <p class="title">Vertical...</p>
-                <p class="subtitle">Top tile</p>
-              </article>
-              <article class="tile is-child notification is-warning">
-                <p class="title">...tiles</p>
-                <p class="subtitle">Bottom tile</p>
-              </article>
+      <div class="columns is-centered is-multiline">
+        <div class="column is-6">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                <%= @yourAvail %>
+              </p>
+              <p class="subtitle">
+                Your Availabilities
+              </p>
             </div>
-        </div>
-
-        <div class="tile is-vertical is-6">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
-                <p class="title">Vertical...</p>
-                <p class="subtitle">Top tile</p>
-              </article>
-              <article class="tile is-child notification is-warning">
-                <p class="title">...tiles</p>
-                <p class="subtitle">Bottom tile</p>
-              </article>
-            </div>
+          </div>
         </div>
         
+        <div class="column is-6"> 
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                <%= @totalAvail %>
+              </p>
+              <p class="subtitle">
+                Total Availabilities
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-6"> 
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                <%= @received %>
+              </p>
+              <p class="subtitle">
+                Interviews Received
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-6"> 
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                <%= @given %>
+              </p>
+              <p class="subtitle">
+                Interviews Given
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

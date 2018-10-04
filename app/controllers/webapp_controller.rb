@@ -5,6 +5,11 @@ class WebappController < ApplicationController
   # Since only page this one has is dashboard
   def dashboard
     @curr_user = User.find(session[:user_id])
+    @totalAvail = Availability.count
+    @yourAvail = Availability.where(user_id: session[:user_id]).count
+    @received = Past_interview.where(interviewee: session[:user_id]).count
+    @given = Past_interview.where(interviewer: session[:user_id]).count
+    
     render layout: 'web_application'
   end
   
