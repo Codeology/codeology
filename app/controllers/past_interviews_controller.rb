@@ -34,7 +34,6 @@ class PastInterviewsController < ApplicationController
     @past_interview = Past_interview.find(params[:id])
     # Find other user's id and then find that user
     @other_user, @is_interviewee = get_other_user_and_is_interviewee(@curr_user, @past_interview)
-    
     render layout: 'web_application'
   end
 
@@ -43,11 +42,33 @@ class PastInterviewsController < ApplicationController
     @past_interview = Past_interview.find(params[:id])
     # Find if user is interviewer or interviewee
     @other_user, @is_interviewee = get_other_user_and_is_interviewee(@curr_user, @past_interview)
-
     render layout: 'web_application'
   end
 
   def update
+    @curr_user = User.find(session[:user_id])
+    @past_interview = Past_interview.find(params[:id])
+    @other_user, @is_interviewee = get_other_user_and_is_interviewee(@curr_user, @past_interview)
+
+    if @is_interviewee
+      if @past_interview.update_attributes(excitement_score: params[:excitement], 
+                                            question_score: params[:question],
+                                            helpfulness_score: params[:helpfulness],
+                                            feedback_interviewer: params[:feedback_interviewer])
+        flash[:success] = "Feedback updated!"
+      else
+        flash[:danger] = "Feedback update failed"
+      end
+    else
+      if @past_interview.update_attributes(technical_score: params[:technical], 
+                                            problem_solving_score: params[:problem_solving],
+                                            communication_score: params[:communication],
+                                            feedback_interviewee: params[:feedback_interviewee])
+        flash[:success] = "Feedback updated!"
+      else
+        flash[:danger] = "Feedback update failed"
+      end
+    end
     redirect_to past_interviews_path
   end
 

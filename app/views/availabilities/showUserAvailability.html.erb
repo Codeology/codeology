@@ -1,9 +1,18 @@
 <section class="section">
-  <div class="container is-fluid has-text-centered">
+  <div class="container is-fluid">
     
-    <h1 class="title is-2 has-text-black small-vertical-padding">Your Availability</h1>
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Your Availability</h1>
+    <article class="message is-codeology-green">
+      <div class="message-body is-codeology-green">
+        We appreciate you for taking the time to give interviews! Interviewing helps both interviewer and interviewee: the interviewer
+        crystallizes their knowledge by providing it to their peer while the interviewee receives much needed practice.
+        As such, you are playing an important part in a well-functioning Codeology. Thank you!
+        <br><br>
+        Tips: Prepare questions of varying difficulty to match interviewee needs, understand solutions in multiple languages, and be smart together! :)
+      </div>
+    </article>
     
-    <div class="small-bottom-padding">
+    <div class="small-bottom-padding has-text-centered">
       <%= link_to_nav_item "Add Availability", new_availability_path, :class => "button is-rounded is-medium is-success is-outlined custom-button" %>
     </div>
     <table class="table is-fullwidth">

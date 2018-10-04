@@ -1,9 +1,7 @@
 <% provide(:title, "Edit Past Interview") %>
 
-<section id="edit" class="hero">
-  <div class="hero-body" id="login-box">
-    <div class="columns is-centered">
-      <div class="column is-8">
+<section id="edit" class="section">
+  <div class="container is-fluid">
         <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">
         Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
         </h2>
@@ -11,11 +9,11 @@
         <article class="message is-codeology-green">
           <div class="message-body is-codeology-green">
             We appreciate you for taking the time to leave feedback! Leaving feedback helps our peers grow as students,
-            interviewers, and interviewees and as such you are playing an important part of a well-functioning Codeology. Thank you!
+            interviewers, and interviewees and as such you are playing an important part in a well-functioning Codeology. Thank you!
             <br><br>
             Tips: Be as concise as possible, provide rationale, cite specific examples whenever possible, and be constructive! :)
             <br><br>
-            Bonus Reading: <a onclick="toggleModal()">click me</a>
+            Bonus reading for general feedback: <a onclick="toggleModal()">click me</a>
           </div>
         </article>
 
@@ -42,7 +40,7 @@
                 </span>
                 Feedback</label>
               <p class="control is-expanded">
-                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
+                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewee" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
               </p>
             </div>
         
@@ -108,7 +106,7 @@
                 </span>
                 Feedback</label>
               <p class="control is-expanded">
-                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
+                <textarea id="feedback_interviewer" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"></textarea>   
               </p>
             </div>
         
@@ -116,7 +114,7 @@
               <label class="label">How excited would you be to work with them?</label>
               <div class="control has-icons-left">
                 <div class="select is-rounded">
-                  <select id="technical" name="technical">
+                  <select id="excitement" name="excitement">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -133,7 +131,7 @@
               <label class="label">How good were the questions?</label>
               <div class="control has-icons-left">
                 <div class="select is-rounded">
-                  <select id="problem_solving" name="problem_solving">
+                  <select id="question" name="question">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -150,7 +148,7 @@
               <label class="label">How helpful was your interviewer in guiding you to the solution(s)?</label>
               <div class="control has-icons-left">
                 <div class="select is-rounded">
-                  <select id="communication" name="communication">
+                  <select id="helpfulness" name="helpfulness">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -165,9 +163,7 @@
           <% end%>
           <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
         <% end %>
-        
-      </div>
-    </div>
+     
   </div>
 </section>
 
