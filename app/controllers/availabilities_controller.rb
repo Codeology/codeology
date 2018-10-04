@@ -84,7 +84,7 @@ class AvailabilitiesController < ApplicationController
     overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
 
     # If time is within 24 hours
-    if timeObj <= 24.hours.from_now
+    if timeObj.gmtime <= 24.hours.from_now
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
     elsif dups
