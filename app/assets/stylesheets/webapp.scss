@@ -21,9 +21,44 @@ $codeology-blue: #92D5E6;
   color: $codeology-blue;
 }
 
+.custom-button.is-info.is-outlined.is-rounded.button{
+  border-color: $codeology-blue;
+  color: $codeology-blue;
+  transition: .25s;
+}
+
+.custom-button.is-info.is-outlined.is-rounded.button:hover{
+  background-color: $codeology-blue;
+  border-color: $codeology-blue;
+  color: white;
+}
+
+
+.custom-button.is-success.is-outlined.is-rounded.button{
+  border-color: $codeology-green;
+  color: $codeology-green;
+  transition: .25s;
+}
+
+.custom-button.is-success.is-outlined.is-rounded.button:hover{
+  background-color: $codeology-green;
+  border-color: $codeology-green;
+  color: white;
+}
+
+.button.is-rounded.is-danger.is-outlined.custom-button{
+  transition: .25s
+}
+
 /* ============================ */
 /* Side bar styling
 /* ============================ */
+
+.dropdown-item.custom{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
 
 .sideNav {
   height: 100%;
@@ -31,10 +66,9 @@ $codeology-blue: #92D5E6;
   max-width : 250px;
   width: 20vw;
   position: fixed;
-  background-color: #333333; 
-  transition: 0.25s;
+  background-color: rgb(231, 231, 231); 
   z-index: 2;
-  box-shadow: 0px 0px 2px 1px #888888; 
+  box-shadow: 0px 0px 4px 1px #888888; 
 }
 
 
@@ -42,13 +76,26 @@ $codeology-blue: #92D5E6;
   border: 0px;
   height: calc((100vh - 125px)/8);
   transition: 0.2s;
+  color: rgb(34, 34, 34) !important;
+  padding: 0.5em 1.5em;
 }
 
 .panel-block.sideNav-custom:hover {
-  background-color: $codeology-green;
   color: black !important;
-  box-shadow: -1px 2px 4px 2px #303030; 
+  box-shadow: -1px 0px 4px 2px #777777; 
   font-weight: bold;
+}
+
+.panel-heading.sideNav-custom {
+  border: 0px;
+  transition: 0.2s;
+  background-color: rgb(231, 231, 231);
+  border-radius: 0px;
+}
+
+.panel-heading.sideNav-custom:hover {
+  box-shadow: -1px 0px 4px 2px #777777;
+  background-color: $codeology-green;
 }
 
 .custom-icon {
@@ -69,12 +116,6 @@ $codeology-blue: #92D5E6;
   -ms-transform: scaleX(-1);
 }
 
-.panel-heading.sideNav-custom {
-  border: 0px;
-  background-color: $codeology-green;
-  border-radius: 0px;
-}
-
 .image.sideNav-custom {
   display: inline-block;
 }
@@ -89,4 +130,12 @@ $codeology-blue: #92D5E6;
 
 .button.sideNav-toggle:hover {
   background-color: $codeology-yellow;
+}
+
+/* ============================ */
+/* Misc. Styling Custom
+/* ============================ */
+
+.message-body.is-codeology-green{
+  border-color: $codeology-green;
 }

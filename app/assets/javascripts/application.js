@@ -17,7 +17,8 @@
 //= require_tether
 //= require bootstrap
 //= require d3
-
+//= require datepicker.min
+/*
 $(window).scroll(function(){
 
   var wScroll = $(this).scrollTop();
@@ -34,3 +35,4 @@ $(window).scroll(function(){
   }
 
 });
+*/

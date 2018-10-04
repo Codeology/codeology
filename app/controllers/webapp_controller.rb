@@ -1,8 +1,17 @@
 class WebappController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_login
 
+  # You can prob merge this controller wih availability controller
+  # Since only page this one has is dashboard
   def dashboard
     @curr_user = User.find(session[:user_id])
+    @totalAvail = Availability.count
+    @yourAvail = Availability.where(user_id: session[:user_id]).count
+    @received = Past_interview.where(interviewee: session[:user_id]).count
+    @given = Past_interview.where(interviewer: session[:user_id]).count
+    @upcomingReceive = Upcoming_interview.where(interviewee: session[:user_id]).count
+    @upcomingGive = Upcoming_interview.where(interviewer: session[:user_id]).count
+
     render layout: 'web_application'
   end
   

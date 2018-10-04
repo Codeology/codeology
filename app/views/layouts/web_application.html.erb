@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla|Roboto">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +17,6 @@
   </head>
 
   <body onresize="adjustForMobile()">
-
     <!-- NAVPANEL -->
     <div id="sideNavPanel" class="sideNav is-hidden-mobile">
     <%= render "layouts/sideNav" %>
@@ -25,7 +24,7 @@
     
     <!-- DropDown menu -->
     <div class="is-hidden-tablet">
-    <%= render "layouts/webappNavbar"%>
+    <%= render "layouts/dropdownSideNav"%>
     </div>
 
     <!-- NAVPANEL TOGGLE -->
@@ -49,10 +48,16 @@
 
     <!-- MAIN CONTENT -->
     <div id="resize-content-container" class="put-footer-bottom">
-      <!-- BODY -->
+      <!-- BODY --><!-- NOTIFICATIONS -->
+      <div class="container is-fluid extra-navbar-padding">
+        <% flash.each do |key, value| %>
+          <div class="has-text-centered notification is-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
   </body>
+        <!--
 
   <footer id="footer" class="footer">
     <div class="container is-fluid">
@@ -81,6 +86,7 @@
       </div>
     </div>
   </footer>
+        -->
 
   <script type="text/javascript"> 
     adjustForMobile();

@@ -1,0 +1,13 @@
+<section class="section">
+  <div class="container is-fluid has-text-centered">
+    
+    <h2 class="subtitle is-size-6 has-text-black">Codeology Cancelled Interview</h2>
+    <p class="has-text-black"> 
+      Hi <%= @user.name %>!
+      Your interview with <%= @other_user.name%> at <%= @upcoming_interview.time.localtime.strftime("%m/%d/%y %I:%M %p") %> has been cancelled.
+
+      <%= link_to "Your Upcoming Interviews", upcoming_interviews_url %>
+    </p>
+        
+  </div>
+</section>

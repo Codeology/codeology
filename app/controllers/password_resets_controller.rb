@@ -1,9 +1,10 @@
 class PasswordResetsController < ApplicationController
   before_action :get_user,         only: [:create, :edit, :update]
   before_action :valid_user,       only: [:edit, :update]
-  before_action :check_expiration, only: [:edit, :update]    # Case (1)
+  before_action :check_expiration, only: [:edit, :update]
 
   def new
+    render layout: 'application_fluid'
   end
 
   def create
@@ -20,6 +21,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+    render layout: 'application_fluid'
   end
 
   def update

@@ -1,0 +1,122 @@
+<section class="section">
+  <div class="container is-fluid">
+      
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">New Availability</h1>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
+          <input autocomplete="off" name="hidden" type="text" style="display:none;">
+
+          <div class="field is-grouped is-grouped-centered">
+            <p class="control has-icons-left">
+              <input type="text" data-toggle="datepicker" id="availability_date" class="input is-rounded" name="availability[date]" placeholder="Pick a date">      
+
+              <span class="icon is-small is-left">
+                <i class="fa fa-lg fa-calendar"></i>
+              </span>
+            </p>
+
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="availability_time" name="availability[time]">
+                  
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-clock-o"></i>
+              </div>
+            </div>
+            
+            <input type="submit" name="commit" value="Submit" class="button is-rounded" data-disable-with="Submit">
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+
+  function populate(start)
+  {
+    $("#availability_time").html(""); //reset child options
+    for (i = start; i<32; i++) { //populate child options 
+      $("#availability_time").append("<option>"+timeArray[i]+"</option>");
+    };
+  };
+
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate()+1);
+  
+  let timeArray = ["8:00 am",
+                  "8:30 am",
+                  "9:00 am",
+                  "9:30 am",
+                  "10:00 am",
+                  "10:30 am",
+                  "11:00 am",
+                  "11:30 am",
+                  "12:00 pm",
+                  "12:30 pm",
+                  "1:00 pm",
+                  "1:30 pm",
+                  "2:00 pm",
+                  "2:30 pm",
+                  "3:00 pm",
+                  "3:30 pm",
+                  "4:00 pm",
+                  "4:30 pm",
+                  "5:00 pm",
+                  "5:30 pm",
+                  "6:00 pm",
+                  "6:30 pm",
+                  "7:00 pm",
+                  "7:30 pm",
+                  "8:00 pm",
+                  "8:30 pm",
+                  "9:00 pm",
+                  "9:30 pm",
+                  "10:00 pm",
+                  "10:30 pm",
+                  "11:00 pm",
+                  "11:30 pm"]
+
+  $('[data-toggle="datepicker"]').datepicker({
+    autoHide: true,
+    startDate: tomorrow,
+    endDate: new Date(2019, 0, 0)
+  });
+
+  $("#availability_date").on('pick.datepicker', function (e) {
+    if (e.date.getMonth() == tomorrow.getMonth() && e.date.getDate() == tomorrow.getDate()) {
+      let today = new Date();
+      today.setDate(today.getDate());
+      // DAYLIGHT SAVINGS: 15 needs to be changed to 16 when we lose? an hour
+      let hours = (today.getHours() + 16 ) % 24;
+      let minutes = today.getMinutes();
+      // calculate index from current time
+      let index = 0;
+      if (minutes < 29) {
+        index = index + 1;
+      } else if (minutes < 59) {
+        index = index + 2;
+      }
+      index = (index + (hours * 2)) % 32;
+
+      // if we're between 12am and 8am, set index to 0
+      if (index < 0 || index > 32) {
+        index = 0;
+      }
+      // Fill in options
+      populate(index);
+
+    } else {
+      // Fill in options
+      populate(0);
+    }
+  });
+
+
+</script>

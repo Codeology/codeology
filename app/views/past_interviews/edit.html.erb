@@ -1,0 +1,187 @@
+<% provide(:title, "Edit Past Interview") %>
+
+<section id="edit" class="section">
+  <div class="container is-fluid">
+        <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">
+        Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
+        </h2>
+        
+        <article id="msg" class="message is-codeology-green">
+          <div class="message-body is-codeology-green">
+            <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
+            We appreciate you for taking the time to leave feedback! Leaving feedback helps our peers grow as students,
+            interviewers, and engineers. As such you are playing an important part in a well-functioning Codeology. Thank you!
+            <br><br>
+            Tips: Be as concise as possible, provide rationale, cite specific examples whenever possible, and be constructive! :)
+            <br><br>
+            Bonus reading for giving general feedback: <a onclick="toggleModal()">click me</a>
+          </div>
+        </article>
+
+        <div id="modal_feedback" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <p class="image">
+							<%= image_tag("resources/FBIFeedback.png", :alt=>"placeholder text", :class=>"") %>
+            </p>
+          </div>
+          <button onclick="toggleModal()" class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+
+
+        <%= form_tag("/past_interviews/" + @past_interview.id.to_s, method: "patch", autocomplete: "off") do %>
+          <input autocomplete="off" name="hidden" type="text" style="display:none;">
+          
+          <% if !@is_interviewee %>
+            <div class="field">
+              <label class="label">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-pencil-square-o"></i>
+                </span>
+                Feedback</label>
+              <p class="control is-expanded">
+                <textarea id="feedback_interviewee" class="textarea" name="feedback_interviewee" rows="8" placeholder="Help <%=@other_user.name%> get better!"><%= @past_interview.feedback_interviewee%></textarea>   
+              </p>
+            </div>
+        
+            <div class="field">
+              <label class="label">How were their technical skills?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="technical" name="technical">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-wrench"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">How was their problem solving ability?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="problem_solving" name="problem_solving">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-lightbulb-o"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">What about their communication ability?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="communication" name="communication">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-quote-left"></i>
+                </div>
+              </div>
+            </div>
+
+
+          <% else %>
+
+
+            <div class="field">
+              <label class="label">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lg fa-pencil-square-o"></i>
+                </span>
+                Feedback</label>
+              <p class="control is-expanded">
+                <textarea id="feedback_interviewer" class="textarea" name="feedback_interviewer" rows="8" placeholder="Help <%=@other_user.name%> get better!"><%= @past_interview.feedback_interviewer%></textarea>   
+              </p>
+            </div>
+        
+            <div class="field">
+              <label class="label">How excited would you be to work with them?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="excitement" name="excitement">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-id-badge"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">How good were the questions?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="question" name="question">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-question-circle-o"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">How helpful was your interviewer in guiding you to the solution(s)?</label>
+              <div class="control has-icons-left">
+                <div class="select is-rounded">
+                  <select id="helpfulness" name="helpfulness">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fa fa-lg fa-map-o"></i>
+                </div>
+              </div>
+            </div>
+          <% end%>
+          <input type="submit" name="commit" value="Submit" class="button is-rounded" style="margin-top: 10px;" data-disable-with="Submit">
+        <% end %>
+     
+  </div>
+</section>
+
+<script type="text/javascript">
+  function toggleModal() {
+    $("#modal_feedback").toggleClass('is-active');
+  }
+
+  function closeMessage() {
+    $("#msg").css('display', 'none');
+  }
+
+  $("#technical").prop("selectedIndex", <%= @past_interview.technical_score - 1%>);
+  $("#problem_solving").prop("selectedIndex", <%= @past_interview.problem_solving_score - 1%>);
+  $("#communication").prop("selectedIndex", <%= @past_interview.communication_score - 1%>);
+  $("#excitement").prop("selectedIndex", <%= @past_interview.excitement_score - 1%>);
+  $("#question").prop("selectedIndex", <%= @past_interview.question_score - 1%>);
+  $("#helpfulness").prop("selectedIndex", <%= @past_interview.helpfulness_score - 1%>);
+
+</script>

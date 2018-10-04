@@ -1,0 +1,50 @@
+<section class="section">
+  <div class="container is-fluid">
+    
+    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Your Availability</h1>
+    
+    <article id="msg" class="message is-codeology-green">  
+      <div class="message-body is-codeology-green">        
+        <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
+        We appreciate you for taking the time to give interviews! Interviewing helps both interviewer and interviewee: the interviewer
+        crystallizes their knowledge by providing it to their peer while the interviewee receives much needed practice.
+        As such, you are playing an important part in a well-functioning Codeology. Thank you!
+        <br><br>
+        Tips: Prepare questions of varying difficulty to match interviewee needs, understand solutions in multiple languages, and be smart together! :)
+        <br><br>
+        Note: The system assumes Interviews to be an hour long
+      </div>
+    </article>
+    
+    <div class="small-bottom-padding has-text-centered">
+      <%= link_to_nav_item "Add Availability", new_availability_path, :class => "button is-rounded is-medium is-success is-outlined custom-button" %>
+    </div>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @userAvailabilitys.each do |availability| %>
+          <tr>
+          <!-- TODO parse date and time for 1st and 2nd respectively -->
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td style="vertical-align:middle;"><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  class: "button is-rounded is-danger is-outlined custom-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+  function closeMessage() {
+    $("#msg").css('display', 'none');
+  }
+</script> 

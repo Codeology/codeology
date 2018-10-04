@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla|Roboto">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -24,11 +24,11 @@
     <!-- MAIN CONTENT -->
     <div id="main-content-container" class="put-footer-bottom">
       <!-- NOTIFICATIONS -->
-        <div class="container extra-navbar-padding">
-          <% flash.each do |key, value| %>
-            <div class="notification is-<%= key %>"><%= value %></div>
-          <% end %>
-        </div>
+      <div class="container extra-navbar-padding">
+        <% flash.each do |key, value| %>
+          <div class="notification is-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
 
       <%= yield %>
     </div>
