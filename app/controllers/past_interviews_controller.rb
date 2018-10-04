@@ -14,6 +14,7 @@ class PastInterviewsController < ApplicationController
                                             excitement_score: 0, question_score: 0, helpfulness_score: 0)
       @past_interview.save
       upcoming.destroy
+      end
 
     # Get upcoming interviews
     allPastReceiving = Past_interview.where(interviewee: session[:user_id]).order('time ASC')
@@ -67,6 +68,8 @@ class PastInterviewsController < ApplicationController
         flash[:success] = "Feedback updated!"
       else
         flash[:danger] = "Feedback update failed"
+        redirect_to edit_past_interview_path(@past_interview)
+        return
       end
     else
       if @past_interview.update_attributes(technical_score: params[:technical], 
@@ -76,6 +79,8 @@ class PastInterviewsController < ApplicationController
         flash[:success] = "Feedback updated!"
       else
         flash[:danger] = "Feedback update failed"
+        redirect_to edit_past_interview_path(@past_interview)
+        return
       end
     end
     redirect_to past_interview_path(@past_interview)
