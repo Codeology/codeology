@@ -66,8 +66,14 @@ class AvailabilitiesController < ApplicationController
   
     # Finds if there is an availability at or overlapping with new availability timeslot
     dups = userAvailabilities.find {|avail| avail.time == timeObj}
-    overlapAhead = userAvailabilities.find {|avail| avail.time == ahead}
-    overlapBehind = userAvailabilities.find {|avail| avail.time == behind}
+    ####################
+    #
+    # For now we won't be stopping overlapping availabilities, since booking cancels overlapping availabilities
+    # This allows for greater availability posting flexibility while also maintaining scheduling integrity
+    #
+    #overlapAhead = userAvailabilities.find {|avail| avail.time == ahead}
+    #overlapBehind = userAvailabilities.find {|avail| avail.time == behind}
+    ####################
 
     # Query DB for existing upcoming-interviews to check overlap/duplicates
     userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
@@ -83,8 +89,14 @@ class AvailabilitiesController < ApplicationController
     # if dups or overlap availability exists
     elsif dups
       flash[:warning] = "You already have an availability posted for that time"
-    elsif overlapAhead || overlapBehind
-      flash[:warning] = "You already have an overlapping availability posted for that time"
+    ####################
+    #
+    # For now we won't be stopping overlapping availabilities, since booking cancels overlapping availabilities
+    # This allows for greater availability posting flexibility while also maintaining scheduling integrity
+    #
+    #elsif overlapAhead || overlapBehind
+    #  flash[:warning] = "You already have an overlapping availability posted for that time"
+    ####################
     # if dups or overlap upcoming interview exists
     elsif dupsUpcoming
       flash[:warning] = "You already have an upcoming interview for that time"

@@ -1,11 +1,40 @@
-<section class="hero is-medium">
+<section class="hero">
   <div class="hero-body">
     <div class="container is-fluid has-text-centered">
-      <h1 class="title is-2 has-text-black">
+      <h1 class="extra-vertical-padding title is-2 has-text-black">
       Welcome <%= @curr_user.name %>!
-      
       </h1>
-      
+
+      <div class="tile is-ancestor">
+
+        <div class="tile is-vertical is-6">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Vertical...</p>
+                <p class="subtitle">Top tile</p>
+              </article>
+              <article class="tile is-child notification is-warning">
+                <p class="title">...tiles</p>
+                <p class="subtitle">Bottom tile</p>
+              </article>
+            </div>
+        </div>
+
+        <div class="tile is-vertical is-6">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Vertical...</p>
+                <p class="subtitle">Top tile</p>
+              </article>
+              <article class="tile is-child notification is-warning">
+                <p class="title">...tiles</p>
+                <p class="subtitle">Bottom tile</p>
+              </article>
+            </div>
+        </div>
+        
+      </div>
+
     </div>
   </div>
 </section>
