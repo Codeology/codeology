@@ -11,10 +11,11 @@ class UserMailer < ActionMailer::Base
     mail to: user.email, subject: "[Codeology] Password Reset"
   end
 
-  def new_booking(user, other_user, upcoming_interview)
+  def new_booking(user, other_user, upcoming_interview, is_interviewer)
     @user = user
     @other_user = other_user
     @upcoming_interview = upcoming_interview
+    @is_interviewer = is_interviewer
     mail to: user.email, subject: "[Codeology] New Interview"
   end
 
