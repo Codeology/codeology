@@ -3,12 +3,12 @@
     
     <h2 class="subtitle is-size-6 has-text-black">Codeology New Interview</h2>
     <p class="has-text-black"> 
-      <% if @is_interviewer %>
-      Hi <%= @other_user.name %>!
-      <%= @user.name%> has created a booking with you. You will be interviewing them at
-      <% else %>
+      <% if @is_interviewee %>
       Hi <%= @user.name %>!
       You have created a booking with <%= @other_user.name%>. They will be interviewing you at
+      <% else %>
+      Hi <%= @user.name %>!
+      <%= @other_user.name%> has created a booking with you. You will be interviewing them at
       <% end %>
 
       <%= @upcoming_interview.time.localtime.strftime("%m/%d/%y %I:%M %p") %>
