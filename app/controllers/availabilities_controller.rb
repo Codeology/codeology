@@ -43,8 +43,6 @@ class AvailabilitiesController < ApplicationController
  
   def create
     @curr_user = User.find(session[:user_id])
-    puts params[:availability][:time].nil?
-    puts params[:availability][:date].nil?
     if (params[:availability][:time].nil? || params[:availability][:date].nil?)
       flash[:danger] = "Availability not complete"
       redirect_to new_availability_path
@@ -82,9 +80,11 @@ class AvailabilitiesController < ApplicationController
     dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
     overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
     overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
-
+    puts timeObj
+    puts 24.hours.from_now.gmtime
     # If time is within 24 hours
-    if timeObj.gmtime <= 24.hours.from_now
+    if timeObj <= 24.hours.from_now.gmtime
+      
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
     elsif dups
