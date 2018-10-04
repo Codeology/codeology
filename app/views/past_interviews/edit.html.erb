@@ -6,10 +6,11 @@
         Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
         </h2>
         
-        <article class="message is-codeology-green">
+        <article id="msg" class="message is-codeology-green">
           <div class="message-body is-codeology-green">
+            <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
             We appreciate you for taking the time to leave feedback! Leaving feedback helps our peers grow as students,
-            interviewers, and interviewees and as such you are playing an important part in a well-functioning Codeology. Thank you!
+            interviewers, and engineers. As such you are playing an important part in a well-functioning Codeology. Thank you!
             <br><br>
             Tips: Be as concise as possible, provide rationale, cite specific examples whenever possible, and be constructive! :)
             <br><br>
@@ -170,6 +171,10 @@
 <script type="text/javascript">
   function toggleModal() {
     $("#modal_feedback").toggleClass('is-active');
+  }
+
+  function closeMessage() {
+    $("#msg").css('display', 'none');
   }
 
   $("#technical").prop("selectedIndex", <%= @past_interview.technical_score - 1%>);

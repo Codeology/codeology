@@ -2,8 +2,10 @@
   <div class="container is-fluid">
     
     <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Your Availability</h1>
-    <article class="message is-codeology-green">
-      <div class="message-body is-codeology-green">
+    
+    <article id="msg" class="message is-codeology-green">  
+      <div class="message-body is-codeology-green">        
+        <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
         We appreciate you for taking the time to give interviews! Interviewing helps both interviewer and interviewee: the interviewer
         crystallizes their knowledge by providing it to their peer while the interviewee receives much needed practice.
         As such, you are playing an important part in a well-functioning Codeology. Thank you!
@@ -38,3 +40,9 @@
 
   </div>
 </section>
+
+<script type="text/javascript">
+function closeMessage() {
+  $("#msg").css('display', 'none');
+}
+</script> 
