@@ -6,6 +6,15 @@ class PastInterviewsController < ApplicationController
   def index
     @curr_user = User.find(session[:user_id])
 
+    # Prune upcoming interviews
+    upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now)
+    upcomingInterviews.each do |upcoming|
+      @past_interview = Past_interview.new(interviewee: upcoming.interviewee, interviewer: upcoming.interviewer, time: upcoming.time,
+                                            technical_score: 0, communication_score: 0, problem_solving_score: 0,
+                                            excitement_score: 0, question_score: 0, helpfulness_score: 0)
+      @past_interview.save
+      upcoming.destroy
+
     # Get upcoming interviews
     allPastReceiving = Past_interview.where(interviewee: session[:user_id]).order('time ASC')
     allPastGiving = Past_interview.where(interviewer: session[:user_id]).order('time ASC')
