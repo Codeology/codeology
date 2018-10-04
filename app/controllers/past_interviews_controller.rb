@@ -33,14 +33,7 @@ class PastInterviewsController < ApplicationController
     @curr_user = User.find(session[:user_id])
     @past_interview = Past_interview.find(params[:id])
     # Find other user's id and then find that user
-    if @past_interview.interviewee == @curr_user.id
-      other_id = @past_interview.interviewer
-      @is_interviewee = true
-    else
-      other_id = @past_interview.interviewee
-      @is_interviewee = false
-    end
-    @other_user = User.find(other_id)
+    @other_user, @is_interviewee = get_other_user_and_is_interviewee(@curr_user, @past_interview)
     
     render layout: 'web_application'
   end
@@ -49,11 +42,8 @@ class PastInterviewsController < ApplicationController
     @curr_user = User.find(session[:user_id])
     @past_interview = Past_interview.find(params[:id])
     # Find if user is interviewer or interviewee
-    if @past_interview.interviewee == @curr_user.id
-      @is_interviewee = true
-    else
-      @is_interviewee = false
-    end
+    @other_user, @is_interviewee = get_other_user_and_is_interviewee(@curr_user, @past_interview)
+
     render layout: 'web_application'
   end
 
@@ -67,6 +57,18 @@ class PastInterviewsController < ApplicationController
       redirect_to login_path
     end
       
+    def get_other_user_and_is_interviewee(curr_user, past_interview)
+      if past_interview.interviewee == curr_user.id
+        other_id = past_interview.interviewer
+        is_interviewee = true
+      else
+        other_id = @past_interview.interviewee
+        is_interviewee = false
+      end
+      other_user = User.find(other_id)
+      return other_user, is_interviewee
+    end
+
     # Before filters
 
     # Confirms a logged-in user.
