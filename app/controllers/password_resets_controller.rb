@@ -4,6 +4,7 @@ class PasswordResetsController < ApplicationController
   before_action :check_expiration, only: [:edit, :update]
 
   def new
+    render layout: 'application_fluid'
   end
 
   def create
@@ -20,6 +21,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+    render layout: 'application_fluid'
   end
 
   def update
