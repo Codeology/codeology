@@ -2,8 +2,18 @@
   <div class="container is-fluid">
       
     <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">New Availability</h1>
+    
+
     <div class="columns is-centered">
       <div class="column is-8">
+
+        <article id="msg" class="message is-codeology-green">  
+          <div class="message-body is-codeology-green">        
+            <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
+            Note: Clicking on the date selector before the page fully loads breaks it.
+          </div>
+        </article>
+
         <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
           <input autocomplete="off" name="hidden" type="text" style="display:none;">
 
@@ -118,5 +128,8 @@
     }
   });
 
+  function closeMessage() {
+    $("#msg").css('display', 'none');
+  }
 
 </script>
