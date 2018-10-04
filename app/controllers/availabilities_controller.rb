@@ -80,10 +80,10 @@ class AvailabilitiesController < ApplicationController
     dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
     overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
     overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
-    puts timeObj
-    puts 24.hours.from_now.gmtime
-    # If time is within 24 hours
-    if timeObj <= 24.hours.from_now.gmtime
+    #puts timeObj
+    #puts 24.hours.from_now.gmtime
+    # If time is within 24 hours #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
+    if timeObj <= 17.hours.from_now.gmtime
       
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
