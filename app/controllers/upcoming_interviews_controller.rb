@@ -7,7 +7,8 @@ class UpcomingInterviewsController < ApplicationController
     @curr_user = User.find(session[:user_id])
 
     # Prune upcoming interviews
-    upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now.utc)
+    # Use 7.hours.ago instead of time.now for Heroku prod
+    upcomingInterviews = Upcoming_interview.where("time <= ?", 7.hours.ago)
     upcomingInterviews.each do |upcoming|
       @past_interview = Past_interview.new(interviewee: upcoming.interviewee, interviewer: upcoming.interviewer, time: upcoming.time,
                                             technical_score: 0, communication_score: 0, problem_solving_score: 0,
