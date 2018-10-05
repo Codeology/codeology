@@ -25,8 +25,8 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:username] %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:is_python] %>Python<% else %>Java<% end %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:is_videocall] %>Videocall<% else %>On Campus<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
             <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
             <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
@@ -56,8 +56,8 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:username] %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:is_python] %>Python<% else %>Java<% end %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:is_videocall] %>Videocall<% else %>On Campus<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
             <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
             <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>

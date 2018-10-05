@@ -49,7 +49,7 @@ class AvailabilitiesController < ApplicationController
 
     # Get logistical details
     is_videocall =  (params[:availability][:is_videocall] == "true" ? true : false)
-    isPython =  (params[:availability][:is_python] == "true" ? true : false)
+    is_python =  (params[:availability][:is_python] == "true" ? true : false)
     
     # Create dateTime object
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]

@@ -5,8 +5,8 @@
   <div class="container is-fluid">
     <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h1>
     <h2 class="subtitle is-4 has-text-black has-text-centered">
-      Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %><br>
-      Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %>
+      Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
+      Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
     </h2>
     
     <div class="columns is-centered">
