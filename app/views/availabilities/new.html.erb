@@ -38,10 +38,38 @@
                 <i class="fa fa-lg fa-clock-o"></i>
               </div>
             </div>
-            
-            <input type="submit" name="commit" value="Submit" class="button is-rounded" data-disable-with="Submit">
-
           </div>
+
+          <div class="field is-grouped is-grouped-centered">            
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="availability_language" name="availability[is_python]">
+                  <option value="true">Python</option>
+                  <option value="false">Java</option>
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-code"></i>
+              </div>
+            </div>
+
+            <div class="control has-icons-left">
+              <div class="select is-rounded">
+                <select id="availability_location" name="availability[is_videocall]">
+                  <option value="false">On Campus</option>
+                  <option value="true">Videocall</option>
+                </select>
+              </div>
+              <div class="icon is-small is-left">
+                <i class="fa fa-lg fa-video-call"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">            
+            <input type="submit" name="commit" value="Submit" class="button is-rounded" data-disable-with="Submit">
+          </div>
+
         <% end %>
       </div>
     </div>

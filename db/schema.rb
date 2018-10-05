@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003215527) do
+ActiveRecord::Schema.define(version: 20181005194749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20181003215527) do
   create_table "availabilities", force: :cascade do |t|
     t.datetime "time"
     t.integer  "user_id"
+    t.boolean  "is_python"
+    t.boolean  "is_videocall"
     t.index ["user_id"], name: "index_availabilities_on_user_id", using: :btree
   end
 
@@ -33,12 +35,16 @@ ActiveRecord::Schema.define(version: 20181003215527) do
     t.integer  "question_score"
     t.integer  "helpfulness_score"
     t.text     "feedback_interviewer"
+    t.boolean  "is_python"
+    t.boolean  "is_videocall"
   end
 
   create_table "upcoming_interviews", force: :cascade do |t|
     t.integer  "interviewee"
     t.integer  "interviewer"
     t.datetime "time"
+    t.boolean  "is_python"
+    t.boolean  "is_videocall"
   end
 
   create_table "users", force: :cascade do |t|
