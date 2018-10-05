@@ -39,11 +39,19 @@ class AvailabilitiesController < ApplicationController
  
   def create
     @curr_user = User.find(session[:user_id])
+    # Check for existence of date and time. No need to check for language/location since these are booleans
+    # and the lack of those parameters will result in failure later on in this method.
     if (params[:availability][:time].nil? || params[:availability][:date].nil?)
       flash[:danger] = "Availability not complete"
       redirect_to new_availability_path
       return      
     end
+
+    # Get logistical details
+    is_videocall =  (params[:availability][:is_videocall] == "true" ? true : false)
+    is_python =  (params[:availability][:is_python] == "true" ? true : false)
+    
+    # Create dateTime object
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]
     timeObj = Time.strptime(datetimeString, "%m/%d/%Y %l:%M %P")
     #puts timeObj
@@ -56,7 +64,7 @@ class AvailabilitiesController < ApplicationController
     behind = timeObj - 30.minutes
 
     # create new availability item
-    @availability = Availability.new(time: timeObj, user_id: session[:user_id])
+    @availability = Availability.new(time: timeObj, user_id: session[:user_id], is_python: is_python, is_videocall: is_videocall)
     
     # Query DB for existing user availabilities to check again duplicates and overlapping times e.g. 8:30 and 9:00 overlap
     userAvailabilities = Availability.where(user_id: session[:user_id])
@@ -125,7 +133,9 @@ class AvailabilitiesController < ApplicationController
     @availability = Availability.find(params[:id])
     other_user = User.find(@availability.user_id)
     # Create new upcoming interview instance
-    @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, time: @availability.time)
+    @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, 
+                                                  time: @availability.time, is_python: @availability.is_python,
+                                                  is_videocall: @availability.is_videocall)
     
     # Query DB for existing upcoming-interviews to check overlap/duplicates
     userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
