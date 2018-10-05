@@ -31,7 +31,7 @@ class AvailabilitiesController < ApplicationController
     # optimization is recommended.
     #
     #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
-    Availability.where("time <= ?", 17.hours.from_now).destroy_all
+    Availability.where("time <= ?", 24.hours.from_now).destroy_all
 
     @curr_user = User.find(session[:user_id])
     @allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
@@ -52,7 +52,10 @@ class AvailabilitiesController < ApplicationController
     end
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]
     timeObj = Time.strptime(datetimeString, "%m/%d/%Y %l:%M %P")
-    timeObj = timeObj.gmtime
+    #puts timeObj
+    #puts 24.hours.from_now.gmtime
+    #puts 24.hours.from_now.utc
+    timeObj = timeObj.utc
 
     # Create overlapping times
     ahead = timeObj + 30.minutes
@@ -85,7 +88,7 @@ class AvailabilitiesController < ApplicationController
     #puts timeObj
     #puts 24.hours.from_now.gmtime
     # If time is within 24 hours #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
-    if timeObj <= 17.hours.from_now.gmtime
+    if timeObj <= 24.hours.from_now.utc
       
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
@@ -134,7 +137,7 @@ class AvailabilitiesController < ApplicationController
     userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
     
     # Create overlapping times
-    timeObj = @availability.time.gmtime
+    timeObj = @availability.time.utc
     ahead = timeObj + 30.minutes
     behind = timeObj - 30.minutes
     

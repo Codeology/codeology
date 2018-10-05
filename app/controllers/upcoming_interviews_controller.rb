@@ -7,7 +7,7 @@ class UpcomingInterviewsController < ApplicationController
     @curr_user = User.find(session[:user_id])
 
     # Prune upcoming interviews
-    upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now.gmtime)
+    upcomingInterviews = Upcoming_interview.where("time <= ?", Time.now.utc)
     upcomingInterviews.each do |upcoming|
       @past_interview = Past_interview.new(interviewee: upcoming.interviewee, interviewer: upcoming.interviewer, time: upcoming.time,
                                             technical_score: 0, communication_score: 0, problem_solving_score: 0,
