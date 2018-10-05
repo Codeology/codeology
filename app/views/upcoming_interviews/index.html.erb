@@ -12,7 +12,9 @@
           <th>Date</th>
           <th>Time</th>
           <th>Interviewer</th>
-          <th colspan="3"></th>
+          <th>Language</th>
+          <th>Location</th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -23,6 +25,8 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= receiving[:username] %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:is_python] %>Python<% else %>Java<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if receiving[:is_videocall] %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
             <td style="vertical-align:middle;"><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
           </tr>
@@ -38,7 +42,9 @@
           <th>Date</th>
           <th>Time</th>
           <th>Interviewee</th>
-          <th colspan="3"></th>
+          <th>Language</th>
+          <th>Location</th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -49,6 +55,8 @@
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= giving[:username] %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:is_python] %>Python<% else %>Java<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if giving[:is_videocall] %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
             <td style="vertical-align:middle;"><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
           </tr>

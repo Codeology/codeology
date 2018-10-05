@@ -10,7 +10,9 @@
         <tr>
           <th>Date</th>
           <th>Time</th>
-          <th colspan="3"></th>
+          <th>Language</th>
+          <th>Location</th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -20,6 +22,8 @@
           <!-- TODO parse date and time for 1st and 2nd respectively -->
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
             <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if availability.is_python %>Python<% else %>Java<% end %></td>
+            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td style="vertical-align:middle;">
               <%= link_to 'Book', availability, method: :patch, data: { confirm: 'You are about to book for: ' + 
               availability.time.localtime.strftime("%m/%d/%y") + " " + availability.time.localtime.strftime("%I:%M %p") + 

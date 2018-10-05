@@ -3,8 +3,13 @@
 
 <section id="edit" class="section">
   <div class="container is-fluid">
-        <h2 class="title is-2 has-text-black has-text-centered extra-top-padding">
+        <h2 class="title is-2 has-text-black has-text-centered small-vertical-padding">
         Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
+        </h2>
+
+        <h2 class="subtitle is-4 has-text-black has-text-centered">
+        Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %><br>
+        Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %>
         </h2>
         
         <article id="msg" class="message is-codeology-green">
