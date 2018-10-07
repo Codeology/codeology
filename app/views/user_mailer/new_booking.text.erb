@@ -1,9 +1,9 @@
 <% if @is_interviewee %>
 Hi <%= @user.name %>!
-You have created a booking with <%= @other_user.name%>. They will be interviewing you at
+You have created a booking with <%= @other_user.name%>. Their email is <%= @other_user.email%> and they will be interviewing you at
 <% else %>
 Hi <%= @user.name %>!
-<%= @other_user.name%> has created a booking with you. You will be interviewing them at
+<%= @other_user.name%> has created a booking with you. Their email is <%= @other_user.email%> and you will be interviewing them at
 <% end %>
 <%= @upcoming_interview.time.localtime.strftime("%m/%d/%y %I:%M %p") %>
 
