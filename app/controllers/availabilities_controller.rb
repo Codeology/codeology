@@ -28,7 +28,8 @@ class AvailabilitiesController < ApplicationController
     Availability.where("time <= ?", 17.hours.from_now).destroy_all
 
     @curr_user = User.find(session[:user_id])
-    @allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
+    @allAvailabilitys = Availability.all.order('time ASC')
+    #@allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
     render layout: 'web_application'
   end
 
@@ -132,6 +133,14 @@ class AvailabilitiesController < ApplicationController
     @curr_user = User.find(session[:user_id])    
     @availability = Availability.find(params[:id])
     other_user = User.find(@availability.user_id)
+
+    if @curr_user.id == other_user.id
+      # This is for the case where someone submits an http request from outside the website
+      flash[:warning] = "You can't book yourself"
+      redirect_to availabilities_path
+      return
+    end
+
     # Create new upcoming interview instance
     @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @availability.user_id, 
                                                   time: @availability.time, is_python: @availability.is_python,
