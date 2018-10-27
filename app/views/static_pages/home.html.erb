@@ -1,25 +1,27 @@
 <% provide(:title, "Codeology | Home") %>
 
-<section id="landing" class="hero has-fixed-navbar is-fullheight landing is-bold">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="landing-title has-text-white">Codeology.</h1>
-      <h5 class="landing-blurb is-size-3 is-size-3-tablet is-size-5-mobile has-text-white">
-      <span class="is-codeology-yellow">Education.</span>
-      <span class="is-codeology-green">Exploration.</span>
-      <span class="is-codeology-blue">Community.</span>
-      </h5>
-      <div class="columns is-multiline is-centered">
-        <div class="column is-3">
-          <a href="#about-us" class="button-fade is-size-4 is-size-5-mobile">Learn More</a>
-        </div>
-        <div class="column is-3">
-          <a href="https://goo.gl/forms/L7gzaXF7oDiMn7O43" class="button-fade is-size-4 is-size-5-mobile">Apply ></a>
-        </div>
+<section id="landing" class="has-fixed-navbar">
+  <div class="is-fullheight parallax-container bg">
+    <div class="parallax"><%=image_tag("11.jpg") %></div>
+  </div>
+  <div class="container is-fullheight has-text-centered">
+    <h1 class="landing-title white-text">Codeology.</h1>
+    <h3 class="landing-blurb ">
+    <span class="is-codeology-yellow">Education.</span>
+    <span class="is-codeology-green">Exploration.</span>
+    <span class="is-codeology-blue">Community.</span>
+    </h3>
+    <div class="row has-text-centered">
+      <div class="col s4 offset-s4">
+        <a href="#about-us" class="button-fade">Learn More</a>
       </div>
+      <!--
+      <div class="column is-3">
+        <a href="https://goo.gl/forms/L7gzaXF7oDiMn7O43" class="button-fade is-size-4 is-size-5-mobile">Apply ></a>
+      </div>
+      -->
     </div>
   </div>
-  <div class="hero-foot"></div>
 </section>
 
 <!-- ABOUT US -->
@@ -166,5 +168,6 @@
 </section>
 <!-- Script found in smoothScroll.js -->
 <script type="text/javascript">
-    addSmoothScroll();
+  $('.parallax').parallax();
+  addSmoothScroll();
 </script>

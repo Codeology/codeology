@@ -184,6 +184,10 @@ $codeology-blue: #92D5E6;
 /* LANDING
 /* ============================ */
 
+.bg {
+  z-index: -999999;
+}
+
 .landing {
   background-image: asset-url("11.jpg");
   background-size: cover; 
@@ -194,11 +198,13 @@ $codeology-blue: #92D5E6;
 .landing-title {
   font-weight: bold;
   font-size: 9vw;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  padding-top: 10vh;
+  margin-top: calc(-100vh + 64px);
+  //margin-bottom: 10vh;
 }
 
 .landing-blurb{
+  font-size: 3vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
   min-width:275px; //This is for mobile displays

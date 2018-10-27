@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
   end
 
   def calendar
-    render layout: 'application'  
+    render layout: 'application'
   end
 
   def apply
