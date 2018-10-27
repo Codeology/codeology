@@ -60,7 +60,7 @@
             <div class="col s12 m4">
               <div class="card small">
                 <div class="card-image project-card-image">
-                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
+                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image", :style=>"object-fit:cover;") %>
                 </div>
                 <div class="card-content">
                   <p class="is-size-5"><%= element[:name] %></p>
@@ -81,7 +81,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h2 class="is-size-1-tablet is-size-2-mobile  ">Events</h2>
+                <h2 class="is-size-1-tablet is-size-2-mobile">Events</h2>
                 <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
                 </p>
