@@ -34,7 +34,7 @@ DELETE	  /users/1	      destroy	  user_path(user)	      delete user
   # GET /users/new
   def new
     @user = User.new
-    render layout: "application_fluid"
+    render layout: "application"
   end
 
   # GET /users/1/edit

@@ -22,13 +22,13 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div id="main-content-container" class="put-footer-bottom">
+    <div id="main-content-container" class="">
       <!-- NOTIFICATIONS -->
-        <div class="container extra-navbar-padding">
-          <% flash.each do |key, value| %>
-            <div class="notification is-<%= key %>"><%= value %></div>
-          <% end %>
-        </div>
+      <div class="container extra-navbar-padding">
+        <% flash.each do |key, value| %>
+          <div class="notification is-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
 
       <%= yield %>
     </div>
@@ -36,22 +36,22 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="columns is-mobile has-text-centered is-centered">
-        <div class="column is-2">
+      <div class="rows has-text-centered">
+        <div class="col s4">
           <a class="footer-icon" href="https://github.com/CodeologyClub" target="_blank">
 			      <span class="icon" style="color: #333;">
 			        <i class="fa fa-lg fa-github"></i>
 			      </span>
 			    </a>
         </div>
-        <div class="column is-2">
+        <div class="col s4">
           <a class="footer-item" href="https://www.linkedin.com/company/berkeley-codeology/" target="_blank">
             <span class="icon" style="color: #007bb6;">
               <i class="fa fa-lg fa-linkedin-square"></i>
             </span>
           </a>
         </div>
-        <div class="column is-2">
+        <div class="col s4">
 			    <a class="footer-icon" href="https://www.facebook.com/berkeleycodeology/" target="_blank">
 			      <span class="icon" style="color: #3B5998;">
 			        <i class="fa fa-lg fa-facebook-f"></i>

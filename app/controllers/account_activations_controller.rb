@@ -1,7 +1,7 @@
 class AccountActivationsController < ApplicationController
   
   def new
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 
   def create

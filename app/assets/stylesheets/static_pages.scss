@@ -14,6 +14,10 @@ $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
+.has-text-centered {
+  text-align: center !important;
+}
+
 .reverse{
   direction: rtl;
   unicode-bidi: bidi-override;

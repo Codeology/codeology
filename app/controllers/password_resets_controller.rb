@@ -4,7 +4,7 @@ class PasswordResetsController < ApplicationController
   before_action :check_expiration, only: [:edit, :update]
 
   def new
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 
   def create
@@ -21,7 +21,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 
   def update
@@ -34,7 +34,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url
     else
       flash[:danger] = "Passwords must match or can not be blank"
-      render 'edit', layout: 'application_fluid'
+      render 'edit', layout: 'application'
     end
   end
 
