@@ -1,7 +1,15 @@
 
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 993px) and (max-width: 1440px) {
 	.nav-wrapper {
 		padding-left: 2em;
 		padding-right: 2em;
+	}
+}
+
+
+@media only screen and (min-width: 1440px) {
+	.nav-wrapper {
+		padding-left: 4em;
+		padding-right: 4em;
 	}
 }
