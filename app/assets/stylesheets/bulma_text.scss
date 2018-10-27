@@ -30,7 +30,7 @@
     font-size: 0.75rem !important;
   }
   
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .is-size-1-mobile {
       font-size: 3rem !important;
     }
@@ -52,9 +52,9 @@
     .is-size-7-mobile {
       font-size: 0.75rem !important;
     }
-  }
+}
   
-  @media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px), print {
     .is-size-1-tablet {
       font-size: 3rem !important;
     }
@@ -76,9 +76,9 @@
     .is-size-7-tablet {
       font-size: 0.75rem !important;
     }
-  }
+}
   
-  @media screen and (max-width: 1087px) {
+@media screen and (max-width: 1087px) {
     .is-size-1-touch {
       font-size: 3rem !important;
     }
@@ -100,9 +100,9 @@
     .is-size-7-touch {
       font-size: 0.75rem !important;
     }
-  }
+}
   
-  @media screen and (min-width: 1088px) {
+@media screen and (min-width: 1088px) {
     .is-size-1-desktop {
       font-size: 3rem !important;
     }
@@ -124,9 +124,9 @@
     .is-size-7-desktop {
       font-size: 0.75rem !important;
     }
-  }
+}
   
-  @media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
     .is-size-1-widescreen {
       font-size: 3rem !important;
     }
@@ -148,9 +148,9 @@
     .is-size-7-widescreen {
       font-size: 0.75rem !important;
     }
-  }
+}
   
-  @media screen and (min-width: 1472px) {
+@media screen and (min-width: 1472px) {
     .is-size-1-fullhd {
       font-size: 3rem !important;
     }
@@ -172,4 +172,4 @@
     .is-size-7-fullhd {
       font-size: 0.75rem !important;
     }
-  }
+}
