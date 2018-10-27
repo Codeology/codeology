@@ -4,7 +4,7 @@
   <div class="hero-body" id="login-box">
     <div class="columns is-centered">
       <div class="column is-6">
-        <h2 class="title is-2 has-text-black extra-top-padding">Password Reset</h2>
+        <h2 class="title is-2   extra-top-padding">Password Reset</h2>
         <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
           <%= hidden_field_tag :email, @user.email %>
 

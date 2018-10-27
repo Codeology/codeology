@@ -1,19 +1,16 @@
 <% provide(:title, "Codeology | Home") %>
 
-<section id="landing" class="has-fixed-navbar">
-  <div class="is-fullheight parallax-container bg">
-    <div class="parallax"><%=image_tag("11.jpg") %></div>
-  </div>
+<section id="landing" class="landing is-fullheight has-fixed-navbar">
   <div class="container is-fullheight has-text-centered">
     <h1 class="landing-title white-text">Codeology.</h1>
-    <h3 class="landing-blurb ">
+    <h3 class="landing-blurb is-size-3 is-size-4-mobile">
     <span class="is-codeology-yellow">Education.</span>
     <span class="is-codeology-green">Exploration.</span>
     <span class="is-codeology-blue">Community.</span>
     </h3>
     <div class="row has-text-centered">
-      <div class="col s4 offset-s4">
-        <a href="#about-us" class="button-fade">Learn More</a>
+      <div class="col s6 offset-s3 m4 offset-m4">
+        <a href="#about-us" class="waves-effect waves-green btn is-round normal-caps white grey-text text-darken-4">Learn More</a>
       </div>
       <!--
       <div class="column is-3">
@@ -25,12 +22,13 @@
 </section>
 
 <!-- ABOUT US -->
-<section id="about-us" class="section">
+<section class="section">
+<a style="top: -10vh; position:relative;" id="about-us"></a>
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="title is-2 has-text-black">About Us</h2>
-        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <h2 class="is-size-1-tablet is-size-2-mobile">About Us</h2>
+        <p class="flow-text" style="line-height:1.25;">
         <strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry
         in the context of a supportive community.
         <br>
@@ -47,29 +45,25 @@
 <!-- PROJECTS -->
 <section id="projects" class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="title is-2 has-text-black">Projects</h2>
-        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <h2 class="is-size-1-tablet is-size-2-mobile  ">Projects</h2>
+        <p class="flow-text" style="line-height:1.25;">
         <strong>This semester</strong> we'll be introducing projects as an opportunity for our
           members to <strong>explore</strong> cool niches in tech, to gain <strong>experience</strong>
           as developers, and to <strong>lead</strong> their own project teams.
           </p>
-        <!-- PROJECTS HERE -->
+        <!-- PROJECT CARDS HERE -->
         <!-- Three projects are chosen at random in the static_pages_controller and in Projects.rb -->
-        <div class="columns">
+        <div class="row">
           <% @projects.each do |element| %>
-            <div class="column is-one-third">
+            <div class="col s12 m4">
               <div class="card">
                 <div class="card-image project-card-image">
                   <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
                 </div>
                 <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <h5 class="project-card-title title is-5 has-text-black"><%= element[:name] %></h5>
-                    </div>
-                  </div>
+                  <p class="is-size-5"><%= element[:name] %></p>
                 </div>
               </div>
             </div>
@@ -85,9 +79,9 @@
 <!-- EVENTS -->
 <section id="events" class="section">
     <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Events</h2>
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <h2 class="is-size-1-tablet is-size-2-mobile  ">Events</h2>
                 <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
                 </p>
@@ -101,26 +95,20 @@
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
     <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Leadership</h2>
-                <div class="columns is-mobile is-multiline is-centered">
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <h2 class="is-size-1-tablet is-size-2-mobile">Leadership</h2>
+                <div class="row">
                   <% @leadership.each do |element| %>
 
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
+                    <div class="col s6 m3">
                       <div class="card">
                         <div class="card-image">
-                          <figure class="image is-3by4">
 			                    <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
                         </div>
                         <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4"><%= element[:name] %></h2>
-                              <h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
-                            </div>
-                          </div>
+                          <p class="is-size-4"><%= element[:name] %></p>
+                          <p class="is-size-6"><%= element[:title] %></p>
                         </div>
                       </div>
                     </div>
@@ -137,9 +125,9 @@
 <!-- CONTACT -->
 <section id="events" class="section">
     <div class="container">
-        <div class="columns has-text-centered is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Contact Us</h2>
+        <div class="row has-text-centered">
+            <div class="col s12 m10 offset-m1">
+                <h2 class="is-size-1-tablet is-size-2-mobile">Contact Us</h2>
                 <p class="reverse">
                 bulc.ygoloedoc@ofni
                 </p>
@@ -151,7 +139,7 @@
 <!-- SPONSORS -->
 <section id="sponsors" class="section">
     <div id="sponsors" class="has-text-centered container">
-        <h3 class="title is-2 small-caps">OUR SPONSORS</h3>
+        <h3 class="is-size-2 is-size-3-mobile small-caps">OUR SPONSORS</h3>
         <h3 class="sub-header"></h3>
         <div class="card-group" id="all-sponsor-container">
             <div class="card" id="sponsor-container">
@@ -168,6 +156,5 @@
 </section>
 <!-- Script found in smoothScroll.js -->
 <script type="text/javascript">
-  $('.parallax').parallax();
   addSmoothScroll();
 </script>

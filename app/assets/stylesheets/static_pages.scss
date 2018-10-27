@@ -14,9 +14,26 @@ $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
-.nav-image {
-  height: 64px;
-  object-fit: cover;
+.is-round {
+	border-radius: 50px !important
+}
+
+.normal-caps {
+	text-transform: none !important
+}
+
+@media only screen and (max-width: 601px) {
+  .nav-image{
+    height: 56px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .nav-image {
+    height: 64px;
+    object-fit: cover;
+  }
 }
 
 .has-text-centered {
@@ -179,7 +196,6 @@ $codeology-blue: #92D5E6;
   height: 20vh;
 }
 
-
 /* ============================ */
 /* LANDING
 /* ============================ */
@@ -196,15 +212,14 @@ $codeology-blue: #92D5E6;
 }
 
 .landing-title {
-  font-weight: bold;
   font-size: 9vw;
-  padding-top: 10vh;
-  margin-top: calc(-100vh + 64px);
-  //margin-bottom: 10vh;
+  font-weight: bold;
+  padding-top: 20vh;
+  margin-top: -64px;
+  margin-bottom: 10vh;
 }
 
 .landing-blurb{
-  font-size: 3vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
   min-width:275px; //This is for mobile displays

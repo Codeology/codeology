@@ -1,8 +1,8 @@
 <section class="section">
   <div class="container is-fluid has-text-centered">
     
-    <h2 class="subtitle is-size-6 has-text-black">Codeology Activation</h2>
-    <p class="has-text-black"> 
+    <h2 class="subtitle is-size-6  ">Codeology Activation</h2>
+    <p class=" "> 
       Hi <%= @user.name %>!
       Thanks for registering! To confirm your registration click the URL below. 
       
@@ -10,7 +10,7 @@
     
     <%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
     
-    <p class="has-text-black">
+    <p class=" ">
       This link will expire in three hours.
       <br>
       <br>
