@@ -168,10 +168,37 @@ $codeology-blue: #92D5E6;
 }
 
 /* ============================ */
-/* PROJECT CARD
+/* CARD
 /* ============================ */
-.fixed-height{
-  min-height: calc(600px - 25vw)
+
+@media only screen and (min-width: 1150px) and (max-width: 1273px) {
+  .card.fixed-height{
+    min-height: 32.5vw;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1150px) {
+  .card.fixed-height{
+    min-height: 36.5vw;
+  }
+}
+
+@media only screen and (min-width: 925px) and (max-width: 993px) {
+  .card.fixed-height{
+    min-height: 40vw;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 925px) {
+  .card.fixed-height{
+    min-height: 45vw;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+  .card.fixed-height{
+    min-height: 55vw;
+  }
 }
 
 .project-card{

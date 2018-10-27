@@ -26,7 +26,7 @@
 <a style="top: -10vh; position:relative;" id="about-us"></a>
   <div class="container">
     <div class="row">
-      <div class="col s12 m10 offset-m1">
+      <div class="col s12">
         <h2 class="is-size-1-tablet is-size-2-mobile">About Us</h2>
         <p class="flow-text" style="line-height:1.25;">
         <strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry
@@ -46,7 +46,7 @@
 <section id="projects" class="section">
   <div class="container">
     <div class="row">
-      <div class="col s12 m10 offset-m1">
+      <div class="col s12">
         <h2 class="is-size-1-tablet is-size-2-mobile  ">Projects</h2>
         <p class="flow-text" style="line-height:1.25;">
         <strong>This semester</strong> we'll be introducing projects as an opportunity for our
@@ -58,7 +58,7 @@
         <div class="row">
           <% @projects.each do |element| %>
             <div class="col s12 m4">
-              <div class="card">
+              <div class="card small">
                 <div class="card-image project-card-image">
                   <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
                 </div>
@@ -80,7 +80,7 @@
 <section id="events" class="section">
     <div class="container">
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s12">
                 <h2 class="is-size-1-tablet is-size-2-mobile  ">Events</h2>
                 <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
@@ -95,30 +95,29 @@
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
     <div class="container">
-        <div class="row">
-            <div class="col s12 m10 offset-m1">
-                <h2 class="is-size-1-tablet is-size-2-mobile">Leadership</h2>
-                <div class="row">
-                  <% @leadership.each do |element| %>
-
-                    <div class="col s6 m3">
-                      <div class="card">
-                        <div class="card-image">
-			                    <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-                        </div>
-                        <div class="card-content">
-                          <p class="is-size-4"><%= element[:name] %></p>
-                          <p class="is-size-6"><%= element[:title] %></p>
-                        </div>
-                      </div>
-                    </div>
-                  <%end%>
-
-                </div>
-                <%= link_to_nav_item "See All >", about_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
-            </div>
+      <div class="row">
+        <div class="col s12">
+            <h2 class="is-size-1-tablet is-size-2-mobile">Leadership</h2>
         </div>
-
+        
+        <% @leadership.each do |element| %>
+          <div class="col s6 m3">
+            <div class="card fixed-height">
+              <div class="card-image">
+                <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+              </div>
+              <div class="card-content">
+                <p class="is-size-4"><%= element[:name] %></p>
+                <p class="is-size-6"><%= element[:title] %></p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        
+        <div class="col s12">
+          <%= link_to_nav_item "See All >", about_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
+        </div>
+      </div>
     </div>
 </section>
 
@@ -126,7 +125,7 @@
 <section id="events" class="section">
     <div class="container">
         <div class="row has-text-centered">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s12">
                 <h2 class="is-size-1-tablet is-size-2-mobile">Contact Us</h2>
                 <p class="reverse">
                 bulc.ygoloedoc@ofni
