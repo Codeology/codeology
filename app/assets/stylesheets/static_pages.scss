@@ -89,6 +89,7 @@ $codeology-blue: #92D5E6;
   padding: 6rem 0rem 0rem;
 }
 
+/* extra-navbar-padding is for flash notifications */
 .container.extra-navbar-padding {
   padding: 52px 0 0;
   margin-bottom: -50px;
@@ -169,10 +170,6 @@ $codeology-blue: #92D5E6;
   height: 20vh;
 }
 
-.put-footer-bottom{
-  //TODO Calculate footer height as opposed to using fixed 170px value i.e. calc(100vh - footerHeight)
-  min-height: calc(100vh - 170px);
-}
 
 /* ============================ */
 /* LANDING
