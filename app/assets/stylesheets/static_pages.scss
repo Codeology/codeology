@@ -18,6 +18,10 @@ $codeology-blue: #92D5E6;
   text-align: center !important;
 }
 
+.is-fullheight {
+	min-height: 100vh
+}
+
 .reverse{
   direction: rtl;
   unicode-bidi: bidi-override;
