@@ -14,6 +14,11 @@ $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
+.section-anchor{
+  top: -7vh; 
+  position: relative;
+}
+
 .is-round {
 	border-radius: 50px !important
 }
