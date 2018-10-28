@@ -175,24 +175,32 @@ $codeology-blue: #92D5E6;
 /* ============================ */
 /* CARD
 /* ============================ */
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 450px) {
   .card.adjustable-size{
-    height: 450px;
+    height: 375px;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 1472px) {
+
+@media only screen and (min-width:450px) and (max-width: 600px) {
+  .card.adjustable-size{
+    height: 425px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1350px) {
   .card.adjustable-size{
     height: 400px;
   }
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1675px) {
+@media only screen and (min-width: 1350px) and (max-width: 1600px) {
   .card.adjustable-size{
     height: 450px;
   }
 }
 
-@media only screen and (min-width: 1675px) {
+@media only screen and (min-width: 1600px) {
   .card.adjustable-size{
     height: 500px;
   }
