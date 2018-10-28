@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col s12">
         <h2 class="is-size-1-tablet is-size-2-mobile">About Us</h2>
-        <p class="flow-text" style="line-height:1.25;">
+        <p class="flow-text" style="line-height:1.5;">
         <strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry
         in the context of a supportive community.
         <br>
@@ -47,8 +47,8 @@
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h2 class="is-size-1-tablet is-size-2-mobile  ">Projects</h2>
-        <p class="flow-text" style="line-height:1.25;">
+        <h2 class="is-size-1-tablet is-size-2-mobile">Projects</h2>
+        <p class="flow-text" style="line-height:1.5;">
         <strong>This semester</strong> we'll be introducing projects as an opportunity for our
           members to <strong>explore</strong> cool niches in tech, to gain <strong>experience</strong>
           as developers, and to <strong>lead</strong> their own project teams.
@@ -82,7 +82,7 @@
         <div class="row">
             <div class="col s12">
                 <h2 class="is-size-1-tablet is-size-2-mobile">Events</h2>
-                <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+                <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.5;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
                 </p>
                 <%= link_to_nav_item "Our Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
@@ -102,7 +102,7 @@
         
         <% @leadership.each do |element| %>
           <div class="col s6 m3">
-            <div class="card fixed-height">
+            <div class="card adjustable-height">
               <div class="card-image">
                 <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
               </div>
