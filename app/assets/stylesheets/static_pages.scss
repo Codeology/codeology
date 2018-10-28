@@ -188,13 +188,13 @@ $codeology-blue: #92D5E6;
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1350px) {
+@media only screen and (min-width: 600px) and (max-width: 1367px) {
   .card.adjustable-size{
     height: 400px;
   }
 }
 
-@media only screen and (min-width: 1350px) and (max-width: 1600px) {
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
   .card.adjustable-size{
     height: 450px;
   }
@@ -234,28 +234,6 @@ $codeology-blue: #92D5E6;
   .card.fixed-height{
     height: 50vw;
   }
-}
-
-.project-card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.25s;
-}
-
-.project-card:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
-}
-
-.project-card-image{
-  max-height: 25vh;
-}
-
-.card-image.project-card-image{
-  display: flex; 
-}
-
-.project-card-content{
-  padding: 1.25rem;
-  height: 20vh;
 }
 
 /* ============================ */

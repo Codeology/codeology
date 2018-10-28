@@ -58,14 +58,20 @@
         <div class="row">
           <% @projects.each do |element| %>
             <div class="col s12 m4">
-              <div class="card medium">
-                <div class="card-image project-card-image">
-                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image", :style=>"object-fit:cover;") %>
+              <div class="card small hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image activator", :style=>"object-fit: cover;") %>
                 </div>
                 <div class="card-content">
-                  <p class="is-size-4"><%= element[:name] %></p>
+                  <p class="is-size-4 truncate activator"><%= element[:name] %></p>
+                  <p class="activator"><i class="material-icons right">arrow_drop_up</i></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title is-size-4 is-size-6-mobile grey-text text-darken-4"><%= element[:name] %><i class="material-icons right">arrow_drop_down</i></span>
+                  <p><%= element[:blurb] %></p>
                 </div>
               </div>
+              
             </div>
           <% end %>
         </div>
