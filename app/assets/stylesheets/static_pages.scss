@@ -14,6 +14,11 @@ $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
+// adding pointer to materialize's activator
+.activator {
+  cursor: pointer;
+}
+
 .section-anchor{
   top: -7vh; 
   position: relative;

@@ -55,26 +55,9 @@
           </p>
         <!-- PROJECT CARDS HERE -->
         <!-- Three projects are chosen at random in the static_pages_controller and in Projects.rb -->
-        <div class="row">
-          <% @projects.each do |element| %>
-            <div class="col s12 m4">
-              <div class="card small hoverable">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image activator", :style=>"object-fit: cover;") %>
-                </div>
-                <div class="card-content">
-                  <p class="is-size-4 truncate activator"><%= element[:name] %></p>
-                  <p class="activator"><i class="material-icons right">arrow_drop_up</i></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title is-size-4 is-size-6-mobile grey-text text-darken-4"><%= element[:name] %><i class="material-icons right">arrow_drop_down</i></span>
-                  <p><%= element[:blurb] %></p>
-                </div>
-              </div>
-              
-            </div>
-          <% end %>
-        </div>
+        <!-- These are sent as @projects and the html is created in _project-cards.html.erb which is then rendered here-->
+        <%= render "layouts/project_cards" %>
+
         <!-- END OF PROJECTS-->
         <%= link_to_nav_item "All Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
       </div>
