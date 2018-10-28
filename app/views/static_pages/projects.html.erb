@@ -2,19 +2,17 @@
 <% provide(:title, "Codeology | Projects") %>
 
 <!-- Projects Landing -->
-<section class="hero extra-vertical-padding">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-10 is-offset-1 has-text-centered">
-          <h1 class="title is-2  ">
-            Projects
-          </h1>
-          <h2 class="subtitle is-5  ">
-            Codeology is introducing projects as a way to provide our members with hands-on experience.
-			Projects are led by experienced members within our community.
-          </h2>
-        </div>
+<section class="extra-vertical-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h1 class="has-text-centered is-size-1-tablet is-size-2-mobile">
+          Projects
+        </h1>
+        <p class="flow-text">
+          Codeology is introducing projects as a way to provide our members with hands-on experience.
+          Projects groups are led by experienced members within our community.
+        </p>
       </div>
     </div>
   </div>
@@ -23,27 +21,21 @@
 <!-- PROJECTS -->
 <section id="projects" class="section">
 	<div class="container">
-		<div class="columns">
-			<div class="column is-10 is-offset-1">
-				<h2 class="title is-2  ">Projects</h2>
-				<h2 class="subtitle is-4  ">Fall 2018</h2>
-        <div class="columns is-multiline">
+		<div class="row">
+			<div class="col s12">
+				<p><span class="is-size-3 is-size-4-mobile">Projects</span><br>
+        <span class="is-size-4 is-size-5-mobile">Fall 2018</span></p>
+				
+        <div class="row">
           <% @projects.each do |element| %>
-            <div class="column is-one-third">
-              <div class="card">
+            <div class="col s12 m4">
+              <div class="card medium">
                 <div class="card-image project-card-image">
-                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
+                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image", :style=>"object-fit:cover;") %>
                 </div>
                 <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <h5 class="  title is-5  "><%= element[:name] %></h5>
-                    </div>
-                  </div>
-
-                  <div class="content">
-                    <p class="project-card-subtitle subtitle is-6"><%= element[:blurb] %></p>
-                  </div>
+                    <p class="is-size-5"><%= element[:name] %></p>
+                    <p class="is-size-6"><%= element[:blurb] %></p>
                 </div>
               </div>
             </div>
