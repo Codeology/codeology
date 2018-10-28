@@ -25,10 +25,12 @@
     <!-- MAIN CONTENT -->
     <div id="main-content-container" class="">
       <!-- NOTIFICATIONS -->
-      <div class="container extra-navbar-padding">
+      <% if flash.any? %>
+      <div class="container collection has-text-centered">
         <% flash.each do |key, value| %>
-          <div class="notification is-<%= key %>"><%= value %></div>
+          <p class="collection-item is-<%= key %>"><%= value %></p>
         <% end %>
+      <% end %>
       </div>
 
       <%= yield %>
