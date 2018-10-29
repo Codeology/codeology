@@ -1,69 +1,35 @@
-<nav class="panel">
+<!-- NAVIGATION BAR -->
+<div class="navbar-fixed">
+  <nav class="white">
+    <div class="nav-wrapper">
+      <a data-target="mobile-nav" class="sidenav-trigger"><i class="grey-text text-darken-3 fa fa-3x fa-bars"></i></a>
+    </div>
+  </nav>
+</div>
 
-  <div class="panel-heading sideNav-custom has-text-centered">
+<ul class="sidenav fixed-sidenav" id="mobile-nav">
+  <li><div class="user-view">
     <%= link_to dashboard_path do %>
-      <figure class="image sideNav-custom">
-        <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
-      </figure>
+      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-rounded")  %>
     <% end %>
-  </div>
+    <%= link_to user_path(@curr_user), :class => "grey-text text-darken-3 name" do %>
+      @curr_user.name
+    <% end %>
+    <%= link_to user_path(@curr_user), :class => "grey-text text-darken-3 name" do %>
+      @curr_user.email
+    <% end %>
+  </div></li>
 
-  <%= link_to availabilities_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-terminal"></i>
-    </span>
-    Get Interviewed
-  <% end %>
+  <li><%= link_to availabilities_path, :class => "grey-text text-darken-3" do %><i class="material-icons">cloud</i> Get Interviewed <% end %></li>
+  <li><%= link_to myAvailability_path, :class => "grey-text text-darken-3" do %> Interview Others <% end %></li>
+  <li><%= link_to upcoming_interviews_path, :class => "grey-text text-darken-3" do %> Upcoming <% end %></li>
+  <li><%= link_to past_interviews_path, :class => "grey-text text-darken-3" do %> Completed <% end %></li>
+  <li><%= link_to users_path, :class => "grey-text text-darken-3" do %> Member Directory <% end %></li>
+  <li><%= link_to root_url, :class => "grey-text text-darken-3" do %> Back to Website <% end %></li>
+  <li><%= link_to user_path(@curr_user), :class => "grey-text text-darken-3" do %> Settings <% end %></li>
+  <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-3">Log Out</a></li> 
+</ul>
 
-  <%= link_to myAvailability_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-comments-o"></i>
-    </span>
-    Interview Others
-  <% end %>
-
-  <%= link_to upcoming_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-calendar"></i>
-    </span>
-    Upcoming
-  <% end %>
-
-  <%= link_to past_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-bar-chart"></i>
-    </span>
-    Completed
-  <% end %>
-
-  <a href="/users" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class="fa fa-address-book-o"></i>
-    </span>
-    Member Directory
-  </a>
-
-  <a href="/" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class="fa fa-angle-double-left"></i>
-    </span>
-    Back to Website
-  </a>
-  
-  <%= link_to user_path(@curr_user), :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class=" icon-flipped fa fa-gears"></i>
-    </span>
-    Settings
-  <% end %>
-
-  <a rel="nofollow" data-method="delete" href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class=" icon-flipped fa fa-sign-out"></i>
-    </span>
-    Log Out
-  </a>
-  
-  
-
-</nav>
+<script type="text/javascript"> 
+  $('.sidenav').sidenav();
+</script>

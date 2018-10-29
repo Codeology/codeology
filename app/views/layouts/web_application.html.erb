@@ -16,49 +16,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body onresize="adjustForMobile()">
+  <body>
     <!-- NAVPANEL -->
-    <div id="sideNavPanel" class="sideNav is-hidden-mobile">
     <%= render "layouts/sideNav" %>
-    </div>
-    
-    <!-- DropDown menu -->
-    <div class="is-hidden-tablet">
-    <%= render "layouts/dropdownSideNav"%>
-    </div>
 
-    <!-- NAVPANEL TOGGLE -->
-    <!--
-    <div id="sideNavToggleOn">
-      <button onclick="openNav()" class="button sideNav-toggle">
-        <span class="panel-icon has-text-grey-darker">
-          <i class="fa fa-caret-right" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-
-    <div id="sideNavToggleOff" class="is-hidden-desktop">
-      <button onclick="closeNav()" class="button sideNav-toggle">
-        <span class="panel-icon has-text-grey-darker">
-          <i class="fa fa-caret-left" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    -->
 
     <!-- MAIN CONTENT -->
-    <div id="resize-content-container" class="">
-      <!-- BODY --><!-- NOTIFICATIONS -->
+    <div id="container" class="">
+      <!-- NOTIFICATIONS -->
       <div class="container is-fluid extra-navbar-padding">
         <% flash.each do |key, value| %>
           <div class="has-text-centered notification is-<%= key %>"><%= value %></div>
         <% end %>
       </div>
+      <!-- YIELD PAGE -->
       <%= yield %>
     </div>
   </body>
-  
-  <script type="text/javascript"> 
-    adjustForMobile();
-  </script>
 </html>
