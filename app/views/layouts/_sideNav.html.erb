@@ -7,29 +7,44 @@
   </nav>
 </div>
 
-<ul class="sidenav fixed-sidenav" id="mobile-nav">
+<ul class="sidenav sidenav-fixed" id="mobile-nav">
   <li><div class="user-view">
+    <div class="background">
+      <%= image_tag("office.jpg", alt: "logo")  %>
+    </div>
     <%= link_to dashboard_path do %>
-      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-rounded")  %>
+      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-round", style: "width: 225px !important")  %>
     <% end %>
-    <%= link_to user_path(@curr_user), :class => "grey-text text-darken-3 name" do %>
-      @curr_user.name
+    <%= link_to user_path(@curr_user) do %>
+      <span class="grey-text text-darken-4 name" style="font-weight:bold;"><%= @curr_user.name %></span>
     <% end %>
-    <%= link_to user_path(@curr_user), :class => "grey-text text-darken-3 name" do %>
-      @curr_user.email
+    <%= link_to user_path(@curr_user) do %>
+      <span class="grey-text text-darken-4 email" style="font-weight:bold;"><%= @curr_user.email %></span>
     <% end %>
   </div></li>
 
-  <li><%= link_to availabilities_path, :class => "grey-text text-darken-3" do %><i class="material-icons">cloud</i> Get Interviewed <% end %></li>
-  <li><%= link_to myAvailability_path, :class => "grey-text text-darken-3" do %> Interview Others <% end %></li>
-  <li><%= link_to upcoming_interviews_path, :class => "grey-text text-darken-3" do %> Upcoming <% end %></li>
-  <li><%= link_to past_interviews_path, :class => "grey-text text-darken-3" do %> Completed <% end %></li>
-  <li><%= link_to users_path, :class => "grey-text text-darken-3" do %> Member Directory <% end %></li>
-  <li><%= link_to root_url, :class => "grey-text text-darken-3" do %> Back to Website <% end %></li>
-  <li><%= link_to user_path(@curr_user), :class => "grey-text text-darken-3" do %> Settings <% end %></li>
-  <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-3">Log Out</a></li> 
+  <li><%= link_to availabilities_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">work_outline</i> Get Interviewed <% end %></li>
+  <li><%= link_to myAvailability_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">chat_bubble_outline</i> Interview Others <% end %></li>
+  <li><%= link_to upcoming_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">schedule</i> Upcoming <% end %></li>
+  <li><%= link_to past_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">insert_chart_outlined</i> Completed <% end %></li>
+  <li><%= link_to users_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">people_outline</i> Member Directory <% end %></li>
+  <li>
+    <ul class="collapsible">
+      <li>
+        <a class="collapsible-header grey-text text-darken-4 waves-effect waves-green"><i class="material-icons">settings_applications</i> Options</a>
+        <div class="collapsible-body">
+          <ul>
+            <li><%= link_to root_url, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">open_in_browser</i> Back to Website <% end %></li>
+            <li><%= link_to user_path(@curr_user), :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">settings</i> Settings <% end %></li>
+            <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-4 waves-effect waves-green"><i class="material-icons">exit_to_app</i>Log Out</a></li> 
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <script type="text/javascript"> 
   $('.sidenav').sidenav();
+  $('.collapsible').collapsible();
 </script>

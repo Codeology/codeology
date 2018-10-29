@@ -21,6 +21,16 @@ $codeology-blue: #92D5E6;
   color: $codeology-blue;
 }
 
+.adjustable-container {
+  padding-left: 300px !important;
+}
+
+@media only screen and (max-width : 992px) {
+  .adjustable-container {
+    padding-left: 0px !important;
+  }
+}
+
 .custom-button.is-info.is-outlined.is-rounded.button{
   border-color: $codeology-blue;
   color: $codeology-blue;
