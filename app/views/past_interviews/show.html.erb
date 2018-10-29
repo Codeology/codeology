@@ -14,9 +14,9 @@
 
       <div class="col s12 l10 offset-l1">
         <ul class="tabs">
-          <li id="for_me_tab" class="tab col s4 normal-caps"><a class="active waves-effect waves-green" href="#for_me">Feedback About Me</a></li>
-          <li><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview), class: "col tab s4 normal-caps waves-effect waves-green"%></li>
-          <li id="by_me_tab" class="tab col s4 normal-caps"><a class="waves-effect waves-green" href="#by_me">Feedback By Me</a></li>
+          <li class="tab col s4 normal-caps" id="for_me_tab"><a class="active waves-effect waves-green" href="#for_me">Feedback About Me</a></li>
+          <li class="col s4"><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview), class: "col tab s12 normal-caps waves-effect waves-green"%></li>
+          <li class="tab col s4 normal-caps" id="by_me_tab"><a class="waves-effect waves-green" href="#by_me">Feedback By Me</a></li>
         </ul>
       </div>
 
