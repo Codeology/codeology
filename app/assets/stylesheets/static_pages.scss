@@ -10,6 +10,7 @@ $old-codeology-yellow: #EEBF44;
 $old-codeology-green: #50D397;
 $old-codeology-blue: #69EAE3;
 
+$codeology-red: #ef9a9a ;
 $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
@@ -97,6 +98,25 @@ $codeology-blue: #92D5E6;
   width: 66vw;
   min-width: 300px;
   height: 75vh;
+}
+/* ============================ */
+/* NOTIFICATIONS
+/* ============================ */
+
+.is-success{
+  background-color: $codeology-green !important;
+}
+
+.is-info{
+  background-color: $codeology-blue !important;  
+}
+
+.is-warning{
+  background-color: $codeology-yellow !important;  
+}
+
+.is-danger{
+  background-color: $codeology-red !important;  
 }
 
 /* ============================ */
