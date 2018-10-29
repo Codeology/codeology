@@ -6,7 +6,7 @@
     <h1 class="title is-2   small-vertical-padding has-text-centered">Completed Interviews</h1>
     <h1 class="title is-5   ">Received Interviews</h1>
         
-    <table class="table is-fullwidth">
+    <table class="responsive-table highlight">
       <thead>
         <tr>
           <th>Date</th>
@@ -22,14 +22,14 @@
         <% @mappedPastReceiving.each do |receiving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td style="vertical-align:middle;"><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
-            <td style="vertical-align:middle;"><%= receiving[:username] %></td>
-            <td style="vertical-align:middle;"><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
-            <td style="vertical-align:middle;"><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= receiving[:username] %></td>
+            <td><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
+            <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
-            <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
-            <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -37,7 +37,7 @@
 
     <h1 class="title is-5   ">Given Interviews</h1>
 
-    <table class="table is-fullwidth">
+    <table class="responsive-table highlight">
       <thead>
         <tr>
           <th>Date</th>
@@ -53,14 +53,14 @@
         <% @mappedPastGiving.each do |giving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td style="vertical-align:middle;"><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
-            <td style="vertical-align:middle;"><%= giving[:username] %></td>
-            <td style="vertical-align:middle;"><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
-            <td style="vertical-align:middle;"><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= giving[:username] %></td>
+            <td><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
+            <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
-            <td style="vertical-align:middle;"><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
-            <td style="vertical-align:middle;"><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
           </tr>
         <% end %>
       </tbody>

@@ -1,37 +1,28 @@
 <% provide(:title, "Codeology | Edit User") %>
 
 <section id="edit" class="hero">
-  <div class="hero-body" id="login-box">
-    <div class="columns has-text-centered is-centered">
-      <div class="column is-6">
-        <h2 class="title is-2   extra-top-padding">Edit User</h2>
-       
-        <%= render 'layouts/error_messages' %>
-       
-        <%= form_for(@user) do |f| %>
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.text_field :name, placeholder: 'name', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                <i class="fa fa-lg fa-user"></i>
-              </span>
-            </p>
-          </div>
+  <div class="row has-text-centered">
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
+      <h3 class="extra-top-padding">Edit User</h3>
+      
+      <%= render 'layouts/error_messages' %>
+      
+      <%= form_for(@user) do |f| %>
+        <div class="input-field">
+          <i class="material-icons prefix">person_outline</i>
+          <%= f.text_field :name, class: '' %>
+          <label for="user_name">name</label>  
+        </div>
 
-          
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                <i class="fa fa-lg fa-envelope-o"></i>
-              </span>
-          </p>
-          </div>
+        <div class="input-field">
+          <i class="material-icons prefix">mail_outline</i>
+          <%= f.email_field :email, class: '' %>
+          <label for="user_email">email</label>
+        </div>
 
-          <%= f.submit "Submit Changes", class: "button is-rounded", style: "margin-top: 10px;"%> 
-        <% end %>
-        
-      </div>
+        <%= f.submit "Submit Changes", class: "btn is-round normal-caps white grey-text text-darken-4", style: "margin-top: 10px;"%> 
+      <% end %>
+      
     </div>
   </div>
 </section>
