@@ -2,7 +2,7 @@
 <% provide(:title, title) %>
 
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
     <div class="row">
       <div class="col s12 l10 offset-l1">
         <h3 class="small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h3>
@@ -10,123 +10,70 @@
           Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
           Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
         </h5>
+      </div>
 
-        <div class="tabs is-medium is-toggle is-toggle-rounded is-centered">
-          <ul>
-            <li onclick="toggleByMe()" id="by_me_tab" class=""><a><span>Feedback By Me</span></a></li>
-            <li><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview) %></li>
-            <li onclick="toggleForMe()" id="for_me_tab" class="is-active"><a><span>Feedback About Me</span></a></li>
-          </ul>
-        </div>
+      <div class="col s12 l10 offset-l1">
+        <ul class="tabs">
+          <li id="for_me_tab" class="tab col s4 normal-caps"><a class="active" href="#for_me">Feedback About Me</a></li>
+          <li><%= link_to 'Update Feedback', edit_past_interview_path(@past_interview), class: "col tab s4 normal-caps"%></li>
+          <li id="by_me_tab" class="tab col s4 normal-caps"><a href="#by_me">Feedback By Me</a></li>
+        </ul>
+      </div>
+
+      <div class="col s12 l10 offset-l1">
 
         <% if @is_interviewee %>
           <div class="card" id="for_me">
         <% else %>
-          <div class="card" id="by_me" style="display:none;">
+          <div class="card" id="by_me">
         <% end %>
           <div class="card-content">
-            
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">How were <%if @is_interviewee%>my<%else%>their<%end%> technical skills?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">How were <%if @is_interviewee%>my<%else%>their<%end%> technical skills?</span>
               <% @past_interview.technical_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
+                <i class="material-icons">grade</i>
               <% end %>
-            </div>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">How was <%if @is_interviewee%>my<%else%>their<%end%> problem solving ability?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">How was <%if @is_interviewee%>my<%else%>their<%end%> problem solving ability?</span>
               <% @past_interview.problem_solving_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
+                <i class="material-icons">grade</i>
               <% end %>
-            </div>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">What about <%if @is_interviewee%>my<%else%>their<%end%> communication ability?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">What about <%if @is_interviewee%>my<%else%>their<%end%> communication ability?</span>
               <% @past_interview.communication_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
-              <% end %>            </div>
+                <i class="material-icons">grade</i>
+              <% end %>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6"><%if @is_interviewee%>Their feedback to help me<%else%>My feedback to help them<%end%> get better!</p>
-              </div>
-            </div>
-            <div class="content" style="font-family: 'Courier New', Courier, monospace;">
+            <span class="card-title is-size-5"><%if @is_interviewee%>Their feedback to help me<%else%>My feedback to help them<%end%> get better!</span>
+            <div style="font-family: 'Courier New', Courier, monospace;">
               <%= @past_interview.feedback_interviewee %>
             </div>
           </div>
         </div>
         
         <% if @is_interviewee %>
-          <div class="card" id="by_me" style="display:none;">
+          <div class="card" id="by_me">
         <% else %>
           <div class="card" id="for_me">
         <% end %>
           <div class="card-content">
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">How excited would <%if @is_interviewee%>I be to work with them<%else%>they be to work with me<%end%>?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">How excited would <%if @is_interviewee%>I be to work with them<%else%>they be to work with me<%end%>?</span>
               <% @past_interview.excitement_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
+                  <i class="material-icons">grade</i>
               <% end %>
-            </div>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">How good were <%if @is_interviewee%>their<%else%>my<%end%> questions?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">How good were <%if @is_interviewee%>their<%else%>my<%end%> questions?</span>
               <% @past_interview.question_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
+                <i class="material-icons">grade</i>
               <% end %>
-            </div>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6">How helpful  <%if @is_interviewee%>where they<%else%>was I<%end%> 
-                in guiding <%if @is_interviewee%>me<%else%>them<%end%> to the solution(s)?</p>
-              </div>
-            </div>
-            <div class="content">
+            <span class="card-title is-size-5">How helpful  <%if @is_interviewee%>where they<%else%>was I<%end%> 
+            in guiding <%if @is_interviewee%>me<%else%>them<%end%> to the solution(s)?</span>
               <% @past_interview.helpfulness_score.times do %>
-                <span class="icon">
-                  <i class="fa fa-lg fa-star"></i>
-                </span>
+                <i class="material-icons">grade</i>
               <% end %>
-            </div>
             <hr>
-            <div class="media">
-              <div class="media-content">
-                <p class="subtitle is-6"><%if @is_interviewee%>My feedback to help them<%else%>Their feedback to help me<%end%> get better!</p>
-              </div>
-            </div>
-            <div class="content" style="font-family: 'Courier New', Courier, monospace;">
+            <span class="card-title is-size-5"><%if @is_interviewee%>My feedback to help them<%else%>Their feedback to help me<%end%> get better!</span>
+            <div style="font-family: 'Courier New', Courier, monospace;">
               <%= @past_interview.feedback_interviewer %>
             </div>
           </div>
@@ -139,20 +86,5 @@
 </section>
 
 <script type="text/javascript">
-function toggleByMe() {
-  $("#by_me_tab").attr('class', 'is-active');
-  $("#for_me_tab").attr('class', '');
-  $("#by_me").css('display', 'block');
-  $("#for_me").css('display', 'none');
-}
-  $(document).ready(function(){
-    $('.tabs').tabs();
-  });
-function toggleForMe() {
-  $("#by_me_tab").attr('class', '');
-  $("#for_me_tab").attr('class', 'is-active');
-  $("#by_me").css('display', 'none');
-  $("#for_me").css('display', 'block');
-}
-
+$('.tabs').tabs();
 </script>
