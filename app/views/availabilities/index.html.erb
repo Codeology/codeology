@@ -19,14 +19,14 @@
       <tbody>
         <% @allAvailabilitys.each do |availability| %>
           <tr>
-            <td><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= availability.time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= availability.time.localtime.strftime("%l:%M %p") %></td>
             <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
             <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td>
               <!-- if availability belongs to user, render a disabled book button instead -->
               <%= link_to_if availability.user_id != session[:user_id], 'Book', availability, method: :patch, data: { confirm: 'You are about to book for: ' + 
-              availability.time.localtime.strftime("%m/%d/%y") + " " + availability.time.localtime.strftime("%I:%M %p") + 
+              availability.time.localtime.strftime("%b %d, %Y") + " " + availability.time.localtime.strftime("%l:%M %p") + 
               ". This will destroy any availabilities you have posted that overlap with this booking." },
                 class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" do %>
                 <span class="tooltipped" data-position="top" data-tooltip="This is your availability">

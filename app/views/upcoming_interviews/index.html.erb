@@ -3,8 +3,8 @@
 <section class="section">
   <div class="container is-fluid">
       
-    <h1 class="title is-2   small-vertical-padding has-text-centered">Upcoming Interviews</h1>
-    <h1 class="title is-5   ">Receiving Interviews</h1>
+    <h3 class="small-vertical-padding has-text-centered">Upcoming Interviews</h3>
+    <h5>Receiving Interviews</h5>
         
     <table class="responsive-table highlight">
       <thead>
@@ -22,19 +22,20 @@
         <% @mappedUpcomingReceiving.each do |receiving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%l:%M %p") %></td>
             <td><%= receiving[:username] %></td>
             <td><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
-            <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
+            <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, 
+            class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <h1 class="title is-5   ">Giving Interviews</h1>
+    <h5>Giving Interviews</h5>
 
     <table class="responsive-table highlight">
       <thead>
@@ -52,13 +53,14 @@
         <% @mappedUpcomingGiving.each do |giving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%l:%M %p") %></td>
             <td><%= giving[:username] %></td>
             <td><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
-            <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, class: "button is-rounded is-danger is-outlined custom-button" %></td>
+            <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, 
+            class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>

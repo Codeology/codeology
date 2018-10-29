@@ -22,8 +22,8 @@
         <% @mappedPastReceiving.each do |receiving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td><%= receiving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= receiving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= receiving[:interview].time.localtime.strftime("%l:%M %p") %></td>
             <td><%= receiving[:username] %></td>
             <td><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
@@ -53,8 +53,8 @@
         <% @mappedPastGiving.each do |giving| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td><%= giving[:interview].time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= giving[:interview].time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= giving[:interview].time.localtime.strftime("%l:%M %p") %></td>
             <td><%= giving[:username] %></td>
             <td><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>

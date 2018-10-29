@@ -38,8 +38,8 @@
         <% @userAvailabilitys.each do |availability| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td><%= availability.time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= availability.time.localtime.strftime("%l:%M %p") %></td>
             <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
             <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  
