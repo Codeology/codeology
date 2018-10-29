@@ -12,7 +12,7 @@
     <div class="background">
       <%= image_tag("office.jpg", alt: "logo")  %>
     </div>
-    <%= link_to dashboard_path do %>
+    <%= link_to root_url do %>
       <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-round hoverable", style: "width: 225px !important")  %>
     <% end %>
     <%= link_to user_path(@curr_user) do %>
@@ -22,12 +22,12 @@
       <span class="grey-text text-darken-4 email" style="font-weight:bold;"><%= @curr_user.email %></span>
     <% end %>
   </div></li>
-
   <li><%= link_to availabilities_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">work_outline</i> Get Interviewed <% end %></li>
   <li><%= link_to myAvailability_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">chat_bubble_outline</i> Interview Others <% end %></li>
   <li><%= link_to upcoming_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">schedule</i> Upcoming <% end %></li>
   <li><%= link_to past_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">insert_chart_outlined</i> Completed <% end %></li>
   <li><%= link_to users_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">people_outline</i> Member Directory <% end %></li>
+  <li><%= link_to dashboard_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">tv</i> Dashboard <% end %></li>
   <li>
     <ul class="collapsible">
       <li>
