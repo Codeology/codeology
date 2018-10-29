@@ -1,16 +1,14 @@
 <% provide(:title, "Codeology | Dashboard") %>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-fluid">
-      <h1 class="title is-2   has-text-centered" style="padding: 3rem 0rem 0rem">
-      Welcome <%= @curr_user.name %>! <hr>
-      </h1>
+<section>
+  <div class="container">
+    <h3 class="has-text-centered" style="padding: 3rem 0rem 0rem">Welcome <%= @curr_user.name %>! <hr></h3>
 
-    <article id="msg" class="message is-codeology-green">  
-      <div class="message-body is-codeology-green">        
-        <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
-        Welcome! There's not that many directions released as we want to get ui/ux feedback from users. Please feel free to explore and break things.
+    <article id="msg" class="message is-codeology-green">
+      <div class="message-body is-codeology-green grey-text text-darken-4"> 
+        <a onclick="closeMessage()" class="delete" style="cursor:pointer; float:right;"><i class="material-icons">close</i></a>
+        Welcome! We recently migrated CSS frameworks so as you might have noticed everything looks a lot cleaner.
+        Once again there's not that many directions released as we want to get ui/ux feedback from users. Please feel free to explore and break things.
         <br><br>
         Note: The Codeology webapp code is availabile on <a href="https://github.com/CodeologyClub/codeology">github</a> 
         if you are interested in contributing!
@@ -26,94 +24,76 @@
       </div>
     </article>
 
-      <div class="columns is-centered has-text-centered is-multiline">
-        <div class="column is-6">
-          <div class="card">
-            <a href="/myAvailability">
-            <div class="card-content">
-              <p class="title">
-                <%= @yourAvail %>
-              </p>
-              <p class="subtitle">
-                Your Availabilities
-              </p>
-            </div>
-            </a>
+    <div class="row">
+      
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @yourAvail %></p>
+            <p class="flow-text">Your Availabilities</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
           </div>
         </div>
+      </div>
         
-        <div class="column is-6"> 
-          <div class="card">
-            <a href="/availabilities">
-            <div class="card-content">
-              <p class="title">
-                <%= @totalAvail %>
-              </p>
-              <p class="subtitle">
-                Total Availabilities
-              </p>
-            </div>
-            </a>
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @totalAvail %></p>
+            <p class="flow-text">Total Availabilities</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
           </div>
         </div>
+      </div>
 
-        <div class="column is-6">
-          <div class="card">
-            <a href="/upcoming_interviews">
-            <div class="card-content">
-              <p class="title">
-                <%= @upcomingReceive %>
-              </p>
-              <p class="subtitle">
-                Interviews to Receive
-              </p>
-            </div>
-            </a>
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @upcomingReceive %></p>
+            <p class="flow-text">Interviews to Receive</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
           </div>
         </div>
-        
-        <div class="column is-6"> 
-          <div class="card">
-            <a href="/upcoming_interviews">
-            <div class="card-content">
-              <p class="title">
-                <%= @upcomingGive %>
-              </p>
-              <p class="subtitle">
-                Interviews to Give
-              </p>
-            </div>
-            </a>
-          </div>
-        </div>
+      </div>
 
-        <div class="column is-6"> 
-          <div class="card">
-            <a href="/past_interviews">
-            <div class="card-content">
-              <p class="title">
-                <%= @received %>
-              </p>
-              <p class="subtitle">
-                Interviews Received
-              </p>
-            </div>
-            </a>
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @upcomingGive %></p>
+            <p class="flow-text">Interviews to Give</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
           </div>
         </div>
-        
-        <div class="column is-6"> 
-          <div class="card">
-            <a href="/past_interviews">
-            <div class="card-content">
-              <p class="title">
-                <%= @given %>
-              </p>
-              <p class="subtitle">
-                Interviews Given
-              </p>
-            </div>
-            </a>
+      </div>
+
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @received %></p>
+            <p class="flow-text">Interviews Received</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col s6 m4">
+        <div class="card hoverable">
+          <div class="card-content has-text-centered">
+            <p class="flow-text"><%= @given %></p>
+            <p class="flow-text">Interviews Given</p>
+          </div>
+          <div class="card-action">
+            <a href="/myAvailability">View</a>
           </div>
         </div>
       </div>

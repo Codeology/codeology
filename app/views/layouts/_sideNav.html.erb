@@ -13,7 +13,7 @@
       <%= image_tag("office.jpg", alt: "logo")  %>
     </div>
     <%= link_to dashboard_path do %>
-      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-round", style: "width: 225px !important")  %>
+      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-round hoverable", style: "width: 225px !important")  %>
     <% end %>
     <%= link_to user_path(@curr_user) do %>
       <span class="grey-text text-darken-4 name" style="font-weight:bold;"><%= @curr_user.name %></span>
@@ -36,7 +36,7 @@
           <ul>
             <li><%= link_to root_url, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">open_in_browser</i> Back to Website <% end %></li>
             <li><%= link_to user_path(@curr_user), :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">settings</i> Settings <% end %></li>
-            <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-4 waves-effect waves-green"><i class="material-icons">exit_to_app</i>Log Out</a></li> 
+            <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-4 waves-effect waves-green"><i class="icon-flipped material-icons">exit_to_app</i>Log Out</a></li> 
           </ul>
         </div>
       </li>
