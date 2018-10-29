@@ -26,7 +26,7 @@
     <div class="adjustable-container">
       <!-- NOTIFICATIONS -->
       <% if flash.any? %>
-      <div class="container collection has-text-centered">
+      <div class="container is-round collection has-text-centered">
         <% flash.each do |key, value| %>
           <p class="collection-item is-<%= key %>"><%= value %></p>
         <% end %>
