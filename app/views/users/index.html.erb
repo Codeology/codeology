@@ -17,13 +17,13 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= user.name %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= user.email %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= link_to 'View', user, class: "button is-rounded is-success is-outlined custom-button" %></td>
+            <td style="vertical-align:middle;"><%= user.name %></td>
+            <td style="vertical-align:middle;"><%= user.email %></td>
+            <td style="vertical-align:middle;"><%= link_to 'View', user, class: "button is-rounded is-success is-outlined custom-button" %></td>
             <% if is_admin? %>  
-              <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= link_to 'Edit', edit_user_path(user), class: "button is-rounded is-info is-outlined custom-button" %></td>
+              <td style="vertical-align:middle;"><%= link_to 'Edit', edit_user_path(user), class: "button is-rounded is-info is-outlined custom-button" %></td>
               <!-- Destroy is much more humorous than delete and so it shall remain -->
-              <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone' },
+              <td style="vertical-align:middle;"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone' },
               class: "button is-rounded is-danger is-outlined custom-button" %></td>
             <% end %>
           </tr>

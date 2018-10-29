@@ -1,66 +1,50 @@
 <% provide(:title, "Codeology | New Availability") %>
 
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
       
-    <h1 class="title is-2   small-vertical-padding has-text-centered">New Availability</h1>
+    <h3 class="small-vertical-padding has-text-centered">New Availability</h3>
     
 
-    <div class="columns is-centered">
-      <div class="column is-8">
-
+    <div class="row">
+      <div class="col s12 m10 offset-m1 l8 offset-l2">
         <%= form_tag("/availabilities", method: "post", autocomplete: "off") do %>
           <input autocomplete="off" name="hidden" type="text" style="display:none;">
 
-          <div class="field is-grouped is-grouped-centered">
-            <p class="control has-icons-left">
-              <input type="text" data-toggle="datepicker" id="availability_date" class="input is-rounded" name="availability[date]" placeholder="Pick a date">      
-
-              <span class="icon is-small is-left">
-                <i class="fa fa-lg fa-calendar"></i>
-              </span>
-            </p>
-
-            <div class="control has-icons-left">
-              <div class="select is-rounded">
-                <select id="availability_time" name="availability[time]">
-                  
-                </select>
-              </div>
-              <div class="icon is-small is-left">
-                <i class="fa fa-lg fa-clock-o"></i>
-              </div>
-            </div>
+          <div class="input-field">
+            <i class="material-icons prefix">today</i>
+            <input type="text" id="availability_date" class="datepicker" name="availability[date]">
+            <label for="availability_date">Pick a date</label>
           </div>
 
-          <div class="field is-grouped is-grouped-centered">            
-            <div class="control has-icons-left">
-              <div class="select is-rounded">
-                <select id="availability_language" name="availability[is_python]">
-                  <option value="true">Python</option>
-                  <option value="false">Java</option>
-                </select>
-              </div>
-              <div class="icon is-small is-left">
-                <i class="fa fa-lg fa-code"></i>
-              </div>
-            </div>
-
-            <div class="control has-icons-left">
-              <div class="select is-rounded">
-                <select id="availability_location" name="availability[is_videocall]">
-                  <option value="false">On Campus</option>
-                  <option value="true">Videocall</option>
-                </select>
-              </div>
-              <div class="icon is-small is-left">
-                <i class="fa fa-lg fa-video-camera"></i>
-              </div>
-            </div>
+          <div class="input-field">
+            <i class="material-icons prefix">timer</i>
+            <input type="text" id="availability_time" class="timepicker" name="availability[time]">
+            <label for="availability_time">Pick a time</label>
           </div>
 
-          <div class="field is-grouped is-grouped-centered">            
-            <input type="submit" name="commit" value="Submit" class="button is-rounded" data-disable-with="Submit">
+
+          <div class="input-field">
+            <i class="material-icons prefix">code</i>
+            <select id="availability_language" name="availability[is_python]">
+              <option value="true">Python</option>
+              <option value="false">Java</option>
+            </select>
+            <label>Language</label>
+          </div>
+            
+          <div class="input-field">
+            <i class="material-icons prefix">location_on</i>
+            <select id="availability_location" name="availability[is_videocall]">
+              <option value="false">On Campus</option>
+              <option value="true">Videocall</option>
+            </select>
+            <label>Location</label>
+          </div>
+
+          <div class="input-field">            
+            <input type="submit" name="commit" value="Submit" class="btn waves-effect waves-green white black-text is-round normal-caps" 
+            data-disable-with="Submit">
           </div>
 
         <% end %>
@@ -69,8 +53,8 @@
   </div>
 </section>
 
-
 <script type="text/javascript">
+/*
 
   function populate(start)
   {
@@ -115,12 +99,11 @@
                   "10:30 pm",
                   "11:00 pm",
                   "11:30 pm"]
-
   $('[data-toggle="datepicker"]').datepicker({
     autoHide: true,
     startDate: tomorrow,
     endDate: new Date(2019, 0, 0)
-  });
+  }); 
 
   $("#availability_date").on('pick.datepicker', function (e) {
     if (e.date.getMonth() == tomorrow.getMonth() && e.date.getDate() == tomorrow.getDate()) {
@@ -150,9 +133,14 @@
       populate(0);
     }
   });
+*/
 
   function closeMessage() {
     $("#msg").css('display', 'none');
   }
-
+  $(document).ready(function(){
+    $('.timepicker').timepicker();
+    $('.datepicker').datepicker();
+    $('select').formSelect();
+  });
 </script>

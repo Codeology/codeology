@@ -5,7 +5,7 @@
       
     <h3 class="small-vertical-padding">Available Interviews</h3>
 
-    <table class="responsive-table">
+    <table class="highlight responsive-table">
       <thead>
         <tr>
           <th>Date</th>
@@ -19,18 +19,18 @@
       <tbody>
         <% @allAvailabilitys.each do |availability| %>
           <tr>
-            <td class="is-size-6 is-size-7-mobile"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-6 is-size-7-mobile"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
-            <td class="is-size-6 is-size-7-mobile"><% if availability.is_python %>Python<% else %>Java<% end %></td>
-            <td class="is-size-6 is-size-7-mobile"><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
-            <td class="centered-column">
+            <td><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
+            <td><%= availability.time.localtime.strftime("%I:%M %p") %></td>
+            <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
+            <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td>
               <!-- if availability belongs to user, render a disabled book button instead -->
               <%= link_to_if availability.user_id != session[:user_id], 'Book', availability, method: :patch, data: { confirm: 'You are about to book for: ' + 
               availability.time.localtime.strftime("%m/%d/%y") + " " + availability.time.localtime.strftime("%I:%M %p") + 
               ". This will destroy any availabilities you have posted that overlap with this booking." },
                 class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" do %>
-                <p class="tooltipped" data-position="top" data-tooltip="This is your availability">
-                <a class="btn disabled is-round waves-effect waves-light normal-caps white-text">book</a></p>
+                <span class="tooltipped" data-position="top" data-tooltip="This is your availability">
+                <a class="btn disabled is-round waves-effect waves-light normal-caps white-text">book</a></span>
               <% end %>
             </td>
             <!--<td><a class = "button is-rounded is-success is-outlined custom-button"> Book </a></td>-->

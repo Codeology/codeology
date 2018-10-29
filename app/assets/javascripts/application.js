@@ -16,7 +16,6 @@
 //= require_tether
 //= require bootstrap
 //= require d3
-//= require datepicker.min
 //= require materialize
 /*
 $(window).scroll(function(){
