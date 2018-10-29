@@ -10,15 +10,19 @@ $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
 .is-codeology-yellow{
-  color: $codeology-yellow;
+  color: $codeology-yellow !important;
 }
 
 .is-codeology-green{
-  color: $codeology-green;
+  color: $codeology-green !important;
+}
+
+.background-is-codeology-green{
+  background-color: $codeology-green !important;
 }
 
 .is-codeology-blue{
-  color: $codeology-blue;
+  color: $codeology-blue !important;
 }
 
 .adjustable-container {
@@ -43,7 +47,6 @@ $codeology-blue: #92D5E6;
   color: white;
 }
 
-
 .custom-button.is-success.is-outlined.is-rounded.button{
   border-color: $codeology-green;
   color: $codeology-green;
@@ -60,6 +63,7 @@ $codeology-blue: #92D5E6;
   transition: .25s
 }
 
+
 /* ============================ */
 /* Side bar styling
 /* ============================ */
@@ -71,6 +75,17 @@ $codeology-blue: #92D5E6;
   -ms-transform: scaleX(-1);
 }
 
+
+/* ============================ */
+/* Table 
+/* ============================ */
+
+.centered-column {
+  justify-content: center;
+  display: flex;
+}
+
+
 /* ============================ */
 /* Misc. Styling Custom
 /* ============================ */
@@ -78,3 +93,4 @@ $codeology-blue: #92D5E6;
 .message-body.is-codeology-green{
   border-color: $codeology-green;
 }
+
