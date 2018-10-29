@@ -19,9 +19,10 @@
     </article>
     <p class="small-bottom-padding"></p>
 
-    <div class="small-bottom-padding has-text-centered tooltipped" data-position="top" data-tooltip="Yaaaas">
-      <%= link_to_nav_item "Add Availability", new_availability_path, 
-      :class => "btn is-round waves-effect waves-light normal-caps white-text background-is-codeology-green" %>
+    <div class="small-bottom-padding has-text-centered">
+      <%= link_to 'Add Availability', new_availability_path, 
+      :class => "btn hoverable is-round waves-effect waves-light normal-caps white-text background-is-codeology-green tooltipped",
+      :'data-position'=>'top', :'data-tooltip'=>'Yaaaas' %>
     </div>
     <table class="highlight responsive-table">
       <thead>
@@ -43,7 +44,7 @@
             <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
             <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  
-            class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
+            class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>

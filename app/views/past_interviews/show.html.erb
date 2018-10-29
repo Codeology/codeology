@@ -3,14 +3,13 @@
 
 <section class="section">
   <div class="container is-fluid">
-    <h3 class="small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h3>
-    <h5 class="subtitle is-4   has-text-centered">
-      Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
-      Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
-    </h5>
-    
-    <div class="columns is-centered">
-      <div class="column is-10">
+    <div class="row">
+      <div class="col s12 l10 offset-l1">
+        <h3 class="small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h3>
+        <h5 class="subtitle is-4   has-text-centered">
+          Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
+          Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
+        </h5>
 
         <div class="tabs is-medium is-toggle is-toggle-rounded is-centered">
           <ul>
@@ -146,7 +145,9 @@ function toggleByMe() {
   $("#by_me").css('display', 'block');
   $("#for_me").css('display', 'none');
 }
-
+  $(document).ready(function(){
+    $('.tabs').tabs();
+  });
 function toggleForMe() {
   $("#by_me_tab").attr('class', '');
   $("#for_me_tab").attr('class', 'is-active');

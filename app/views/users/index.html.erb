@@ -19,12 +19,12 @@
           <tr>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
-            <td><%= link_to 'View', user, class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
+            <td><%= link_to 'View', user, class: "btn hoverable is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
             <% if is_admin? %>  
-              <td><%= link_to 'Edit', edit_user_path(user), class: "btn is-round waves-effect waves-light normal-caps white-text" %></td>
+              <td><%= link_to 'Edit', edit_user_path(user), class: "btn hoverable is-round waves-effect waves-light normal-caps white-text" %></td>
               <!-- Destroy is much more humorous than delete and so it shall remain -->
               <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone' },
-              class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
+              class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
             <% end %>
           </tr>
         <% end %>

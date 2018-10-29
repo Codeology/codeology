@@ -29,8 +29,8 @@
             <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
             <td><%= link_to 'View', past_interview_path(interview), 
-            class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn is-round waves-effect waves-light normal-caps white-text" %></td>
+            class: "btn hoverable is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn hoverable is-round waves-effect waves-light normal-caps white-text" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -61,8 +61,8 @@
             <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
             <td><%= link_to 'View', past_interview_path(interview), 
-            class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn is-round waves-effect waves-light normal-caps white-text" %></td>
+            class: "btn hoverable is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn hoverable is-round waves-effect waves-light normal-caps white-text" %></td>
           </tr>
         <% end %>
       </tbody>

@@ -29,7 +29,7 @@
             <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
             <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, 
-            class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
+            class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -60,7 +60,7 @@
             <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
             <td><%= link_to 'Cancel', interview, method: :delete, data: { confirm: 'Are you sure you want to cancel this interview?' }, 
-            class: "btn is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
+            class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>
