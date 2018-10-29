@@ -1,10 +1,10 @@
 <% provide(:title, "Codeology | Completed Interviews") %>
 
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
       
-    <h1 class="title is-2   small-vertical-padding has-text-centered">Completed Interviews</h1>
-    <h1 class="title is-5   ">Received Interviews</h1>
+    <h3 class="small-vertical-padding has-text-centered">Completed Interviews</h3>
+    <h5 class="">Received Interviews</h5>
         
     <table class="responsive-table highlight">
       <thead>
@@ -28,14 +28,15 @@
             <td><% if receiving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if receiving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = receiving[:interview] %>
-            <td><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td><%= link_to 'View', past_interview_path(interview), 
+            class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn is-round waves-effect waves-light normal-caps white-text" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <h1 class="title is-5   ">Given Interviews</h1>
+    <h5>Given Interviews</h5>
 
     <table class="responsive-table highlight">
       <thead>
@@ -59,8 +60,9 @@
             <td><% if giving[:interview].is_python %>Python<% else %>Java<% end %></td>
             <td><% if giving[:interview].is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <% interview = giving[:interview] %>
-            <td><%= link_to 'View', past_interview_path(interview), class: "button is-rounded is-success is-outlined custom-button" %></td>
-            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "button is-rounded is-info is-outlined custom-button" %></td>
+            <td><%= link_to 'View', past_interview_path(interview), 
+            class: "btn is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" %></td>
+            <td><%= link_to 'Edit', edit_past_interview_path(interview), class: "btn is-round waves-effect waves-light normal-caps white-text" %></td>
           </tr>
         <% end %>
       </tbody>

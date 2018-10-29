@@ -3,11 +3,11 @@
 
 <section class="section">
   <div class="container is-fluid">
-    <h1 class="title is-2   small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h1>
-    <h2 class="subtitle is-4   has-text-centered">
+    <h3 class="small-vertical-padding has-text-centered">Interviewed <%if @is_interviewee%>by <%else%><%end%> <%= @other_user.name %></h3>
+    <h5 class="subtitle is-4   has-text-centered">
       Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
       Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
-    </h2>
+    </h5>
     
     <div class="columns is-centered">
       <div class="column is-10">

@@ -2,15 +2,15 @@
 <% provide(:title, title) %>
 
 <section id="edit" class="section">
-  <div class="container is-fluid">
-        <h2 class="title is-2   has-text-centered small-vertical-padding">
+  <div class="container">
+        <h3 class="has-text-centered small-vertical-padding">
         Feedback for <%if @is_interviewee%>interviewer <%else%>interviewee <%end%><%= @other_user.name%>
-        </h2>
+        </h3>
 
-        <h2 class="subtitle is-4   has-text-centered">
+        <h3 class="has-text-centered">
         Language: <% if @past_interview.is_python %>Python<% else %>Java<% end %><br>
         Location: <% if @past_interview.is_videocall %>Videocall<% else %>On Campus<% end %>
-        </h2>
+        </h3>
         
         <article id="msg" class="message is-codeology-green">
           <div class="message-body is-codeology-green grey-text text-darken-4"> 
