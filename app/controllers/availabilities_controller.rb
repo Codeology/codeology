@@ -10,8 +10,7 @@ class AvailabilitiesController < ApplicationController
   end
 
   def index
-    
-    # Not the most efficient way to do this
+    # Prob not the most efficient way to do this
     # Every time a user looks at availabilities, all availabilities
     # within 24 hours are deleted (so that people can only sign up for
     # an interview at least 24 hours in advance)
@@ -24,7 +23,8 @@ class AvailabilitiesController < ApplicationController
     # If for some reason this application needs to scale then the
     # optimization is recommended.
     #
-    #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
+    # NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
+    # TODO: Create an environment variable for this so that we don't need to hardcode 24 or 17
     Availability.where("time <= ?", 17.hours.from_now).destroy_all
 
     @curr_user = User.find(session[:user_id])
@@ -54,7 +54,7 @@ class AvailabilitiesController < ApplicationController
     
     # Create dateTime object
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]
-    timeObj = Time.strptime(datetimeString, "%m/%d/%Y %l:%M %P")
+    timeObj = Time.strptime(datetimeString, "%b %d, %Y %I:%M %P")
     #puts timeObj
     #puts 24.hours.from_now.gmtime
     #puts 24.hours.from_now.utc

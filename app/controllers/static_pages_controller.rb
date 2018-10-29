@@ -5,28 +5,28 @@ class StaticPagesController < ApplicationController
     @projects = projArray
     
     @leadership = People.leadership
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 
   def about
     @leadership = People.leadership
     @members = People.members
     @alumni = People.alumni
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 
   def calendar
-    render layout: 'application_fluid'  
+    render layout: 'application'
   end
 
   def apply
-    render layout: 'application_fluid'  
+    render layout: 'application'  
   end
 
   def projects
     projlist = Projects.new
     array = projlist.choose() # default parameter is all elements
     @projects = array
-    render layout: 'application_fluid'
+    render layout: 'application'
   end
 end

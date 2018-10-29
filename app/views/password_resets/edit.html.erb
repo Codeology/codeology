@@ -1,36 +1,27 @@
 <% provide(:title, "Codeology | New Password") %>
 
-<section id="sign-in" class="hero">
-  <div class="hero-body" id="login-box">
-    <div class="columns is-centered">
-      <div class="column is-6">
-        <h2 class="title is-2 has-text-black extra-top-padding">Password Reset</h2>
-        <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-          <%= hidden_field_tag :email, @user.email %>
+<section class="is-fullheight">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <h2 class="is-size-2 is-size-3-mobile extra-top-padding">Password Reset</h2>
+      <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+        <%= hidden_field_tag :email, @user.email %>
 
-          <div class="field">
-            <p class="control has-icons-left">
-              <%=  f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
-              </span>
-          </p>
-          </div>
-         
-         <div class="field">
-            <p class="control has-icons-left">
-              <%=  f.password_field :password_confirmation, placeholder: 'password confirmation', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
-              </span>
-          </p>
-          </div>
+        <div class="input-field">
+          <i class="material-icons prefix">lock_outline</i>
+          <%=  f.password_field :password, class: '' %>
+          <label for="user_password">password</label>          
+        </div>
+        
+        <div class="input-field">
+          <i class="material-icons prefix">lock_outline</i>
+          <%=  f.password_field :password_confirmation, class: '' %>
+          <label for="user_password_confirmation">password</label>          
+        </div>
 
-          <%= f.submit "Reset Password", class: "button is-rounded", style: "margin-top: 10px;"%> 
-        <% end %>
+        <%= f.submit "Reset Password", class: "btn white black-text is-round normal-caps", style: "margin-top: 10px;"%> 
+      <% end %>
 
-
-      </div>
     </div>
   </div>
 </section>

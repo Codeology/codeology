@@ -1,10 +1,5 @@
 <% provide(:title, "Codeology | About") %>
 
-<!-- LOADING SCREEN -->
-<div id="loader">
-</div>
-
-
 <!-- PHOTO CAROUSEL -->
 <section id="carousel" class="extra-vertical-padding">
 	<div class="scroller kinetic-active">
@@ -52,20 +47,20 @@
 <!-- ABOUT CODEOLOGY -->
 <section id="about-codeology" class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="title is-2 has-text-black">About Codeology</h2>
-        <p class="blurb is-size-5 is-size-6-mobile">
-		Codeology is a UC Berkeley student club focused on self-exploration within the tech industry.
-		By offering hands-on experience through collaborative student projects and professional workshops,
-		we aim to bring the breadth of opportunities and roles within the tech field to Cal students, as
-		well as help our members explore their specific technical and professional interests.
-		<br>
-		<br>
-		We boast of having 60+ active members and alumni who have diverse interests and are highly motivated.
-		They contribute to a variety of research positions on campus as well as tech companies in the Bay
-		area such as Uber, Google, Amazon, Samsung, Berkeley InterACT, ServiceNow, Facebook, Rubrik, The
-		Climate Corporation, Atlassian, Microsoft, Expedia, IBM, Berkeley's Division of Data Sciences and more.
+    <div class="row">
+      <div class="col s12">
+        <h2 class="is-size-1 is-size-2-mobile">About Codeology</h2>
+        <p class="blurb is-size-4 is-size-5-mobile">
+          Codeology is a UC Berkeley student club focused on self-exploration within the tech industry.
+          By offering hands-on experience through collaborative student projects and professional workshops,
+          we aim to bring the breadth of opportunities and roles within the tech field to Cal students, as
+          well as help our members explore their specific technical and professional interests.
+          <br>
+          <br>
+          We boast of having 60+ active members and alumni who have diverse interests and are highly motivated.
+          They contribute to a variety of research positions on campus as well as tech companies in the Bay
+          area such as Uber, Google, Amazon, Samsung, Berkeley InterACT, ServiceNow, Facebook, Rubrik, The
+          Climate Corporation, Atlassian, Microsoft, Expedia, IBM, Berkeley's Division of Data Sciences and more.
         </p>
       </div>
     </div>
@@ -75,28 +70,29 @@
 <!-- VALUES -->
 <section id="about-us" class="section">
 	<div class="container">
-		<div class="columns">
-			<div class="column is-10 is-offset-1">
-				<h2 class="title is-2 has-text-black">Our Values</h2>
-				<div class="columns">
-					<div class="column is-one-third">
-						<h5 class="subtitle is-3"><span class="is-codeology-yellow">EDUCATION</span></h5>
+		<div class="row">
+			<div class="col s12">
+				<h2 class="is-size-1 is-size-2-mobile">Our Values</h2>
+				<div class="row">
+					<div class="col s12 m4">
+						<h5 class="is-size-3 is-size-4-mobile"><span class="is-codeology-yellow">EDUCATION</span></h5>
 						<p class="is-size-6 blurb">Members lead practice interview sessions and professional
 						development workshops to help each other further their education.
 						Codeology is here to support members in their personal and technical growth.
+            Our club also has an interview scheduling web app for members and alumni.
 						</p>
 					</div>
 
-					<div class="column is-one-third">
-						<h5 class="subtitle is-3"><span class="is-codeology-green">EXPLORATION</span></h5>
+					<div class="col s12 m4">
+						<h5 class="is-size-3 is-size-4-mobile"><span class="is-codeology-green">EXPLORATION</span></h5>
 						<p class="is-size-6 blurb">Members gain exposure to a large breadth of industry-relevant
 						tools and technologies by building projects and developing their
-						professional skills at workshops lead by alumni and industry leaders.
+						professional skills at workshops led by alumni and industry leaders.
 						</p>
 					</div>
 
-					<div class="column is-one-third">
-						<h5 class="subtitle is-3"><span class="is-codeology-blue">COMMUNITY</span></h5>
+					<div class="col s12 m4">
+						<h5 class="is-size-3 is-size-4-mobile"><span class="is-codeology-blue">COMMUNITY</span></h5>
 						<p class="is-size-6 blurb">Codeology offers a supportive environment for members to grow within
 						the computer science community. We reward kindness and taking action in
 						order to foster an enjoyable and motivated culture that encourages
@@ -111,33 +107,25 @@
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
 	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Leadership</h2>
-				<div class="columns is-mobile is-multiline is-centered">
-					
-					<% @leadership.each do |element| %>
-						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-							<div class="card">
-								<div class="card-image">
-									<figure class="image is-3by4">
-									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-									</figure>
-								</div>
-								<div class="card-content">
-									<div class="media">
-										<div class="media-content">
-											<h2 class="title is-4"><%= element[:name] %></h2>
-											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<%end%>
-
-				</div>
+		<div class="row">
+			<div class="col s12">
+				<h2 class="is-size-1 is-size-2-mobile">Leadership</h2>
 			</div>
+					
+      <% @leadership.each do |element| %>
+        <div class="col s6 m3">
+          <div class="card adjustable-size">
+            <div class="card-image">
+              <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+            </div>
+            <div class="card-content">
+              <p class="is-size-4"><%= element[:name] %></p>
+              <p class="is-size-6"><%= element[:title] %></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
 		</div>
 	</div>
 </section>
@@ -145,33 +133,25 @@
 <!-- MEMBERS -->
 <section id="members" class="section">
 	<div class="container">
-		<div class="columns is-centered">
-			<div class="column is-10">
-				<h2 class="title is-2 has-text-black">Members</h2>
-				<div class="columns is-mobile is-multiline is-centered">
-
-					<% @members.each do |element| %>
-						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-							<div class="card">
-								<div class="card-image">
-									<figure class="image is-3by4">
-									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-									</figure>
-								</div>
-								<div class="card-content">
-									<div class="media">
-										<div class="media-content">
-											<h2 class="title is-4"><%= element[:name] %></h2>
-											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<%end%>
-					
-				</div>
+		<div class="row">
+			<div class="col s12">
+				<h2 class="is-size-1 is-size-2-mobile">Members</h2>
 			</div>
+					
+      <% @members.each do |element| %>
+        <div class="col s6 m3">
+          <div class="card adjustable-size">
+            <div class="card-image">
+              <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+            </div>
+            <div class="card-content">
+              <p class="is-size-4"><%= element[:name] %></p>
+              <p class="is-size-6"><%= element[:title] %></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
 		</div>
 	</div>
 </section>
@@ -179,36 +159,29 @@
 <!-- ALUMNI -->
 <section id="alumni" class="section">
 	<div class="container">
-		<div class="columns">
-			<div class="column is-10 is-offset-1">
-				<h2 class="title is-2 has-text-black">Alumni</h2>
-				<div class="columns is-mobile is-multiline is-centered">
-					
-					<% @alumni.each do |element| %>
-						<div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-							<div class="card">
-								<div class="card-image">
-									<figure class="image is-3by4">
-									<%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-									</figure>
-								</div>
-								<div class="card-content">
-									<div class="media">
-										<div class="media-content">
-											<h2 class="title is-4"><%= element[:name] %></h2>
-											<h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<%end%>
-
-				</div>
+		<div class="row">
+			<div class="col s12">
+				<h2 class="is-size-1 is-size-2-mobile">Alumni</h2>
 			</div>
+					
+      <% @alumni.each do |element| %>
+        <div class="col s6 m3">
+          <div class="card adjustable-size">
+            <div class="card-image">
+              <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+            </div>
+            <div class="card-content">
+              <p class="is-size-4"><%= element[:name] %></p>
+              <p class="is-size-6"><%= element[:title] %></p>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
 		</div>
 	</div>
 </section>
+
 
 <script type="text/javascript">
 	$(document).ready(function(){

@@ -1,50 +1,15 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: Roboto, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+
+@media only screen and (min-width: 993px) and (max-width: 1440px) {
+	.nav-wrapper {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
-p, ol, ul, td {
-  font-family: Roboto, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
-}
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-th {
-  font-family: Roboto, arial, helvetica, sans-serif;
-  padding-bottom: 5px;
-}
-
-td {
-  padding-bottom: 7px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  border-color: #ff3860;
-}
-
-label {
-  display: block;
+@media only screen and (min-width: 1440px) {
+	.nav-wrapper {
+		padding-left: 4em;
+		padding-right: 4em;
+	}
 }

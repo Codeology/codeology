@@ -3,21 +3,19 @@
 
 <p id="notice"><%= notice %></p>
 
-<section id="profile" class="hero">
-  <div class="hero-body">
-    <div class="columns has-text-centered is-centered">
-      <div class="column is-6">
-        <h1 class="title is-4 has-text-black extra-top-padding">
-            <strong>Name:</strong>
-            <%= @user.name %>
-        </h1>
+<section id="profile">
+  <div class="row has-text-centered">
+    <div class="col s6 offset-s3">
+      <h3 class="extra-top-padding">
+          <strong>Name:</strong>
+          <%= @user.name %>
+      </h3>
 
-        <h2 class="subtitle is-4 has-text-black">      
-              <strong>Email:</strong>
-              <%= @user.email %>
-        </h2>
-        <%= link_to 'Edit', edit_user_path(@user), class: "button is-rounded is-info is-outlined custom-button" %>
-      </div>
+      <h4>      
+            <strong>Email:</strong>
+            <%= @user.email %>
+      </h4>
+      <%= link_to 'Edit', edit_user_path(@user), class: "btn hoverable is-round waves-effect waves-teal normal-caps white grey-text text-darken-4" %>
     </div>
   </div>
 </section>

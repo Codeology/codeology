@@ -1,69 +1,50 @@
-<nav class="panel">
+<!-- NAVIGATION BAR -->
+<div class="navbar-fixed">
+  <nav class="white">
+    <div class="nav-wrapper">
+      <a data-target="mobile-nav" class="sidenav-trigger"><i class="grey-text text-darken-3 fa fa-3x fa-bars"></i></a>
+    </div>
+  </nav>
+</div>
 
-  <div class="panel-heading sideNav-custom has-text-centered">
-    <%= link_to dashboard_path do %>
-      <figure class="image sideNav-custom">
-        <%= image_tag("codeology_logo_padded.png", alt: "default profile picture", class: "is-rounded")  %>
-      </figure>
+<ul class="sidenav sidenav-fixed" id="mobile-nav">
+  <li><div class="user-view">
+    <div class="background">
+      <%= image_tag("office.jpg", alt: "logo")  %>
+    </div>
+    <%= link_to root_url do %>
+      <%= image_tag("codeology_logo_padded.png", alt: "logo", class: "is-round hoverable", style: "width: 225px !important")  %>
     <% end %>
-  </div>
+    <%= link_to user_path(@curr_user) do %>
+      <span class="grey-text text-darken-4 name" style="font-weight:bold;"><%= @curr_user.name %></span>
+    <% end %>
+    <%= link_to user_path(@curr_user) do %>
+      <span class="grey-text text-darken-4 email" style="font-weight:bold;"><%= @curr_user.email %></span>
+    <% end %>
+  </div></li>
+  <li><%= link_to availabilities_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">work_outline</i> Get Interviewed <% end %></li>
+  <li><%= link_to myAvailability_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">chat_bubble_outline</i> Interview Others <% end %></li>
+  <li><%= link_to upcoming_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">date_range</i> Upcoming <% end %></li>
+  <li><%= link_to past_interviews_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">insert_chart_outlined</i> Completed <% end %></li>
+  <li><%= link_to users_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">people_outline</i> Member Directory <% end %></li>
+  <li><%= link_to dashboard_path, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">tv</i> Dashboard <% end %></li>
+  <li>
+    <ul class="collapsible">
+      <li>
+        <a class="collapsible-header grey-text text-darken-4 waves-effect waves-green"><i class="material-icons">settings_applications</i> Options</a>
+        <div class="collapsible-body">
+          <ul>
+            <li><%= link_to root_url, :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">open_in_browser</i> Back to Website <% end %></li>
+            <li><%= link_to user_path(@curr_user), :class => "grey-text text-darken-4 waves-effect waves-green" do %><i class="material-icons">settings</i> Settings <% end %></li>
+            <li><a rel="nofollow" data-method="delete" href="/logout" class="grey-text text-darken-4 waves-effect waves-green"><i class="icon-flipped material-icons">exit_to_app</i>Log Out</a></li> 
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-  <%= link_to availabilities_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-terminal"></i>
-    </span>
-    Get Interviewed
-  <% end %>
-
-  <%= link_to myAvailability_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-comments-o"></i>
-    </span>
-    Interview Others
-  <% end %>
-
-  <%= link_to upcoming_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-calendar"></i>
-    </span>
-    Upcoming
-  <% end %>
-
-  <%= link_to past_interviews_path, :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class="fa fa-bar-chart"></i>
-    </span>
-    Completed
-  <% end %>
-
-  <a href="/users" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class="fa fa-address-book-o"></i>
-    </span>
-    Member Directory
-  </a>
-
-  <a href="/" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class="fa fa-angle-double-left"></i>
-    </span>
-    Back to Website
-  </a>
-  
-  <%= link_to user_path(@curr_user), :class => "panel-block sideNav-custom has-text-grey-lighter" do %>
-    <span class="custom-icon">
-      <i class=" icon-flipped fa fa-gears"></i>
-    </span>
-    Settings
-  <% end %>
-
-  <a rel="nofollow" data-method="delete" href="/logout" class="panel-block sideNav-custom has-text-grey-lighter">
-    <span class="custom-icon">
-      <i class=" icon-flipped fa fa-sign-out"></i>
-    </span>
-    Log Out
-  </a>
-  
-  
-
-</nav>
+<script type="text/javascript"> 
+  $('.sidenav').sidenav();
+  $('.collapsible').collapsible();
+</script>

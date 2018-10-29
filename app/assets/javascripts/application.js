@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require_tether
 //= require bootstrap
 //= require d3
-//= require datepicker.min
+//= require materialize
 /*
 $(window).scroll(function(){
 

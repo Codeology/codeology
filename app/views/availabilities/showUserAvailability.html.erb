@@ -1,13 +1,13 @@
 <% provide(:title, "Codeology | My Availability") %>
 
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
     
-    <h1 class="title is-2 has-text-black small-vertical-padding has-text-centered">Your Availability</h1>
+    <h3 class="small-vertical-padding has-text-centered">Your Availability</h3>
     
-    <article id="msg" class="message is-codeology-green">  
-      <div class="message-body is-codeology-green">        
-        <button onclick="closeMessage()" class="delete" aria-label="delete" style="float:right;"></button>    
+    <article id="msg" class=" message is-codeology-green">
+      <div class="message-body is-codeology-green grey-text text-darken-4"> 
+        <a onclick="closeMessage()" class="delete" style="cursor:pointer; float:right;"><i class="material-icons">close</i></a>
         We appreciate you for taking the time to give interviews! Interviewing helps both interviewer and interviewee: the interviewer
         crystallizes their knowledge by providing it to their peer while the interviewee receives much needed practice.
         As such, you are playing an important part in a well-functioning Codeology. Thank you!
@@ -17,11 +17,14 @@
         Note: The system assumes Interviews to be an hour long
       </div>
     </article>
-    
+    <p class="small-bottom-padding"></p>
+
     <div class="small-bottom-padding has-text-centered">
-      <%= link_to_nav_item "Add Availability", new_availability_path, :class => "button is-rounded is-medium is-success is-outlined custom-button" %>
+      <%= link_to 'Add Availability', new_availability_path, 
+      :class => "btn hoverable is-round waves-effect waves-light normal-caps white-text background-is-codeology-green tooltipped",
+      :'data-position'=>'top', :'data-tooltip'=>'Yaaaas' %>
     </div>
-    <table class="table is-fullwidth">
+    <table class="highlight responsive-table">
       <thead>
         <tr>
           <th>Date</th>
@@ -36,11 +39,12 @@
         <% @userAvailabilitys.each do |availability| %>
           <tr>
           <!-- TODO parse date and time for 1st and 2nd respectively -->
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%m/%d/%y") %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><%= availability.time.localtime.strftime("%I:%M %p") %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if availability.is_python %>Python<% else %>Java<% end %></td>
-            <td class="is-size-6 is-size-7-mobile" style="vertical-align:middle;"><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
-            <td style="vertical-align:middle;"><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  class: "button is-rounded is-danger is-outlined custom-button" %></td>
+            <td><%= availability.time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= availability.time.localtime.strftime("%l:%M %p") %></td>
+            <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
+            <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  
+            class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -50,6 +54,8 @@
 </section>
 
 <script type="text/javascript">
+  $('.tooltipped').tooltip();
+
   function closeMessage() {
     $("#msg").css('display', 'none');
   }

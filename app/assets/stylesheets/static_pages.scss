@@ -10,9 +10,50 @@ $old-codeology-yellow: #EEBF44;
 $old-codeology-green: #50D397;
 $old-codeology-blue: #69EAE3;
 
+$codeology-red: #ef9a9a ;
 $codeology-yellow: #F4C484;
 $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
+
+// adding pointer to materialize's activator
+.activator {
+  cursor: pointer;
+}
+
+.section-anchor{
+  top: -7vh; 
+  position: relative;
+}
+
+.is-round {
+	border-radius: 50px !important
+}
+
+.normal-caps {
+	text-transform: none !important
+}
+
+@media only screen and (max-width: 601px) {
+  .nav-image{
+    height: 56px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .nav-image {
+    height: 64px;
+    object-fit: cover;
+  }
+}
+
+.has-text-centered {
+  text-align: center !important;
+}
+
+.is-fullheight {
+	min-height: 100vh
+}
 
 .reverse{
   direction: rtl;
@@ -58,6 +99,25 @@ $codeology-blue: #92D5E6;
   min-width: 300px;
   height: 75vh;
 }
+/* ============================ */
+/* NOTIFICATIONS
+/* ============================ */
+
+.is-success{
+  background-color: $codeology-green !important;
+}
+
+.is-info{
+  background-color: $codeology-blue !important;  
+}
+
+.is-warning{
+  background-color: $codeology-yellow !important;  
+}
+
+.is-danger{
+  background-color: $codeology-red !important;  
+}
 
 /* ============================ */
 /* PHOTO CAROUSEL
@@ -70,7 +130,7 @@ $codeology-blue: #92D5E6;
 }
 
 .extra-vertical-padding{
-  padding: 6rem 0rem 3rem;
+  padding: 3rem 0rem 3rem;
 }
 
 .small-vertical-padding{
@@ -85,6 +145,7 @@ $codeology-blue: #92D5E6;
   padding: 6rem 0rem 0rem;
 }
 
+/* extra-navbar-padding is for flash notifications */
 .container.extra-navbar-padding {
   padding: 52px 0 0;
   margin-bottom: -50px;
@@ -137,42 +198,76 @@ $codeology-blue: #92D5E6;
 }
 
 /* ============================ */
-/* PROJECT CARD
+/* CARD
 /* ============================ */
-.fixed-height{
-  min-height: calc(600px - 25vw)
+
+@media only screen and (max-width: 450px) {
+  .card.adjustable-size{
+    height: 375px;
+  }
 }
 
-.project-card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.25s;
+@media only screen and (min-width:450px) and (max-width: 600px) {
+  .card.adjustable-size{
+    height: 425px;
+  }
 }
 
-.project-card:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+@media only screen and (min-width: 600px) and (max-width: 1367px) {
+  .card.adjustable-size{
+    height: 400px;
+  }
 }
 
-.project-card-image{
-  max-height: 25vh;
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
+  .card.adjustable-size{
+    height: 450px;
+  }
 }
 
-.card-image.project-card-image{
-  display: flex; 
+@media only screen and (min-width: 1600px) {
+  .card.adjustable-size{
+    height: 500px;
+  }
 }
 
-.project-card-content{
-  padding: 1.25rem;
-  height: 20vh;
+@media only screen and (min-width: 1150px) and (max-width: 1273px) {
+  .card.fixed-height{
+    height: 34.5vw;
+  }
 }
 
-.put-footer-bottom{
-  //TODO Calculate footer height as opposed to using fixed 170px value i.e. calc(100vh - footerHeight)
-  min-height: calc(100vh - 170px);
+@media only screen and (min-width: 993px) and (max-width: 1150px) {
+  .card.fixed-height{
+    height: 37.5vw;
+  }
+}
+
+@media only screen and (min-width: 925px) and (max-width: 993px) {
+  .card.fixed-height{
+    height: 41vw;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 925px) {
+  .card.fixed-height{
+    height: 45vw;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+  .card.fixed-height{
+    height: 50vw;
+  }
 }
 
 /* ============================ */
 /* LANDING
 /* ============================ */
+
+.bg {
+  z-index: -999999;
+}
 
 .landing {
   background-image: asset-url("11.jpg");
@@ -182,9 +277,10 @@ $codeology-blue: #92D5E6;
 }
 
 .landing-title {
-  font-weight: bold;
   font-size: 9vw;
-  margin-top: 10vh;
+  font-weight: bold;
+  padding-top: 20vh;
+  margin-top: -64px;
   margin-bottom: 10vh;
 }
 

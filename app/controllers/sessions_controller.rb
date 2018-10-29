@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user_is_logged_in?
       redirect_to dashboard_path
     else
-      render layout: 'application_fluid'  
+      render layout: 'application'  
     end
   end
 

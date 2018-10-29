@@ -1,38 +1,34 @@
 <% provide(:title, "Codeology | Home") %>
 
-<!-- LOADING SCREEN -->
-<div id="loader">
-</div>
-
-<section id="landing" class="hero has-fixed-navbar is-fullheight landing is-bold">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="landing-title has-text-white">Codeology.</h1>
-      <h5 class="landing-blurb is-size-3 is-size-3-tablet is-size-5-mobile has-text-white">
-      <span class="is-codeology-yellow">Education.</span>
-      <span class="is-codeology-green">Exploration.</span>
-      <span class="is-codeology-blue">Community.</span>
-      </h5>
-      <div class="columns is-multiline is-centered">
-        <div class="column is-3">
-          <a href="#about-us" class="button-fade is-size-4 is-size-5-mobile">Learn More</a>
-        </div>
-        <div class="column is-3">
-          <a href="https://goo.gl/forms/L7gzaXF7oDiMn7O43" class="button-fade is-size-4 is-size-5-mobile">Apply ></a>
-        </div>
+<section id="landing" class="landing is-fullheight has-fixed-navbar">
+  <div class="container is-fullheight has-text-centered">
+    <h1 class="landing-title white-text">Codeology.</h1>
+    <h3 class="landing-blurb is-size-2-widescreen is-size-3-tablet is-size-4-mobile">
+    <span class="is-codeology-yellow">Education.</span>
+    <span class="is-codeology-green">Exploration.</span>
+    <span class="is-codeology-blue">Community.</span>
+    </h3>
+    <div class="row has-text-centered">
+      <div class="col s6 offset-s3 m4 offset-m4">
+        <a href="#about-us" id="pulse-about-button" class="waves-effect waves-green btn is-round normal-caps white grey-text text-darken-4 pulse">Learn More</a>
       </div>
+      <!--
+      <div class="column is-3">
+        <a href="https://goo.gl/forms/L7gzaXF7oDiMn7O43" class="button-fade is-size-4 is-size-5-mobile">Apply ></a>
+      </div>
+      -->
     </div>
   </div>
-  <div class="hero-foot"></div>
+  <a class="section-anchor" id="about-us"></a>
 </section>
 
 <!-- ABOUT US -->
-<section id="about-us" class="section">
+<section class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="title is-2 has-text-black">About Us</h2>
-        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+    <div class="row">
+      <div class="col s12">
+        <h2 class="is-size-1 is-size-2-mobile">About Us</h2>
+        <p class="flow-text" style="line-height:1.5;">
         <strong>Here at Codeology,</strong> we provide opportunities for you to explore the tech industry
         in the context of a supportive community.
         <br>
@@ -49,34 +45,19 @@
 <!-- PROJECTS -->
 <section id="projects" class="section">
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10">
-        <h2 class="title is-2 has-text-black">Projects</h2>
-        <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+    <div class="row">
+      <div class="col s12">
+        <h2 class="is-size-1 is-size-2-mobile">Projects</h2>
+        <p class="flow-text" style="line-height:1.5;">
         <strong>This semester</strong> we'll be introducing projects as an opportunity for our
           members to <strong>explore</strong> cool niches in tech, to gain <strong>experience</strong>
           as developers, and to <strong>lead</strong> their own project teams.
           </p>
-        <!-- PROJECTS HERE -->
+        <!-- PROJECT CARDS HERE -->
         <!-- Three projects are chosen at random in the static_pages_controller and in Projects.rb -->
-        <div class="columns">
-          <% @projects.each do |element| %>
-            <div class="column is-one-third">
-              <div class="card">
-                <div class="card-image project-card-image">
-                  <%= image_tag(element[:imgurl], :alt=>"project image", :class=>"image") %>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-content">
-                      <h5 class="project-card-title title is-5 has-text-black"><%= element[:name] %></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+        <!-- These are sent as @projects and the html is created in _project-cards.html.erb which is then rendered here-->
+        <%= render "layouts/project_cards" %>
+
         <!-- END OF PROJECTS-->
         <%= link_to_nav_item "All Projects >", projects_path, :class => "is-codeology-green is-size-3 is-size-4-mobile" %>
       </div>
@@ -87,10 +68,10 @@
 <!-- EVENTS -->
 <section id="events" class="section">
     <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Events</h2>
-                <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.25;">
+        <div class="row">
+            <div class="col s12">
+                <h2 class="is-size-1 is-size-2-mobile">Events</h2>
+                <p class="subtitle is-size-4 is-size-5-mobile" style="line-height:1.5;">
                 We host <strong>workshops</strong> and <strong>tech talks</strong> on campus from club members and industry workers that are open to the public.
                 </p>
                 <%= link_to_nav_item "Our Calender >", calendar_path, :class => "is-codeology-yellow is-size-3 is-size-4-mobile" %>
@@ -102,46 +83,39 @@
 
 <!-- LEADERSHIP -->
 <section id="leadership" class="section">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Leadership</h2>
-                <div class="columns is-mobile is-multiline is-centered">
-                  <% @leadership.each do |element| %>
-
-                    <div class="column is-half-tablet is-half-mobile is-one-quarter-desktop">
-                      <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-3by4">
-			                    <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                          <div class="media">
-                            <div class="media-content">
-                              <h2 class="title is-4"><%= element[:name] %></h2>
-                              <h4 class="subtitle has-text-weight-bold is-6"><%= element[:title] %></h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <%end%>
-
-                </div>
-                <%= link_to_nav_item "See All >", about_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h2 class="is-size-1 is-size-2-mobile">Leadership</h2>
+      </div>
+    
+    <% @leadership.each do |element| %>
+      <div class="col s6 m3">
+        <div class="card adjustable-size">
+          <div class="card-image">
+            <%= image_tag(element[:imgurl], :alt=>"placeholder officer image", :class=>"") %>
+          </div>
+          <div class="card-content">
+            <p class="is-size-4"><%= element[:name] %></p>
+            <p class="is-size-6"><%= element[:title] %></p>
+          </div>
         </div>
-
+      </div>
+    <%end%>
+      
+      <div class="col s12">
+        <%= link_to_nav_item "See All >", about_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="events" class="section">
     <div class="container">
-        <div class="columns has-text-centered is-centered">
-            <div class="column is-10">
-                <h2 class="title is-2 has-text-black">Contact Us</h2>
+        <div class="row has-text-centered">
+            <div class="col s12">
+                <h2 class="is-size-1 is-size-2-mobile">Contact Us</h2>
                 <p class="reverse">
                 bulc.ygoloedoc@ofni
                 </p>
@@ -153,16 +127,16 @@
 <!-- SPONSORS -->
 <section id="sponsors" class="section">
     <div id="sponsors" class="has-text-centered container">
-        <h3 class="title is-2 small-caps">OUR SPONSORS</h3>
+        <h3 class="is-size-2 is-size-3-mobile small-caps">OUR SPONSORS</h3>
         <h3 class="sub-header"></h3>
         <div class="card-group" id="all-sponsor-container">
-            <div class="card" id="sponsor-container">
+            <div class="card hoverable" id="sponsor-container">
             <a href="https://www.samsara.com/" target="_blank"><img class="card-img-top" src="samsara_logo.png" id="sponsor-logo"></a>
             </div>
         </div>
         <h3 class="sub-header"></h3>
         <div class="card-group" id="all-sponsor-container">
-            <div class="card" id="sponsor-container">
+            <div class="card hoverable" id="sponsor-container">
             <a href="https://www.indeed.com/" target="_blank"><img class="card-img-top" src="indeed_logo.jpg" id="sponsor-logo"></a>
             </div>
         </div>
@@ -170,5 +144,10 @@
 </section>
 <!-- Script found in smoothScroll.js -->
 <script type="text/javascript">
-    addSmoothScroll();
+  addSmoothScroll();
+  
+  $('#pulse-about-button').on("click", function(){
+    $('#pulse-about-button').removeClass("pulse");
+  });
+
 </script>

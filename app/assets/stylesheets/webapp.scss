@@ -10,15 +10,29 @@ $codeology-green: #7AC377;
 $codeology-blue: #92D5E6;
 
 .is-codeology-yellow{
-  color: $codeology-yellow;
+  color: $codeology-yellow !important;
 }
 
 .is-codeology-green{
-  color: $codeology-green;
+  color: $codeology-green !important;
+}
+
+.background-is-codeology-green{
+  background-color: $codeology-green !important;
 }
 
 .is-codeology-blue{
-  color: $codeology-blue;
+  color: $codeology-blue !important;
+}
+
+.adjustable-container {
+  padding-left: 300px !important;
+}
+
+@media only screen and (max-width : 992px) {
+  .adjustable-container {
+    padding-left: 0px !important;
+  }
 }
 
 .custom-button.is-info.is-outlined.is-rounded.button{
@@ -32,7 +46,6 @@ $codeology-blue: #92D5E6;
   border-color: $codeology-blue;
   color: white;
 }
-
 
 .custom-button.is-success.is-outlined.is-rounded.button{
   border-color: $codeology-green;
@@ -50,86 +63,16 @@ $codeology-blue: #92D5E6;
   transition: .25s
 }
 
+
 /* ============================ */
 /* Side bar styling
 /* ============================ */
-
-.dropdown-item.custom{
-  height: 10vh;
-  display: flex;
-  align-items: center;
-}
-
-.sideNav {
-  height: 100%;
-  min-width : 200px;
-  max-width : 250px;
-  width: 20vw;
-  position: fixed;
-  background-color: rgb(231, 231, 231); 
-  z-index: 2;
-  box-shadow: 0px 0px 4px 1px #888888; 
-}
-
-
-.panel-block.sideNav-custom {
-  border: 0px;
-  height: calc((100vh - 125px)/8);
-  transition: 0.2s;
-  color: rgb(34, 34, 34) !important;
-  padding: 0.5em 1.5em;
-}
-
-.panel-block.sideNav-custom:hover {
-  color: black !important;
-  box-shadow: -1px 0px 4px 2px #777777; 
-  font-weight: bold;
-}
-
-.panel-heading.sideNav-custom {
-  border: 0px;
-  transition: 0.2s;
-  background-color: rgb(231, 231, 231);
-  border-radius: 0px;
-}
-
-.panel-heading.sideNav-custom:hover {
-  box-shadow: -1px 0px 4px 2px #777777;
-  background-color: $codeology-green;
-}
-
-.custom-icon {
-  display: inline-block;
-  font-size: 18px;
-  height: 1em;
-  line-height: 1em;
-  text-align: center;
-  vertical-align: top;
-  width: 1em;
-  margin-right: 0.75em;
-}
 
 .icon-flipped {
   transform: scaleX(-1);
   -moz-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   -ms-transform: scaleX(-1);
-}
-
-.image.sideNav-custom {
-  display: inline-block;
-}
-
-.button.sideNav-toggle {
-  position: fixed;
-  transition: 0.2s;
-  border: 0px;
-  border-radius: 0px;
-  z-index: 1;
-}
-
-.button.sideNav-toggle:hover {
-  background-color: $codeology-yellow;
 }
 
 /* ============================ */
@@ -139,3 +82,4 @@ $codeology-blue: #92D5E6;
 .message-body.is-codeology-green{
   border-color: $codeology-green;
 }
+

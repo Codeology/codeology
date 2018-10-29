@@ -1,37 +1,29 @@
 <% provide(:title, "Codeology | Log in") %>
 
-<section id="sign-in" class="hero">
-  <div class="hero-body" id="login-box">
-    <div class="columns is-centered">
-      <div class="column is-6">
-        <h2 class="title is-2 has-text-black extra-top-padding">Member Login</h2>
+<section class="is-fullheight">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <h2 class="is-size-2 is-size-3-mobile extra-top-padding">Member Login</h2>
 
-        <%= form_for(:session, url: login_path) do |f| %>
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.email_field :email, placeholder: 'email', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-envelope-o"></i>
-              </span>
-          </p>
-          </div>
-          
-          <div class="field">
-            <p class="control has-icons-left">
-              <%= f.password_field :password, placeholder: 'password', class: 'input is-rounded' %>
-              <span class="icon is-small is-left">
-                  <i class="fa fa-lg fa-lock"></i>
-              </span>
-            </p>
-          </div>
-          <%= f.submit "Log in", class: "button is-rounded", style: "margin-top: 10px;"%> 
-          <p class="signup-link"><%= link_to "Forgot password?", new_password_reset_path %></p>
-          <p class="signup-link"><%= link_to "Resend activation link", new_account_activation_path %></p>
-          <p class="signup-link">New user? <%= link_to "Sign up now!", signup_path %></p>
-        <% end %>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <div class="input-field">
+          <i class="material-icons prefix">mail_outline</i>
+          <%= f.email_field :email, class: '' %> 
+          <label for="session_email">email</label>          
+        </div>
+        
+        <div class="input-field">
+            <i class="material-icons prefix">lock_outline</i>
+            <%= f.password_field :password, class: '' %>
+            <label for="session_password">password</label>
+        </div>
 
+        <%= f.submit "Log in", class: "btn white black-text is-round normal-caps", style: "margin-top: 10px;"%> 
+        <p class="signup-link"><%= link_to "Forgot password?", new_password_reset_path %></p>
+        <p class="signup-link"><%= link_to "Resend activation link", new_account_activation_path %></p>
+        <p class="signup-link">New user? <%= link_to "Sign up now!", signup_path %></p>
+      <% end %>
 
-      </div>
     </div>
   </div>
 </section>
