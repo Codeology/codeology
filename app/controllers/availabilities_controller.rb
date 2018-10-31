@@ -28,7 +28,8 @@ class AvailabilitiesController < ApplicationController
     Availability.where("time <= ?", 7.hours.ago).destroy_all
 
     @curr_user = User.find(session[:user_id])
-    @allAvailabilitys = Availability.all.order('time ASC')
+    @allAvailabilitys = Availability.where(["time > ?", 17.hours.from_now]).order('time ASC')
+
     #@allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
     render layout: 'web_application'
   end
