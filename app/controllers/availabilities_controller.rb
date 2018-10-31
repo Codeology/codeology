@@ -23,9 +23,9 @@ class AvailabilitiesController < ApplicationController
     # If for some reason this application needs to scale then the
     # optimization is recommended.
     #
-    # NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
+    # NOTE: in production: use 7 hours ago as opposed to now since heroku servers are in PST
     # TODO: Create an environment variable for this so that we don't need to hardcode 24 or 17
-    Availability.where("time <= ?", 17.hours.from_now).destroy_all
+    Availability.where("time <= ?", 7.hours.ago).destroy_all
 
     @curr_user = User.find(session[:user_id])
     @allAvailabilitys = Availability.all.order('time ASC')
@@ -55,60 +55,35 @@ class AvailabilitiesController < ApplicationController
     # Create dateTime object
     datetimeString = params[:availability][:date] + " " + params[:availability][:time]
     timeObj = Time.strptime(datetimeString, "%b %d, %Y %I:%M %P")
-    #puts timeObj
-    #puts 24.hours.from_now.gmtime
-    #puts 24.hours.from_now.utc
     timeObj = timeObj.utc
 
     # Create overlapping times
-    ahead = timeObj + 30.minutes
-    behind = timeObj - 30.minutes
+    ahead = timeObj + 60.minutes
+    behind = timeObj - 60.minutes
 
     # create new availability item
     @availability = Availability.new(time: timeObj, user_id: session[:user_id], is_python: is_python, is_videocall: is_videocall)
     
     # Query DB for existing user availabilities to check again duplicates and overlapping times e.g. 8:30 and 9:00 overlap
     userAvailabilities = Availability.where(user_id: session[:user_id])
-  
-    # Finds if there is an availability at or overlapping with new availability timeslot
+    
+    # Finds if there is an existing availability at new availability timeslot
     dups = userAvailabilities.find {|avail| avail.time == timeObj}
-    ####################
-    #
-    # For now we won't be stopping overlapping availabilities, since booking cancels overlapping availabilities
-    # This allows for greater availability posting flexibility while also maintaining scheduling integrity
-    #
-    #overlapAhead = userAvailabilities.find {|avail| avail.time == ahead}
-    #overlapBehind = userAvailabilities.find {|avail| avail.time == behind}
-    ####################
 
     # Query DB for existing upcoming-interviews to check overlap/duplicates
     userUpcomings = Upcoming_interview.where(interviewer: session[:user_id]).or(Upcoming_interview.where(interviewee: session[:user_id]))
     
     # Finds if there is an upcoming interview at or overlapping with new availability timeslot
-    dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
-    overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
-    overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
-    #puts timeObj
-    #puts 24.hours.from_now.gmtime
+    overlapUpcoming = userUpcomings.find {|upcoming| upcoming.time > behind and upcoming.time < ahead}
+
     # If time is within 24 hours #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
     if timeObj <= 17.hours.from_now.utc
-      
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
     elsif dups
       flash[:warning] = "You already have an availability posted for that time"
-    ####################
-    #
-    # For now we won't be stopping overlapping availabilities, since booking cancels overlapping availabilities
-    # This allows for greater availability posting flexibility while also maintaining scheduling integrity
-    #
-    #elsif overlapAhead || overlapBehind
-    #  flash[:warning] = "You already have an overlapping availability posted for that time"
-    ####################
-    # if dups or overlap upcoming interview exists
-    elsif dupsUpcoming
-      flash[:warning] = "You already have an upcoming interview for that time"
-    elsif overlapAheadUpcoming || overlapBehindUpcoming
+    # if overlaps an existing upcoming interview
+    elsif overlapUpcoming
       flash[:warning] = "You already have an overlapping upcoming interview for that time"
     # if model saving into database is successful
     elsif @availability.save
@@ -116,7 +91,6 @@ class AvailabilitiesController < ApplicationController
     else
       flash[:danger] = "Availability couldn't be saved"
     end
-    # puts @availability.errors.full_messages
     
     redirect_to new_availability_path
   end
@@ -151,27 +125,23 @@ class AvailabilitiesController < ApplicationController
     
     # Create overlapping times
     timeObj = @availability.time.utc
-    ahead = timeObj + 30.minutes
-    behind = timeObj - 30.minutes
+    ahead = timeObj + 60.minutes
+    behind = timeObj - 60.minutes
     
     # Finds if there is an upcoming interview at or overlapping with new availability timeslot
-    dupsUpcoming = userUpcomings.find {|upcoming| upcoming.time == timeObj}
-    overlapAheadUpcoming = userUpcomings.find {|upcoming| upcoming.time == ahead}
-    overlapBehindUpcoming = userUpcomings.find {|upcoming| upcoming.time == behind}
-   
-    # if dups or overlap upcoming interview exists
-    if dupsUpcoming
-      flash[:warning] = "You already have an upcoming interview for that time"
-    elsif overlapAheadUpcoming || overlapBehindUpcoming
+    overlapUpcoming = userUpcomings.find {|upcoming| upcoming.time > behind and upcoming.time < ahead}
+
+    # if attempted booking overlaps upcoming interview exists
+    if overlapUpcoming
       flash[:warning] = "You already have an overlapping upcoming interview for that time"
     # if model saving into database is successful    
     elsif @upcoming_interview.save
       flash[:success] = "Successful booking!"
       Availability.find(params[:id]).destroy
       # Query DB for overlapping availabilities and destroy
-      # For example: if I book for 9pm, I want to delete my own availabilities at 8:30, 9:00, and/or 9:30 due to overlap with my new booking.
-      Availability.where(time: ahead).or(Availability.where(time: behind).or(Availability.where(time: timeObj))).where(user_id: session[:user_id]).destroy_all
-      Availability.where(time: ahead).or(Availability.where(time: behind).or(Availability.where(time: timeObj))).where(user_id: other_user.id).destroy_all
+      # For example: if I book for 9pm, I want to delete my own availabilities at 8-10pm non-inclusive.
+      Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, session[:user_id]]).destroy_all
+      Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, other_user.id]).destroy_all
       @curr_user.send_booking_emails(other_user, @upcoming_interview)
     else
       flash[:danger] = "Booking failed. Submit an issue if this persists"
