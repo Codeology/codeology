@@ -24,11 +24,11 @@ class AvailabilitiesController < ApplicationController
     # optimization is recommended.
     #
     # NOTE: in production: use 7 hours ago as opposed to now since heroku servers are in PST
-    # TODO: Create an environment variable for this so that we don't need to hardcode 24 or 17
+    # TODO: Create an environment variable for this so that we don't need to hardcode 24 or 16
     Availability.where("time <= ?", 7.hours.ago).destroy_all
 
     @curr_user = User.find(session[:user_id])
-    @allAvailabilitys = Availability.where(["time > ?", 17.hours.from_now]).order('time ASC')
+    @allAvailabilitys = Availability.where(["time > ?", 16.hours.from_now]).order('time ASC')
 
     #@allAvailabilitys = Availability.where.not(user_id: session[:user_id]).order('time ASC')
     render layout: 'web_application'
@@ -77,8 +77,8 @@ class AvailabilitiesController < ApplicationController
     # Finds if there is an upcoming interview at or overlapping with new availability timeslot
     overlapUpcoming = userUpcomings.find {|upcoming| upcoming.time > behind and upcoming.time < ahead}
 
-    # If time is within 24 hours #NOTE: in production: use 17 hours from now as opposed to 24 since heroku servers are in PST
-    if timeObj <= 17.hours.from_now.utc
+    # If time is within 24 hours #NOTE: in production: use 16 hours from now as opposed to 24 since heroku servers are in PST
+    if timeObj <= 16.hours.from_now.utc
       flash[:warning] = "Availability must be at least 24 hours ahead of current time"
     # if dups or overlap availability exists
     elsif dups

@@ -45,7 +45,7 @@
             <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  
             class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
-            <% if availability.time < 17.hours.from_now %>
+            <% if availability.time < 16.hours.from_now %>
               <td><span class="tooltipped" data-position="left" data-tooltip="This availability is within 24 hours and won't be seen by others"> 
               <i class="material-icons">info_outline</i></span></td>
             <% end %>
