@@ -23,8 +23,8 @@
             <li><%= link_to about_path, :class => "grey-text text-darken-3" do %> About <% end %></li>
             <li><%= link_to projects_path, :class => "grey-text text-darken-3" do %> Projects <% end %></li>
             <li><%= link_to calendar_path, :class => "grey-text text-darken-3" do %> Calendar <% end %></li>
+            <li><%= link_to apply_path, :class => "grey-text text-darken-3" do %> Apply <% end %></li> 
             <!--
-            <%= link_to_nav_item "Apply", apply_path, :class => "navbar-item custom-nav-item" %>
             -->
             <% if user_is_logged_in? %>  
             <li><%= link_to dashboard_path, :class => "grey-text text-darken-3" do %> Dashboard <% end %></li>
