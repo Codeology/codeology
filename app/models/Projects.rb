@@ -34,7 +34,7 @@ class Projects
             :blurb => "Intro to iOS app development to create a task list app with basic design implementation"}
         project_7 = {:name => "Blockchain Application", :imgurl => "projects/blockchain.png",
             :blurb => "Construct a DApp with different frameworks to create an online betting game."}
-        project_8 = {:name => "Blockchain Application", :imgurl => "projects/webdev.jpg",
+        project_8 = {:name => "Full stack Web Dev", :imgurl => "projects/webdev.jpg",
             :blurb => "Full stack responsive web app for finding buddies to walk home safely with."}
     
             array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6, project_7, project_8]
