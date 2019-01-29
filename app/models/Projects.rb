@@ -27,7 +27,7 @@ class Projects
         project_3 = {:name => "Crave", :imgurl => "projects/nlp.png",
             :blurb => "Build an iOS app that utilizes an NLP chatbot to help users narrow down their preferences and discover new food"}
         project_4 = {:name => "Quant Trading Algorithms", :imgurl => "projects/quantopian.jpg",
-            :blurb => "Tired of manually checking up on stocks? Why not put that CS knowledge to some good use! Code it, hit run, make $$"}
+            :blurb => "Build a stock market trading algorithm for US equities and backtest/deploy it on Quantopian against S&P 500"}
         project_5 = {:name => "Spotify Recommendations", :imgurl => "projects/spotify.jpg",
             :blurb => "Build models using data from Spotify’s API to get recommendations from any playlist."}
         project_6 = {:name => "Todo list iOS app", :imgurl => "projects/iphone.jpg",
