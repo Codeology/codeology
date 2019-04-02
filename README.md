@@ -1,7 +1,9 @@
 # README
 This is the website for the Codeology club at Berkeley
 
-To make minor changes, please refer to [bulma documentation](https://bulma.io/documentation/) to get familiarized with the CSS framework.
+To make minor changes, please refer to [materialize documentation](https://materializecss.com/) to get familiarized with the CSS framework.
+
+To update the website, please refer to [our guide](guide.md).
 
 To make large changes skim [getting started with rails](https://www.pluralsight.com/blog/software-development/tutorial-rails) to get familiarized with how ruby on rails works. Knowledge of MVC, how data is passed between them, and embedded ruby are of particular interest.
 
