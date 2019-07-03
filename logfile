@@ -8,3 +8,8 @@
 2018-08-03 10:21:56.192 PDT [64842] FATAL:  lock file "postmaster.pid" already exists
 2018-08-03 10:21:56.192 PDT [64842] HINT:  Is another postmaster (PID 64777) running in data directory "/usr/local/var/postgres"?
 2018-08-03 10:23:13.976 PDT [64880] FATAL:  database "db/development" does not exist
+2019-07-02 17:16:49.156 PDT [46449] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-07-02 17:16:49.156 PDT [46449] LOG:  listening on IPv6 address "::1", port 5432
+2019-07-02 17:16:49.157 PDT [46449] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-07-02 17:16:49.173 PDT [46450] LOG:  database system was shut down at 2019-07-02 17:14:34 PDT
+2019-07-02 17:16:49.180 PDT [46449] LOG:  database system is ready to accept connections

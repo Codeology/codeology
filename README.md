@@ -24,8 +24,9 @@ Next, [install rbenv](https://github.com/sstephenson/rbenv#installation) and
 manage your Ruby versions and gems:
 
 ```
-rbenv install 2.2.2
-rbenv local 2.2.2
+rvm install ruby-2.5.1
+rbenv install 2.5.1
+rbenv local 2.5.1
 gem install bundler
 ```
 
@@ -37,13 +38,19 @@ because it's a dependency for the `mysql2` gem:
 brew install mysql
 ```
 
-Finally, install the gems necessary for development, testing, and deployment:
+Finally, install the gems necessary for development, testing, and deployment. Make sure you are in the codeology folder directory in order to run this command:
 
 ```
 bundle install
 ```
 
 If you run into an error with incompatible Ruby Versions, check [here](https://stackoverflow.com/questions/37619964/bundle-install-not-using-rbenv-local-ruby-version) and see if you need to update your ~/.bash_profile 's PATH accordingly).
+
+If you have trouble installing pg on Mojave, see [here](https://medium.com/@naveeninja/cannot-install-pg-gem-in-mac-osx-ddd9e3df1748). You will have to install PostgreSQL (if you don't already have) to do this part.
+
+```
+brew install postgresql
+```
 
 If you have trouble installing libv8 on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
 
@@ -57,7 +64,7 @@ When developing on local, you need to instantiate a PG server instance in order 
 ```
 initdb /usr/local/var/postgres -E utf8
 ```
-if you need to initialize a PG server instance, and 
+if you need to initialize a PG server instance, and
 ```
 pg_ctl -D /usr/local/var/postgres -l logfile start
 
