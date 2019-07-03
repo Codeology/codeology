@@ -46,13 +46,13 @@ bundle install
 
 If you run into an error with incompatible Ruby Versions, check [here](https://stackoverflow.com/questions/37619964/bundle-install-not-using-rbenv-local-ruby-version) and see if you need to update your ~/.bash_profile 's PATH accordingly).
 
-If you have trouble installing pg on Mojave, see [here](https://medium.com/@naveeninja/cannot-install-pg-gem-in-mac-osx-ddd9e3df1748). You will have to install PostgreSQL (if you don't already have) to do this part.
+If you have trouble installing 'pg' on Mojave, see [here](https://medium.com/@naveeninja/cannot-install-pg-gem-in-mac-osx-ddd9e3df1748). You will have to install PostgreSQL (if you don't already have) to do this part:
 
 ```
 brew install postgresql
 ```
 
-If you have trouble installing libv8 on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
+If you have trouble installing 'libv8' on El Capitan, see [here](http://stackoverflow.com/questions/19577759/installing-libv8-gem-on-os-x-10-9).
 
 Make sure to run
 ```
