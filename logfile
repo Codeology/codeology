@@ -13,3 +13,5 @@
 2019-07-02 17:16:49.157 PDT [46449] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2019-07-02 17:16:49.173 PDT [46450] LOG:  database system was shut down at 2019-07-02 17:14:34 PDT
 2019-07-02 17:16:49.180 PDT [46449] LOG:  database system is ready to accept connections
+2019-07-02 21:04:47.121 PDT [59253] FATAL:  role "postgres" does not exist
+2019-07-02 21:04:52.236 PDT [59294] FATAL:  role "postgres" does not exist
