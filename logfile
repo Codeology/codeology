@@ -15,3 +15,7 @@
 2019-07-02 17:16:49.180 PDT [46449] LOG:  database system is ready to accept connections
 2019-07-02 21:04:47.121 PDT [59253] FATAL:  role "postgres" does not exist
 2019-07-02 21:04:52.236 PDT [59294] FATAL:  role "postgres" does not exist
+2019-07-23 10:19:38.747 PDT [46449] LOG:  received smart shutdown request
+2019-07-23 10:19:38.751 PDT [46449] LOG:  background worker "logical replication launcher" (PID 46456) exited with exit code 1
+2019-07-23 10:19:38.751 PDT [46451] LOG:  shutting down
+2019-07-23 10:19:38.760 PDT [46449] LOG:  database system is shut down
