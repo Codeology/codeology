@@ -25,7 +25,7 @@ class Projects
         project_2 = {:name => "Whatcha Wanna Do", :imgurl => "projects/whatchaWanna.jpg",
             :blurb => "Bored and not sure what you want to do? This website searches through Eventbrite to create a schedule for you to get out there and explore!"}
         project_3 = {:name => "Unity Development", :imgurl => "projects/unityDev.jpg",
-            :blurb => "Over the course of this semester,  we will be building a 2D game in Unity and C#. We want to build something that our team members think is fun and engaging - so, we'll be deciding on what the specific genre our game will be with our project team, whether that's something like Pokemon or Zelda. "}
+            :blurb => "Learn 2D game development with a team of other developers using C# and Unity."}
         project_4 = {:name => "Movie Recommendations", :imgurl => "projects/movieRecs.jpg",
             :blurb => "Build a movie recommendation engine using filtering algorithms and visualize it on an interactive Tableau dashboard."}
         project_5 = {:name => "Web Reacts Only", :imgurl => "projects/webReacts.jpg",
