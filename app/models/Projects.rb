@@ -30,7 +30,7 @@ class Projects
             :blurb => "Build a movie recommendation engine using filtering algorithms and visualize it on an interactive Tableau dashboard."}
         project_5 = {:name => "Web Reacts Only", :imgurl => "projects/webReacts.jpg",
             :blurb => "Learn how to start building basic Web apps with a focus on React and API calls!"}
-        project_6 = {:name => "TBA", :imgurl => "projects/iphone.jpg",
+        project_6 = {:name => "Rethinking CS", :imgurl => "projects/iphone.jpg",
             :blurb => "TBA"}
 
             array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6]
