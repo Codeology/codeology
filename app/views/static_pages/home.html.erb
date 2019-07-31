@@ -88,7 +88,7 @@
       <div class="col s12">
         <h2 class="is-size-1 is-size-2-mobile">Leadership</h2>
       </div>
-    
+
     <% @leadership.each do |element| %>
       <div class="col s6 m3">
         <div class="card adjustable-size">
@@ -102,7 +102,7 @@
         </div>
       </div>
     <%end%>
-      
+
       <div class="col s12">
         <%= link_to_nav_item "See All >", about_path(anchor: "members"), :class => "is-codeology-blue is-size-3 is-size-4-mobile" %>
       </div>
@@ -116,9 +116,9 @@
         <div class="row has-text-centered">
             <div class="col s12">
                 <h2 class="is-size-1 is-size-2-mobile">Contact Us</h2>
-                <p class="reverse">
+                <a class="reverse" href="mailto:info@codeology.club">
                 bulc.ygoloedoc@ofni
-                </p>
+                </a>
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@
 <!-- Script found in smoothScroll.js -->
 <script type="text/javascript">
   addSmoothScroll();
-  
+
   $('#pulse-about-button').on("click", function(){
     $('#pulse-about-button').removeClass("pulse");
   });

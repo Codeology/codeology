@@ -3,14 +3,16 @@ class People
     # Eventually model will pull from DB as opposed to having data hardcoded
 
     @@leadership = [
-        {:name => "Sera Yang", :title => "President", :imgurl => "people/sera.jpg"},
-        {:name => "Jinsu Elhance", :title => "Vice-President", :imgurl => "people/jinsu.jpg"},
-        {:name => "Sherman Luo", :title => "Director of Education", :imgurl => "people/sherman.jpg"},
-        {:name => "Jiayue Li", :title => "Director of Technology", :imgurl => "people/jaj.jpg"},
-        {:name => "Amanda Te", :title => "Co-Director of Social", :imgurl => "people/amanda.jpg"},
-        {:name => "Calvin Chen", :title => "Co-Director of Social", :imgurl => "people/calvin.jpg"},
-        {:name => "Jessica Hsiao", :title => "Director of Media", :imgurl => "people/jess.jpg"},
-        {:name => "Lyric Yu", :title => "Director of Industry", :imgurl => "people/lyric.jpg"}
+        {:name => "Lyric Yu", :title => "President", :imgurl => "people/lyric.jpg"},
+        {:name => "Calvin Chen", :title => "Vice President", :imgurl => "people/calvin.jpg"},
+        {:name => "Karthick Ravikumar", :title => "Director of Education", :imgurl => "people/karthick.jpg"},
+        {:name => "Micah Harrison", :title => "Co-Director of Technology", :imgurl => "people/micah.jpg"},
+        {:name => "Richard Huang", :title => "Co-Director of Technology", :imgurl => "people/richard.jpg"},
+        {:name => "Alma Pineda", :title => "Co-Director of Member Relations", :imgurl => "people/alma.jpg"},
+        {:name => "Jennifer Xiao", :title => "Co-Director of Member Relations", :imgurl => "people/jennifer.jpg"},
+        {:name => "Tiffany Chung", :title => "Director of Media", :imgurl => "people/tiffany.jpg"},
+        {:name => "Emily Wang", :title => "Director of Finance", :imgurl => "people/ewang.jpg"},
+        {:name => "Kaavya Shah", :title => "Director of Industry", :imgurl => "people/kaavya.jpg"}
     ]
 
     @@members = [
@@ -19,7 +21,7 @@ class People
         {:name => "Claire Li", :title => "Project Leader", :imgurl => "people/claire.jpg"},
         {:name => "Kevin Wang", :title => "Project Leader", :imgurl => "people/kevin.jpg"},
         {:name => "Micah Harrison", :title => "Project Leader", :imgurl => "people/micah.jpg"},
-        
+
         {:name => "Myles Domingo", :title => "Designer", :imgurl => "people/myles.jpg"},
         {:name => "Nikita Gupta", :title => "General Member", :imgurl => "people/nikita.jpg"},
         {:name => "Shalandy Zhang", :title => "Project Leader", :imgurl => "people/shalandy.jpg"},
