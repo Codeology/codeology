@@ -28,7 +28,7 @@ class People
         {:name => "Ashley Song", :title => "Project Leader", :imgurl => "people/ashley.jpg"},
         {:name => "Bridget Cheng", :title => "Project Leader", :imgurl => "people/bridget.jpg"},
 
-        {:name => "Marvin Luong", :title => "Project Leader", :imgurl => "people/marvin.png"},
+        {:name => "Marvin Luong", :title => "Project Leader", :imgurl => "people/marvin.jpg"},
         {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.jpg"},
         {:name => "Vaibhav Gattani", :title => "Project Leader", :imgurl => "people/vaib.jpg"},
         {:name => "Ayush Maganahalli", :title => "Project Leader", :imgurl => "people/ayush.png"},
@@ -53,7 +53,7 @@ class People
         {:name => "Stella Lu", :title => "General Member", :imgurl => "people/stella.png"},
 
         {:name => "Susan Chen", :title => "General Member", :imgurl => "people/susan.jpg"},
-        {:name => "Varun Murthy", :title => "General Member", :imgurl => "people/varun.png"}
+        {:name => "Varun Murthy", :title => "General Member", :imgurl => "people/varun.jpg"}
 
     ]
 
