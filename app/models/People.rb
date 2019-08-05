@@ -57,7 +57,6 @@ class People
 
     ]
 
-=begin
     @@alumni = [
         {:name => "Catherine Chang", :title => "Atlassian", :imgurl => "alumni/catherine.jpg"},
         {:name => "Albert Hu", :title => "Samsara", :imgurl => "alumni/albert.jpg"},
@@ -66,7 +65,6 @@ class People
         {:name => "David Gao", :title => "SAP Ariba", :imgurl => "alumni/david.jpg"},
         {:name => "Marcus Lee", :title => "Amazon", :imgurl => "alumni/marcus.jpg"},
     ]
-=end
 
     def self.leadership
         @@leadership
@@ -76,10 +74,8 @@ class People
         @@members
     end
 
-=begin
     def self.alumni
         @@alumni
     end
-=end
 
 end
