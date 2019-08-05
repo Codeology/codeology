@@ -16,69 +16,48 @@ class People
     ]
 
     @@members = [
-        {:name => "Andrew Liu", :title => "Project Manager", :imgurl => "people/andrew.jpg"},
-        {:name => "Carson Trinh", :title => "Project Manager", :imgurl => "people/carson.jpg"},
-        {:name => "Claire Li", :title => "Project Leader", :imgurl => "people/claire.jpg"},
-        {:name => "Kevin Wang", :title => "Project Leader", :imgurl => "people/kevin.jpg"},
-        {:name => "Micah Harrison", :title => "Project Leader", :imgurl => "people/micah.jpg"},
+        {:name => "Jiayue Li", :title => "Project Manager", :imgurl => "people/jaj.jpg"},
+        {:name => "Kevin Wang", :title => "Project Manager", :imgurl => "people/kevin.jpg"},
+        {:name => "Tina Zhao", :title => "Project Manager", :imgurl => "people/tina.jpg"},
+        {:name => "Elizabeth Leong", :title => "Project Manager", :imgurl => "people/elizabeth.jpg"},
+        {:name => "Jimmy Lee", :title => "Project Leader", :imgurl => "people/jimmy.jpg"},
 
-        {:name => "Myles Domingo", :title => "Designer", :imgurl => "people/myles.jpg"},
-        {:name => "Nikita Gupta", :title => "General Member", :imgurl => "people/nikita.jpg"},
-        {:name => "Shalandy Zhang", :title => "Project Leader", :imgurl => "people/shalandy.jpg"},
-        {:name => "Tina Zhao", :title => "Project Leader", :imgurl => "people/tina.jpg"},
-        {:name => "Weiwei Zhang", :title => "Industry Coordinator", :imgurl => "people/weiwei.jpg"},
+        {:name => "Katherine Peng", :title => "Project Leader", :imgurl => "people/katherine.jpg"},
+        {:name => "Anna Young", :title => "Project Leader", :imgurl => "people/anna.jpg"},
+        {:name => "Haotian Ye", :title => "Project Leader", :imgurl => "people/haotian.jpg"},
+        {:name => "Ashley Song", :title => "Project Leader", :imgurl => "people/ashley.jpg"},
+        {:name => "Bridget Cheng", :title => "Project Leader", :imgurl => "people/bridget.jpg"},
 
-        {:name => "David Ly", :title => "Project Leader", :imgurl => "people/david_ly.png"},
-        {:name => "Jagpinder Singh", :title => "General Member", :imgurl => "people/jagpinder_singh.jpg"},
-        {:name => "Alan Liu", :title => "General Member", :imgurl => "people/alan_liu.jpg"},
-        {:name => "Muying Chen", :title => "General Member", :imgurl => "people/muying_chen.jpg"},
-        {:name => "Kyle Hua", :title => "General Member", :imgurl => "people/kyle_hua.png"},
+        {:name => "Marvin Luong", :title => "Project Leader", :imgurl => "people/marvin.png"},
+        {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.jpg"},
+        {:name => "Vaibhav Gattani", :title => "Project Leader", :imgurl => "people/vaib.jpg"},
+        {:name => "Ayush Maganahalli", :title => "Project Leader", :imgurl => "people/ayush.png"},
+        {:name => "Andrew Wang", :title => "General Member", :imgurl => "people/andrew.jpg"},
 
-        {:name => "Ashley Song", :title => "General Member", :imgurl => "people/ashley_song.jpg"},
-        {:name => "Hiroaki Oshima", :title => "General Member", :imgurl => "people/hiroaki_oshima.png"},
-        {:name => "Isha Mangal", :title => "General Member", :imgurl => "people/isha_mangal.jpg"},
-        {:name => "Sun Ah Lee", :title => "General Member", :imgurl => "people/sunah_lee.png"},
-        {:name => "Luciano Lopez", :title => "General Member", :imgurl => "people/luciano_lopez.jpg"},
+        {:name => "Asli Akalin", :title => "General Member", :imgurl => "people/asli.png"},
+        {:name => "Charlize Dang", :title => "General Member", :imgurl => "people/charlize.jpg"},
+        {:name => "Christine Chao", :title => "General Member", :imgurl => "people/default.jpg"},
+        {:name => "Clark Wang", :title => "General Member", :imgurl => "people/default.jpg"},
+        {:name => "David Paner", :title => "General Member", :imgurl => "people/david.jpg"},
 
-        {:name => "Richard Huang", :title => "General Member", :imgurl => "people/richard_huang.jpg"},
-        {:name => "Vincent Tantra", :title => "General Member", :imgurl => "people/vincent_tantra.JPG"},
-        {:name => "Emily Wang", :title => "General Member", :imgurl => "people/emily_wang.jpg"},
-        {:name => "Pranad Reddy", :title => "General Member", :imgurl => "people/pranad_reddy.jpg"},
-        {:name => "Jennifer Xiao", :title => "General Member", :imgurl => "people/jennifer_xiao.jpg"},
+        {:name => "Dorothy Xu", :title => "General Member", :imgurl => "people/dorothy.jpg"},
+        {:name => "Abinav Routhu", :title => "General Member", :imgurl => "people/abinav.jpg"},
+        {:name => "Emily Wang", :title => "General Member", :imgurl => "people/emilyNew.jpg"},
+        {:name => "Eric Peng", :title => "General Member", :imgurl => "people/eric.jpg"},
+        {:name => "Jagpinder Singh", :title => "General Member", :imgurl => "people/jag.jpg"},
 
-        {:name => "Johnathan Zhou", :title => "General Member", :imgurl => "people/johnathan_zhou.png"},
-        {:name => "Sai Kapuluru", :title => "General Member", :imgurl => "people/sai_kapuluru.jpg"},
-        {:name => "Eric Jia", :title => "General Member", :imgurl => "people/eric_jia.jpg"},
-        {:name => "Stella Lu", :title => "General Member", :imgurl => "people/stella_lu.png"},
-        {:name => "Michael Chen", :title => "General Member", :imgurl => "people/michael_chen.png"},
+        {:name => "Matt Hashimoto", :title => "General Member", :imgurl => "people/matt.jpg"},
+        {:name => "Michael Chen", :title => "General Member", :imgurl => "people/michael.jpg"},
+        {:name => "Sai Kapuluru", :title => "General Member", :imgurl => "people/sai.jpg"},
+        {:name => "Snehpreet Kaur", :title => "General Member", :imgurl => "people/sneh.jpg"},
+        {:name => "Stella Lu", :title => "General Member", :imgurl => "people/stella.png"},
 
-        {:name => "David Paner", :title => "General Member", :imgurl => "people/david_paner.JPG"},
-        {:name => "Ayush Maganahalli ", :title => "General Member", :imgurl => "people/maganahalli_ayush.png"},
-        {:name => "Howie Ye", :title => "General Member", :imgurl => "people/haotian_ye.jpg"},
-        {:name => "Emily Hu", :title => "General Member", :imgurl => "people/emily_hu.jpg"},
-        {:name => "Jackie Chu", :title => "General Member", :imgurl => "people/jackie_chu.jpg"},
-
-        {:name => "Snehpreet Kaur", :title => "General Member", :imgurl => "people/snehpreet_kaur.jpg"},
-        {:name => "John Li", :title => "General Member", :imgurl => "people/wenyao_li.jpg"},
-        {:name => "Kaavya Shah", :title => "General Member", :imgurl => "people/kaavya_shah.jpg"},
-        {:name => "Alex Lazich", :title => "General Member", :imgurl => "people/alex_lazich.jpg"},
-        {:name => "Thu Nguyen", :title => "General Member", :imgurl => "people/thu_nguyen.jpg"},
-
-        {:name => "Dymtro Khelemendyk", :title => "General Member", :imgurl => "people/dmytro_khelemendyk.jpg"},
-        {:name => "Jack Coyle", :title => "General Member", :imgurl => "people/jack_coyle.jpg"},
-        {:name => "Asli Kalin", :title => "General Member", :imgurl => "people/aslihan_kalin.png"},
-        {:name => "Karthick Ravikumar", :title => "General Member", :imgurl => "people/karthick_ravikumar.jpg"},
-        {:name => "Lucas Liu", :title => "General Member", :imgurl => "people/lucas_liu.jpg"},
-
-        {:name => "Natalia Layson", :title => "General Member", :imgurl => "people/natalia_layson.jpg"},
-        {:name => "Anna Young", :title => "General Member", :imgurl => "people/anna_young.jpg"},
-        {:name => "Harvey Woo", :title => "General Member", :imgurl => "people/harvey_woo.jpg"},
-        {:name => "Kimmy Ko", :title => "General Member", :imgurl => "people/kimberly_ko.JPG"},
-        {:name => "Albert Hu", :title => "General Member", :imgurl => "people/albert_hu.jpg"}
-
+        {:name => "Susan Chen", :title => "General Member", :imgurl => "people/susan.jpg"},
+        {:name => "Varun Murthy", :title => "General Member", :imgurl => "people/varun.png"}
 
     ]
 
+=begin
     @@alumni = [
         {:name => "Catherine Chang", :title => "Atlassian", :imgurl => "alumni/catherine.jpg"},
         {:name => "Albert Hu", :title => "Samsara", :imgurl => "alumni/albert.jpg"},
@@ -87,6 +66,7 @@ class People
         {:name => "David Gao", :title => "SAP Ariba", :imgurl => "alumni/david.jpg"},
         {:name => "Marcus Lee", :title => "Amazon", :imgurl => "alumni/marcus.jpg"},
     ]
+=end
 
     def self.leadership
         @@leadership
@@ -96,8 +76,10 @@ class People
         @@members
     end
 
+=begin
     def self.alumni
         @@alumni
     end
+=end
 
 end

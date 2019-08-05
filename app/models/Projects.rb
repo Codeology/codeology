@@ -25,12 +25,12 @@ class Projects
         project_2 = {:name => "Whatcha Wanna Do", :imgurl => "projects/whatchaWanna.jpg",
             :blurb => "Bored and not sure what you want to do? This website searches through Eventbrite to create a schedule for you to get out there and explore!"}
         project_3 = {:name => "Unity Development", :imgurl => "projects/unityDev.jpg",
-            :blurb => "Learn 2D game development with a team of other developers using C# and Unity."}
+            :blurb => "Learn game development with a team of other developers using C# and Unity."}
         project_4 = {:name => "Movie Recommendations", :imgurl => "projects/movieRecs.jpg",
             :blurb => "Build a movie recommendation engine using filtering algorithms and visualize it on an interactive Tableau dashboard."}
         project_5 = {:name => "Web Reacts Only", :imgurl => "projects/webReacts.jpg",
             :blurb => "Learn how to start building basic Web apps with a focus on React and API calls!"}
-        project_6 = {:name => "Rethinking CS", :imgurl => "projects/iphone.jpg",
+        project_6 = {:name => "Rethinking CS", :imgurl => "projects/bigBrain.jpg",
             :blurb => "TBA"}
 
             array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6]
