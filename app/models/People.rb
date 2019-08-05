@@ -20,7 +20,7 @@ class People
         {:name => "Kevin Wang", :title => "Project Manager", :imgurl => "people/kevin.jpg"},
         {:name => "Tina Zhao", :title => "Project Manager", :imgurl => "people/tina.jpg"},
         {:name => "Elizabeth Leong", :title => "Project Manager", :imgurl => "people/elizabeth.jpg"},
-        {:name => "Jimmy Lee", :title => "Project Leader", :imgurl => "people/jimmy.jpg"},
+        {:name => "Jimmy Lee", :title => "Skrillexmaster", :imgurl => "people/jimmy.jpg"},
 
         {:name => "Katherine Peng", :title => "Project Leader", :imgurl => "people/katherine.jpg"},
         {:name => "Anna Young", :title => "Project Leader", :imgurl => "people/anna.jpg"},
