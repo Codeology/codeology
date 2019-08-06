@@ -21,7 +21,7 @@ Check out this repository to your local workspace ([GitHub for Mac](http://mac.g
 
 Next, [install rbenv](https://github.com/sstephenson/rbenv#installation) and
 [add ruby-build](https://github.com/sstephenson/ruby-build#installation) to
-manage your Ruby versions and gems:
+manage your Ruby versions and gems (only install version 2.5.1 as other older/newer versions are not compatible with our website):
 
 ```
 rvm install ruby-2.5.1
