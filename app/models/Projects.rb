@@ -31,7 +31,7 @@ class Projects
         project_5 = {:name => "Web Reacts Only", :imgurl => "projects/webReacts.jpg",
             :blurb => "Learn how to start building basic Web apps with a focus on React and API calls!"}
         project_6 = {:name => "Rethinking CS", :imgurl => "projects/bigBrain.jpg",
-            :blurb => "TBA"}
+            :blurb => "Learn about what goes into the process of designing an app! We will cover topics like ui/ux, design theory, user interaction, and much more!"}
 
             array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6]
         if amount == 3 then
