@@ -141,9 +141,11 @@ class AvailabilitiesController < ApplicationController
       Availability.find(params[:id]).destroy
       # Query DB for overlapping availabilities and destroy
       # For example: if I book for 9pm, I want to delete my own availabilities at 8-10pm non-inclusive.
+      Request.where(["time < ? and time > ? and user_id = ?", ahead, behind, session[:user_id]]).destroy_all
+      Request.where(["time < ? and time > ? and user_id = ?", ahead, behind, other_user.id]).destroy_all
       Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, session[:user_id]]).destroy_all
       Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, other_user.id]).destroy_all
-      @curr_user.send_booking_emails(other_user, @upcoming_interview)
+      @curr_user.send_avail_booking_emails(other_user, @upcoming_interview)
     else
       flash[:danger] = "Booking failed. Submit an issue if this persists"
     end

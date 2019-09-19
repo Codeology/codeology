@@ -1,0 +1,10 @@
+Hi <%= @user.name %>!
+<% if @is_interviewee %>
+<%= @other_user.name%> has created a booking with you. Their email is <%= @other_user.email%> and they will be interviewing you at
+<% else %>
+You have created a booking with <%= @other_user.name%>. Their email is <%= @other_user.email%> and you will be interviewing them at
+<% end %>
+
+<%= @upcoming_interview.time.localtime.strftime("%m/%d/%y %I:%M %p") %>
+
+<%= upcoming_interviews_url %>
