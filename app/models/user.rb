@@ -32,6 +32,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 8 }, allow_nil:true
   has_many :availabilitys
+  has_many :requests
 
   # scope :leadership_team, -> { where(is_officer: true) }
 
@@ -53,13 +54,19 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
-  # Sends booking email
-  def send_booking_emails(other_user, upcoming_interview)
-    UserMailer.new_booking(self, other_user, upcoming_interview, true).deliver_now
-    UserMailer.new_booking(other_user, self, upcoming_interview, false).deliver_now
+  # Sends avail booking email
+  def send_avail_booking_emails(other_user, upcoming_interview)
+    UserMailer.new_avail_booking(self, other_user, upcoming_interview, true).deliver_now
+    UserMailer.new_avail_booking(other_user, self, upcoming_interview, false).deliver_now
   end
 
-  # Sends cancel email
+  # Sends req booking email
+  def send_req_booking_emails(other_user, upcoming_interview)
+    UserMailer.new_req_booking(self, other_user, upcoming_interview, false).deliver_now
+    UserMailer.new_req_booking(other_user, self, upcoming_interview, true).deliver_now
+  end
+
+  # Sends avail cancel email
   def send_cancel_emails(other_user, upcoming_interview)
     UserMailer.cancel_booking(self, other_user, upcoming_interview).deliver_now
     UserMailer.cancel_booking(other_user, self, upcoming_interview).deliver_now

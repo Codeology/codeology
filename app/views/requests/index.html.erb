@@ -1,9 +1,9 @@
-<% provide(:title, "Codeology | Availabilities") %>
+<% provide(:title, "Codeology | Requests") %>
 
 <section class="section">
   <div class="container has-text-centered">
       
-    <h3 class="small-vertical-padding">Others ready to interview you</h3>
+    <h3 class="small-vertical-padding">Others ready to be interviewed</h3>
 
     <table class="highlight responsive-table">
       <thead>
@@ -17,25 +17,25 @@
       </thead>
 
       <tbody>
-        <% @allAvailabilitys.each do |availability| %>
+        <% @allRequests.each do |request| %>
           <tr>
-            <td><%= availability.time.localtime.strftime("%b %d, %Y") %></td>
-            <td><%= availability.time.localtime.strftime("%l:%M %p") %></td>
-            <td><% if availability.is_python %>Python<% else %>Java<% end %></td>
-            <td><% if availability.is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td><%= request.time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= request.time.localtime.strftime("%l:%M %p") %></td>
+            <td><% if request.is_python %>Python<% else %>Java<% end %></td>
+            <td><% if request.is_videocall %>Videocall<% else %>On Campus<% end %></td>
             <td>
               <!-- if availability belongs to user, render a disabled book button instead -->
-              <%= link_to_if availability.user_id != session[:user_id], 'Book', availability, method: :patch, data: { confirm: 'You are about to book for: ' + 
-              availability.time.localtime.strftime("%b %d, %Y") + " " + availability.time.localtime.strftime("%l:%M %p") + 
-              ". This will destroy any availabilities you have posted that overlap with this booking." },
+              <%= link_to_if request.user_id != session[:user_id], 'Book', request, method: :patch, data: { confirm: 'You are about to book for: ' + 
+              request.time.localtime.strftime("%b %d, %Y") + " " + request.time.localtime.strftime("%l:%M %p") + 
+              ". This will destroy any requests you have posted that overlap with this booking." },
                 class: "btn hoverable is-round waves-effect waves-light normal-caps background-is-codeology-green white-text" do %>
-                <span class="tooltipped" data-position="top" data-tooltip="This is your availability">
+                <span class="tooltipped" data-position="top" data-tooltip="This is your request">
                 <a class="btn disabled is-round waves-effect waves-light normal-caps white-text">book</a></span>
               <% end %>
             </td>
             <!--<td><a class = "button is-rounded is-success is-outlined custom-button"> Book </a></td>-->
             <% if is_admin? %>  
-              <td><%= link_to 'Delete', availability, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone' },
+              <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone' },
               class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
             <% end %>
           </tr>

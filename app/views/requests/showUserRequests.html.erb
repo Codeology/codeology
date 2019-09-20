@@ -1,0 +1,64 @@
+<% provide(:title, "Codeology | My Requests") %>
+
+<section class="section">
+  <div class="container">
+    
+    <h3 class="small-vertical-padding has-text-centered">Your Requests</h3>
+    
+    <article id="msg" class=" message is-codeology-green">
+      <div class="message-body is-codeology-green grey-text text-darken-4"> 
+        <a onclick="closeMessage()" class="delete" style="cursor:pointer; float:right;"><i class="material-icons">close</i></a>
+        Best of luck interviewing!
+        <br><br>
+        Approach the interview as an opportunity to be smart together! :)
+        <br><br>
+        Note: The system assumes Interviews to be an hour long
+      </div>
+    </article>
+    <p class="small-bottom-padding"></p>
+
+    <div class="small-bottom-padding has-text-centered">
+      <%= link_to 'Add Request', new_request_path, 
+      :class => "btn hoverable is-round waves-effect waves-light normal-caps white-text background-is-codeology-green tooltipped",
+      :'data-position'=>'top', :'data-tooltip'=>'Yaaaas' %>
+    </div>
+    <table class="highlight responsive-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Language</th>
+          <th>Location</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @userRequests.each do |request| %>
+          <tr>
+          <!-- TODO parse date and time for 1st and 2nd respectively -->
+            <td><%= request.time.localtime.strftime("%b %d, %Y") %></td>
+            <td><%= request.time.localtime.strftime("%l:%M %p") %></td>
+            <td><% if request.is_python %>Python<% else %>Java<% end %></td>
+            <td><% if request.is_videocall %>Videocall<% else %>On Campus<% end %></td>
+            <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure? This CANNOT be undone'},  
+            class: "btn hoverable is-round waves-effect waves-light normal-caps red lighten-1 white-text" %></td>
+            <% if request.time < 16.hours.from_now %>
+              <td><span class="tooltipped" data-position="left" data-tooltip="This request is within 24 hours and won't be seen by others"> 
+              <i class="material-icons">info_outline</i></span></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+  $('.tooltipped').tooltip();
+
+  function closeMessage() {
+    $("#msg").css('display', 'none');
+  }
+</script> 
