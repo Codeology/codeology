@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'webapp#dashboard'
 
   get '/myAvailability', to: 'availabilities#showUserAvailability'
+  get '/myRequests', to: 'availabilities#showUserRequests'
 
   resources :users
   resources :account_activations, :only => [:new, :create, :edit]

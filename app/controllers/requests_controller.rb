@@ -100,7 +100,7 @@ class RequestsController < ApplicationController
     def destroy
       Request.find(params[:id]).destroy
       flash[:info] = "Request deleted"
-      redirect_to myRequest_path
+      redirect_to myRequests_path
     end
   
     # the update path is used exclusively for booking interviews
