@@ -32,6 +32,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 8 }, allow_nil:true
   has_many :availabilitys
+  has_many :requests
 
   # scope :leadership_team, -> { where(is_officer: true) }
 

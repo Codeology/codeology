@@ -118,7 +118,7 @@ class RequestsController < ApplicationController
       end
   
       # Create new upcoming interview instance
-      @upcoming_interview = Upcoming_interview.new(interviewee: @curr_user.id, interviewer: @request.user_id, 
+      @upcoming_interview = Upcoming_interview.new(interviewee: @request.user_id, interviewer: @curr_user.id, 
                                                     time: @request.time, is_python: @request.is_python,
                                                     is_videocall: @request.is_videocall)
       
@@ -146,7 +146,7 @@ class RequestsController < ApplicationController
         Request.where(["time < ? and time > ? and user_id = ?", ahead, behind, other_user.id]).destroy_all
         Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, session[:user_id]]).destroy_all
         Availability.where(["time < ? and time > ? and user_id = ?", ahead, behind, other_user.id]).destroy_all
-        @curr_user.send_booking_emails(other_user, @upcoming_interview)
+        @curr_user.send_req_booking_emails(other_user, @upcoming_interview)
       else
         flash[:danger] = "Booking failed. Submit an issue if this persists"
       end
