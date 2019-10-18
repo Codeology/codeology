@@ -79,7 +79,7 @@ class People
         {:name => "Michael Chen", :title => "Active Member", :imgurl => "people/michael.jpg"},
         {:name => "Noah Alcus", :title => "Active Member", :imgurl => "people/noah.jpg"},
         {:name => "Omar Flores", :title => "Active Member", :imgurl => "people/omar.jpg"},
-        {:name => "Roshan Kumaraswamy", :title => "Active Member", :imgurl => "people/roshan.png"},
+        {:name => "Roshan Kumaraswamy", :title => "Active Member", :imgurl => "people/roshan.jpg"},
 
         {:name => "Sai Kapuluru", :title => "Active Member", :imgurl => "people/sai.jpg"},
         {:name => "Shaylan Dias", :title => "Active Member", :imgurl => "people/shaylan.jpg"},
