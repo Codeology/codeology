@@ -70,7 +70,7 @@ class People
 
         {:name => "Jagpinder Singh", :title => "Active Member", :imgurl => "people/jag.jpg"},
         {:name => "John Um", :title => "Active Member", :imgurl => "people/john.JPG"},
-        {:name => "Karina Pichardo", :title => "Active Member", :imgurl => "people/karina.jpg"},
+        {:name => "Karina Pichardo", :title => "Active Member", :imgurl => "people/karina.JPG"},
         {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.jpg"},
 
         {:name => "Mantej Panesar", :title => "Active Member", :imgurl => "people/mantej.jpg"},
