@@ -69,14 +69,14 @@ class People
         {:name => "Ethan Chen", :title => "Active Member", :imgurl => "people/ethan.jpg"},
 
         {:name => "Jagpinder Singh", :title => "Active Member", :imgurl => "people/jag.jpg"},
-        {:name => "John Um", :title => "Active Member", :imgurl => "people/john.jpg"},
-        {:name => "Karina Pichardo", :title => "Active Member", :imgurl => "people/default.jpg"},
+        {:name => "John Um", :title => "Active Member", :imgurl => "people/john.JPG"},
+        {:name => "Karina Pichardo", :title => "Active Member", :imgurl => "people/karina.jpg"},
         {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.jpg"},
 
         {:name => "Mantej Panesar", :title => "Active Member", :imgurl => "people/mantej.jpg"},
         {:name => "Matt Hashimoto", :title => "Active Member", :imgurl => "people/matt.jpg"},
         {:name => "Michael Chen", :title => "Active Member", :imgurl => "people/michael.jpg"},
-        {:name => "Noah Alcus", :title => "Active Member", :imgurl => "people/noah.jpg"},
+        {:name => "Noah Alcus", :title => "Active Member", :imgurl => "people/noah.JPG"},
 
         {:name => "Omar Flores", :title => "Active Member", :imgurl => "people/omar.jpg"},
         {:name => "Roshan Kumaraswamy", :title => "Active Member", :imgurl => "people/roshan.jpg"},
