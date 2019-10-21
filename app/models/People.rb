@@ -49,6 +49,7 @@ class People
         {:name => "Adithya Seshan", :title => "Active Member", :imgurl => "people/adi.jpg"},
 
         {:name => "Ahmed Baqai", :title => "Active Member", :imgurl => "people/ahmed.jpg"},
+        {:name => "Alicia Matsumoto", :title => "Active Member", :imgurl => "people/alicia.jpg"},
         {:name => "Andrew Wang", :title => "Active Member", :imgurl => "people/andrew.jpg"},
         {:name => "Angela Xu", :title => "Active Member", :imgurl => "people/angela.jpg"},
         {:name => "Anthony Zhou", :title => "Active Member", :imgurl => "people/anthony.jpg"},
@@ -59,7 +60,7 @@ class People
         {:name => "Cindy Zhang", :title => "Active Member", :imgurl => "people/cindy.jpg"},
 
         {:name => "CJ Manna", :title => "Active Member", :imgurl => "people/cj.jpg"},
-        {:name => "Clark Wang", :title => "Active Member", :imgurl => "people/default.jpg"},
+        {:name => "Clark Wang", :title => "Active Member", :imgurl => "people/clark.jpg"},
         {:name => "Daniel Tseng", :title => "Active Member", :imgurl => "people/daniel.jpg"},
         {:name => "David Paner", :title => "Active Member", :imgurl => "people/david.jpg"},
 
