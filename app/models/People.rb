@@ -31,15 +31,15 @@ class People
         {:name => "Ashley Song", :title => "Project Leader", :imgurl => "people/ashley.jpg"},
         {:name => "Bridget Cheng", :title => "Project Leader", :imgurl => "people/bridget.jpg"},
         {:name => "Marvin Luong", :title => "Project Leader", :imgurl => "people/marvin.jpg"},
-        {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.jpg"},
+        {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.JPG"},
 
         {:name => "Vaibhav Gattani", :title => "Project Leader", :imgurl => "people/vaib.jpg"},
-        {:name => "Ayush Maganahalli", :title => "Project Leader", :imgurl => "people/ayush.png"},
+        {:name => "Ayush Maganahalli", :title => "Project Leader", :imgurl => "people/ayush.jpg"},
         {:name => "Sera Yang", :title => "Senior Council", :imgurl => "people/sera.jpg"},
         {:name => "Jinsu Elhance", :title => "Senior Council", :imgurl => "people/jinsu.jpg"},
 
         {:name => "Sherman Luo", :title => "Senior Council", :imgurl => "people/sherman.png"},
-        {:name => "Stella Lu", :title => "Senior Council", :imgurl => "people/stella.png"},
+        {:name => "Stella Lu", :title => "Senior Council", :imgurl => "people/stella.jpg"},
         {:name => "Jessica Hsiao", :title => "Senior Council", :imgurl => "people/jess.jpg"},
         {:name => "Nikita Gupta", :title => "Senior Council", :imgurl => "people/nikita.jpg"},
 
@@ -90,7 +90,8 @@ class People
         {:name => "Susan Chen", :title => "Active Member", :imgurl => "people/susan.jpg"},
 
         {:name => "Trevor Baba", :title => "Active Member", :imgurl => "people/trevor.jpg"},
-        {:name => "Varun Murthy", :title => "Active Member", :imgurl => "people/varun.jpg"}
+        {:name => "Varun Murthy", :title => "Active Member", :imgurl => "people/varun.jpg"},
+        {:name => "Avocodeology", :title => "Club Mascot", :imgurl => "people/avocodeology.jpg"}
 
     ]
 
