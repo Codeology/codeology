@@ -31,7 +31,7 @@ class People
         {:name => "Ashley Song", :title => "Project Leader", :imgurl => "people/ashley.jpg"},
         {:name => "Bridget Cheng", :title => "Project Leader", :imgurl => "people/bridget.jpg"},
         {:name => "Marvin Luong", :title => "Project Leader", :imgurl => "people/marvin.jpg"},
-        {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.JPG"},
+        {:name => "Kyle Hua", :title => "Project Leader", :imgurl => "people/kyle.jpg"},
 
         {:name => "Vaibhav Gattani", :title => "Project Leader", :imgurl => "people/vaib.jpg"},
         {:name => "Ayush Maganahalli", :title => "Project Leader", :imgurl => "people/ayush.jpg"},
