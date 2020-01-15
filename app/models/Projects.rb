@@ -36,7 +36,7 @@ class Projects
         project_6 = {:name => "It's a Gentrified Day in the Neighborhood: Predicting Gentrification", :imgurl => "projects/gentrification.jpg",
             :blurb => "This project addresses the issue of gentrification by identifying areas where it is occurring as well as predicting where else gentrification might be happening. Gentrification will be assessed as a calculation based on the following 6 demographic measures: % change in gross income, % change non-Latinx White residents, % change in average household size, % change in gross rent, % change in residents with Bachelor's degrees, and % change in IRS filer ratio. Tableau visualization software will be used to illustrate the trends in US Demographics data that portray the severity of gentrification's in a given area."}
 
-            array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6]
+        array = [project_0, project_1, project_2, project_3, project_4, project_5, project_6]
         if amount == 3 then
             seed = rand(9)
             toReturn = []
