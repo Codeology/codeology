@@ -87,6 +87,7 @@ class People
         {:name => "Avocodeology", :title => "Club Mascot", :imgurl => "people/avocodeology.jpg"}
 
 
+
         # non-actives?
 
         # {:name => "Kevin Wang", :title => "Project Manager", :imgurl => "people/kevin.jpg"},
