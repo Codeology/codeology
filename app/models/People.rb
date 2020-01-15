@@ -83,8 +83,9 @@ class People
         {:name => "Sera Yang", :title => "Contributing Member", :imgurl => "people/sera.jpg"},
         {:name => "Sherman Luo", :title => "Contributing Member", :imgurl => "people/sherman.png"},
         {:name => "Stella Lu", :title => "Contributing Member", :imgurl => "people/stella.jpg"},
-        
+
         {:name => "Avocodeology", :title => "Club Mascot", :imgurl => "people/avocodeology.jpg"}
+
 
         # non-actives?
 
