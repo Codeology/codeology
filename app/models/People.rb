@@ -69,7 +69,7 @@ class People
         {:name => "David Paner", :title => "Contributing Member", :imgurl => "people/david.jpg"},
         {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.jpg"},
 
-        {:name => "Howie Ye", :title => "Contributing Member", :imgurl => "people/haotian.jpg"},
+        {:name => "Haotian Ye", :title => "Contributing Member", :imgurl => "people/haotian.jpg"},
         {:name => "Isha Mangal", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jack Coyle", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jagpinder Singh", :title => "Contributing Member", :imgurl => "people/jag.jpg"},
