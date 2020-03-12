@@ -31,7 +31,7 @@ class People
 
         {:name => "CJ Manna", :title => "Project Leader", :imgurl => "people/cj.jpg"},
         {:name => "Clark Wang", :title => "Project Leader", :imgurl => "people/clark.jpg"},
-        {:name => "Jimmy Lee", :title => "Project Leader", :imgurl => "people/jimmy.jpg"},
+        {:name => "Jimmy Lee", :title => "Project Leader", :imgurl => "people/jimmy2.jpg"},
         {:name => "Matt Hashimoto", :title => "Project Leader", :imgurl => "people/matt.jpg"},
 
         {:name => "Michael Chen", :title => "Project Leader", :imgurl => "people/michael.jpg"},
@@ -42,48 +42,74 @@ class People
         {:name => "Ada Hu", :title => "Active Member", :imgurl => "people/ada.jpg"},
         {:name => "Adithya Seshan", :title => "Active Member", :imgurl => "people/adi.jpg"},
         {:name => "Ahmed Baqai", :title => "Active Member", :imgurl => "people/ahmed.jpg"},
-        {:name => "Alicia Matsumoto", :title => "Active Member", :imgurl => "people/alicia.jpg"},
+        {:name => "Alicia Matsumoto", :title => "Active Member", :imgurl => "people/ali.jpg"},
 
-        {:name => "Angela Xu", :title => "Active Member", :imgurl => "people/angela.jpg"},
+        {:name => "Amy Huang", :title => "Active Member", :imgurl => "people/amy.jpg"},
+        {:name => "Angela Jiang", :title => "Active Member", :imgurl => "people/angelaj.jpg"},
+        {:name => "Angela Xu", :title => "Active Member", :imgurl => "people/angelaxu.jpg"},
+        {:name => "Ashley Chu", :title => "Active Member", :imgurl => "people/ashleychu.jpg"},
+
         {:name => "Cindy Zhang", :title => "Active Member", :imgurl => "people/cindy.jpg"},
+        {:name => "Daniel Jae Im", :title => "Active Member", :imgurl => "people/default.jpg"},
         {:name => "Daniel Tseng", :title => "Active Member", :imgurl => "people/daniel.jpg"},
-        {:name => "Emily Wang", :title => "Active Member", :imgurl => "people/emilyNew.jpg"},
+        {:name => "Dustin Luong", :title => "Active Member", :imgurl => "people/default.jpg"},
 
+        {:name => "Emily Wang", :title => "Active Member", :imgurl => "people/emilyNew.jpg"},
         {:name => "Ethan Chen", :title => "Active Member", :imgurl => "people/ethan.jpg"},
+        {:name => "Grace Altree", :title => "Active Member", :imgurl => "people/grace.jpg"},
+        {:name => "Jasper Chen", :title => "Active Member", :imgurl => "people/jasper.jpg"},
+
+        {:name => "Jen Buja", :title => "Active Member", :imgurl => "people/jen.jpg"},
         {:name => "John Um", :title => "Active Member", :imgurl => "people/john.JPG"},
-        {:name => "Karina Pichardo", :title => "Active Member", :imgurl => "people/karina.jpg"},
+        {:name => "Jun Hee Han", :title => "Active Member", :imgurl => "people/default.jpg"},
+        {:name => "Kamille Dyan Fernando", :title => "Active Member", :imgurl => "people/kamille.jpg"},
+
+        {:name => "Kyra Wong", :title => "Active Member", :imgurl => "people/kyra.jpg"},
         {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.jpg"},
+        {:name => "Krishna Ravi", :title => "Active Member", :imgurl => "people/krishna.jpg"},
+        {:name => "Kristie Lin", :title => "Active Member", :imgurl => "people/kristie.jpg"},
 
         {:name => "Mantej Panesar", :title => "Active Member", :imgurl => "people/mantej.jpg"},
-        {:name => "Noah Alcus", :title => "Active Member", :imgurl => "people/noah.JPG"},
+        {:name => "Michelle Lin", :title => "Active Member", :imgurl => "people/michelle.jpg"},
+        {:name => "Noah Alcus", :title => "Active Member", :imgurl => "people/noah.jpg"},
         {:name => "Pranav Pomalapally", :title => "Active Member", :imgurl => "people/default.jpg"},
+
+        {:name => "Roger Zhang", :title => "Active Member", :imgurl => "people/roger.jpg"},
+        {:name => "Saketh Kollu", :title => "Active Member", :imgurl => "people/saketh.jpg"},
+        {:name => "Satiya Kem", :title => "Active Member", :imgurl => "people/satiya.jpg"},
         {:name => "Shaylan Dias", :title => "Active Member", :imgurl => "people/shaylan.jpg"},
 
         {:name => "SreeVidya Ganga", :title => "Active Member", :imgurl => "people/vidya.jpg"},
         {:name => "Srishti Goswamy", :title => "Active Member", :imgurl => "people/srishti.jpg"},
+        {:name => "Taylor Yoo", :title => "Active Member", :imgurl => "people/taylor.jpg"},
         {:name => "Trevor Baba", :title => "Active Member", :imgurl => "people/trevor.jpg"},
-        {:name => "Varun Murthy", :title => "Active Member", :imgurl => "people/varun.jpg"},
 
+        {:name => "Varun Murthy", :title => "Active Member", :imgurl => "people/varun.jpg"},
+        {:name => "Vidhi Chander", :title => "Active Member", :imgurl => "people/default.jpg"},
         {:name => "Abinav Routhu", :title => "Contributing Member", :imgurl => "people/abinav.jpg"},
         {:name => "Christine Chao", :title => "Contributing Member", :imgurl => "people/christine.jpg"},
-        {:name => "David Paner", :title => "Contributing Member", :imgurl => "people/david.jpg"},
-        {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.jpg"},
 
-        {:name => "Haotian Ye", :title => "Contributing Member", :imgurl => "people/haotian.jpg"},
+        {:name => "David Paner", :title => "Contributing Member", :imgurl => "people/david.jpg"},
+        {:name => "Emily Hu", :title => "Contributing Member", :imgurl => "people/default.jpg"},
+        {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.jpg"},
+        {:name => "Haotian Ye", :title => "Contributing Member", :imgurl => "people/howie.jpg"},
+
         {:name => "Isha Mangal", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jack Coyle", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jagpinder Singh", :title => "Contributing Member", :imgurl => "people/jag.jpg"},
+        {:name => "Jessica Hsiao", :title => "Contributing Member", :imgurl => "people/jag.jpg"},
 
         {:name => "Jiayue Li", :title => "Contributing Member", :imgurl => "people/jaj.jpg"},
         {:name => "Jinsu Elhance", :title => "Contributing Member", :imgurl => "people/jinsu.jpg"},
         {:name => "Katherine Peng", :title => "Contributing Member", :imgurl => "people/katherine.jpg"},
-        {:name => "Marvin Luong", :title => "Contributing Member", :imgurl => "people/marvin.jpg"},
+        {:name => "Kevin Wang", :title => "Contributing Member", :imgurl => "people/kevin.jpg"},
 
-        {:name => "Nitzan Orr", :title => "Contributing Member", :imgurl => "people/default.jpg"},
+        {:name => "Marvin Luong", :title => "Contributing Member", :imgurl => "people/marvin.jpg"},
+        {:name => "Nitzan Orr", :title => "Contributing Member", :imgurl => "people/nitzan.jpg"},
         {:name => "Sera Yang", :title => "Contributing Member", :imgurl => "people/sera.jpg"},
         {:name => "Sherman Luo", :title => "Contributing Member", :imgurl => "people/sherman.png"},
-        {:name => "Stella Lu", :title => "Contributing Member", :imgurl => "people/stella.jpg"},
 
+        {:name => "Stella Lu", :title => "Contributing Member", :imgurl => "people/stella.jpg"},
         {:name => "Avocodeology", :title => "Club Mascot", :imgurl => "people/avocodeology.jpg"}
 
         # non-actives?
