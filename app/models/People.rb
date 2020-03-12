@@ -62,7 +62,7 @@ class People
         {:name => "Jen Buja", :title => "Active Member", :imgurl => "people/jen.jpg"},
         {:name => "John Um", :title => "Active Member", :imgurl => "people/john.JPG"},
         {:name => "Jun Hee Han", :title => "Active Member", :imgurl => "people/default.jpg"},
-        {:name => "Kamille Dyan Fernando", :title => "Active Member", :imgurl => "people/kamille.jpg"},
+        {:name => "Kamille Fernando", :title => "Active Member", :imgurl => "people/kamille.jpg"},
 
         {:name => "Kyra Wong", :title => "Active Member", :imgurl => "people/default.jpg"},
         {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.jpg"},
