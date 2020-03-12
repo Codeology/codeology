@@ -29,12 +29,12 @@ class People
         {:name => "Calvin Chen", :title => "Project Leader", :imgurl => "people/calvin.jpg"},
         {:name => "Charlize Dang", :title => "Project Leader", :imgurl => "people/charlize.jpg"},
 
-        {:name => "CJ Manna", :title => "Project Leader", :imgurl => "people/cj.JPG"},
+        {:name => "CJ Manna", :title => "Project Leader", :imgurl => "people/cj.jpg"},
         {:name => "Clark Wang", :title => "Project Leader", :imgurl => "people/clark.jpg"},
         {:name => "Jimmy Lee", :title => "Project Leader", :imgurl => "people/jimmy2.jpg"},
         {:name => "Matt Hashimoto", :title => "Project Leader", :imgurl => "people/matt.jpg"},
 
-        {:name => "Michael Chen", :title => "Project Leader", :imgurl => "people/michael.JPG"},
+        {:name => "Michael Chen", :title => "Project Leader", :imgurl => "people/michael.jpg"},
         {:name => "Omar Flores", :title => "Project Leader", :imgurl => "people/omar.jpg"},
         {:name => "Susan Chen", :title => "Project Leader", :imgurl => "people/susan.jpg"},
         {:name => "Aarushi Karandikar", :title => "Active Member", :imgurl => "people/aarushi.jpg"},
@@ -54,7 +54,7 @@ class People
         {:name => "Daniel Tseng", :title => "Active Member", :imgurl => "people/daniel.jpg"},
         {:name => "Dustin Luong", :title => "Active Member", :imgurl => "people/default.jpg"},
 
-        {:name => "Emily Wang", :title => "Active Member", :imgurl => "people/emilyNew.JPG"},
+        {:name => "Emily Wang", :title => "Active Member", :imgurl => "people/emilyNew.jpg"},
         {:name => "Ethan Chen", :title => "Active Member", :imgurl => "people/ethan.jpg"},
         {:name => "Grace Altree", :title => "Active Member", :imgurl => "people/grace.jpg"},
         {:name => "Jasper Chen", :title => "Active Member", :imgurl => "people/jasper.jpg"},
@@ -65,7 +65,7 @@ class People
         {:name => "Kamille Dyan Fernando", :title => "Active Member", :imgurl => "people/kamille.jpg"},
 
         {:name => "Kyra Wong", :title => "Active Member", :imgurl => "people/default.jpg"},
-        {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.JPG"},
+        {:name => "Kevin Chai", :title => "Active Member", :imgurl => "people/kevinchai.jpg"},
         {:name => "Krishna Ravi", :title => "Active Member", :imgurl => "people/krishna.jpg"},
         {:name => "Kristie Lin", :title => "Active Member", :imgurl => "people/kristie.jpg"},
 
@@ -91,18 +91,18 @@ class People
 
         {:name => "David Paner", :title => "Contributing Member", :imgurl => "people/david.jpg"},
         {:name => "Emily Hu", :title => "Contributing Member", :imgurl => "people/default.jpg"},
-        {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.JPG"},
+        {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.jpg"},
         {:name => "Haotian Ye", :title => "Contributing Member", :imgurl => "people/howie.jpg"},
 
         {:name => "Isha Mangal", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jack Coyle", :title => "Contributing Member", :imgurl => "people/default.jpg"},
-        {:name => "Jagpinder Singh", :title => "Contributing Member", :imgurl => "people/jag.JPG"},
+        {:name => "Jagpinder Singh", :title => "Contributing Member", :imgurl => "people/jag.jpg"},
         {:name => "Jessica Hsiao", :title => "Contributing Member", :imgurl => "people/jess.jpg"},
 
         {:name => "Jiayue Li", :title => "Contributing Member", :imgurl => "people/jaj.jpg"},
-        {:name => "Jinsu Elhance", :title => "Contributing Member", :imgurl => "people/jinsu.JPG"},
+        {:name => "Jinsu Elhance", :title => "Contributing Member", :imgurl => "people/jinsu.jpg"},
         {:name => "Katherine Peng", :title => "Contributing Member", :imgurl => "people/katherine.jpg"},
-        {:name => "Kevin Wang", :title => "Contributing Member", :imgurl => "people/kevin.JPG"},
+        {:name => "Kevin Wang", :title => "Contributing Member", :imgurl => "people/kevin.jpg"},
 
         {:name => "Marvin Luong", :title => "Contributing Member", :imgurl => "people/marvin.jpg"},
         {:name => "Nitzan Orr", :title => "Contributing Member", :imgurl => "people/nitzan.jpg"},
