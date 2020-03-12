@@ -5,13 +5,13 @@ class People
     @@leadership = [
         {:name => "Karthick Ravikumar", :title => "President", :imgurl => "people/karthick.jpg"},
         {:name => "Alma Pineda", :title => "Vice President", :imgurl => "people/alma.jpg"},
-        {:name => "Ayush Maganahalli", :title => "Co-Director of Education", :imgurl => "people/ayush.jpg"},
+        {:name => "Ayush M.", :title => "Co-Director of Education", :imgurl => "people/ayush.jpg"},
         {:name => "Kyle Hua", :title => "Co-Director of Education", :imgurl => "people/kyle.jpg"},
 
         {:name => "Micah Harrison", :title => "Co-Director of Technology", :imgurl => "people/micah.jpg"},
         {:name => "Richard Huang", :title => "Co-Director of Technology", :imgurl => "people/richard.jpg"},
         {:name => "Jennifer Xiao", :title => "Co-Director of Member Relations", :imgurl => "people/jennifer.jpg"},
-        {:name => "Roshan Kumaraswamy", :title => "Co-Director of Member Relations", :imgurl => "people/roshan.jpg"},
+        {:name => "Roshan K.", :title => "Co-Director of Member Relations", :imgurl => "people/roshan.jpg"},
 
         {:name => "Tiffany Chung", :title => "Director of Media", :imgurl => "people/tiffany.jpg"},
         {:name => "Emily Wang", :title => "Director of Finance", :imgurl => "people/ewang.jpg"},
@@ -94,7 +94,7 @@ class People
         {:name => "Eric Peng", :title => "Contributing Member", :imgurl => "people/eric.jpg"},
         {:name => "Haotian Ye", :title => "Contributing Member", :imgurl => "people/howie.jpg"},
 
-        {:name => "Isha Mangal", :title => "Contributing Member", :imgurl => "people/default.jpg"},
+        {:name => "Isha Mangal", :title => "Contributing Member", :imgurl => "people/isha.JPG"},
         {:name => "Jack Coyle", :title => "Contributing Member", :imgurl => "people/default.jpg"},
         {:name => "Jagpinder Singh", :title => "Contributing Member", :imgurl => "people/jag.jpg"},
         {:name => "Jessica Hsiao", :title => "Contributing Member", :imgurl => "people/jess.jpg"},
