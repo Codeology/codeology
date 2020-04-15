@@ -5,7 +5,7 @@ class Projects
         project_0 = {:name => "Personal Website", :imgurl => "projects/portfolio.jpg",
             :blurb => "Build your own personal website from scratch! We will be using HTML, CSS, and JavaScript, and no prior experience is necessary. Also learn about web design principles such as spacing, color, and typography."}
         project_1 = {:name => "Small Monkey Brain React Reward Project", :imgurl => "projects/smallBrain.JPG",
-            :blurb => "w0w you're actually smol monkey brain... Message: 'One day he became too kathiccc.'"}
+            :blurb => "w0w you're actually smol monkey brain... Clue: url/karthick"}
         project_2 = {:name => "Balling with Data", :imgurl => "projects/ballin.png",
             :blurb => "Have you ever looked up to the stars and wondered to yourself, what could've been if your favorite NBA team knew how to draft players? Well, if you're a Knicks fan, you know exactly what we're talking about.   In this project, Matt and Calvin will be combining their two of their favorite topics, data science and basketball, to demonstrate how we can work with NCAA and NBA data today to predict the next best rookies to transform the NBA. We'll be covering a variety of different data science topics, from data collection to feature engineering to modeling, in order to finally showcase a prediction for the 2020 NBA Draft backed completely by data! Now, you'll be able to take your fool-proof predictions to your local GM, and convince them to finally learn how to tank properly and which player will best fit their team in the upcoming season."}
         project_3 = {:name => "Predicting Film Success", :imgurl => "projects/filmSuccess.jpg",
