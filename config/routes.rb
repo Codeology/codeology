@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/calendar', to: 'static_pages#calendar'
   get '/projects', to: 'static_pages#projects'
   get '/apply', to: 'static_pages#apply'
-  get '/karthick', to: 'static_pages#karthick'
 
   get '/signup', to: 'users#new'
 
