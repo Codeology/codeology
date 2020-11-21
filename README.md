@@ -1,5 +1,5 @@
 # README
-This is the website for the Codeology club at Berkeley
+(OUTDATED OLD WEBSITE) This is the website for the Codeology club at Berkeley
 
 To make minor changes, please refer to [materialize documentation](https://materializecss.com/) to get familiarized with the CSS framework.
 
